@@ -1,0 +1,14 @@
+---
+title: "Welcome To CKeditor"
+author: "granPiero"
+date: "2024-09-29"
+categories: [code]
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    include-after-body: "include-after-body.html"
+---
+
+This is the first post in a Quarto blog to use CKeditor.
+
+Has format: html: include: include-on-header:
