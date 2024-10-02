@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ynot",
+    "objectID": "posts/cke/index.html",
+    "href": "posts/cke/index.html",
+    "title": "Welcome To CKeditor",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
+    "text": "&lt;p&gt;Hello from CKEditor 5!&lt;/p&gt;\n    \n  \n\n\n\n\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -21,17 +21,17 @@
     "text": "About this blog"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ynot",
+    "section": "",
+    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
     "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "posts/cke/index.html",
-    "href": "posts/cke/index.html",
-    "title": "Welcome To CKeditor",
-    "section": "",
-    "text": "This is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:"
   }
 ]

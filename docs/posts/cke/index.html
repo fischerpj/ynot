@@ -151,6 +151,15 @@ ul.task-list li input[type="checkbox"] {
     
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+<textarea id="editor">  &lt;p&gt;Hello from CKEditor 5!&lt;/p&gt;
+    </textarea>
+  <script>
+    InlineEditor
+      .create(document.querySelector('#editor'))
+      .catch(error => {
+        console.error(error);
+      });
+      </script>
 
 
 
@@ -162,15 +171,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
-<textarea id="editor">  &lt;p&gt;Hello from CKEditor 5!&lt;/p&gt;
-    </textarea>
-  <script>
-    ClassicEditor
-      .create(document.querySelector('#editor'))
-      .catch(error => {
-        console.error(error);
-      });
-      </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
