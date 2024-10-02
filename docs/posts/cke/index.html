@@ -163,17 +163,17 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 <textarea id="editor">  &lt;p&gt;Hello from CKEditor 5!&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;script&gt;
+    </textarea>
+  <script>
     ClassicEditor
       .create(document.querySelector('#editor'))
-      .catch(error =&gt; {
+      .catch(error => {
         console.error(error);
       });
-      &lt;/script&gt;
-&lt;script id = "quarto-html-after-body" type="application/javascript"&gt;
+      </script>
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) =&gt; {
+  const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
     const bodyEl = window.document.querySelector("body");
     if (mode === "dark") {
@@ -184,7 +184,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       bodyEl.classList.remove("quarto-dark");
     }
   }
-  const toggleBodyColorPrimary = () =&gt; {
+  const toggleBodyColorPrimary = () => {
     const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
     if (bsSheetEl) {
       toggleBodyColorMode(bsSheetEl);
@@ -198,7 +198,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) =&gt; {
+  const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
         return true;
@@ -264,12 +264,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) =&gt; {
+    var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
  	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i&lt;links.length; i++) {
+    for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
         // undo the damage that might have been done by quarto-nav.js in the case of
@@ -305,7 +305,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i&lt;noterefs.length; i++) {
+  for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
       // use id or data attribute instead here
@@ -321,9 +321,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) =&gt; {
+  const processXRef = (id, note) => {
     // Strip column container classes
-    const stripColumnClz = (el) =&gt; {
+    const stripColumnClz = (el) => {
       el.classList.remove("page-full", "page-columns");
       if (el.children) {
         for (const child of el.children) {
@@ -335,11 +335,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
-      if (note.children &amp;&amp; note.children.length &gt; 2) {
+      if (note.children && note.children.length > 2) {
         container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i &lt; note.children.length; i++) {
+        for (let i = 1; i < note.children.length; i++) {
           const child = note.children[i];
-          if (child.tagName === "P" &amp;&amp; child.innerText === "") {
+          if (child.tagName === "P" && child.innerText === "") {
             continue;
           } else {
             container.appendChild(child.cloneNode(true));
@@ -373,7 +373,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
-  for (var i=0; i&lt;xrefs.length; i++) {
+  for (var i=0; i<xrefs.length; i++) {
     const xref = xrefs[i];
     tippyHover(xref, undefined, function(instance) {
       instance.disable();
@@ -398,8 +398,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         } else {
           // See if we can fetch this
           fetch(url.split('#')[0])
-          .then(res =&gt; res.text())
-          .then(html =&gt; {
+          .then(res => res.text())
+          .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
             const note = htmlDoc.getElementById(id);
@@ -407,7 +407,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               const html = processXRef(id, note);
               instance.setContent(html);
             } 
-          }).finally(() =&gt; {
+          }).finally(() => {
             instance.enable();
             instance.show();
           });
@@ -416,8 +416,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         // See if we can fetch a full url (with no hash to target)
         // This is a special case and we should probably do some content thinning / targeting
         fetch(url)
-        .then(res =&gt; res.text())
-        .then(html =&gt; {
+        .then(res => res.text())
+        .then(html => {
           const parser = new DOMParser();
           const htmlDoc = parser.parseFromString(html, "text/html");
           const note = htmlDoc.querySelector('main.content');
@@ -425,13 +425,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             // This should only happen for chapter cross references
             // (since there is no id in the URL)
             // remove the first header
-            if (note.children.length &gt; 0 &amp;&amp; note.children[0].tagName === "HEADER") {
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
               note.children[0].remove();
             }
             const html = processXRef(null, note);
             instance.setContent(html);
           } 
-        }).finally(() =&gt; {
+        }).finally(() => {
           instance.enable();
           instance.show();
         });
@@ -440,36 +440,36 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
       let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) =&gt; {
+      const selectorForAnnotation = ( cell, annotation) => {
         let cellAttr = 'data-code-cell="' + cell + '"';
         let lineAttr = 'data-code-annotation="' +  annotation + '"';
         const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
         return selector;
       }
-      const selectCodeLines = (annoteEl) =&gt; {
+      const selectCodeLines = (annoteEl) => {
         const doc = window.document;
         const targetCell = annoteEl.getAttribute("data-target-cell");
         const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
         const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
         const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) =&gt; {
+        const lineIds = lines.map((line) => {
           return targetCell + "-" + line;
         })
         let top = null;
         let height = null;
         let parent = null;
-        if (lineIds.length &gt; 0) {
+        if (lineIds.length > 0) {
             //compute the position of the single el (top and bottom and make a div)
             const el = window.document.getElementById(lineIds[0]);
             top = el.offsetTop;
             height = el.offsetHeight;
             parent = el.parentElement.parentElement;
-          if (lineIds.length &gt; 1) {
+          if (lineIds.length > 1) {
             const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
             const bottom = lastEl.offsetTop + lastEl.offsetHeight;
             height = bottom - top;
           }
-          if (top !== null &amp;&amp; height !== null &amp;&amp; parent !== null) {
+          if (top !== null && height !== null && parent !== null) {
             // cook up a div (if necessary) and position it 
             let div = window.document.getElementById("code-annotation-line-highlight");
             if (div === null) {
@@ -496,9 +496,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectedAnnoteEl = annoteEl;
         }
       };
-      const unselectCodeLines = () =&gt; {
+      const unselectCodeLines = () => {
         const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) =&gt; {
+        elementsIds.forEach((elId) => {
           const div = window.document.getElementById(elId);
           if (div) {
             div.remove();
@@ -509,7 +509,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         // Handle positioning of the toggle
     window.addEventListener(
       "resize",
-      throttle(() =&gt; {
+      throttle(() => {
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -519,13 +519,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     function throttle(fn, ms) {
     let throttle = false;
     let timer;
-      return (...args) =&gt; {
+      return (...args) => {
         if(!throttle) { // first call gets through
             fn.apply(this, args);
             throttle = true;
         } else { // all the others get throttled
             if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() =&gt; {
+            timer = setTimeout(() => {
               fn.apply(this, args);
               timer = throttle = false;
             }, ms);
@@ -535,7 +535,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) =&gt; {
+        annoteDlNode.addEventListener('click', (event) => {
           const clickedEl = event.target;
           if (clickedEl !== selectedAnnoteEl) {
             unselectCodeLines();
@@ -552,7 +552,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           }
         });
       }
-  const findCites = (el) =&gt; {
+  const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
       const cites = parentEl.dataset.cites;
@@ -569,7 +569,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i&lt;bibliorefs.length; i++) {
+  for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
     const citeInfo = findCites(ref);
     if (citeInfo) {
@@ -590,10 +590,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-&lt;/script&gt;
-&lt;/div&gt; &lt;!-- /content --&gt;
+</script>
+</div> <!-- /content -->
 
-&lt;/body&gt;
 
-&lt;/html&gt;
-</textarea></div></body></html>
+
+
+</body></html>
