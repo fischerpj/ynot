@@ -2,9 +2,11 @@
   <p>Hello from CKEditor 5!</p>
     </textarea>
   <script>
-    InlineEditor
+    let CKE = InlineEditor
       .create(document.querySelector('#editor'))
       .catch(error => {
         console.error(error);
       });
+    // Set editor width to 100% and height to 350px.
+    CKE.resize( '100%', '350' );  
       </script>
