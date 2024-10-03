@@ -7,8 +7,13 @@ format:
   html:
     include-in-header: "include-in-header.html"
     include-before-body: "include-after-body.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
 ---
 
 This is the first post in a Quarto blog to use CKeditor.
 
 Has format: html: include: include-on-header:
+
+Has also html: commets: utterances: repo:
