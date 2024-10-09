@@ -1,0 +1,19 @@
+---
+title: "Iframe"
+author: "granPiero"
+date: "2024-10-09"
+categories: [code]
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    include-before-body: "include-after-body.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+This is the first post in a Quarto blog to use \\\<`iframe\>`{=html}
+
+to show src = <https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV>
+
+<iframe>src= "<https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV>" title="jsfapi iframe" width="300" height="200"</iframe>

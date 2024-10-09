@@ -11,6 +11,10 @@ website:
         href: https://github.com/
       - icon: twitter
         href: https://twitter.com
+listing:
+  contents: docs
+  sort:
+    - "date desc"
 format:
   html:
     theme: cosmo
