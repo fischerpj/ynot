@@ -11,7 +11,7 @@
     "href": "posts/iframe/index.html",
     "title": "Iframe",
     "section": "",
-    "text": "This is the first post in a Quarto blog to use \\&lt;iframe\\&gt;\nto show src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "This is the first post in a Quarto blog to use an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\nDue enhancements are content_switching between json and html and css styling.\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
