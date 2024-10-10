@@ -4,12 +4,18 @@
     "items": []
   },
   {
-    "listing": "/posts/iframe/index.html",
+    "listing": "/posts/post-with-code/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/welcome/index.html",
     "items": []
   },
   {
     "listing": "/index.html",
     "items": [
+      "/posts/notes/index.html",
+      "/posts/verses/index.html",
       "/posts/iframe/index.html",
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html",
@@ -21,11 +27,15 @@
     "items": []
   },
   {
-    "listing": "/posts/welcome/index.html",
+    "listing": "/posts/notes/index.html",
     "items": []
   },
   {
-    "listing": "/posts/post-with-code/index.html",
+    "listing": "/posts/iframe/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/index.html",
     "items": []
   }
 ]

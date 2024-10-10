@@ -1,0 +1,17 @@
+---
+title: "verses"
+author: "granPiero"
+date: "2024-10-10"
+categories: [news]
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    include-before-body: "include-after-body.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+My preferred verses to memorize are captured here like *comments*. The **refs'** syntax respects *"canon":"ps1:1-3!SG21\@bgw"*.
+
+<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:1-3!SG21" title="jsfapi iframe" width="400" height="300"></iframe>

@@ -12,7 +12,7 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-This is the first post in a Quarto blog to use an **iframe** element to display src = <https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV>
+First use of an **iframe** element to display src = <https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV>
 
 <iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV" title="jsfapi iframe"width="400" height="300"></iframe>
 
