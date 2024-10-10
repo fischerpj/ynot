@@ -14,6 +14,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/jsfapi/index.html",
       "/posts/notes/index.html",
       "/posts/verses/index.html",
       "/posts/iframe/index.html",
@@ -36,6 +37,10 @@
   },
   {
     "listing": "/posts/verses/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/jsfapi/index.html",
     "items": []
   }
 ]
