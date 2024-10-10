@@ -12,4 +12,6 @@ format:
 
 *jsfapi* is the raw json API to BibleGateway, hosted by netlify like in following iframe which is R_independent! Develop this feature with *comments*.
 
-<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:2!SG21" title="jsfapi iframe" width="400" height="300"></iframe>
+<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:2!SG21" title="jsfapi iframe" width="400" height="300">
+
+</iframe>
