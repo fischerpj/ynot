@@ -1,80 +1,17 @@
 [
   {
-    "objectID": "posts/observables/index.html",
-    "href": "posts/observables/index.html",
-    "title": "Observables",
+    "objectID": "posts/immobilier/index.html",
+    "href": "posts/immobilier/index.html",
+    "title": "immobilier",
     "section": "",
-    "text": "We demonstrate ObservableJS in quarto action.\n\nimport {html} from \"@observablehq/htl\";\n\nhtml`&lt;button onclick=\"alert('Button clicked!')\"&gt;Click me!&lt;/button&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Point de départ du projet d’habitation à Montpellier.\nhttps://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/bible-look/index.html",
-    "href": "posts/bible-look/index.html",
-    "title": "bible look",
+    "objectID": "posts/cke/index.html",
+    "href": "posts/cke/index.html",
+    "title": "Welcome To CKeditor",
     "section": "",
-    "text": "Bible Search and Lookup technology.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/cuisine/index.html",
-    "href": "posts/cuisine/index.html",
-    "title": "cuisine",
-    "section": "",
-    "text": "Recettes de cuisine éprouvées.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/priorités/index.html",
-    "href": "posts/priorités/index.html",
-    "title": "priorités",
-    "section": "",
-    "text": "Organise the tree of priorities\n\nimportant first\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/notes/index.html",
-    "href": "posts/notes/index.html",
-    "title": "notes",
-    "section": "",
-    "text": "I capture my ideas like comments, at random here.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Ynot (Why not!) is my personal gitHub repo to store infos as issues, that are anchored to any pages of my other websites.\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ynot",
-    "section": "",
-    "text": "priorités\n\n\n\n\n\n\norg\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/iframe/index.html",
-    "href": "posts/iframe/index.html",
-    "title": "Iframe",
-    "section": "",
-    "text": "First use of an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\nDue enhancements are content_switching between json and html and css styling.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/verses/index.html",
-    "href": "posts/verses/index.html",
-    "title": "verses",
-    "section": "",
-    "text": "My preferred verses to memorize are captured here like comments. The refs’ syntax respects “canon”:“ps1:1-3!SG21@bgw”.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "&lt;p&gt;Hello from CKEditor 5!&lt;/p&gt;\n    \n  \n\n\n\n\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: commets: utterances: repo:\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/jsfapi/index.html",
@@ -84,10 +21,80 @@
     "text": "jsfapi is the raw json API to BibleGateway, hosted by netlify like in following iframe which is R_independent! Develop this feature with comments.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/cke/index.html",
-    "href": "posts/cke/index.html",
-    "title": "Welcome To CKeditor",
+    "objectID": "posts/verses/index.html",
+    "href": "posts/verses/index.html",
+    "title": "verses",
     "section": "",
-    "text": "&lt;p&gt;Hello from CKEditor 5!&lt;/p&gt;\n    \n  \n\n\n\n\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: commets: utterances: repo:\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "My preferred verses to memorize are captured here like comments. The refs’ syntax respects “canon”:“ps1:1-3!SG21@bgw”.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/iframe/index.html",
+    "href": "posts/iframe/index.html",
+    "title": "Iframe",
+    "section": "",
+    "text": "First use of an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\nDue enhancements are content_switching between json and html and css styling.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ynot",
+    "section": "",
+    "text": "priorités\n\n\n\n\n\n\norg\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Ynot (Why not!) is my personal gitHub repo to store infos as issues, that are anchored to any pages of my other websites.\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/notes/index.html",
+    "href": "posts/notes/index.html",
+    "title": "notes",
+    "section": "",
+    "text": "I capture my ideas like comments, at random here.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/priorités/index.html",
+    "href": "posts/priorités/index.html",
+    "title": "priorités",
+    "section": "",
+    "text": "Organise the tree of priorities\n\nimportant first\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/cuisine/index.html",
+    "href": "posts/cuisine/index.html",
+    "title": "cuisine",
+    "section": "",
+    "text": "Recettes de cuisine éprouvées.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/bible-look/index.html",
+    "href": "posts/bible-look/index.html",
+    "title": "bible look",
+    "section": "",
+    "text": "Bible Search and Lookup technology.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/observables/index.html",
+    "href": "posts/observables/index.html",
+    "title": "Observables",
+    "section": "",
+    "text": "We demonstrate ObservableJS in quarto action.\n\nimport {html} from \"@observablehq/htl\";\n\nhtml`&lt;button onclick=\"alert('Button clicked!')\"&gt;Click me!&lt;/button&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

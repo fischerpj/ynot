@@ -1,0 +1,18 @@
+---
+title: "immobilier"
+author: "granPiero"
+date: "2024-10-1"
+categories: [immobilier]
+image: "maison.jpg"
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    include-before-body: "include-after-body.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+Point de départ du projet d'**habitation** à Montpellier.
+
+<https://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html>
