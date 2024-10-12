@@ -1,19 +1,33 @@
 [
   {
-    "listing": "/posts/cke/index.html",
+    "listing": "/posts/observables/index.html",
     "items": []
   },
   {
-    "listing": "/posts/post-with-code/index.html",
+    "listing": "/posts/bible-look/index.html",
     "items": []
   },
   {
-    "listing": "/posts/welcome/index.html",
+    "listing": "/posts/verses/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/iframe/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/notes/index.html",
+    "items": []
+  },
+  {
+    "listing": "/about.html",
     "items": []
   },
   {
     "listing": "/index.html",
     "items": [
+      "/posts/bible-look/index.html",
+      "/posts/observables/index.html",
       "/posts/jsfapi/index.html",
       "/posts/notes/index.html",
       "/posts/verses/index.html",
@@ -24,23 +38,19 @@
     ]
   },
   {
-    "listing": "/about.html",
+    "listing": "/posts/welcome/index.html",
     "items": []
   },
   {
-    "listing": "/posts/notes/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/iframe/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/verses/index.html",
+    "listing": "/posts/post-with-code/index.html",
     "items": []
   },
   {
     "listing": "/posts/jsfapi/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/cke/index.html",
     "items": []
   }
 ]

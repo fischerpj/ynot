@@ -1,0 +1,21 @@
+---
+title: "Observables"
+author: "granPiero"
+date: "2024-10-12"
+image: "observablejs.jpg"
+categories: [code]
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+We demonstrate **ObservableJS** in quarto action.
+
+```{ojs}
+import {html} from "@observablehq/htl";
+
+html`<button onclick="alert('Button clicked!')">Click me!</button>`
+
+```
