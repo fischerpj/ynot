@@ -1,0 +1,18 @@
+---
+title: "priorités"
+author: "granPiero"
+date: "2024-10-12"
+categories: [org]
+image: "todo.jpg"
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    include-before-body: "include-after-body.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+Organise the **tree of priorities**
+
+1.  important first

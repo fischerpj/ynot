@@ -8,11 +8,15 @@
     "items": []
   },
   {
-    "listing": "/posts/verses/index.html",
+    "listing": "/posts/cuisine/index.html",
     "items": []
   },
   {
-    "listing": "/posts/iframe/index.html",
+    "listing": "/posts/post-with-code/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/priorités/index.html",
     "items": []
   },
   {
@@ -26,6 +30,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/priorités/index.html",
+      "/posts/cuisine/index.html",
       "/posts/bible-look/index.html",
       "/posts/observables/index.html",
       "/posts/jsfapi/index.html",
@@ -42,7 +48,11 @@
     "items": []
   },
   {
-    "listing": "/posts/post-with-code/index.html",
+    "listing": "/posts/iframe/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/index.html",
     "items": []
   },
   {

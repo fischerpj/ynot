@@ -1,0 +1,16 @@
+---
+title: "cuisine"
+author: "granPiero"
+date: "2024-10-12"
+categories: [cuisine]
+image: "pizza.jpg"
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    include-before-body: "include-after-body.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+**Recettes** de cuisine éprouvées.
