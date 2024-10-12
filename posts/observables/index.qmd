@@ -11,11 +11,19 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-We demonstrate **ObservableJS** in quarto action.
+We demonstrate **ObservableJS** interactions in a quarto document.
 
 ```{ojs}
+// create a button that fires an alert
 import {html} from "@observablehq/htl";
 
-html`<button onclick="alert('Button clicked!')">Click me!</button>`
+html`<button onclick="alert('Button clicked!')">Fire me!</button>`
+```
 
+```{ojs}
+// Interactive capture of ref
+viewof ref =  Inputs.text({label: "ref", placeholder: "Enter your ref", value: "ps1:10"})
+
+// reuse the dynamic value retruned by viewof 
+ref.length;
 ```

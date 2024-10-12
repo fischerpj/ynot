@@ -95,6 +95,6 @@
     "href": "posts/observables/index.html",
     "title": "Observables",
     "section": "",
-    "text": "We demonstrate ObservableJS in quarto action.\n\nimport {html} from \"@observablehq/htl\";\n\nhtml`&lt;button onclick=\"alert('Button clicked!')\"&gt;Click me!&lt;/button&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "We demonstrate ObservableJS interactions in a quarto document.\n\nimport {html} from \"@observablehq/htl\";\n\nhtml`&lt;button onclick=\"alert('Button clicked!')\"&gt;Fire me!&lt;/button&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof ref =  Inputs.text({label: \"ref\", placeholder: \"Enter your ref\", value: \"ps1:10\"})\n\n// reuse the dynamic value retruned by viewof \nref.length;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
