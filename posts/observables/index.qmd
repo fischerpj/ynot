@@ -26,4 +26,8 @@ viewof ref =  Inputs.text({label: "ref", placeholder: "Enter your ref", value: "
 
 // reuse the dynamic value retruned by viewof 
 ref.length;
+
+html`<button onclick="alert('Button clicked!')">${ref}</button>`
+
+viewof tim = Inputs.button("Update", {value: null, reduce: () => new Date})
 ```
