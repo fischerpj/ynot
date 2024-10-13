@@ -24,10 +24,14 @@ html`<button onclick="alert('Button clicked!')">Fire me!</button>`
 // Interactive capture of ref
 viewof ref =  Inputs.text({label: "ref", placeholder: "Enter your ref", value: "ps1:10"})
 
-// reuse the dynamic value retruned by viewof 
+// ref is a reactive value whereever reused
 ref.length;
 
-html`<button onclick="alert('Button clicked!')">${ref}</button>`
+// craft url as a reactive value too
+url =  '"' +"https://jsfapi.netlify.app/.netlify/functions/bgw?param=" +ref +'"';
+ifram = "html`" +"<iframe src=" +url +"></iframe>`";
+md`_${url}_ is dynamic`
 
-viewof tim = Inputs.button("Update", {value: null, reduce: () => new Date})
+html`<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="jsfapi iframe static" width="400" height="300">
+</iframe>`
 ```
