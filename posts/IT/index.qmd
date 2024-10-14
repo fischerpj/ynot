@@ -1,0 +1,16 @@
+---
+title: "IT"
+author: "granPiero"
+date: "2024-10-14"
+categories: [tech]
+image: "old_pc.jpg"
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    include-before-body: "include-after-body.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+Everything related to ***technology.***

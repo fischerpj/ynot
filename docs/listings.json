@@ -12,7 +12,11 @@
     "items": []
   },
   {
-    "listing": "/posts/verses/index.html",
+    "listing": "/posts/cuisine/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/IT/index.html",
     "items": []
   },
   {
@@ -26,6 +30,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/IT/index.html",
+      "/posts/gospel-banner/index.html",
       "/posts/priorités/index.html",
       "/posts/cuisine/index.html",
       "/posts/bible-look/index.html",
@@ -57,7 +63,11 @@
     "items": []
   },
   {
-    "listing": "/posts/cuisine/index.html",
+    "listing": "/posts/verses/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/gospel-banner/index.html",
     "items": []
   },
   {
