@@ -5,8 +5,6 @@ date: "2024-10-09"
 categories: [code]
 format: 
   html:
-    include-in-header: "include-in-header.html"
-    include-before-body: "include-after-body.html"
     comments:
       utterances: 
         repo: "fischerpj/ynot"
@@ -14,6 +12,8 @@ format:
 
 First use of an **iframe** element to display src = <https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV>
 
-<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV" title="jsfapi iframe"width="400" height="300"></iframe>
+<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV" title="jsfapi iframe" width="400" height="300">
 
-Due enhancements are content_switching between json and html and css styling. 
+</iframe>
+
+Due enhancements are content_switching between json and html and css styling.

@@ -6,8 +6,6 @@ categories: [bible]
 image: "old_bible.jpg"
 format: 
   html:
-    include-in-header: "include-in-header.html"
-    include-before-body: "include-after-body.html"
     comments:
       utterances: 
         repo: "fischerpj/ynot"

@@ -5,8 +5,6 @@ date: "2024-10-10"
 categories: [code]
 format: 
   html:
-    include-in-header: "include-in-header.html"
-    include-before-body: "include-after-body.html"
     comments:
       utterances: 
         repo: "fischerpj/ynot"
