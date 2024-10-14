@@ -13,4 +13,4 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-A animated web **presentation** of biblical claims.
+The animated web **presentation** of biblical claims is posted [https://xminpi.netlify.app/ppt/gospel-banner/](https://xminpi.netlify.app/ppt/gospel-banner/#/levangile-est-la-puissance-de-dieu)
