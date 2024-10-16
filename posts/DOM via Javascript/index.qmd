@@ -11,4 +11,14 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-Show Javascript accessing the **DOM**.
+1.  Show Javascript accessing the **DOM**, requires an **input** field, a submit **button** triggers, a DOM insert **javascript** function.
+
+<input type="text" id="inputField" placeholder="Type something here"><button id="submitButton">Submit</button>
+
+<p id="displayText">
+
+</p>
+
+<script src="script.js"></script>
+
+1.  Show Javascript inject a dynamic javascript into DOM.
