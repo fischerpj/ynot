@@ -109,7 +109,7 @@
     "href": "posts/DOM via Javascript/index.html",
     "title": "DOM via Javascript",
     "section": "",
-    "text": "Show Javascript accessing the DOM, requires an input field, a submit button triggers, a DOM insert javascript function.\n\nSubmit\n\n\n\n\nDynamic update of an iframe content. Redo where target DOM element is an iframe, keep the button-trigger and the callback function sets the src= attribute of iframe\n\nSubmit\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n  \nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n\nDisplay\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/observables/index.html",
