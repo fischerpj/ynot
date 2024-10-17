@@ -1,0 +1,14 @@
+---
+title: "résidence Etoile"
+author: "granPiero"
+date: "2024-10-1"
+categories: [immobilier]
+image: "etoile.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+Point de départ de l'habitation au **Clos de l'Etoile**
