@@ -16,9 +16,14 @@ format:
 <input type="text" id="inputField" placeholder="Type something here"><button id="submitButton">Submit</button>
 
 <p id="displayText">
-
 </p>
 
 <script src="script.js"></script>
 
-1.  Show Javascript inject a dynamic javascript into DOM.
+2.  Dynamic update of an iframe content. Redo where target DOM element is an iframe, keep the button-trigger and the callback function sets the src= attribute of iframe
+
+```{=html}
+<input type="text" id="inputField2" placeholder="Type a ref here"><button id="submitButton2">Submit</button>
+
+<iframe id="frame0" src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:2!SG21" title="jsfapi iframe" width="400" height="300"></iframe>
+```
