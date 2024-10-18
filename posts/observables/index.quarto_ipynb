@@ -1,0 +1,72 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Observables\"\n",
+        "author: \"granPiero\"\n",
+        "date: \"2024-10-12\"\n",
+        "image: \"observablejs.jpg\"\n",
+        "categories: [code]\n",
+        "format: \n",
+        "  html:\n",
+        "    comments:\n",
+        "      utterances: \n",
+        "        repo: \"fischerpj/ynot\"\n",
+        "---\n",
+        "\n",
+        "\n",
+        "We demonstrate **ObservableJS** interactions in a quarto document.\n",
+        "\n",
+        "\n",
+        "```{js}\n",
+        "import {html} from \"@observablehq/htl\";\n",
+        "\n",
+        "// Create the input and button elements\n",
+        "const input = html`<input type=\"text\" id=\"myInput\" placeholder=\"Type here\">`;\n",
+        "const button = html`<button id=\"myButton\">Update Text</button>`;\n",
+        "const display = html`<p id=\"displayText\">Original Text</p>`;\n",
+        "\n",
+        "// Add them to the document\n",
+        "html`${input}${button}${display}`;\n",
+        "\n",
+        "// Add an event listener to the button to update the text of the paragraph\n",
+        "document.getElementById('myButton').addEventListener('click', () => {\n",
+        "  const inputValue = document.getElementById('myInput').value;\n",
+        "  document.getElementById('displayText').innerText = inputValue;\n",
+        "});\n",
+        "\n",
+        "```\n",
+        "\n",
+        "```{ojs}\n",
+        "html`<iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"300\">\n",
+        "</iframe>`\n",
+        "```\n",
+        "\n",
+        "```{ojs}\n",
+        "// create a button that fires an alert\n",
+        "import {html} from \"@observablehq/htl\";\n",
+        "// Interactive capture of ref\n",
+        "viewof ref =  Inputs.text({label: \"\", placeholder: \"your ref here\", value: \"\"})\n",
+        "ref\n",
+        "```\n",
+        "\n",
+        "```{ojs}\n",
+        "html`<button onclick=\"alert('Alert clicked!')\">Fire me!</button>`\n",
+        "```"
+      ],
+      "id": "4b964249"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

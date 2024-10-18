@@ -123,6 +123,20 @@
     "href": "posts/observables/index.html",
     "title": "Observables",
     "section": "",
-    "text": "We demonstrate ObservableJS interactions in a quarto document.\n\nhtml`&lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"300\"&gt;\n&lt;/iframe&gt;`\n\n\n\n\n\n\n\nimport {html} from \"@observablehq/htl\";\n// Interactive capture of ref\nviewof ref =  Inputs.text({label: \"\", placeholder: \"your ref here\", value: \"\"})\nref\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`&lt;button onclick=\"alert('Alert clicked!')\"&gt;Fire me!&lt;/button&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "We demonstrate interactions with ObservableJS Inputs.text, Input.button in a quarto document."
+  },
+  {
+    "objectID": "posts/observables/index.html#inputs.text",
+    "href": "posts/observables/index.html#inputs.text",
+    "title": "Observables",
+    "section": "Inputs.text",
+    "text": "Inputs.text\n\nimport {} from \"@observablehq/inputs\";\n\n// Create an Inputs.text element\nviewof userInput = Inputs.text({\n  label: \"Enter\",\n  placeholder: \"Type here\",\n  value: \"Initial text\"\n})\n\n// Display the input value\nuserInput"
+  },
+  {
+    "objectID": "posts/observables/index.html#button.click",
+    "href": "posts/observables/index.html#button.click",
+    "title": "Observables",
+    "section": "button.click",
+    "text": "button.click\n\nviewof myButton = Inputs.button(\"Count me!\");\n\n// By default, shows the #clicks\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport {html} from \"@observablehq/htl\";\n\n// Create HTML nested elements: div, h1, p, iframe\nmyHtml = html`&lt;div&gt;\n  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;\n  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;\n  &lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"150\"&gt;\n&lt;/div&gt;`;\n\n// Display the HTML element\nmyHtml"
   }
 ]

@@ -11,21 +11,45 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-We demonstrate **ObservableJS** interactions in a quarto document.
+We demonstrate interactions with **ObservableJS** Inputs.text, Input.button in a quarto document.
+
+## Inputs.text
 
 ```{ojs}
-html`<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="STATIC IFRAME jsfapi" width="400" height="300">
-</iframe>`
+import {} from "@observablehq/inputs";
+
+// Create an Inputs.text element
+viewof userInput = Inputs.text({
+  label: "Enter",
+  placeholder: "Type here",
+  value: "Initial text"
+})
+
+// Display the input value
+userInput
 ```
 
+## button.click
+
 ```{ojs}
-// create a button that fires an alert
+// Create a button using Inputs.button
+viewof myButton = Inputs.button("Count me!");
+
+// By default, shows the #clicks
+myButton
+```
+
+
+```{ojs}
 import {html} from "@observablehq/htl";
-// Interactive capture of ref
-viewof ref =  Inputs.text({label: "", placeholder: "your ref here", value: ""})
-ref
-```
 
-```{ojs}
-html`<button onclick="alert('Alert clicked!')">Fire me!</button>`
+// Create HTML nested elements: div, h1, p, iframe
+myHtml = html`<div>
+  <h1>Hello, Observable!</h1>
+  <p>This is a paragraph followed by AN IFRAME within a div element.</p>
+  <iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="STATIC IFRAME jsfapi" width="400" height="150">
+</div>`;
+
+// Display the HTML element
+myHtml
 ```
