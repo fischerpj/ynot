@@ -14,24 +14,18 @@ format:
 We demonstrate **ObservableJS** interactions in a quarto document.
 
 ```{ojs}
-// create a button that fires an alert
-import {html} from "@observablehq/htl";
-
-html`<button onclick="alert('Button clicked!')">Fire me!</button>`
+html`<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="STATIC IFRAME jsfapi" width="400" height="300">
+</iframe>`
 ```
 
 ```{ojs}
+// create a button that fires an alert
+import {html} from "@observablehq/htl";
 // Interactive capture of ref
-viewof ref =  Inputs.text({label: "ref", placeholder: "Enter your ref", value: "ps1:10"})
+viewof ref =  Inputs.text({label: "", placeholder: "your ref here", value: ""})
+ref
+```
 
-// ref is a reactive value whereever reused
-ref.length;
-
-// craft url as a reactive value too
-url =  '"' +"https://jsfapi.netlify.app/.netlify/functions/bgw?param=" +ref +'"';
-ifram = "html`" +"<iframe src=" +url +"></iframe>`";
-md`_${url}_ is dynamic`
-
-html`<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="jsfapi iframe static" width="400" height="300">
-</iframe>`
+```{ojs}
+html`<button onclick="alert('Alert clicked!')">Fire me!</button>`
 ```

@@ -252,29 +252,19 @@ window.Quarto = {
 
 <p>We demonstrate <strong>ObservableJS</strong> interactions in a quarto document.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-startfrom="18" data-source-offset="-39"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 17;"><span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {html} <span class="im">from</span> <span class="st">"@observablehq/htl"</span><span class="op">;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;button onclick="alert('Button clicked!')"&gt;Fire me!&lt;/button&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-startfrom="16" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 15;"><span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="STATIC IFRAME jsfapi" width="400" height="300"&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/iframe&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
+<div id="ojs-cell-1" data-nodetype="expression">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="expression">
-
-</div>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-startfrom="25" data-source-offset="-30"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 24;"><span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>viewof ref <span class="op">=</span>  Inputs<span class="op">.</span><span class="fu">text</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"ref"</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter your ref"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"ps1:10"</span>})</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">// ref is a reactive value whereever reused</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ref<span class="op">.</span><span class="at">length</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2" data-startfrom="23" data-source-offset="-39"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 22;"><span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {html} <span class="im">from</span> <span class="st">"@observablehq/htl"</span><span class="op">;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">// Interactive capture of ref</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>viewof ref <span class="op">=</span>  Inputs<span class="op">.</span><span class="fu">text</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">""</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"your ref here"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">""</span>})</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ref</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -284,42 +274,24 @@ window.Quarto = {
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-2-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb3" data-startfrom="31" data-source-offset="-215"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 30;"><span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span>  <span class="st">'"'</span> <span class="op">+</span><span class="st">"https://jsfapi.netlify.app/.netlify/functions/bgw?param="</span> <span class="op">+</span>ref <span class="op">+</span><span class="st">'"'</span><span class="op">;</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ifram <span class="op">=</span> <span class="st">"html`"</span> <span class="op">+</span><span class="st">"&lt;iframe src="</span> <span class="op">+</span>url <span class="op">+</span><span class="st">"&gt;&lt;/iframe&gt;`"</span><span class="op">;</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu">md</span><span class="vs">`_</span><span class="sc">${</span>url<span class="sc">}</span><span class="vs">_ is dynamic`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-3" data-nodetype="declaration">
+<div id="ojs-cell-2-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-2-4" data-nodetype="declaration">
+<div id="ojs-cell-2-3" data-nodetype="expression">
 
 </div>
 </div>
 </div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" data-startfrom="29" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 28;"><span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;button onclick="alert('Alert clicked!')"&gt;Fire me!&lt;/button&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-5" data-nodetype="expression">
+<div id="ojs-cell-3" data-nodetype="expression">
 
-</div>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb4" data-startfrom="35" data-source-offset="-375"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 34;"><span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="jsfapi iframe static" width="400" height="300"&gt;</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/iframe&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-6" data-nodetype="expression">
-
-</div>
 </div>
 </div>
 </div>
@@ -336,7 +308,7 @@ No matching items
 </div>
 </div></main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIGNyZWF0ZSBhIGJ1dHRvbiB0aGF0IGZpcmVzIGFuIGFsZXJ0XG5pbXBvcnQge2h0bWx9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL2h0bFwiO1xuXG5odG1sYDxidXR0b24gb25jbGljaz1cImFsZXJ0KCdCdXR0b24gY2xpY2tlZCEnKVwiPkZpcmUgbWUhPC9idXR0b24+YFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gSW50ZXJhY3RpdmUgY2FwdHVyZSBvZiByZWZcbnZpZXdvZiByZWYgPSAgSW5wdXRzLnRleHQoe2xhYmVsOiBcInJlZlwiLCBwbGFjZWhvbGRlcjogXCJFbnRlciB5b3VyIHJlZlwiLCB2YWx1ZTogXCJwczE6MTBcIn0pXG5cbi8vIHJlZiBpcyBhIHJlYWN0aXZlIHZhbHVlIHdoZXJlZXZlciByZXVzZWRcbnJlZi5sZW5ndGg7XG5cbi8vIGNyYWZ0IHVybCBhcyBhIHJlYWN0aXZlIHZhbHVlIHRvb1xudXJsID0gICdcIicgK1wiaHR0cHM6Ly9qc2ZhcGkubmV0bGlmeS5hcHAvLm5ldGxpZnkvZnVuY3Rpb25zL2Jndz9wYXJhbT1cIiArcmVmICsnXCInO1xuaWZyYW0gPSBcImh0bWxgXCIgK1wiPGlmcmFtZSBzcmM9XCIgK3VybCArXCI+PC9pZnJhbWU+YFwiO1xubWRgXyR7dXJsfV8gaXMgZHluYW1pY2BcblxuaHRtbGA8aWZyYW1lIHNyYz1cImh0dHBzOi8vanNmYXBpLm5ldGxpZnkuYXBwLy5uZXRsaWZ5L2Z1bmN0aW9ucy9iZ3c/cGFyYW09Z2VuMToxIVNHMjFcIiB0aXRsZT1cImpzZmFwaSBpZnJhbWUgc3RhdGljXCIgd2lkdGg9XCI0MDBcIiBoZWlnaHQ9XCIzMDBcIj5cbjwvaWZyYW1lPmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncmVmJykifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgPGlmcmFtZSBzcmM9XCJodHRwczovL2pzZmFwaS5uZXRsaWZ5LmFwcC8ubmV0bGlmeS9mdW5jdGlvbnMvYmd3P3BhcmFtPWdlbjE6MSFTRzIxXCIgdGl0bGU9XCJTVEFUSUMgSUZSQU1FIGpzZmFwaVwiIHdpZHRoPVwiNDAwXCIgaGVpZ2h0PVwiMzAwXCI+XG48L2lmcmFtZT5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBjcmVhdGUgYSBidXR0b24gdGhhdCBmaXJlcyBhbiBhbGVydFxuaW1wb3J0IHtodG1sfSBmcm9tIFwiQG9ic2VydmFibGVocS9odGxcIjtcbi8vIEludGVyYWN0aXZlIGNhcHR1cmUgb2YgcmVmXG52aWV3b2YgcmVmID0gIElucHV0cy50ZXh0KHtsYWJlbDogXCJcIiwgcGxhY2Vob2xkZXI6IFwieW91ciByZWYgaGVyZVwiLCB2YWx1ZTogXCJcIn0pXG5yZWZcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgPGJ1dHRvbiBvbmNsaWNrPVwiYWxlcnQoJ0FsZXJ0IGNsaWNrZWQhJylcIj5GaXJlIG1lITwvYnV0dG9uPmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncmVmJykifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
