@@ -27,6 +27,9 @@ viewof userInput = Inputs.text({
 
 // Display the input value
 userInput
+endpoint = "https://jsfapi.netlify.app/.netlify/functions/bgw"
+url = endpoint+"?param="+userInput
+url
 ```
 
 ## button.click

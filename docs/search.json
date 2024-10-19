@@ -130,7 +130,7 @@
     "href": "posts/observables/index.html#inputs.text",
     "title": "Observables",
     "section": "Inputs.text",
-    "text": "Inputs.text\n\nimport {} from \"@observablehq/inputs\";\n\n// Create an Inputs.text element\nviewof userInput = Inputs.text({\n  label: \"Enter\",\n  placeholder: \"Type here\",\n  value: \"Initial text\"\n})\n\n// Display the input value\nuserInput"
+    "text": "Inputs.text\n\nimport {} from \"@observablehq/inputs\";\n\n// Create an Inputs.text element\nviewof userInput = Inputs.text({\n  label: \"Enter\",\n  placeholder: \"Type here\",\n  value: \"Initial text\"\n})\n\n// Display the input value\nuserInput\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nendpoint = \"https://jsfapi.netlify.app/.netlify/functions/bgw\"\nurl = endpoint+\"?param=\"+userInput\nurl"
   },
   {
     "objectID": "posts/observables/index.html#button.click",
