@@ -1,0 +1,37 @@
+---
+title: "Bible access"
+author: "granPiero"
+date: "2024-10-21"
+categories: [bible]
+image: "microscope.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+Gives access to Bible Texts **version, display, search, pdf** as well as to resources like **Strong_Numbers** and miscellaneous Bible sites. The **refs'** syntax respects *"canon":"ps1:1-3!SG21\@bgw"*.
+
+1.  input 2. api 3. iframe
+
+```{ojs}
+import {} from "@observablehq/inputs";
+
+// Create an Inputs.text element
+viewof userInput = Inputs.text({
+  label: "Enter",
+  placeholder: "Type here",
+  value: "Initial text"
+})
+
+// Display the input value
+userInput
+endpoint = "https://jsfapi.netlify.app/.netlify/functions/bgw"
+url = endpoint+"?param="+userInput
+url
+```
+
+<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:1-3!SG21" title="jsfapi iframe" width="400" height="300">
+
+</iframe>

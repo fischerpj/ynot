@@ -2,7 +2,7 @@
 title: "verses"
 author: "granPiero"
 date: "2024-10-10"
-categories: [news]
+categories: [bible]
 format: 
   html:
     comments:
