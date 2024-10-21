@@ -18,7 +18,7 @@
     "href": "posts/DOM via Javascript/index.html",
     "title": "DOM via Javascript",
     "section": "",
-    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\nConclusion: Abandon ObersvableJS technology because of CSS-styling hurdle.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/jsfapi/index.html",
@@ -35,11 +35,18 @@
     "text": "Recettes de cuisine éprouvées.\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/IT/index.html",
-    "href": "posts/IT/index.html",
-    "title": "IT",
+    "objectID": "posts/excursions/index.html",
+    "href": "posts/excursions/index.html",
+    "title": "excursions",
     "section": "",
-    "text": "Everything related to technology.\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "The root of discoveries.\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/iframe/index.html",
@@ -60,7 +67,7 @@
     "href": "index.html",
     "title": "ynot",
     "section": "",
-    "text": "Bible access\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nexcursions\n\n\n\n\n\n\nloisirs\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIT\n\n\n\n\n\n\ntech\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ngospel banner\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nDOM via Javascript\n\n\n\n\n\n\nit\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\npriorités\n\n\n\n\n\n\norg\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nrésidence Etoile\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
+    "text": "Bible access\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 22, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nexcursions\n\n\n\n\n\n\nloisirs\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIT\n\n\n\n\n\n\ntech\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ngospel banner\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nDOM via Javascript\n\n\n\n\n\n\nit\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\npriorités\n\n\n\n\n\n\norg\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nrésidence Etoile\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -84,11 +91,18 @@
     "text": "Organise the tree of priorities\n\nimportant first\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/bible-access/index.html",
+    "href": "posts/bible-access/index.html",
+    "title": "Bible access",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Give access to Bible Texts, version, display, search, pdf as well as to Strong_Numbers and Bible sites. The refs’ full syntax respects “canon”:“ps1:1-3!SG21@bgw”. Workflow is 1.input 2.button.listener 3.iframe.src gets updated\n\n\n  Get API\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/IT/index.html",
+    "href": "posts/IT/index.html",
+    "title": "IT",
+    "section": "",
+    "text": "Everything related to technology.\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/verses/index.html",
@@ -138,19 +152,5 @@
     "title": "Observables",
     "section": "button.click",
     "text": "button.click\n\nviewof myButton = Inputs.button(\"Count me!\");\n\n// By default, shows the #clicks\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport {html} from \"@observablehq/htl\";\n\n// Create HTML nested elements: div, h1, p, iframe\nmyHtml = html`&lt;div&gt;\n  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;\n  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;\n  &lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"150\"&gt;\n&lt;/div&gt;`;\n\n// Display the HTML element\nmyHtml"
-  },
-  {
-    "objectID": "posts/bible-access/index.html",
-    "href": "posts/bible-access/index.html",
-    "title": "Bible access",
-    "section": "",
-    "text": "Gives access to Bible Texts, version, display, search, pdf as well as to resources like Strong_Numbers and miscellaneous Bible sites. The refs’ syntax respects “canon”:“ps1:1-3!SG21@bgw”.\nThe workflow is 1.input 2.api 3.iframe\n\nimport {} from \"@observablehq/inputs\";\n\n// Create an Inputs.text element\nviewof userInput = Inputs.text({\n  label: \"\",\n  placeholder: \"Type here\",\n  value: \"ps1:1-3\",\n  submit: false,\n  width: \"10px\",\n  maxlength: \"15\" // Set the width to 15 chars\n})\n\n// Craft the input value without display\nendpoint = \"https://jsfapi.netlify.app/.netlify/functions/bgw\"\nurl = endpoint+\"?param=\"+userInput\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof myButton = Inputs.button(\"Show me API!\", {value: null, reduce: () =&gt; url})\n// By default, shows the #clicks here Date\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/excursions/index.html",
-    "href": "posts/excursions/index.html",
-    "title": "excursions",
-    "section": "",
-    "text": "The root of discoveries.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres.\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

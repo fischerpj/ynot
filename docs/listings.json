@@ -20,7 +20,11 @@
     "items": []
   },
   {
-    "listing": "/posts/IT/index.html",
+    "listing": "/posts/excursions/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/post-with-code/index.html",
     "items": []
   },
   {
@@ -67,7 +71,11 @@
     "items": []
   },
   {
-    "listing": "/posts/post-with-code/index.html",
+    "listing": "/posts/bible-access/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/IT/index.html",
     "items": []
   },
   {
@@ -88,14 +96,6 @@
   },
   {
     "listing": "/posts/observables/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/bible-access/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/excursions/index.html",
     "items": []
   }
 ]

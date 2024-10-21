@@ -1,7 +1,7 @@
 ---
 title: "Bible access"
 author: "granPiero"
-date: "2024-10-21"
+date: "2024-10-22"
 categories: [bible]
 image: "microscope.jpg"
 format: 
@@ -9,39 +9,34 @@ format:
     comments:
       utterances: 
         repo: "fischerpj/ynot"
+params:
+  init_ref: "gen1:1"
 execute:
   echo: false        
 ---
 
-Gives access to Bible **Texts,** **version, display, search, pdf** as well as to resources like **Strong_Numbers** and miscellaneous Bible sites. The **refs'** syntax respects *"canon":"ps1:1-3!SG21\@bgw"*.
+> Give access to Bible **Texts,** **version, display, search, pdf** as well as to **Strong_Numbers** and Bible sites. The **refs'** full syntax respects *"canon":"ps1:1-3!SG21\@bgw"*. Workflow is 1.input 2.button.listener 3.iframe.src gets updated
 
-The workflow is 1.input 2.api 3.iframe
 
-```{ojs}
-import {} from "@observablehq/inputs";
+```{=html}
+<span>
+<input type="text" id="inputField" placeholder="{{< meta params.init_ref >}}">&nbsp;&nbsp;<button id="submitButton">Get API</button>
+</span>
 
-// Create an Inputs.text element
-viewof userInput = Inputs.text({
-  label: "",
-  placeholder: "Type here",
-  value: "ps1:1-3",
-  submit: false,
-  width: "10px",
-  maxlength: "15" // Set the width to 15 chars
-})
-
-// Craft the input value without display
-endpoint = "https://jsfapi.netlify.app/.netlify/functions/bgw"
-url = endpoint+"?param="+userInput
-```
-
-```{ojs}
-// Create a button using Inputs.button
-viewof myButton = Inputs.button("Show me API!", {value: null, reduce: () => url})
-// By default, shows the #clicks here Date
-myButton
-```
-
-<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:1-3!SG21" title="jsfapi iframe" width="400" height="300">
-
+<br/><br/>
+<iframe id="frame0" src="https://jsfapi.netlify.app/.netlify/functions/bgw?param={{< meta params.init_ref >}}" title="jsfapi iframe" width="400" height="300">
 </iframe>
+```
+
+<script>
+    // Function to be triggered when the button is clicked
+    function handleClick() {
+      const endpoint = "https://jsfapi.netlify.app/.netlify/functions/bgw";
+      var inputValue = document.getElementById('inputField').value;
+//      document.getElementById('displayText').innerText = endpoint +"?param=" + inputValue;
+      document.getElementById('frame0').src = endpoint +"?param=" + inputValue;
+    };
+
+    // Add event listener to the button
+    document.getElementById('submitButton').addEventListener('click', handleClick);
+  </script>
