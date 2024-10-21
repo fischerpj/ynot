@@ -1,0 +1,20 @@
+---
+title: "excursions"
+author: "granPiero"
+date: "2024-10-21"
+categories: [loisirs]
+image: "orgues_saint_pierre_montpellier.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+execute:
+  echo: false        
+---
+
+The root of **discoveries**.
+
+Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.
+
+Marrons à Brenas le 20 octobre 2024, près de Vernazoubres.
