@@ -251,21 +251,23 @@ window.Quarto = {
 
 
 <p>Gives access to Bible Texts <strong>version, display, search, pdf</strong> as well as to resources like <strong>Strong_Numbers</strong> and miscellaneous Bible sites. The <strong>refs’</strong> syntax respects <em>“canon”:“ps1:1-3!SG21@bgw”</em>.</p>
-<ol type="1">
-<li>input 2. api 3. iframe</li>
-</ol>
+<p>The workflow is 1.input 2.api 3.iframe</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-startfrom="19" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 18;"><span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {} <span class="im">from</span> <span class="st">"@observablehq/inputs"</span><span class="op">;</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">// Create an Inputs.text element</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>viewof userInput <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Enter"</span><span class="op">,</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Type here"</span><span class="op">,</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"Initial text"</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the input value</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>userInput</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="21" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {} <span class="im">from</span> <span class="st">"@observablehq/inputs"</span><span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">// Create an Inputs.text element</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>viewof userInput <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">""</span><span class="op">,</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Type here"</span><span class="op">,</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"ps1:1-3"</span><span class="op">,</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">submit</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="st">"10px"</span><span class="op">,</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="dt">maxlength</span><span class="op">:</span> <span class="st">"15"</span> <span class="co">// Set the width to 15 chars</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">// Craft the input value without display</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>endpoint <span class="op">=</span> <span class="st">"https://jsfapi.netlify.app/.netlify/functions/bgw"</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> endpoint<span class="op">+</span><span class="st">"?param="</span><span class="op">+</span>userInput</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -282,14 +284,11 @@ window.Quarto = {
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-3" data-nodetype="expression">
+<div id="ojs-cell-1-3" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb2" data-startfrom="30" data-source-offset="-217"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 29;"><span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>endpoint <span class="op">=</span> <span class="st">"https://jsfapi.netlify.app/.netlify/functions/bgw"</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> endpoint<span class="op">+</span><span class="st">"?param="</span><span class="op">+</span>userInput</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-4" data-nodetype="declaration">
@@ -297,16 +296,21 @@ window.Quarto = {
 </div>
 </div>
 </div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="40" data-source-offset="-39"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>viewof myButton <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Show me API!"</span><span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">reduce</span><span class="op">:</span> () <span class="kw">=&gt;</span> url})</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">// By default, shows the #clicks here Date</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>myButton</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-5" data-nodetype="declaration">
+<div id="ojs-cell-2-1" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-6" data-nodetype="expression">
+<div id="ojs-cell-2-2" data-nodetype="expression">
 
 </div>
 </div>
@@ -327,7 +331,7 @@ No matching items
 </div>
 </div></main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7fSBmcm9tIFwiQG9ic2VydmFibGVocS9pbnB1dHNcIjtcblxuLy8gQ3JlYXRlIGFuIElucHV0cy50ZXh0IGVsZW1lbnRcbnZpZXdvZiB1c2VySW5wdXQgPSBJbnB1dHMudGV4dCh7XG4gIGxhYmVsOiBcIkVudGVyXCIsXG4gIHBsYWNlaG9sZGVyOiBcIlR5cGUgaGVyZVwiLFxuICB2YWx1ZTogXCJJbml0aWFsIHRleHRcIlxufSlcblxuLy8gRGlzcGxheSB0aGUgaW5wdXQgdmFsdWVcbnVzZXJJbnB1dFxuZW5kcG9pbnQgPSBcImh0dHBzOi8vanNmYXBpLm5ldGxpZnkuYXBwLy5uZXRsaWZ5L2Z1bmN0aW9ucy9iZ3dcIlxudXJsID0gZW5kcG9pbnQrXCI/cGFyYW09XCIrdXNlcklucHV0XG51cmxcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgndXNlcklucHV0JykifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7fSBmcm9tIFwiQG9ic2VydmFibGVocS9pbnB1dHNcIjtcblxuLy8gQ3JlYXRlIGFuIElucHV0cy50ZXh0IGVsZW1lbnRcbnZpZXdvZiB1c2VySW5wdXQgPSBJbnB1dHMudGV4dCh7XG4gIGxhYmVsOiBcIlwiLFxuICBwbGFjZWhvbGRlcjogXCJUeXBlIGhlcmVcIixcbiAgdmFsdWU6IFwicHMxOjEtM1wiLFxuICBzdWJtaXQ6IGZhbHNlLFxuICB3aWR0aDogXCIxMHB4XCIsXG4gIG1heGxlbmd0aDogXCIxNVwiIC8vIFNldCB0aGUgd2lkdGggdG8gMTUgY2hhcnNcbn0pXG5cbi8vIENyYWZ0IHRoZSBpbnB1dCB2YWx1ZSB3aXRob3V0IGRpc3BsYXlcbmVuZHBvaW50ID0gXCJodHRwczovL2pzZmFwaS5uZXRsaWZ5LmFwcC8ubmV0bGlmeS9mdW5jdGlvbnMvYmd3XCJcbnVybCA9IGVuZHBvaW50K1wiP3BhcmFtPVwiK3VzZXJJbnB1dFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gQ3JlYXRlIGEgYnV0dG9uIHVzaW5nIElucHV0cy5idXR0b25cbnZpZXdvZiBteUJ1dHRvbiA9IElucHV0cy5idXR0b24oXCJTaG93IG1lIEFQSSFcIiwge3ZhbHVlOiBudWxsLCByZWR1Y2U6ICgpID0+IHVybH0pXG4vLyBCeSBkZWZhdWx0LCBzaG93cyB0aGUgI2NsaWNrcyBoZXJlIERhdGVcbm15QnV0dG9uXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3VzZXJJbnB1dCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdteUJ1dHRvbicpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

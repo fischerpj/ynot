@@ -9,27 +9,37 @@ format:
     comments:
       utterances: 
         repo: "fischerpj/ynot"
+execute:
+  echo: false        
 ---
 
-Gives access to Bible Texts **version, display, search, pdf** as well as to resources like **Strong_Numbers** and miscellaneous Bible sites. The **refs'** syntax respects *"canon":"ps1:1-3!SG21\@bgw"*.
+Gives access to Bible **Texts,** **version, display, search, pdf** as well as to resources like **Strong_Numbers** and miscellaneous Bible sites. The **refs'** syntax respects *"canon":"ps1:1-3!SG21\@bgw"*.
 
-1.  input 2. api 3. iframe
+The workflow is 1.input 2.api 3.iframe
 
 ```{ojs}
 import {} from "@observablehq/inputs";
 
 // Create an Inputs.text element
 viewof userInput = Inputs.text({
-  label: "Enter",
+  label: "",
   placeholder: "Type here",
-  value: "Initial text"
+  value: "ps1:1-3",
+  submit: false,
+  width: "10px",
+  maxlength: "15" // Set the width to 15 chars
 })
 
-// Display the input value
-userInput
+// Craft the input value without display
 endpoint = "https://jsfapi.netlify.app/.netlify/functions/bgw"
 url = endpoint+"?param="+userInput
-url
+```
+
+```{ojs}
+// Create a button using Inputs.button
+viewof myButton = Inputs.button("Show me API!", {value: null, reduce: () => url})
+// By default, shows the #clicks here Date
+myButton
 ```
 
 <iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:1-3!SG21" title="jsfapi iframe" width="400" height="300">

@@ -13,24 +13,18 @@ format:
 
 1.  Modify the DOM: take an **input**, trigger a **button**, echo the **value**.
 
-```{=html}
 <input type="text" id="inputField" placeholder="Type something here">
   
 <button id="submitButton">Submit</button>
 
 <p id="displayText">
 </p>
-```
-
 <script src="script.js"></script>
 
 2.  Update an **iframe's content** via its src attribute.
 
-```{=html}
 <input type="text" id="inputRef" placeholder="enter your ref here">
 <button id="submitButton2">Display</button>
 <br/><br/>
 <iframe id="frame2" src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="jsfapi iframe" width="400" height="300"></iframe>
-```
-
 <script src="script2.js"></script>

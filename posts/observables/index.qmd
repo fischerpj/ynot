@@ -42,7 +42,6 @@ viewof myButton = Inputs.button("Count me!");
 myButton
 ```
 
-
 ```{ojs}
 import {html} from "@observablehq/htl";
 
