@@ -2,7 +2,7 @@
 title: "Succession"
 author: "granPiero"
 date: "2024-11-07"
-categories: [other]
+categories: [procédure]
 image: "balance.jpg"
 format: 
   html:
