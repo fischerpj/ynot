@@ -38,6 +38,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/succession/index.html",
       "/posts/bible-access/index.html",
       "/posts/excursions/index.html",
       "/posts/IT/index.html",
@@ -96,6 +97,10 @@
   },
   {
     "listing": "/posts/observables/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/succession/index.html",
     "items": []
   }
 ]

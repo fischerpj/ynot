@@ -1,0 +1,14 @@
+---
+title: "Succession"
+author: "granPiero"
+date: "2024-11-07"
+categories: [other]
+image: "balance.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+Everything related to **succession** Fischer-Durrenberger.
