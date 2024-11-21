@@ -41,6 +41,7 @@
       "/posts/succession/index.html",
       "/posts/bible-access/index.html",
       "/posts/excursions/index.html",
+      "/posts/storage/index.html",
       "/posts/IT/index.html",
       "/posts/gospel-banner/index.html",
       "/posts/DOM via Javascript/index.html",
@@ -101,6 +102,10 @@
   },
   {
     "listing": "/posts/succession/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/storage/index.html",
     "items": []
   }
 ]

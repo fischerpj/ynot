@@ -1,0 +1,42 @@
+---
+title: "Storage with Javascript"
+author: "granPiero"
+date: "2024-10-14"
+categories: [it]
+image: "hdisk.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+1.  Modify the DOM: take an **input**, trigger a **button** to echo the **value** and save to **LocalStorage**
+
+<input type="text" id="inputField" placeholder="Type something here">
+
+<button id="submitButton">
+
+Submit to LocalStorage
+
+</button>
+
+<p id="displayText">
+
+</p>
+
+2.  Read Back from LocalStorage: Trigger the **retrieval** and echo the value
+
+<button id="getButton">
+
+Retrieve from LocalStorage
+
+</button>
+
+<p id="retrievedText">
+
+3.  **One script** here handles all
+
+- make it a content script extension.
+
+<script src="script.js"></script>
