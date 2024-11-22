@@ -214,13 +214,18 @@ window.Quarto = {
 
 
 
-<p>My preferred verses to memorize are captured here like <em>comments</em>. The <strong>refs’</strong> syntax respects <em>“canon”:“ps1:1-3!SG21@bgw”</em>.</p>
-<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:1-3!SG21" title="jsfapi iframe" width="400" height="300">
-</iframe>
-
-
-
-
+<p>We prefer to keep a <strong>persistent accumulation of bible_refs</strong> using the <em>LocalStorage API</em> along a workflow like</p>
+<ol type="1">
+<li><strong>Get_storage</strong> displayed unattended as</li>
+</ol>
+<p><span id="retrievedText"></span> <button id="getButton">from LocalStorage Memory</button></p>
+<ol start="2" type="1">
+<li><p><strong>Input_current</strong> bible_ref here and <strong>Accumulate</strong> both</p></li>
+<li><p><strong>Set_storage</strong> new string of bible_refs as</p>
+<div>
+<p><input type="text" id="inputField" placeholder="Type something here"> <button id="submitButton">Submit to LocalStorage</button> as <span id="displayText"></span></p>
+</div></li>
+</ol>
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
 
@@ -228,7 +233,19 @@ window.Quarto = {
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div></main></div>
+<script src="script.js"></script>
+<ol start="5" type="1">
+<li>Reload Page goes to 1.</li>
+</ol>
+<p>Previous technology used utterances for my preferred verses to memorize as captured here like <em>comments</em>. The <strong>refs’</strong> syntax respects <em>“canon”:“ps1:1-3!SG21@bgw”</em>.</p>
+<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:1-3!SG21" title="jsfapi iframe" width="400" height="300">
+</iframe>
+
+
+
+
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -651,7 +668,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://utteranc.es/client.js" repo="fischerpj/ynot" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 

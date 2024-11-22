@@ -37,6 +37,6 @@ Retrieve from LocalStorage
 
 3.  **One script** here handles all
 
-- make it a content script extension.
+-   make it a content script extension.
 
 <script src="script.js"></script>
