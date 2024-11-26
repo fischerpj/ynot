@@ -1,0 +1,18 @@
+---
+title: "verses_ui"
+author: "granPiero"
+date: "2024-10-10"
+categories: [bible]
+image: "torah.jpg"
+format: 
+  html:
+    minimal: true
+    code-copy: true
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+We insert dynamically via storeui.js \[ an **input**, a **button**, an **output** \] (encapsulated in div element ) at the end of DOM body.
+
+<script src="storeui.js"></script>

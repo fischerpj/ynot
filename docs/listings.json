@@ -54,6 +54,7 @@
       "/posts/verses/index.html",
       "/posts/verses/index_legacy.html",
       "/posts/verses/indexoo.html",
+      "/posts/verses/index_store.html",
       "/posts/verses/indexui.html",
       "/posts/iframe/index.html",
       "/posts/post-with-code/index.html",
@@ -129,6 +130,10 @@
   },
   {
     "listing": "/posts/verses/indexui.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/index_store.html",
     "items": []
   }
 ]
