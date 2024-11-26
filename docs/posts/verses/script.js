@@ -1,3 +1,13 @@
+// Function to get the value from localStorage
+function getLocalStorageValue() {
+    // Retrieve the value associated with the key 'myKey'
+    const value = localStorage.getItem('my_input');
+    console.log('Value from localStorage:', value);
+}
+
+// Add an event listener for the window's load event
+window.addEventListener('load', getLocalStorageValue);
+
 // SET LocalStorage
 
 document.getElementById('submitButton').addEventListener('click', function() {

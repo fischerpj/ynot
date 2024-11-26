@@ -1,0 +1,30 @@
+---
+title: "verses_oo"
+author: "granPiero"
+date: "2024-10-10"
+categories: [bible]
+image: "torah.jpg"
+format: 
+  html:
+    minimal: true
+    code-copy: true
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+HELPS
+
+![![](images/clipboard-2089755784.png)](quarto_raw_content.png){width="600"}
+
+![](html_raw_inline.png){width="450"}
+
+Define a JS Class for StorageObject
+
+<div>
+
+<p>yet empty</p>
+
+</div>
+
+<script src="scriptoo.js"></script>

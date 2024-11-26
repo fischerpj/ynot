@@ -11,32 +11,18 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-We prefer to keep a **persistent accumulation of bible_refs** using the *LocalStorage API* along a workflow like
+Implements Workflow as
 
-1.  **Get_storage** displayed unattended as 
+1.  **logic** runs in script2.js
 
-```{=html}
-  <span id="retrievedText"></span>
-  <button id="getButton">from LocalStorage Memory</button>
-```
-   
-2.  **Input_current** bible_ref here and **Accumulate** both
+2.  **INIT onLoad**
 
-```{=html}
-3.  **Set_storage** new string of bible_refs as 
-  <div>
-  <input type="text" id="inputField" placeholder="Type something here">
-  <button id="submitButton">Submit to LocalStorage</button>
-  as <span id="displayText"></span>
-  
-  </div>
-  <script src="script.js"></script>
-```
+    -   Get LocalStorageValue of *accuref*
 
-5.  Reload Page goes to 1.
+    -   Dispatch to element #displayArea as
 
-Previous technology used utterances for my preferred verses to memorize as captured here like *comments*. The **refs'** syntax respects *"canon":"ps1:1-3!SG21\@bgw"*.
+3.  **INPUT & Set LocalStorage** (key= *accuref*) then Redisplay
 
-<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:1-3!SG21" title="jsfapi iframe" width="400" height="300">
+<input type="text" id="inputRef" placeholder="Type _ref_ here"><button id="storeButton">to LocalStorage</button>
 
-</iframe>
+<script src="script2.js"></script>

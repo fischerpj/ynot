@@ -52,6 +52,9 @@
       "/posts/jsfapi/index.html",
       "/posts/notes/index.html",
       "/posts/verses/index.html",
+      "/posts/verses/index_legacy.html",
+      "/posts/verses/indexoo.html",
+      "/posts/verses/indexui.html",
       "/posts/iframe/index.html",
       "/posts/post-with-code/index.html",
       "/posts/etoile/index.html",
@@ -106,6 +109,26 @@
   },
   {
     "listing": "/posts/storage/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/index2.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/index_legacy.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/index_oo.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/indexoo.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/indexui.html",
     "items": []
   }
 ]
