@@ -1,0 +1,18 @@
+---
+title: "verses_ui"
+author: "granPiero"
+date: "2024-10-10"
+categories: [bible]
+image: "torah.jpg"
+format: 
+  html:
+    minimal: true
+    code-copy: true
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+We retrieve a biblegateway reference
+
+<script src="bibref.js"></script>

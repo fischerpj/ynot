@@ -52,6 +52,7 @@
       "/posts/jsfapi/index.html",
       "/posts/notes/index.html",
       "/posts/verses/index.html",
+      "/posts/verses/index_ref.html",
       "/posts/verses/index_legacy.html",
       "/posts/verses/indexoo.html",
       "/posts/verses/index_store.html",
@@ -134,6 +135,10 @@
   },
   {
     "listing": "/posts/verses/index_store.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/verses/index_ref.html",
     "items": []
   }
 ]
