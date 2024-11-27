@@ -94,7 +94,6 @@ class StoreUI {
      const inputValue = this.inputField.value;
      if (inputValue) {
       this.storageObject.accu = inputValue;
-      console.log("pfui: " + this.storageObject.accu.toString);
       this.outputDiv.textContent = `Stored value: ${this.storageObject.accu}`;
       this.inputField.value = ''; // Clear the input field
      } else {

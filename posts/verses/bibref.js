@@ -3,6 +3,11 @@ class BibRef {
     this.ref = ref;
     this.urlbase = 'https://jsfapi.netlify.app/.netlify/functions/bgw';
     this._response_object = null; // Initialize the response property to null
+    
+    // Fetch content and create the paragraph inside the constructor
+    this.fetchContent().then(() => {
+      this.createContentHTML();
+    });
   }
 
 // =============================================================================
@@ -40,7 +45,6 @@ class BibRef {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       this._response_object = await response.json(); // parse json into object
-//      console.log("toto json"+ this._response_object);
       return this._response_object;
     } catch (error) {
       console.error('Failed to fetch content:', error);
@@ -69,31 +73,22 @@ class BibRef {
 // about the OUTPUT FORMATTING
 
     // Method to create a <p> element containing the response.content
-  get contentHTML() {
+  createContentHTML() {
     if (this._response_object &&this._response_object.content) {
       const pElement = document.createElement('p');
       pElement.innerHTML = this._response_object.content;
-      return pElement;
+//      console.log('Created <p> element:', pElement); // Debugging log
+      document.body.appendChild(pElement);  // Append the <p> element to the body
     } else {
       console.error('No content available in the response');
-      return null;
     }
   }
 
 }
 
 // Usage
-const myBibRef = new BibRef();
-//myBibRef.displayReference();  // Outputs: The current reference is: gen1:1
-//console.log(myBibRef.urlbase);  // Outputs: https://jsfapi.netlify.app/.netlify/functions/bgw
-console.log(myBibRef.getFullUrl());  // Outputs: https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1
-    
-myBibRef.fetchContent().then(() => {
-   console.log(myBibRef.content)  // Outputs the fetched response using thhe getter
-  console.log(myBibRef.contentHTML)// Outputs the fetched response using thhe getter
 
-  const pElement = myBibRef.contentHTML;
-  if (pElement) {
-    document.body.appendChild(pElement);  // Appends the <p> element to the body if it's not null
-  }
-});
+// Usage
+const myBibRef = new BibRef();
+myBibRef.displayReference();  // Outputs: The current reference is: gen1:1
+console.log(myBibRef.getFullUrl());  // Outputs: https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1

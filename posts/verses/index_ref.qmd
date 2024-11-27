@@ -13,6 +13,6 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-We retrieve a biblegateway reference
+We retrieve for a static biblical reference, the text from biblegateway and render it at end of body. Now, let the logic become a) INPUT_THE_REF and construct BibleRef (that includes the ref's display. NB. split use cases: mon_ref and accu_ref.
 
 <script src="bibref.js"></script>
