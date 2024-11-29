@@ -12,6 +12,10 @@
     "items": []
   },
   {
+    "listing": "/posts/bible-look/index.html",
+    "items": []
+  },
+  {
     "listing": "/posts/jsfapi/index.html",
     "items": []
   },
@@ -20,19 +24,27 @@
     "items": []
   },
   {
-    "listing": "/posts/excursions/index.html",
+    "listing": "/posts/IT/index.html",
     "items": []
   },
   {
-    "listing": "/posts/post-with-code/index.html",
+    "listing": "/posts/bible-access/index.html",
     "items": []
   },
   {
-    "listing": "/posts/iframe/index.html",
+    "listing": "/posts/priorités/index.html",
     "items": []
   },
   {
-    "listing": "/posts/welcome/index.html",
+    "listing": "/posts/storage/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/succession/index.html",
+    "items": []
+  },
+  {
+    "listing": "/about.html",
     "items": []
   },
   {
@@ -51,12 +63,8 @@
       "/posts/observables/index.html",
       "/posts/jsfapi/index.html",
       "/posts/notes/index.html",
-      "/posts/verses/index.html",
-      "/posts/verses/index_ref.html",
-      "/posts/verses/index_legacy.html",
-      "/posts/verses/indexoo.html",
-      "/posts/verses/index_store.html",
-      "/posts/verses/indexui.html",
+      "/posts/verse_lookup/index_one.html",
+      "/posts/DOM via Javascript/index_raw.html",
       "/posts/iframe/index.html",
       "/posts/post-with-code/index.html",
       "/posts/etoile/index.html",
@@ -66,27 +74,23 @@
     ]
   },
   {
-    "listing": "/about.html",
-    "items": []
-  },
-  {
     "listing": "/posts/notes/index.html",
     "items": []
   },
   {
-    "listing": "/posts/priorités/index.html",
+    "listing": "/posts/welcome/index.html",
     "items": []
   },
   {
-    "listing": "/posts/bible-access/index.html",
+    "listing": "/posts/iframe/index.html",
     "items": []
   },
   {
-    "listing": "/posts/IT/index.html",
+    "listing": "/posts/post-with-code/index.html",
     "items": []
   },
   {
-    "listing": "/posts/verses/index.html",
+    "listing": "/posts/excursions/index.html",
     "items": []
   },
   {
@@ -94,7 +98,11 @@
     "items": []
   },
   {
-    "listing": "/posts/bible-look/index.html",
+    "listing": "/posts/verse_lookup/index_one.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/DOM via Javascript/index_raw.html",
     "items": []
   },
   {
@@ -103,42 +111,6 @@
   },
   {
     "listing": "/posts/observables/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/succession/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/storage/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/verses/index2.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/verses/index_legacy.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/verses/index_oo.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/verses/indexoo.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/verses/indexui.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/verses/index_store.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/verses/index_ref.html",
     "items": []
   }
 ]

@@ -1,9 +1,9 @@
 ---
-title: "verses_oo"
+title: "raw content"
 author: "granPiero"
 date: "2024-10-10"
 categories: [bible]
-image: "torah.jpg"
+image: "dom.jpg"
 format: 
   html:
     minimal: true
@@ -15,16 +15,6 @@ format:
 
 HELPS
 
-![![](images/clipboard-2089755784.png)](quarto_raw_content.png){width="600"}
+![](quarto_raw_content.png){width="600"}
 
 ![](html_raw_inline.png){width="450"}
-
-Define a JS Class for StorageObject
-
-<div>
-
-<p>yet empty</p>
-
-</div>
-
-<script src="scriptoo.js"></script>

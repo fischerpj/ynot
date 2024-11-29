@@ -21,6 +21,13 @@
     "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\nConclusion: Abandon ObersvableJS technology because of CSS-styling hurdle.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "posts/bible-look/index.html",
+    "href": "posts/bible-look/index.html",
+    "title": "bible look",
+    "section": "",
+    "text": "Bible Search and Lookup technology.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/jsfapi/index.html",
     "href": "posts/jsfapi/index.html",
     "title": "jsfapi",
@@ -35,60 +42,11 @@
     "text": "Recettes de cuisine éprouvées.\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/excursions/index.html",
-    "href": "posts/excursions/index.html",
-    "title": "excursions",
+    "objectID": "posts/IT/index.html",
+    "href": "posts/IT/index.html",
+    "title": "IT",
     "section": "",
-    "text": "The root of discoveries.\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/iframe/index.html",
-    "href": "posts/iframe/index.html",
-    "title": "Iframe",
-    "section": "",
-    "text": "First use of an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\nDue enhancements are content_switching between json and html and css styling.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ynot",
-    "section": "",
-    "text": "Succession\n\n\n\n\n\n\nprocédure\n\n\n\n\n\n\n\n\n\nNov 7, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nBible access\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 22, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nexcursions\n\n\n\n\n\n\nloisirs\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nStorage with Javascript\n\n\n\n\n\n\nit\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIT\n\n\n\n\n\n\ntech\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ngospel banner\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nDOM via Javascript\n\n\n\n\n\n\nit\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\npriorités\n\n\n\n\n\n\norg\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses_ui\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses_oo\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses_ui\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverses_ui\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nrésidence Etoile\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Ynot (Why not!) is my personal gitHub repo to store infos as issues, that are anchored to any pages of my other websites.\nYnot is sourced from docker rv5/ynot.\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/notes/index.html",
-    "href": "posts/notes/index.html",
-    "title": "notes",
-    "section": "",
-    "text": "I capture my ideas like comments, at random here.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/priorités/index.html",
-    "href": "posts/priorités/index.html",
-    "title": "priorités",
-    "section": "",
-    "text": "Organise the tree of priorities\n\nimportant first\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Everything related to technology.\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/bible-access/index.html",
@@ -98,18 +56,74 @@
     "text": "Give access to Bible Texts, version, display, search, pdf as well as to Strong_Numbers and Bible sites. The refs’ full syntax respects “canon”:“ps1:1-3!SG21@bgw”. Workflow is 1.input 2.button.listener 3.iframe.src gets updated\n\n\n  Get API\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/IT/index.html",
-    "href": "posts/IT/index.html",
-    "title": "IT",
+    "objectID": "posts/priorités/index.html",
+    "href": "posts/priorités/index.html",
+    "title": "priorités",
     "section": "",
-    "text": "Everything related to technology.\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Organise the tree of priorities\n\nimportant first\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/verses/index.html",
-    "href": "posts/verses/index.html",
-    "title": "verses",
+    "objectID": "posts/storage/index.html",
+    "href": "posts/storage/index.html",
+    "title": "Storage with Javascript",
     "section": "",
-    "text": "Implements Workflow as\n\nlogic runs in script2.js\nINIT onLoad\n\nGet LocalStorageValue of accuref\nDispatch to element #displayArea as\n\nINPUT & Set LocalStorage (key= accuref) then Redisplay\n\nto LocalStorage\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Modify the DOM: take an input, trigger a button to echo the value and save to LocalStorage\n\n\n\nSubmit to LocalStorage\n\n\n\n\nRead Back from LocalStorage: Trigger the retrieval and echo the value\n\n\nRetrieve from LocalStorage\n\n\n\nOne script here handles all\n\n\nmake it a content script extension.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/succession/index.html",
+    "href": "posts/succession/index.html",
+    "title": "Succession",
+    "section": "",
+    "text": "Everything related to succession Fischer-Durrenberger.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Ynot (Why not!) is my personal gitHub repo to store infos as issues, that are anchored to any pages of my other websites.\nYnot is sourced from docker rv5/ynot.\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ynot",
+    "section": "",
+    "text": "Succession\n\n\n\n\n\n\nprocédure\n\n\n\n\n\n\n\n\n\nNov 7, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nBible access\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 22, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nexcursions\n\n\n\n\n\n\nloisirs\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nStorage with Javascript\n\n\n\n\n\n\nit\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIT\n\n\n\n\n\n\ntech\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ngospel banner\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nDOM via Javascript\n\n\n\n\n\n\nit\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\npriorités\n\n\n\n\n\n\norg\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nverse_look\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nraw content\n\n\n\n\n\n\nbible\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nrésidence Etoile\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/notes/index.html",
+    "href": "posts/notes/index.html",
+    "title": "notes",
+    "section": "",
+    "text": "I capture my ideas like comments, at random here.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/iframe/index.html",
+    "href": "posts/iframe/index.html",
+    "title": "Iframe",
+    "section": "",
+    "text": "First use of an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\nDue enhancements are content_switching between json and html and css styling.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/excursions/index.html",
+    "href": "posts/excursions/index.html",
+    "title": "excursions",
+    "section": "",
+    "text": "The root of discoveries.\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres.\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/gospel-banner/index.html",
@@ -117,13 +131,6 @@
     "title": "gospel banner",
     "section": "",
     "text": "The animated web presentation of biblical claims is posted https://xminpi.netlify.app/ppt/gospel-banner/\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/bible-look/index.html",
-    "href": "posts/bible-look/index.html",
-    "title": "bible look",
-    "section": "",
-    "text": "Bible Search and Lookup technology.\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/etoile/index.html",
@@ -152,40 +159,5 @@
     "title": "Observables",
     "section": "button.click",
     "text": "button.click\n\nviewof myButton = Inputs.button(\"Count me!\");\n\n// By default, shows the #clicks\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport {html} from \"@observablehq/htl\";\n\n// Create HTML nested elements: div, h1, p, iframe\nmyHtml = html`&lt;div&gt;\n  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;\n  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;\n  &lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"150\"&gt;\n&lt;/div&gt;`;\n\n// Display the HTML element\nmyHtml"
-  },
-  {
-    "objectID": "posts/succession/index.html",
-    "href": "posts/succession/index.html",
-    "title": "Succession",
-    "section": "",
-    "text": "Everything related to succession Fischer-Durrenberger.\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/storage/index.html",
-    "href": "posts/storage/index.html",
-    "title": "Storage with Javascript",
-    "section": "",
-    "text": "Modify the DOM: take an input, trigger a button to echo the value and save to LocalStorage\n\n\n\nSubmit to LocalStorage\n\n\n\n\nRead Back from LocalStorage: Trigger the retrieval and echo the value\n\n\nRetrieve from LocalStorage\n\n\n\nOne script here handles all\n\n\nmake it a content script extension.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/verses/index2.html",
-    "href": "posts/verses/index2.html",
-    "title": "verses",
-    "section": "",
-    "text": "Implements Workflow as\n\nlogic runs in script2.js\nINIT onLoad\n\nGet LocalStorageValue of accuref\nDispatch to element #displayArea as\n\n\n\n\nINPUT & Set LocalStorage (key= accuref) then Redisplay\nto LocalStorage\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/verses/index_legacy.html",
-    "href": "posts/verses/index_legacy.html",
-    "title": "verses",
-    "section": "",
-    "text": "We prefer to keep a persistent accumulation of bible_refs using the LocalStorage API along a workflow like\n\nGet_storage displayed unattended as\n\n\nfrom LocalStorage Memory\n\n\nInput_current bible_ref here and Accumulate both\nSet_storage new string of bible_refs as\n\n Submit to LocalStorage as\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/verses/index_oo.html",
-    "href": "posts/verses/index_oo.html",
-    "title": "verses_oo",
-    "section": "",
-    "text": "Define a JS Class for StorageObject\n\n\nyet empty\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
