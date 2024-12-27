@@ -1,9 +1,8 @@
 project:
   type: website
   output-dir: docs
-
+  
 # Include the html for all pages
-
 website:
   title: "ynot"
   navbar:
@@ -13,14 +12,10 @@ website:
         href: https://github.com/
       - icon: twitter
         href: https://twitter.com
-listing:
-  contents: docs
-  sort:
-    - "date desc"
+
 format:
   html:
     theme: cosmo
     css: styles.css
 
 editor: visual
-
