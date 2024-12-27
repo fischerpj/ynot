@@ -50,6 +50,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/memo_verse/index.html",
       "/posts/succession/index.html",
       "/posts/bible-access/index.html",
       "/posts/excursions/index.html",
@@ -63,7 +64,6 @@
       "/posts/observables/index.html",
       "/posts/jsfapi/index.html",
       "/posts/notes/index.html",
-      "/posts/verse_lookup/index_one.html",
       "/posts/DOM via Javascript/index_raw.html",
       "/posts/iframe/index.html",
       "/posts/post-with-code/index.html",
@@ -111,6 +111,18 @@
   },
   {
     "listing": "/posts/observables/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/memo_verse/index_one.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/memo_verse/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/memo_verse/index_freeze.html",
     "items": []
   }
 ]
