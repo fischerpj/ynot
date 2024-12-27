@@ -13,4 +13,4 @@ about:
 
 **Ynot** (Why not!) is my personal gitHub repo to **store infos** as *issues*, that are anchored to any pages of my other websites.
 
-Ynot is sourced from docker rv5/ynot.
+Ynot is sourced from docker rv5/ynot..
