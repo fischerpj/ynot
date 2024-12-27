@@ -1,5 +1,6 @@
 ---
 title: "About"
+listing: default
 image: profile.jpg
 about:
   template: jolla
