@@ -91,6 +91,13 @@
     "text": "Modify the DOM: take an input, trigger a button to echo the value and save to LocalStorage\n\n\n\nSubmit to LocalStorage\n\n\n\n\nRead Back from LocalStorage: Trigger the retrieval and echo the value\n\n\nRetrieve from LocalStorage\n\n\n\nOne script here handles all\n\n\nmake it a content script extension.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "posts/memo_verse/index.html",
+    "href": "posts/memo_verse/index.html",
+    "title": "memo_verse",
+    "section": "",
+    "text": "This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/priorités/index.html",
     "href": "posts/priorités/index.html",
     "title": "priorités",
@@ -152,12 +159,5 @@
     "title": "Observables",
     "section": "button.click",
     "text": "button.click\n\nviewof myButton = Inputs.button(\"Count me!\");\n\n// By default, shows the #clicks\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport {html} from \"@observablehq/htl\";\n\n// Create HTML nested elements: div, h1, p, iframe\nmyHtml = html`&lt;div&gt;\n  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;\n  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;\n  &lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"150\"&gt;\n&lt;/div&gt;`;\n\n// Display the HTML element\nmyHtml"
-  },
-  {
-    "objectID": "posts/memo_verse/index.html",
-    "href": "posts/memo_verse/index.html",
-    "title": "memo_verse",
-    "section": "",
-    "text": "This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
