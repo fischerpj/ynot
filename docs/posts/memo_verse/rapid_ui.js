@@ -7,7 +7,7 @@ class miniStorage {
     #initValue;
     #cachedValue;
 
-    constructor(defaultKeyId = 'myRefArray', 
+    constructor(defaultKeyId = 'refidArray', 
                 initValue    = "gen1:1") {
         this.#version       = '0.0.10'; 
         this.#defaultKeyId  = defaultKeyId;
@@ -215,7 +215,7 @@ class MUI {
         console.log(this.storageArray.getLast().toString());
     } 
     
-//    const myRefArray = JSON.parse(localStorage.getItem('myRefArray')) || [];
+//    const refidArray = JSON.parse(localStorage.getItem('refidArray')) || [];
 //    const timestamp = new Date().toISOString();
     // Empty the input field after updating outputDiv
     this.inputField.value = null;
@@ -379,7 +379,7 @@ class MUI {
 } /// end of class MUI
 
 // Retrieve array from localStorage and parse it
-//const myArray = JSON.parse(localStorage.getItem('myRefArray')) || [];
+//const myArray = JSON.parse(localStorage.getItem('refidArray')) || [];
 //console.log(myArray);
 
 // Usage example:
