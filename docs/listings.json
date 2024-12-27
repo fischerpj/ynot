@@ -16,77 +16,7 @@
     "items": []
   },
   {
-    "listing": "/posts/jsfapi/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/cuisine/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/IT/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/bible-access/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/priorités/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/storage/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/succession/index.html",
-    "items": []
-  },
-  {
-    "listing": "/about.html",
-    "items": []
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/posts/memo_verse/index.html",
-      "/posts/succession/index.html",
-      "/posts/bible-access/index.html",
-      "/posts/excursions/index.html",
-      "/posts/storage/index.html",
-      "/posts/IT/index.html",
-      "/posts/gospel-banner/index.html",
-      "/posts/DOM via Javascript/index.html",
-      "/posts/priorités/index.html",
-      "/posts/cuisine/index.html",
-      "/posts/bible-look/index.html",
-      "/posts/observables/index.html",
-      "/posts/jsfapi/index.html",
-      "/posts/notes/index.html",
-      "/posts/DOM via Javascript/index_raw.html",
-      "/posts/iframe/index.html",
-      "/posts/post-with-code/index.html",
-      "/posts/etoile/index.html",
-      "/posts/immobilier/index.html",
-      "/posts/welcome/index.html",
-      "/posts/cke/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/notes/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/welcome/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/iframe/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/post-with-code/index.html",
+    "listing": "/posts/gospel-banner/index.html",
     "items": []
   },
   {
@@ -94,11 +24,59 @@
     "items": []
   },
   {
-    "listing": "/posts/gospel-banner/index.html",
+    "listing": "/posts/post-with-code/index.html",
     "items": []
   },
   {
-    "listing": "/posts/verse_lookup/index_one.html",
+    "listing": "/posts/iframe/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/welcome/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/memo_verse/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/notes/index.html",
+    "items": []
+  },
+  {
+    "listing": "/about.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/succession/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/storage/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/memo_verse/index_freeze.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/priorités/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/bible-access/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/IT/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/cuisine/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/jsfapi/index.html",
     "items": []
   },
   {
@@ -111,18 +89,6 @@
   },
   {
     "listing": "/posts/observables/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/memo_verse/index_one.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/memo_verse/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/memo_verse/index_freeze.html",
     "items": []
   }
 ]
