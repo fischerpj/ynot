@@ -6,8 +6,6 @@ categories: [bible]
 image: "brain.png"
 format: 
   html:
-    minimal: true
-    code-copy: true
     comments:
       utterances: 
         repo: "fischerpj/ynot"
@@ -16,5 +14,3 @@ format:
 > This is *on-your-device-only-persistent-memory* of **bible references,** that you accumulate on the fly.
 
 <script src="rapid_ui.js"></script>
-
-title: "bible look" author: "granPiero" date: "2024-10-12" categories: \[bible\] image: "old_bible.jpg" format: html: comments: utterances: repo: "fischerpj/ynot"
