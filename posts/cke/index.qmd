@@ -11,8 +11,10 @@ format:
         repo: "fischerpj/ynot"
 ---
 
+> Concept of CKEditor
+
 This is the first post in a Quarto blog to use CKeditor.
 
 Has format: html: include: include-on-header:
 
-Has also html: commets: utterances: repo:
+Has also html: comments: utterances: repo:

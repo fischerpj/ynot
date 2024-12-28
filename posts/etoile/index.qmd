@@ -11,4 +11,4 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-Point de départ de l'habitation au **Clos de l'Etoile**
+> Point de départ de l'habitation au **Clos de l'Etoile**

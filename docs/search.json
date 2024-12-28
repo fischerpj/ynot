@@ -4,7 +4,7 @@
     "href": "posts/immobilier/index.html",
     "title": "immobilier",
     "section": "",
-    "text": "Point de départ du projet d’habitation à Montpellier.\nhttps://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html"
+    "text": "Point de départ du projet d’habitation à Montpellier.\n\nhttps://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html"
   },
   {
     "objectID": "posts/cke/index.html",
@@ -32,14 +32,14 @@
     "href": "posts/gospel-banner/index.html",
     "title": "gospel banner",
     "section": "",
-    "text": "The animated web presentation of biblical claims is posted https://xminpi.netlify.app/ppt/gospel-banner/"
+    "text": "The animated web presentation of biblical claims is posted at https://xminpi.netlify.app/ppt/gospel-banner/\n\nCapture additional content under comments."
   },
   {
     "objectID": "posts/excursions/index.html",
     "href": "posts/excursions/index.html",
     "title": "excursions",
     "section": "",
-    "text": "The root of discoveries.\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres."
+    "text": "The root of discoveries.\n\n\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres."
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -53,7 +53,7 @@
     "href": "posts/iframe/index.html",
     "title": "Iframe",
     "section": "",
-    "text": "First use of an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\nDue enhancements are content_switching between json and html and css styling."
+    "text": "First use of an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\n\nConclusion: we abandon iframe technology."
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -67,7 +67,7 @@
     "href": "posts/storage/index.html",
     "title": "Storage with Javascript",
     "section": "",
-    "text": "Modify the DOM: take an input, trigger a button to echo the value and save to LocalStorage\n\n\n\nSubmit to LocalStorage\n\n\n\n\nRead Back from LocalStorage: Trigger the retrieval and echo the value\n\n\nRetrieve from LocalStorage\n\n\n\nOne script here handles all\n\n\nmake it a content script extension."
+    "text": "Demonstrate the feasibility of user interaction (input, action) with LocalStorage (set, get).\n\n\nModify the DOM: take an input, trigger a button to echo the value and save to LocalStorage\n\n\n\nSubmit to LocalStorage\n\n\n\n\nRead Back from LocalStorage: Trigger the retrieval and echo the value\n\n\nRetrieve from LocalStorage\n\n\n\nOne script inserted here handles that all.\n\n\nmake it a content script extension."
   },
   {
     "objectID": "posts/succession/index.html",
@@ -88,14 +88,14 @@
     "href": "posts/notes/index.html",
     "title": "notes",
     "section": "",
-    "text": "I capture my ideas like comments, at random here."
+    "text": "I merely capture at random my ideas here as comments below."
   },
   {
     "objectID": "posts/memo_verse/index.html",
     "href": "posts/memo_verse/index.html",
     "title": "memo_verse",
     "section": "",
-    "text": "This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly."
+    "text": "This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
   },
   {
     "objectID": "posts/priorités/index.html",
@@ -130,7 +130,7 @@
     "href": "posts/jsfapi/index.html",
     "title": "jsfapi",
     "section": "",
-    "text": "jsfapi is the raw json API to BibleGateway, hosted by netlify like in following iframe which is R_independent! Develop this feature with comments."
+    "text": "jsfapi is the raw json API to BibleGateway, hosted by netlify.\n\nhere with outdated technology of iframe which is R_independent! Develop this feature with comments."
   },
   {
     "objectID": "posts/etoile/index.html",
@@ -144,7 +144,7 @@
     "href": "posts/observables/index.html",
     "title": "Observables",
     "section": "",
-    "text": "We demonstrate interactions with ObservableJS Inputs.text, Input.button in a quarto document."
+    "text": "We demonstrate interactions with ObservableJS Inputs.text, Input.button in a quarto document. And abandon due to CSS styling complexity."
   },
   {
     "objectID": "posts/observables/index.html#inputs.text",

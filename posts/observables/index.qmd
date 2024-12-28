@@ -3,7 +3,7 @@ title: "Observables"
 author: "granPiero"
 date: "2024-10-12"
 image: "observablejs.jpg"
-categories: [code]
+categories: [it]
 format: 
   html:
     comments:
@@ -11,7 +11,7 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-We demonstrate interactions with **ObservableJS** Inputs.text, Input.button in a quarto document.
+> We demonstrate interactions with **ObservableJS** Inputs.text, Input.button in a quarto document. And **abandon** due to CSS styling complexity.
 
 ## Inputs.text
 

@@ -2,7 +2,7 @@
 title: "jsfapi"
 author: "granPiero"
 date: "2024-10-11"
-categories: [code]
+categories: [it]
 format: 
   html:
     comments:
@@ -10,7 +10,9 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-*jsfapi* is the raw json API to BibleGateway, hosted by netlify like in following iframe which is R_independent! Develop this feature with *comments*.
+> *jsfapi* is the raw json API to BibleGateway, hosted by netlify.
+
+here with outdated technology of **iframe** which is R_independent! Develop this feature with *comments*.
 
 <iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:2!SG21" title="jsfapi iframe" width="400" height="300">
 

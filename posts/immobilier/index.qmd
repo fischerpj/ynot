@@ -11,6 +11,6 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-Point de départ du projet d'**habitation** à Montpellier.
+> Point de départ du projet d'**habitation** à Montpellier.
 
 <https://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html>

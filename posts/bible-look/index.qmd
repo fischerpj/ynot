@@ -11,4 +11,4 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-Bible **Search and Lookup** technology.
+> Bible **Search and Lookup** technologies.

@@ -11,4 +11,4 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-**Recettes** de cuisine éprouvées.
+> **Recettes** de cuisine éprouvées.

@@ -11,6 +11,8 @@ format:
         repo: "fischerpj/ynot"
 ---
 
+> Demonstrate the feasibility of user interaction (input, action) with LocalStorage (set, get).
+
 1.  Modify the DOM: take an **input**, trigger a **button** to echo the **value** and save to **LocalStorage**
 
 <input type="text" id="inputField" placeholder="Type something here">
@@ -35,7 +37,7 @@ Retrieve from LocalStorage
 
 <p id="retrievedText">
 
-3.  **One script** here handles all
+3.  **One script** inserted here handles that all.
 
 -   make it a content script extension.
 

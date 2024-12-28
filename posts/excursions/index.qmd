@@ -13,8 +13,8 @@ execute:
   echo: false        
 ---
 
-The root of **discoveries**.
+> The root of **discoveries**.
 
-magnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.
+-   magnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.
 
-Marrons à Brenas le 20 octobre 2024, près de Vernazoubres.
+-   Marrons à Brenas le 20 octobre 2024, près de Vernazoubres.
