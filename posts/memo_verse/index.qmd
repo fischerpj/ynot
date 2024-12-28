@@ -1,7 +1,7 @@
 ---
 title: "memo_verse"
 author: "granPiero" 
-date: "2024-10-12"
+date: "2024-12-28"
 categories: [bible]
 image: "brain.jpg"
 format: 

@@ -1,1 +1,6 @@
 /* css styles */
+
+.listing .listing-image img {
+    width: 120px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}

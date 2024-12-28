@@ -172,6 +172,7 @@ class MUI {
     this.inputField.type = 'text';
     this.inputField.placeholder = 'Enter text here';
     this.inputField.class="form-control-plaintext"
+    this.inputField.style.width = '120px'; // Adjust the width as needed
 
     this.viewButton = document.createElement('button');
     this.viewButton.textContent = 'View';
