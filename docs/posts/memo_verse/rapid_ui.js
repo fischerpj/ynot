@@ -176,6 +176,7 @@ class MUI {
 
     this.viewButton = document.createElement('button');
     this.viewButton.textContent = 'View';
+    this.viewButton.class = "btn btn-primary";
 
     this.randomButton = document.createElement('button');
     this.randomButton.textContent = 'Random';
