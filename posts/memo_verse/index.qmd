@@ -3,7 +3,7 @@ title: "memo_verse"
 author: "granPiero" 
 date: "2024-10-12"
 categories: [bible]
-image: "brain.png"
+image: "brain.jpg"
 format: 
   html:
     comments:
@@ -12,5 +12,8 @@ format:
 ---
 
 > This is *on-your-device-only-persistent-memory* of **bible references,** that you accumulate on the fly.
+
+::: {#mainAnchor}
+:::
 
 <script src="rapid_ui.js"></script>

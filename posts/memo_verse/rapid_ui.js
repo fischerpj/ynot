@@ -133,7 +133,8 @@ console.log(mymini.getReverse());
 
 class MUI {
   constructor(stor = new miniStorage()) {
-    this.container = document.body;
+//    this.container = document.body;
+    this.container =  document.getElementById('mainAnchor') 
 
     this.createMainDiv();
     this.addInputAndButtons();
@@ -170,6 +171,7 @@ class MUI {
     this.inputField = document.createElement('input');
     this.inputField.type = 'text';
     this.inputField.placeholder = 'Enter text here';
+    this.inputField.class="form-control-plaintext"
 
     this.viewButton = document.createElement('button');
     this.viewButton.textContent = 'View';
