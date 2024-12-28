@@ -170,22 +170,25 @@ class MUI {
   addInputAndButtons() {
     this.inputField = document.createElement('input');
     this.inputField.type = 'text';
-    this.inputField.placeholder = 'Enter text here';
-    this.inputField.class="form-control-plaintext"
+    this.inputField.placeholder = 'ref here';
+    this.inputField.classList.add("form-control");
     this.inputField.style.width = '120px'; // Adjust the width as needed
 
     this.viewButton = document.createElement('button');
     this.viewButton.textContent = 'View';
-    this.viewButton.class = "btn btn-primary";
+    this.viewButton.classList.add("btn", "btn-primary");
 
     this.randomButton = document.createElement('button');
     this.randomButton.textContent = 'Random';
+    this.randomButton.classList.add("btn", "btn-warning");
 
     this.allButton = document.createElement('button');
     this.allButton.innerHTML = '&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;';
+    this.allButton.classList.add("btn", "btn-success");
 
     this.refButton = document.createElement('button');
     this.refButton.textContent = 'Refs';
+    this.refButton.classList.add("btn", "btn-info");
     
     this.inputDiv.appendChild(this.inputField);
     this.inputDiv.appendChild(this.viewButton);
