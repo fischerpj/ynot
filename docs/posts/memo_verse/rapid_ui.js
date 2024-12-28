@@ -275,7 +275,8 @@ class MUI {
   
     displayLiHtml(li, responseObject) {
 //      li.innerHTML = `Refid: ${responseObject.refid} <br> Content: ${responseObject.content} <br> Timestamp: ${responseObject.ts}`;
-      li.innerHTML = `<p><b>${responseObject.refid}</b> ${responseObject.content}`;
+      let content_result = responseObject.content.replace(/^\d+/, '');
+      li.innerHTML = `<p><b>${responseObject.refid}</b> ${content_result}`;
     }
   
   async augmentAndPopulateArray(arr = this.storageArray.getRandom()) {

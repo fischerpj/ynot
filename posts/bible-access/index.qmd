@@ -17,16 +17,9 @@ execute:
 
 > Give access to Bible **Texts,** **version, display, search, pdf** as well as to **Strong_Numbers** and Bible sites. The **refs'** full syntax respects *"canon":"ps1:1-3!SG21\@bgw"*. Workflow is 1.input 2.button.listener 3.iframe.src gets updated
 
+<input type="text" id="inputField" placeholder="{{< meta params.init_ref >}}">  <button id="submitButton">Get API</button>
 
-```{=html}
-<span>
-<input type="text" id="inputField" placeholder="{{< meta params.init_ref >}}">&nbsp;&nbsp;<button id="submitButton">Get API</button>
-</span>
-
-<br/><br/>
-<iframe id="frame0" src="https://jsfapi.netlify.app/.netlify/functions/bgw?param={{< meta params.init_ref >}}" title="jsfapi iframe" width="400" height="300">
-</iframe>
-```
+<br/><br/> <iframe id="frame0" src="https://jsfapi.netlify.app/.netlify/functions/bgw?param={{< meta params.init_ref >}}" title="jsfapi iframe" width="400" height="300"> </iframe>
 
 <script>
     // Function to be triggered when the button is clicked
