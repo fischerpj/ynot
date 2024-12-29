@@ -9,7 +9,7 @@ class miniStorage {
 
     constructor(defaultKeyId = 'refidArray', 
                 initValue    = "gen1:1") {
-        this.#version       = '0.0.10'; 
+        this.#version       = '0.0.11'; 
         this.#defaultKeyId  = defaultKeyId;
         this.#initValue     = this.timestamp_(initValue);
         // check if exists
@@ -21,10 +21,10 @@ class miniStorage {
         this.read_cache();
     }
     
-     getLast() {
+    getLast() {
         return this.#cachedValue.slice(-1);
     }
-  
+    
     getRandom() {
       const array = this.#cachedValue;
       const randomIndex = Math.floor(Math.random() * array.length);
@@ -41,6 +41,16 @@ class miniStorage {
       const new_array = this.#cachedValue;
       const item = this.timestamp_(refid);
       new_array.push(item);
+      this.#cachedValue = new_array;
+      this.write_storage();
+    }
+    
+       // add an element to Array
+    removeLastElement() {
+      const new_array = this.#cachedValue;
+      if (new_array.length > 0) {
+        new_array.pop();
+      }
       this.#cachedValue = new_array;
       this.write_storage();
     }
@@ -123,11 +133,14 @@ mymini.addElement("eph2:9");
 //console.log(JSON.stringify(mymini.cache));
 mymini.addElement("mark7:21");
 mymini.addElement("matt6:33");
+mymini.addElement("matt7:1");
 console.log(mymini.cache);
 console.log(mymini.getRandom());
 console.log(mymini.getLast());
 console.log(mymini.getUniqueRefids());
 console.log(mymini.getReverse());
+mymini.removeLastElement();
+console.log(mymini.cache);
 
 // =============================================================================
 
@@ -190,11 +203,16 @@ class MUI {
     this.refButton.textContent = 'Refs';
     this.refButton.classList.add("btn", "btn-info");
     
+    this.deleteButton = document.createElement('button');
+    this.deleteButton.textContent = 'Del';
+    this.deleteButton.classList.add("btn", "btn-danger");
+    
     this.inputDiv.appendChild(this.inputField);
     this.inputDiv.appendChild(this.viewButton);
     this.inputDiv.appendChild(this.randomButton);
     this.inputDiv.appendChild(this.allButton);
     this.inputDiv.appendChild(this.refButton);
+    this.inputDiv.appendChild(this.deleteButton);
   }
 
   addEventListeners() {
@@ -202,6 +220,7 @@ class MUI {
     this.randomButton.addEventListener('click', () => this.viewRandom());
     this.allButton.addEventListener('click', () => this.viewAll());
     this.refButton.addEventListener('click', () => this.refOnly());
+    this.deleteButton.addEventListener('click', () => this.removeLastRef());
   }
 
   async viewInput() {
@@ -238,7 +257,7 @@ class MUI {
      const result = await this.augmentAndPopulateArray( this.storageArray.getReverse());
   }
   
-    async refOnly() {
+  async refOnly() {
      const result = JSON.stringify(this.storageArray.getUniqueRefids());
      this.ul = document.getElementById('resultList');  
      const li = document.createElement('li');
@@ -246,6 +265,10 @@ class MUI {
      this.ul.innerHTML = null;
      this.ul.appendChild(li);
      console.log(result);
+  }
+  
+  removeLastRef() {
+    this.storageArray.removeLastElement()
   }
   
    // Method to retrieve unique refids
