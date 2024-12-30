@@ -4,3 +4,13 @@
     width: 80px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
 }
+
+.btn-row {
+    display: flex;
+    justify-content: space-between; /* Adjust to your needs: space-around, center, etc. */
+}
+
+button {
+    flex: 1; /* Equal width for all buttons */
+    margin: 0 5px; /* Adjust spacing between buttons */
+}

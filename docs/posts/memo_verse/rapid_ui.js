@@ -207,12 +207,19 @@ class MUI {
     this.deleteButton.textContent = 'Del';
     this.deleteButton.classList.add("btn", "btn-danger");
     
+    this.buttonDiv = document.createElement('div');
+    this.buttonDiv.id = 'buttonDiv';
+    this.buttonDiv.classList.add("btn-row");
+
+    this.buttonDiv.appendChild(this.viewButton);
+    this.buttonDiv.appendChild(this.randomButton);
+    this.buttonDiv.appendChild(this.allButton);
+    this.buttonDiv.appendChild(this.refButton);
+    this.buttonDiv.appendChild(this.deleteButton);
+    
     this.inputDiv.appendChild(this.inputField);
-    this.inputDiv.appendChild(this.viewButton);
-    this.inputDiv.appendChild(this.randomButton);
-    this.inputDiv.appendChild(this.allButton);
-    this.inputDiv.appendChild(this.refButton);
-    this.inputDiv.appendChild(this.deleteButton);
+    this.inputDiv.appendChild(this.buttonDiv);
+
   }
 
   addEventListeners() {
