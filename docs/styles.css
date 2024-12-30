@@ -10,7 +10,12 @@
     justify-content: space-between; /* Adjust to your needs: space-around, center, etc. */
 }
 
-button {
+Xbutton {
+    flex: 1;        /* Equal width for all buttons */
+    margin: 0 0px;  /* Adjust spacing between buttons */
+}
+
+.btn {
     flex: 1;        /* Equal width for all buttons */
     margin: 0 0px;  /* Adjust spacing between buttons */
 }
