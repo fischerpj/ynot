@@ -209,7 +209,7 @@ class MUI {
     
     this.buttonDiv = document.createElement('div');
     this.buttonDiv.id = 'buttonDiv';
-    this.buttonDiv.classList.add("btn-row");
+    this.buttonDiv.classList.add("button-row");
 
     this.buttonDiv.appendChild(this.viewButton);
     this.buttonDiv.appendChild(this.randomButton);

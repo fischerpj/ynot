@@ -5,12 +5,12 @@
     height: auto; /* Maintain aspect ratio */
 }
 
-.btn-row {
+.button-row {
     display: flex;
     justify-content: space-between; /* Adjust to your needs: space-around, center, etc. */
 }
 
 button {
-    flex: 1; /* Equal width for all buttons */
-    margin: 0 5px; /* Adjust spacing between buttons */
+    flex: 1;        /* Equal width for all buttons */
+    margin: 0 0px;  /* Adjust spacing between buttons */
 }
