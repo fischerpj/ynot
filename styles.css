@@ -12,5 +12,5 @@
 
 button {
     flex: 1; /* Equal width for all buttons */
-    margin: 0 5px; /* Adjust spacing between buttons */
+    margin: 0 2px; /* Adjust spacing between buttons */
 }
