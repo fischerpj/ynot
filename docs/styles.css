@@ -19,3 +19,20 @@ Xbutton {
     flex: 1;        /* Equal width for all buttons */
     margin: 0 0px;  /* Adjust spacing between buttons */
 }
+
+.container {
+      display: flex;
+      justify-content: space-evenly; /* Evenly distribute the items */
+      align-items: center; /* Center items vertically */
+/*      height: 100vh; /* Full viewport height to demonstrate vertical centering */
+    }
+    
+.Xinput-field {
+      flex: 1;
+      margin-right: 10px;
+    }
+    
+.Ximage {
+      flex: 1;
+      max-width: 100px; /* Adjust the size of the image as needed */
+    }

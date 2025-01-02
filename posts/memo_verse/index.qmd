@@ -12,8 +12,6 @@ format:
 
 > This is *on-your-device-only-persistent-memory* of **bible references,** that you accumulate on the fly. *However one distinct memory zone per browser*
 
-![](brain.jpg){fig-align="center" width="100"}
-
 ::: {#mainAnchor}
 :::
 

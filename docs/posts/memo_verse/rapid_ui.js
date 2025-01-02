@@ -181,11 +181,29 @@ class MUI {
   }
 
   addInputAndButtons() {
+  // 1. Create the .row, .container div
+    this.rowDiv = document.createElement('div');
+    this.rowDiv.classList.add('row', 'container');
+
+  // 2. Create the image
+    const image = document.createElement('img');
+    image.src = 'brain.jpg';
+    image.alt = 'Brain Image';
+    image.width = 100;
+    image.className = 'image';        
+
+  // 3. Create the input field
     this.inputField = document.createElement('input');
     this.inputField.type = 'text';
     this.inputField.placeholder = 'ref here';
     this.inputField.classList.add("form-control");
-    this.inputField.style.width = '120px'; // Adjust the width as needed
+    this.inputField.style.width = '200px'; // Adjust the width as needed
+    
+  // 4. Append the input field and image to the rowDiv container
+    this.rowDiv.appendChild(this.inputField);
+    this.rowDiv.appendChild(image);
+
+// ALL BUTTONS otherwise
 
     this.viewButton = document.createElement('button');
     this.viewButton.textContent = 'View';
@@ -216,10 +234,10 @@ class MUI {
     this.buttonDiv.appendChild(this.allButton);
     this.buttonDiv.appendChild(this.refButton);
     this.buttonDiv.appendChild(this.deleteButton);
-    
-    this.inputDiv.appendChild(this.inputField);
-    this.inputDiv.appendChild(this.buttonDiv);
 
+  // Appends two divs to the container
+    this.inputDiv.appendChild(this.rowDiv);
+    this.inputDiv.appendChild(this.buttonDiv);
   }
 
   addEventListeners() {
