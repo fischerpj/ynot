@@ -9,9 +9,9 @@
   {
     "objectID": "posts/cke/index.html",
     "href": "posts/cke/index.html",
-    "title": "Welcome To CKeditor",
+    "title": "Welcome To editor.js",
     "section": "",
-    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
+    "text": "Concept of EditorJS\n\nThis is the first post in a Quarto blog to use EditorJS.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:\n\nEditor.js in Node.js\n\n\nplaceholder\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
   },
   {
     "objectID": "posts/DOM via Javascript/index.html",
@@ -152,5 +152,12 @@
     "title": "Observables",
     "section": "button.click",
     "text": "button.click\n\nviewof myButton = Inputs.button(\"Count me!\");\n\n// By default, shows the #clicks\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport {html} from \"@observablehq/htl\";\n\n// Create HTML nested elements: div, h1, p, iframe\nmyHtml = html`&lt;div&gt;\n  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;\n  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;\n  &lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"150\"&gt;\n&lt;/div&gt;`;\n\n// Display the HTML element\nmyHtml"
+  },
+  {
+    "objectID": "posts/cke/index_cke.html",
+    "href": "posts/cke/index_cke.html",
+    "title": "Welcome To CKeditor",
+    "section": "",
+    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
   }
 ]

@@ -1,0 +1,20 @@
+---
+title: "Welcome To CKeditor"
+author: "granPiero"
+date: "2024-09-29"
+categories: [code]
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+> Concept of CKEditor
+
+This is the first post in a Quarto blog to use CKeditor.
+
+Has format: html: include: include-on-header:
+
+Has also html: comments: utterances: repo:

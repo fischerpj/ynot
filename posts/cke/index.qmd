@@ -1,20 +1,29 @@
 ---
-title: "Welcome To CKeditor"
+title: "Welcome To editor.js"
 author: "granPiero"
 date: "2024-09-29"
 categories: [code]
 format: 
   html:
     include-in-header: "include-in-header.html"
-    comments:
-      utterances: 
-        repo: "fischerpj/ynot"
 ---
 
-> Concept of CKEditor
+> Concept of EditorJS
 
-This is the first post in a Quarto blog to use CKeditor.
+This is the first post in a Quarto blog to use EditorJS.
 
 Has format: html: include: include-on-header:
 
 Has also html: comments: utterances: repo:
+
+<h1>Editor.js in Node.js</h1>
+
+::: {#editorjs}
+:::
+
+it's to be class: EditorjsList, Hey!\
+<button id="saveButton">Save Content</button> <button id="loadButton">Load Content</button>
+
+```{=html}
+<script src="my_editor.js"></script>
+```
