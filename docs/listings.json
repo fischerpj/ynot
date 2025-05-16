@@ -2,26 +2,27 @@
   {
     "listing": "/about.html",
     "items": [
-      "/posts/succession/index.html",
-      "/posts/notes/index.html",
-      "/posts/storage/index.html",
-      "/posts/memo_verse/index.html",
-      "/posts/welcome/index.html",
-      "/posts/priorités/index.html",
-      "/posts/iframe/index.html",
-      "/posts/bible-access/index.html",
-      "/posts/IT/index.html",
-      "/posts/excursions/index.html",
-      "/posts/cuisine/index.html",
-      "/posts/gospel-banner/index.html",
-      "/posts/jsfapi/index.html",
       "/posts/bible-look/index.html",
+      "/posts/storage/index.html",
+      "/posts/excursions/index.html",
+      "/posts/welcome/index.html",
+      "/posts/etoile/index.html",
+      "/posts/immobilier/index.html",
+      "/posts/cke/index.html",
+      "/posts/cke/index_cke.html",
+      "/posts/notes/index.html",
+      "/posts/priorités/index.html",
+      "/posts/gospel-banner/index.html",
       "/posts/DOM via Javascript/index_raw.html",
       "/posts/DOM via Javascript/index.html",
-      "/posts/etoile/index.html",
-      "/posts/cke/index.html",
+      "/posts/memo_verse/index.html",
+      "/posts/succession/index.html",
+      "/posts/iframe/index.html",
       "/posts/observables/index.html",
-      "/posts/immobilier/index.html"
+      "/posts/IT/index.html",
+      "/posts/jsfapi/index.html",
+      "/posts/cuisine/index.html",
+      "/posts/bible-access/index.html"
     ]
   }
 ]

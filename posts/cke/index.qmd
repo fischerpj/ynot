@@ -1,20 +1,18 @@
 ---
-title: "Welcome To editor.js"
+title: "Welcome To EditorJS"
 author: "granPiero"
-date: "2024-09-29"
+date: "2025-05-16"
 categories: [code]
 format: 
   html:
     include-in-header: "include-in-header.html"
 ---
 
-> Concept of EditorJS
+> Proof of Concept of EditorJS
 
-This is the first post in a Quarto blog to use EditorJS.
+This is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.
 
-Has format: html: include: include-on-header:
-
-Has also html: comments: utterances: repo:
+relies on yaml =\> format: html: include: include-on-header:
 
 <h1>Editor.js in Node.js</h1>
 
