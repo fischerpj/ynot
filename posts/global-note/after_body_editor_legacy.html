@@ -1,0 +1,98 @@
+<script id="after_body_editor" type="application/javascript">
+  console.log("after_body_editorStarted: true");
+//  alert("hello");
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOMContentLoaded: true");
+
+  // CREATED editorDiv dynamically, if not present elsewhere
+  const mainElement = document.querySelector("main");
+  const EditorDivIsPresent = document.getElementById("editorjs");
+  
+  if (!EditorDivIsPresent) {
+    const editorDiv = document.createElement("div");
+    editorDiv.id = "editorjs";
+    editorDiv.textContent = "toto is created";
+
+    // Insert the new div at the end of main or before lastChild
+    if(mainElement) {
+      mainElement.appendChild(editorDiv);
+      console.log("editorDiv appended to main, its best place");
+    } else {
+      document.body.insertBefore(editorDiv, document.body.lastChild);
+      console.log("editorDiv inserted before body.lastChild!");
+    }
+  } else {
+    console.log("#editorjs already exists.");
+  }
+
+/*
+  const plugins = [
+    "https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest",
+    "https://cdn.jsdelivr.net/npm/@editorjs/header@latest",
+    "https://cdn.jsdelivr.net/npm/@editorjs/image@latest",
+    "https://cdn.jsdelivr.net/npm/@editorjs/list@latest",
+    "https://cdn.jsdelivr.net/npm/@editorjs/quote@latest",
+  ];
+
+  plugins.forEach((pluginUrl, index) => {
+    const script = document.createElement("script");
+    script.src = pluginUrl;
+    script.onload = () => console.log(`Plugin ${index + 1} loaded: ${pluginUrl}`);
+    document.head.appendChild(script);
+  });
+
+  console.log("All Editor.js plugins requested for loading.");
+*/
+
+// LOAD libraries
+  const my_script = document.createElement("script");
+  my_script.src = "https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest";
+  my_script.onload = () => {
+    console.log("Editor.js loaded successfully!");
+    const editor = new EditorJS();
+  };
+  document.head.appendChild(my_script);
+
+/*  
+  const editor = new EditorJS({
+    holder: 'editorjs',
+    tools: {
+      header: {
+        class: Header,
+        inlineToolbar: true
+      },
+      list: {
+        class: EditorjsList,
+        inlineToolbar: true
+      }
+    },
+		onChange: async () => {
+		  const data = await editor.save();
+			localStorage.setItem('editorData', JSON.stringify(data));
+			},
+  });
+            
+  // Save content to Local Storage
+  document.getElementById('saveButton').addEventListener('click', () => {
+    editor.save().then((outputData) => {
+      localStorage.setItem('editorData', JSON.stringify(outputData));
+      alert("Content saved successfully!");
+    }).catch((error) => {
+      console.error("Saving failed:", error);
+    });
+});
+
+// Load content from Local Storage
+  document.getElementById('loadButton').addEventListener('click', () => {
+    const savedData = localStorage.getItem('editorData');
+    if (savedData) {
+      editor.render(JSON.parse(savedData));
+      alert("Content loaded successfully!");
+    } else {
+      alert("No saved content found.");
+    }
+  });        
+*/    
+})
+</script>

@@ -1,0 +1,29 @@
+---
+title: "Global Note"
+author: "granPiero"
+date: "2025-05-17"
+categories: [code]
+format: 
+  html:
+    include-after-body: "after_body_editor.html"
+---
+
+> This is a Global Note Page, that uses -\> EditorJS and -\> localStorage autosave mechanism.
+
+<button id="saveButton">
+
+Save Content
+
+</button>
+
+<button id="loadButton">
+
+Load Content
+
+</button>
+
+```{=html}
+<div id="editorjs">toto's place is vacant</div>
+```
+
+todo: load editorjs libraries
