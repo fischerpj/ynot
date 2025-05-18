@@ -41,8 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.log("#editorjs already exists.");
   }
+  
+  const scripts = [
+    "https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest",
+    "https://cdn.jsdelivr.net/npm/@editorjs/header@latest",
+    "https://cdn.jsdelivr.net/npm/@editorjs/image@latest",
+    "https://cdn.jsdelivr.net/npm/@editorjs/list@latest",
+    "https://cdn.jsdelivr.net/npm/@editorjs/quote@latest",
+  ];
 
-   const editor = new EditorJS({
+  Promise.all(scripts.map(src => new Promise(resolve => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.defer=true;
+    script.onload = resolve;
+    document.head.appendChild(script);
+  }))).then(() => {
+    console.log("All scripts loaded, initializing Editor.js...");
+  
+    const editor = new EditorJS({
       holder: 'editorjs',
       tools: {
         header: {
@@ -57,12 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		  onChange: async () => {
 		    const data = await editor.save();
 			  localStorage.setItem('editorData', JSON.stringify(data));
-			  console.log("Content saved successfully!");
 			},
     }); // end of editor instance
-
-/*
-     // Save content to Local Storage
+  }); // end of then
+  
+       // Save content to Local Storage
   document.getElementById('saveButton').addEventListener('click', () => {
     editor.save().then((outputData) => {
       localStorage.setItem('editorData', JSON.stringify(outputData));
@@ -71,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Saving failed:", error);
     });
   });
-*/
 
 // Load content from Local Storage
   document.getElementById('loadButton').addEventListener('click', () => {
@@ -83,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("No saved content found.");
     }
   });
-    
-  }); // end of event
+  console.log("Loading Editor.js and plugins...");
+
+})
 </script>
