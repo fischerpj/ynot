@@ -18,5 +18,5 @@ Reload
 </button>
 
 ```{=html}
-<div id="editorjs">toto's place is vacant</div>
+<div id="editorjs"></div>
 ```
