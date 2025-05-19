@@ -165,7 +165,7 @@
     "href": "posts/global-note/index.html",
     "title": "Global Note",
     "section": "",
-    "text": "This is a Global Note, using EditorJS and localStorage autosave mechanism.\n\n\nReload\n\ntoto's place is vacant"
+    "text": "This is a Global Note, using EditorJS and localStorage autosave mechanism.\n\n\nthis is inputDiv\nthis is editorDiv"
   },
   {
     "objectID": "posts/global-note/index_cke.html",

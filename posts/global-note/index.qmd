@@ -9,14 +9,18 @@ format:
     include-after-body: "after_body_editor.html"
 ---
 
+::: {#introDiv}
 > This is a Global Note, using **EditorJS** and **localStorage** autosave mechanism.
-
-<button id="loadButton">
-
-Reload
-
-</button>
+:::
 
 ```{=html}
-<div id="editorjs"></div>
+<div id="inputDiv">this is inputDiv</div>
+```
+
+```{=html}
+<div id="editorjs">this is editorDiv</div>
+```
+
+```{=html}
+<script src="ui_elements.js" id="ui_structure type="application/javascript></script>
 ```

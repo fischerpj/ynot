@@ -15,33 +15,11 @@ button {
 </style>
 
 <script id="after_body_editor" type="application/javascript">
-  console.log("after_body_editorStarted: true");
-//  alert("hello");
+  console.log("after_body_editor: started");
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded: true");
-
-  // CREATED editorDiv dynamically, if not present elsewhere
-  const mainElement = document.querySelector("main");
-  const EditorDivIsPresent = document.getElementById("editorjs");
+   console.log("DOMContentLoaded: true");
   
-  if (!EditorDivIsPresent) {
-    const editorDiv = document.createElement("div");
-    editorDiv.id = "editorjs";
-    editorDiv.textContent = "toto is created";
-
-    // Insert the new div at the end of main or before lastChild
-    if(mainElement) {
-      mainElement.appendChild(editorDiv);
-      console.log("editorDiv appended to main, its best place");
-    } else {
-      document.body.insertBefore(editorDiv, document.body.lastChild);
-      console.log("editorDiv inserted before body.lastChild!");
-    }
-  } else {
-    console.log("#editorjs already exists.");
-  }
-
    const editor = new EditorJS({
       holder: 'editorjs',
       tools: {
@@ -51,8 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         list: {
           class: EditorjsList,
-          inlineToolbar: true
-        }
+          inlineToolbar: true,
+          config: {
+            placeholder: 'Type your text here...',
+          }
+        },
       },
 		  onChange: async () => {
 		    const data = await editor.save();
@@ -60,6 +41,23 @@ document.addEventListener("DOMContentLoaded", () => {
 			  console.log("Content saved successfully!");
 			},
     }); // end of editor instance
+    
+    // Simulating "onload" using the `ready` promise
+  editor.isReady
+  .then(() => {
+    console.log('Editor.js is fully loaded and ready!');
+      const savedData = localStorage.getItem('editorData');
+    if (savedData) {
+      editor.render(JSON.parse(savedData));
+//      alert("Content loaded successfully!");
+    } else {
+      alert("No saved content found in localStorage.");
+    }
+    // Add your custom logic here
+  })
+  .catch((error) => {
+    console.error('Editor.js initialization failed:', error);
+  });
 
 /*
      // Save content to Local Storage
@@ -74,13 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
 */
 
 // Load content from Local Storage
+
   document.getElementById('loadButton').addEventListener('click', () => {
     const savedData = localStorage.getItem('editorData');
     if (savedData) {
       editor.render(JSON.parse(savedData));
-      alert("Content loaded successfully!");
+//      alert("Content loaded successfully!");
     } else {
-      alert("No saved content found.");
+      alert("No saved content found in localStorage.");
     }
   });
     
