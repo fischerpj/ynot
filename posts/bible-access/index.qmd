@@ -1,7 +1,7 @@
 ---
 title: "Bible access"
 author: "granPiero"
-date: "2024-10-22"
+date: "2025-05-21"
 categories: [bible]
 image: "microscope.jpg"
 format: 
@@ -15,12 +15,17 @@ execute:
   echo: false        
 ---
 
-> Give access to Bible **Texts,** **version, display, search, pdf** as well as to **Strong_Numbers** and Bible sites. The **refs'** full syntax respects *"canon":"ps1:1-3!SG21\@bgw"*. Workflow is 1.input 2.button.listener 3.iframe.src gets updated
+> Give access to Bible **Texts,** **version, display, search, pdf** as well as to **Strong_Numbers** and Bible sites. The **refs'** full syntax respects *"canon":"ps1:1-3!SG21\@bgw"*. Workflow is 1.input 2.button.listener 3.iframe.src gets updated. Conclusion: Keep the Input+Button; Use the \<iframe for exploration
 
+```{=html}
 <input type="text" id="inputField" placeholder="{{< meta params.init_ref >}}">  <button id="submitButton">Get API</button>
+```
 
+```{=html}
 <br/><br/> <iframe id="frame0" src="https://jsfapi.netlify.app/.netlify/functions/bgw?param={{< meta params.init_ref >}}" title="jsfapi iframe" width="400" height="300"> </iframe>
+```
 
+```{=html}
 <script>
     // Function to be triggered when the button is clicked
     function handleClick() {
@@ -33,3 +38,28 @@ execute:
     // Add event listener to the button
     document.getElementById('submitButton').addEventListener('click', handleClick);
   </script>
+```
+
+```{=html}
+<script>
+async function fetchAndDisplay(param) {
+  try {
+    const response = await fetch(`https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(param)}`);
+    const data = await response.json(); // Assuming the response is in JSON format
+
+    if (data.htmlraw) {
+      const div = document.createElement("div");
+      div.innerHTML = data.htmlraw;
+      document.body.appendChild(div);
+    } else {
+      console.error("rawhtml property not found in response");
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+// Example usage:
+fetchAndDisplay("ps42!kjv");
+</script>
+```
