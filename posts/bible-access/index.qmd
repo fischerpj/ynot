@@ -23,6 +23,7 @@ execute:
 
 ```{=html}
 <br/><br/> <iframe id="frame0" src="https://jsfapi.netlify.app/.netlify/functions/bgw?param={{< meta params.init_ref >}}" title="jsfapi iframe" width="400" height="300"> </iframe>
+<br/><br/> <iframe id="frame1" src="https://hall.pjafischer.workers.dev/passage/?param={{< meta params.init_ref >}}" title="hall iframe" width="400" height="300"> </iframe>
 ```
 
 ```{=html}
