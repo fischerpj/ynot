@@ -18,21 +18,21 @@
     "href": "posts/observables/index.html",
     "title": "Observables",
     "section": "",
-    "text": "We demonstrate interactions with ObservableJS Inputs.text, Input.button in a quarto document. And abandon due to CSS styling complexity."
+    "text": "We demonstrate interactions with ObservableJS Inputs.text, Input.button in a quarto document. And abandon due to CSS styling complexity.\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\n\n// Create an input field for the parameter\nviewof param = Inputs.text({ \n  label: \"Search\", \n  placeholder: \"Type here...\" ,\n  value: \"gen1:1\"\n});\n\n// Construct the API URL using the input parameter\nmyurl = `https://hall.pjafischer.workers.dev/passage/?param=${param}`;\n\n// Fetch the data dynamically\nmydata = (await fetch(myurl)).json();\n\n// Display the htmlraw property inside a div\nhtml`${mydata.htmlraw}`;"
   },
   {
     "objectID": "posts/observables/index.html#inputs.text",
     "href": "posts/observables/index.html#inputs.text",
     "title": "Observables",
     "section": "Inputs.text",
-    "text": "Inputs.text\n\nimport {} from \"@observablehq/inputs\";\n\n// Create an Inputs.text element\nviewof userInput = Inputs.text({\n  label: \"Enter\",\n  placeholder: \"Type here\",\n  value: \"Initial text\"\n})\n\n// Display the input value\nuserInput\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nendpoint = \"https://jsfapi.netlify.app/.netlify/functions/bgw\"\nurl = endpoint+\"?param=\"+userInput\nurl"
+    "text": "Inputs.text\n\nviewof userInput = Inputs.text({\n  label: \"Enter\",\n  placeholder: \"Type here\",\n  value: \"Initial text\"\n})\n\n// Display the input value\nuserInput\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nendpoint = \"https://jsfapi.netlify.app/.netlify/functions/bgw\"\nurl = endpoint+\"?param=\"+userInput\nurl"
   },
   {
     "objectID": "posts/observables/index.html#button.click",
     "href": "posts/observables/index.html#button.click",
     "title": "Observables",
     "section": "button.click",
-    "text": "button.click\n\nviewof myButton = Inputs.button(\"Count me!\");\n\n// By default, shows the #clicks\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport {html} from \"@observablehq/htl\";\n\n// Create HTML nested elements: div, h1, p, iframe\nmyHtml = html`&lt;div&gt;\n  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;\n  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;\n  &lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"150\"&gt;\n&lt;/div&gt;`;\n\n// Display the HTML element\nmyHtml"
+    "text": "button.click\n\nviewof myButton = Inputs.button(\"Count me!\");\n\n// By default, shows the #clicks\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmyHtml = html`&lt;div&gt;\n  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;\n  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;\n  &lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"150\"&gt;\n&lt;/div&gt;`;\n\n// Display the HTML element\nmyHtml"
   },
   {
     "objectID": "posts/succession/index.html",
@@ -42,39 +42,39 @@
     "text": "Everything related to succession Fischer-Durrenberger."
   },
   {
-    "objectID": "posts/DOM via Javascript/index.html",
-    "href": "posts/DOM via Javascript/index.html",
-    "title": "DOM via Javascript",
+    "objectID": "posts/memo_verse/index.html",
+    "href": "posts/memo_verse/index.html",
+    "title": "memo_verse",
     "section": "",
-    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\nConclusion: Abandon ObersvableJS technology because of CSS-styling hurdle."
+    "text": "This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
   },
   {
-    "objectID": "posts/gospel-banner/index.html",
-    "href": "posts/gospel-banner/index.html",
-    "title": "gospel banner",
+    "objectID": "posts/priorités/index.html",
+    "href": "posts/priorités/index.html",
+    "title": "priorités",
     "section": "",
-    "text": "The animated web presentation of biblical claims is posted at https://xminpi.netlify.app/ppt/gospel-banner/\n\nCapture additional content under comments."
+    "text": "Organise the tree of priorities\n\nimportant first"
   },
   {
-    "objectID": "posts/notes/index.html",
-    "href": "posts/notes/index.html",
-    "title": "notes",
+    "objectID": "posts/cke/index_cke.html",
+    "href": "posts/cke/index_cke.html",
+    "title": "Welcome To CKeditor",
     "section": "",
-    "text": "I merely capture at random my ideas here as comments below."
+    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
   },
   {
-    "objectID": "posts/cke/index.html",
-    "href": "posts/cke/index.html",
-    "title": "Welcome To EditorJS",
+    "objectID": "posts/immobilier/index.html",
+    "href": "posts/immobilier/index.html",
+    "title": "immobilier",
     "section": "",
-    "text": "Proof of Concept of EditorJS\n\nThis is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.\nrelies on yaml =&gt; format: html: include: include-on-header:\n\nEditor.js in Node.js\n\n\n\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
+    "text": "Point de départ du projet d’habitation à Montpellier.\n\nhttps://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html"
   },
   {
-    "objectID": "posts/etoile/index.html",
-    "href": "posts/etoile/index.html",
-    "title": "résidence Etoile",
+    "objectID": "posts/romans_note/index.html",
+    "href": "posts/romans_note/index.html",
+    "title": "Romans Note",
     "section": "",
-    "text": "Point de départ de l’habitation au Clos de l’Etoile"
+    "text": "This is a Global Note on Romans (using EditorJS and localStorage autosave mechanisms)\n\n\nthis is inputDiv\nthis is editorDiv"
   },
   {
     "objectID": "posts/excursions/index.html",
@@ -95,7 +95,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Ynot (Why not!) is my personal gitHub repo to store infos as issues, that are anchored to any pages of my other websites.\nYnot is sourced from docker rv5/ynot..\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nStorage with Javascript\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nGlobal Note\n\n\n\n\n\n\n\n\n\n\n\nMay 17, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nexcursions\n\n\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nrésidence Etoile\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To EditorJS\n\n\n\n\n\n\n\n\n\n\n\nMay 16, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\npriorités\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ngospel banner\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nraw content\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nDOM via Javascript\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nmemo_verse\n\n\n\n\n\n\n\n\n\n\n\nDec 28, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nSuccession\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIT\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nBible access\n\n\n\n\n\n\n\n\n\n\n\nMay 21, 2025\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
+    "text": "Ynot (Why not!) is my personal gitHub repo to store infos as issues, that are anchored to any pages of my other websites.\nYnot is sourced from docker rv5/ynot..\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nStorage with Javascript\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nGlobal Note\n\n\n\n\n\n\n\n\n\n\n\nMay 17, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nexcursions\n\n\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nRomans Note\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nrésidence Etoile\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To EditorJS\n\n\n\n\n\n\n\n\n\n\n\nMay 16, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\npriorités\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ngospel banner\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nraw content\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nDOM via Javascript\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nmemo_verse\n\n\n\n\n\n\n\n\n\n\n\nDec 28, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbible API\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nSuccession\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIT\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nBible access\n\n\n\n\n\n\n\n\n\n\n\nMay 21, 2025\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/bible-look/index.html",
@@ -119,32 +119,46 @@
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
-    "objectID": "posts/immobilier/index.html",
-    "href": "posts/immobilier/index.html",
-    "title": "immobilier",
+    "objectID": "posts/etoile/index.html",
+    "href": "posts/etoile/index.html",
+    "title": "résidence Etoile",
     "section": "",
-    "text": "Point de départ du projet d’habitation à Montpellier.\n\nhttps://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html"
+    "text": "Point de départ de l’habitation au Clos de l’Etoile"
   },
   {
-    "objectID": "posts/cke/index_cke.html",
-    "href": "posts/cke/index_cke.html",
-    "title": "Welcome To CKeditor",
+    "objectID": "posts/cke/index.html",
+    "href": "posts/cke/index.html",
+    "title": "Welcome To EditorJS",
     "section": "",
-    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
+    "text": "Proof of Concept of EditorJS\n\nThis is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.\nrelies on yaml =&gt; format: html: include: include-on-header:\n\nEditor.js in Node.js\n\n\n\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
   },
   {
-    "objectID": "posts/priorités/index.html",
-    "href": "posts/priorités/index.html",
-    "title": "priorités",
+    "objectID": "posts/notes/index.html",
+    "href": "posts/notes/index.html",
+    "title": "notes",
     "section": "",
-    "text": "Organise the tree of priorities\n\nimportant first"
+    "text": "I merely capture at random my ideas here as comments below."
   },
   {
-    "objectID": "posts/memo_verse/index.html",
-    "href": "posts/memo_verse/index.html",
-    "title": "memo_verse",
+    "objectID": "posts/gospel-banner/index.html",
+    "href": "posts/gospel-banner/index.html",
+    "title": "gospel banner",
     "section": "",
-    "text": "This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
+    "text": "The animated web presentation of biblical claims is posted at https://xminpi.netlify.app/ppt/gospel-banner/\n\nCapture additional content under comments."
+  },
+  {
+    "objectID": "posts/DOM via Javascript/index.html",
+    "href": "posts/DOM via Javascript/index.html",
+    "title": "DOM via Javascript",
+    "section": "",
+    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\nConclusion: Abandon ObersvableJS technology because of CSS-styling hurdle."
+  },
+  {
+    "objectID": "posts/bible-api/index.html",
+    "href": "posts/bible-api/index.html",
+    "title": "bible API",
+    "section": "",
+    "text": "Bible API technologies.\n\n\n\n\n\n\nconsole.log(\"toto\")\nconst app = new App();\n\n// app.m_fetchPassage(\"ps42!KJV\");\n\n\n\nconsole.log(\"toto2\")\nfetchData(\"ps42!KJV\");"
   },
   {
     "objectID": "posts/iframe/index.html",

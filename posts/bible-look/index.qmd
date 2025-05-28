@@ -4,6 +4,9 @@ author: "granPiero"
 date: "2024-10-12"
 categories: [bible]
 image: "old_bible.jpg"
+params:
+  uuid_gen: !expr uuid::UUIDgenerate()
+  uuid: 1e6448ba-7307-47a0-9950-53c1c1da45c6
 format: 
   html:
     comments:
@@ -12,3 +15,14 @@ format:
 ---
 
 > Bible **Search and Lookup** technologies.
+
+```{r, uuid, eval=FALSE, echo= FALSE}
+params$uuid
+```
+
+::: {#mainAnchor}
+:::
+
+```{=html}
+<script src="mini_mvc.js"></script>
+```

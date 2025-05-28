@@ -1,0 +1,24 @@
+---
+title: "Romans Note"
+title-block-banner: false
+format: 
+  html:
+    include-in-header: "include-in-header.html"
+    include-after-body: "after_body_editor.html"
+---
+
+::: {#introDiv}
+> This is a Global Note on Romans (*using **EditorJS** and **localStorage** autosave mechanisms*)
+:::
+
+```{=html}
+<div id="inputDiv">this is inputDiv</div>
+```
+
+```{=html}
+<div id="editorjs">this is editorDiv</div>
+```
+
+```{=html}
+<script src="ui_elements.js" id="ui_structure type="application/javascript></script>
+```

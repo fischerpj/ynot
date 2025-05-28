@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="granPiero">
-<meta name="dcterms.date" content="2024-10-12">
 
-<title>Observables – ynot</title>
+<title>Romans Note – ynot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -102,8 +66,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script defer="" src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -112,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -148,225 +114,130 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Observables</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">it</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>granPiero </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">October 12, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Romans Note</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<div id="introDiv">
 <blockquote class="blockquote">
-<p>We demonstrate interactions with <strong>ObservableJS</strong> Inputs.text, Input.button in a quarto document. And <strong>abandon</strong> due to CSS styling complexity.</p>
+<p>This is a Global Note on Romans (<em>using <strong>EditorJS</strong> and <strong>localStorage</strong> autosave mechanisms</em>)</p>
 </blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-startfrom="17" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 16;"><span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Inputs } <span class="im">from</span> <span class="st">"@observablehq/inputs"</span><span class="op">;</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { html } <span class="im">from</span> <span class="st">"@observablehq/stdlib"</span><span class="op">;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">// Create an input field for the parameter</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>viewof param <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({ </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Search"</span><span class="op">,</span> </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Type here..."</span> <span class="op">,</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"gen1:1"</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">// Construct the API URL using the input parameter</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>myurl <span class="op">=</span> <span class="vs">`https://hall.pjafischer.workers.dev/passage/?param=</span><span class="sc">${</span>param<span class="sc">}</span><span class="vs">`</span><span class="op">;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">// Fetch the data dynamically</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>mydata <span class="op">=</span> (<span class="cf">await</span> <span class="fu">fetch</span>(myurl))<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the htmlraw property inside a div</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>mydata<span class="op">.</span><span class="at">htmlraw</span><span class="sc">}</span><span class="vs">`</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
 </div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-4" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-5" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-6" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
-<section id="inputs.text" class="level2">
-<h2 class="anchored" data-anchor-id="inputs.text">Inputs.text</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-startfrom="42" data-source-offset="-34"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 41;"><span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>viewof userInput <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Enter"</span><span class="op">,</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Type here"</span><span class="op">,</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"Initial text"</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the input value</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>userInput</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb3" data-startfrom="50" data-source-offset="-178"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 49;"><span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>endpoint <span class="op">=</span> <span class="st">"https://jsfapi.netlify.app/.netlify/functions/bgw"</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> endpoint<span class="op">+</span><span class="st">"?param="</span><span class="op">+</span>userInput</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-4" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-5" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="button.click" class="level2">
-<h2 class="anchored" data-anchor-id="button.click">button.click</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-startfrom="59" data-source-offset="-39"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 58;"><span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>viewof myButton <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Count me!"</span>)<span class="op">;</span></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="co">// By default, shows the #clicks</span></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>myButton</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-startfrom="68" data-source-offset="-52"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 67;"><span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>myHtml <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div&gt;</span></span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;</span></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="STATIC IFRAME jsfapi" width="400" height="150"&gt;</span></span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span><span class="op">;</span></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the HTML element</span></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>myHtml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
+<div id="inputDiv">this is inputDiv</div>
+<div id="editorjs">this is editorDiv</div>
+<script src="ui_elements.js" id="ui_structure type=" application="" javascript=""></script>
 
 
-</section>
 
 </main> <!-- /main -->
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IElucHV0cyB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL2lucHV0c1wiO1xuaW1wb3J0IHsgaHRtbCB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL3N0ZGxpYlwiO1xuXG4vLyBDcmVhdGUgYW4gaW5wdXQgZmllbGQgZm9yIHRoZSBwYXJhbWV0ZXJcbnZpZXdvZiBwYXJhbSA9IElucHV0cy50ZXh0KHsgXG4gIGxhYmVsOiBcIlNlYXJjaFwiLCBcbiAgcGxhY2Vob2xkZXI6IFwiVHlwZSBoZXJlLi4uXCIgLFxuICB2YWx1ZTogXCJnZW4xOjFcIlxufSk7XG5cbi8vIENvbnN0cnVjdCB0aGUgQVBJIFVSTCB1c2luZyB0aGUgaW5wdXQgcGFyYW1ldGVyXG5teXVybCA9IGBodHRwczovL2hhbGwucGphZmlzY2hlci53b3JrZXJzLmRldi9wYXNzYWdlLz9wYXJhbT0ke3BhcmFtfWA7XG5cbi8vIEZldGNoIHRoZSBkYXRhIGR5bmFtaWNhbGx5XG5teWRhdGEgPSAoYXdhaXQgZmV0Y2gobXl1cmwpKS5qc29uKCk7XG5cbi8vIERpc3BsYXkgdGhlIGh0bWxyYXcgcHJvcGVydHkgaW5zaWRlIGEgZGl2XG5odG1sYCR7bXlkYXRhLmh0bWxyYXd9YDtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gQ3JlYXRlIGFuIElucHV0cy50ZXh0IGVsZW1lbnRcbnZpZXdvZiB1c2VySW5wdXQgPSBJbnB1dHMudGV4dCh7XG4gIGxhYmVsOiBcIkVudGVyXCIsXG4gIHBsYWNlaG9sZGVyOiBcIlR5cGUgaGVyZVwiLFxuICB2YWx1ZTogXCJJbml0aWFsIHRleHRcIlxufSlcblxuLy8gRGlzcGxheSB0aGUgaW5wdXQgdmFsdWVcbnVzZXJJbnB1dFxuZW5kcG9pbnQgPSBcImh0dHBzOi8vanNmYXBpLm5ldGxpZnkuYXBwLy5uZXRsaWZ5L2Z1bmN0aW9ucy9iZ3dcIlxudXJsID0gZW5kcG9pbnQrXCI/cGFyYW09XCIrdXNlcklucHV0XG51cmxcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIENyZWF0ZSBhIGJ1dHRvbiB1c2luZyBJbnB1dHMuYnV0dG9uXG52aWV3b2YgbXlCdXR0b24gPSBJbnB1dHMuYnV0dG9uKFwiQ291bnQgbWUhXCIpO1xuXG4vLyBCeSBkZWZhdWx0LCBzaG93cyB0aGUgI2NsaWNrc1xubXlCdXR0b25cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gQ3JlYXRlIEhUTUwgbmVzdGVkIGVsZW1lbnRzOiBkaXYsIGgxLCBwLCBpZnJhbWVcbm15SHRtbCA9IGh0bWxgPGRpdj5cbiAgPGgxPkhlbGxvLCBPYnNlcnZhYmxlITwvaDE+XG4gIDxwPlRoaXMgaXMgYSBwYXJhZ3JhcGggZm9sbG93ZWQgYnkgQU4gSUZSQU1FIHdpdGhpbiBhIGRpdiBlbGVtZW50LjwvcD5cbiAgPGlmcmFtZSBzcmM9XCJodHRwczovL2pzZmFwaS5uZXRsaWZ5LmFwcC8ubmV0bGlmeS9mdW5jdGlvbnMvYmd3P3BhcmFtPWdlbjE6MSFTRzIxXCIgdGl0bGU9XCJTVEFUSUMgSUZSQU1FIGpzZmFwaVwiIHdpZHRoPVwiNDAwXCIgaGVpZ2h0PVwiMTUwXCI+XG48L2Rpdj5gO1xuXG4vLyBEaXNwbGF5IHRoZSBIVE1MIGVsZW1lbnRcbm15SHRtbFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwYXJhbScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd1c2VySW5wdXQnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbXlCdXR0b24nKSJ9XX0=
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../posts/observables";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "../..";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
+<style>
+#editorjs {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 200px;
+}
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+
+<script id="after_body_editor" type="application/javascript">
+  console.log("after_body_editor: started");
+
+document.addEventListener("DOMContentLoaded", () => {
+   console.log("DOMContentLoaded: true");
+  
+   const editor = new EditorJS({
+      holder: 'editorjs',
+      tools: {
+        header: {
+          class: Header,
+          inlineToolbar: true
+        },
+        list: {
+          class: EditorjsList,
+          inlineToolbar: true,
+          config: {
+            placeholder: 'Type your text here...',
+          }
+        },
+      },
+		  onChange: async () => {
+		    const data = await editor.save();
+			  localStorage.setItem('romansNote', JSON.stringify(data));
+			  console.log("Content saved successfully!");
+			},
+    }); // end of editor instance
+    
+    // Simulating "onload" using the `ready` promise
+  editor.isReady
+  .then(() => {
+    console.log('Editor.js is fully loaded and ready!');
+      const savedData = localStorage.getItem('romansNote');
+    if (savedData) {
+      editor.render(JSON.parse(savedData));
+//      alert("Content loaded successfully!");
+    } else {
+//      alert("No saved content found in localStorage.");
+    }
+    // Add your custom logic here
+  })
+  .catch((error) => {
+    console.error('Editor.js initialization failed:', error);
+  });
+
+/*
+     // Save content to Local Storage
+  document.getElementById('saveButton').addEventListener('click', () => {
+    editor.save().then((outputData) => {
+      localStorage.setItem('romansNote', JSON.stringify(outputData));
+//      alert("Content saved successfully!");
+    }).catch((error) => {
+      console.error("Saving failed:", error);
+    });
+  });
+*/
+
+// Load content from Local Storage
+
+  document.getElementById('loadButton').addEventListener('click', () => {
+    const savedData = localStorage.getItem('romansNote');
+    if (savedData) {
+      editor.render(JSON.parse(savedData));
+//      alert("Content loaded successfully!");
+    } else {
+//      alert("No saved content found in localStorage.");
+    }
+  });
+    
+  }); // end of event
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -784,8 +655,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="fischerpj/ynot" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

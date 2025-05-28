@@ -13,10 +13,30 @@ format:
 
 > We demonstrate interactions with **ObservableJS** Inputs.text, Input.button in a quarto document. And **abandon** due to CSS styling complexity.
 
+```{ojs}
+import { Inputs } from "@observablehq/inputs";
+import { html } from "@observablehq/stdlib";
+
+// Create an input field for the parameter
+viewof param = Inputs.text({ 
+  label: "Search", 
+  placeholder: "Type here..." ,
+  value: "gen1:1"
+});
+
+// Construct the API URL using the input parameter
+myurl = `https://hall.pjafischer.workers.dev/passage/?param=${param}`;
+
+// Fetch the data dynamically
+mydata = (await fetch(myurl)).json();
+
+// Display the htmlraw property inside a div
+html`${mydata.htmlraw}`;
+```
+
 ## Inputs.text
 
 ```{ojs}
-import {} from "@observablehq/inputs";
 
 // Create an Inputs.text element
 viewof userInput = Inputs.text({
@@ -43,7 +63,6 @@ myButton
 ```
 
 ```{ojs}
-import {html} from "@observablehq/htl";
 
 // Create HTML nested elements: div, h1, p, iframe
 myHtml = html`<div>
