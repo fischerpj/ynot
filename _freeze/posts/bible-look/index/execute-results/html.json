@@ -1,0 +1,17 @@
+{
+  "hash": "086380fe8ae076e03ab46fb8440b4cc6",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"bible look\"\nauthor: \"granPiero\"\ndate: \"2024-10-12\"\ncategories: [bible]\nimage: \"old_bible.jpg\"\nparams:\n  uuid_gen: !expr uuid::UUIDgenerate()\n  uuid: 1e6448ba-7307-47a0-9950-53c1c1da45c6\nformat: \n  html:\n    comments:\n      utterances: \n        repo: \"fischerpj/ynot\"\n---\n\n\n\n> Bible **Search and Lookup** technologies.\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {#mainAnchor}\n:::\n\n\n\n```{=html}\n<script src=\"mini_mvc.js\"></script>\n```\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
