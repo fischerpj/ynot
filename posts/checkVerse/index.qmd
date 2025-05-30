@@ -1,0 +1,155 @@
+---
+title: "checkVerse"
+image: "bugsbunny.png"
+execute:
+  echo: false
+---
+
+> check BibleRef's validity with *observableJS.*
+
+::: {#outputDiv}
+OK fetch IF valid ! debounce correctly; bibleBooks OK; todo: match
+:::
+
+```{ojs}
+import { html } from "@observablehq/stdlib";
+
+// Create interactive input field using viewof
+viewof param = Inputs.text({ 
+  label: "Search", 
+  value: "gen1:1!KJV"});
+
+// Content reactive to input
+content = await (async (input) => {
+  // Craft the URL dynamically
+  const url = `https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(input)}`;
+  if ( bcve.is_valid ) {
+      console.log(url);
+      const response = await fetch(url);
+      const text = await response.json();
+      return text;
+  } else {
+    return bcve.is_valid
+  }
+})(param);
+
+// html`<div>${viewof param}</div>`;
+html`<div>${content.htmlraw}</div>`;
+
+//======================================================
+bcve = ((userref) => {
+  const editions = new Set(['KJV','SG21',"NGU-DE"]);
+  
+  // Split by multiple separators: comma, semicolon, and pipe
+  const [bc,verse,edition="SG21"] = userref.split(/[:!]/);
+  // emptied edition is doomed invalid 
+  const valid_edition = editions.has(edition) ? edition : ""
+
+  const regx = /^[^!]*/;
+  const regx1 = /^[^:]*/;
+  const no_edition = userref.match(regx).toString();
+  const no_verse = no_edition.match(regx1).toString();
+  
+  const result = {
+    "is_valid": ( 
+        verse === "" || 
+        valid_edition === ""
+        ) ? false : true,
+    "edition": valid_edition,
+    "verse": verse,
+    "bc": bc,
+    "input": userref
+  }
+  
+  return result
+})(param);
+
+html`<div>VALIDATION is ${JSON.stringify(bcve)}</div>`;
+
+check = ((userref) => {
+    const lowerRef = userref.toLowerCase();
+
+    const bibleBooks = {
+        "Genesis": ["Ge", "GEN"],
+        "Exodus": ["Ex", "EXOD"],
+        "Leviticus": ["Lv", "LEV"],
+        "Numbers": ["Nu", "NUM"],
+        "Deuteronomy": ["Dt", "DEUT"],
+        "Joshua": ["Jo", "JOSH","Jos"],
+        "Judges": ["Jg", "JUDG",'Jug'],
+        "Ruth": ["Ru", "RUTH","Rut"],
+        "1 Samuel": ["1S", "1SAM"],
+        "2 Samuel": ["2M", "2SAM"],
+        "1 Kings": ["1K", "1KGS"],
+        "2 Kings": ["2K", "2KGS"],
+        "1 Chronicles": ["1C", "1CHRO","1Chr"],
+        "2 Chronicles": ["2C", "2CHRO","2Chr"],
+        "Ezra": ["Ez", "EZRA","Esd"],
+        "Nehemiah": ["Nh", "NEH"],
+        "Esther": ["Es", "ESTH"],
+        "Job": ["Jb", "JOB"],
+        "Psalms": ["Ps", "PSA"],
+        "Proverbs": ["Pv", "PROV"],
+        "Ecclesiastes": ["Ec", "ECC"],
+        "Song of Solomon": ["So", "SONG","Cc"],
+        "Isaiah": ["Is", "ISA"],
+        "Jeremiah": ["Jr", "JER"],
+        "Lamentations": ["Lm", "LAM"],
+        "Ezekiel": ["Ek", "EZEK"],
+        "Daniel": ["Dn", "DAN"],
+        "Hosea": ["Ho", "HOSEA"],
+        "Joel": ["Jl", "JOEL"],
+        "Amos": ["Am", "AMOS"],
+        "Obadiah": ["Ob", "OBAD"],
+        "Jonah": ["Jn", "JONAH"],
+        "Micah": ["Mc", "MICAH"],
+        "Nahum": ["Na", "NAHUM"],
+        "Habakkuk": ["Ha", "HAB"],
+        "Zephaniah": ["Zp", "ZEPH"],
+        "Haggai": ["Hg", "HAG"],
+        "Zechariah": ["Zc", "ZECH"],
+        "Malachi": ["Ml", "MAL"],
+        "Matthew": ["Mt", "MATT"],
+        "Mark": ["Mk", "MARK"],
+        "Luke": ["Lk", "LUKE"],
+        "John": ["Jh", "JOHN"],
+        "Acts": ["Ac", "ACTS"],
+        "Romans": ["Rm", "ROM"],
+        "1 Corinthians": ["1O", "1COR"],
+        "2 Corinthians": ["2O", "2COR"],
+        "Galatians": ["Ga", "GAL"],
+        "Ephesians": ["Ep", "EPH"],
+        "Philippians": ["Ph", "PHIL"],
+        "Colossians": ["Cl", "COL"],
+        "1 Thessalonians": ["1T", "1THES"],
+        "2 Thessalonians": ["2T", "2THES"],
+        "1 Timothy": ["1I", "1TIM"],
+        "2 Timothy": ["2I", "2TIM"],
+        "Titus": ["Ti", "TIT"],
+        "Philemon": ["Pm", "PHILE"],
+        "Hebrews": ["He", "HEB"],
+        "James": ["Jm", "JAS"],
+        "1 Peter": ["1P", "1PET"],
+        "2 Peter": ["2P", "2PET"],
+        "1 John": ["1J", "1JOHN"],
+        "2 John": ["2J", "2JOHN"],
+        "3 John": ["3J", "3JOHN"],
+        "Jude": ["Ju", "JUDE"],
+        "Revelation": ["Rv", "REV"]
+    };
+//    return JSON.stringify(bibleBooks.Ruth) + ${param};
+      
+      for (const [book, abbreviations] of Object.entries(bibleBooks)) {
+        if (book.toLowerCase() === lowerRef) {
+            return book; // Exact full name match
+        }
+        if (abbreviations.some(abbr => abbr.toLowerCase() === lowerRef)) {
+            return book; // Standard or alternative abbreviation match
+        }
+    }
+    return "No valid match found"; // No match case
+})(param);
+
+// html`<div>${viewof param}</div>`;
+html`<div>${check}</div>`;
+```

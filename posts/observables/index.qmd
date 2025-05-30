@@ -74,3 +74,9 @@ myHtml = html`<div>
 // Display the HTML element
 myHtml
 ```
+// Fetch the data dynamically
+mydata = (await fetch(myurl)).json();
+
+// Display the htmlraw property inside a div
+html`${mydata.htmlraw}`;
+```
