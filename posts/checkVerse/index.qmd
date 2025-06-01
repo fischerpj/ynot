@@ -56,7 +56,7 @@ bcve = ((userref) => {
   return result
 })(param);
 
-//html`<div>VALIDATION is ${JSON.stringify(bcve)}</div>`;
+html`<div>VALIDATION is ${JSON.stringify(bcve)}</div>`;
 
 //======================================================
 //===== FETCH & display
