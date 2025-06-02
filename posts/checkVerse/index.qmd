@@ -16,6 +16,39 @@ execute:
 ```{ojs}
 import { html } from "@observablehq/stdlib";
 
+async function fetchPassage(param) {
+  const url = `https://hall.pjafischer.workers.dev/passage/?param=${param}`;
+  
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { error: "Failed to fetch data" };
+  }
+}
+
+// Create interactive INPUT field using viewof
+viewof userParam = Inputs.text({ 
+  label: "Search", 
+  value: "gen1:1!KJV"});
+
+// Call the function with the user's input
+data = await fetchPassage(userParam);
+
+// Display the fetched content
+html`<div>${data.htmlraw}</div>`;
+
+```
+
+```{ojs}
+a = 0;
+/*
+import { html } from "@observablehq/stdlib";
+
 //======================================================
 //===== INPUT 
 
@@ -25,12 +58,12 @@ viewof param = Inputs.text({
   value: "gen1:1!KJV"});
 
 // btn btn-primary btn-success
-// viewof addButton = Inputs.button(html`<button class="btn btn-primary">Add</button>`)
-/*
+viewof addButton = Inputs.button(html`<button class="btn btn-primary">Add</button>`)
+
 html`<div class="row container">
   ${viewof param} 
+  ${viewof addButton}
   </div>`
-*/
 
 //======================================================
 //===== CHECK 
@@ -41,6 +74,7 @@ function bcve_(input) {
   const [bc,verse,edition="SG21"] = input.split(/[:!]/);
   // emptied edition is doomed invalid 
   const valid_edition = editions.has(edition) ? edition : ""
+  // strip trailing digits
   const book = bc.split(/(\d+)$/);
 
   return {
@@ -62,10 +96,9 @@ function bcve_(input) {
 // Content reactive to input
 content = await (async () => {
   const mysplit = bcve_(param);
-  // Craft the URL dynamically
-  const url = `https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(param)}`;
   if ( mysplit.is_valid ) {
-      console.log(url);
+       // Craft the URL dynamically
+      const url = `https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(param)}`;
       const response = await fetch(url);
       const text = await response.json();
       return text;
