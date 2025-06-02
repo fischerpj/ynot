@@ -25,24 +25,25 @@ viewof param = Inputs.text({
   value: "gen1:1!KJV"});
 
 // btn btn-primary btn-success
-viewof addButton = Inputs.button("Add");
-viewof resetButton = Inputs.button("Reset");
-
-html`<div class="row container">${viewof param} ${viewof addButton}  ${viewof resetButton}</div>`
+// viewof addButton = Inputs.button(html`<button class="btn btn-primary">Add</button>`)
+/*
+html`<div class="row container">
+  ${viewof param} 
+  </div>`
+*/
 
 //======================================================
 //===== CHECK 
-
-bcve = (() => {
+function bcve_(input) {
   const editions = new Set(['KJV','SG21',"NGU-DE"]);
   
   // Split by multiple separators: comma, semicolon, and pipe
-  const [bc,verse,edition="SG21"] = param.split(/[:!]/);
+  const [bc,verse,edition="SG21"] = input.split(/[:!]/);
   // emptied edition is doomed invalid 
   const valid_edition = editions.has(edition) ? edition : ""
   const book = bc.split(/(\d+)$/);
 
-  const result = {
+  return {
     "is_valid": ( 
         verse === "" || 
         valid_edition === ""
@@ -53,26 +54,26 @@ bcve = (() => {
     "book": book[0],
     "input": param
   }
-  
-  return result
-})();
+};
 
 //======================================================
 //===== FETCH & display
 
 // Content reactive to input
 content = await (async () => {
+  const mysplit = bcve_(param);
   // Craft the URL dynamically
   const url = `https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(param)}`;
-  if ( bcve.is_valid ) {
+  if ( mysplit.is_valid ) {
       console.log(url);
       const response = await fetch(url);
       const text = await response.json();
       return text;
   } else {
-    return bcve.is_valid
+    return mysplit.is_valid
   }
 })();
+
 
 // Update outputDiv dynamically inside mainAnchor
 //document.getElementById("outputDiv").innerHTML = content.htmlraw;
@@ -80,6 +81,10 @@ content = await (async () => {
 //document.getElementById("inputDiv").append(viewof param);
 // html`<div>${viewof param}</div>`;
 html`<div>${content.htmlraw}</div>`;
+
+html`<div class="row container">
+  ${JSON.stringify(bcve_(param))} 
+  </div>`
 
 /*
 check = ((userref) => {
@@ -168,6 +173,7 @@ check = ((userref) => {
 })(param);
 */
 
+/*
 html`<div>VALIDATION is ${JSON.stringify(bcve)}</div>`;
-
+*/
 ```
