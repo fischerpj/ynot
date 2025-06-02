@@ -19,28 +19,29 @@ import { html } from "@observablehq/stdlib";
 //======================================================
 //===== INPUT 
 
-// Create interactive input field using viewof
+// Create interactive INPUT field using viewof
 viewof param = Inputs.text({ 
   label: "Search", 
   value: "gen1:1!KJV"});
 
+// btn btn-primary btn-success
+viewof addButton = Inputs.button("Add");
+viewof resetButton = Inputs.button("Reset");
+
+html`<div class="row container">${viewof param} ${viewof addButton}  ${viewof resetButton}</div>`
+
 //======================================================
 //===== CHECK 
 
-bcve = ((userref) => {
+bcve = (() => {
   const editions = new Set(['KJV','SG21',"NGU-DE"]);
   
   // Split by multiple separators: comma, semicolon, and pipe
-  const [bc,verse,edition="SG21"] = userref.split(/[:!]/);
+  const [bc,verse,edition="SG21"] = param.split(/[:!]/);
   // emptied edition is doomed invalid 
   const valid_edition = editions.has(edition) ? edition : ""
   const book = bc.split(/(\d+)$/);
 
-  const regx = /^[^!]*/;
-  const regx1 = /^[^:]*/;
-  const no_edition = userref.match(regx).toString();
-  const no_verse = no_edition.match(regx1).toString();
-  
   const result = {
     "is_valid": ( 
         verse === "" || 
@@ -50,21 +51,19 @@ bcve = ((userref) => {
     "verse": verse,
     "bc": bc,
     "book": book[0],
-    "input": userref
+    "input": param
   }
   
   return result
-})(param);
-
-html`<div>VALIDATION is ${JSON.stringify(bcve)}</div>`;
+})();
 
 //======================================================
 //===== FETCH & display
 
 // Content reactive to input
-content = await (async (input) => {
+content = await (async () => {
   // Craft the URL dynamically
-  const url = `https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(input)}`;
+  const url = `https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(param)}`;
   if ( bcve.is_valid ) {
       console.log(url);
       const response = await fetch(url);
@@ -73,7 +72,7 @@ content = await (async (input) => {
   } else {
     return bcve.is_valid
   }
-})(param);
+})();
 
 // Update outputDiv dynamically inside mainAnchor
 //document.getElementById("outputDiv").innerHTML = content.htmlraw;
@@ -168,4 +167,7 @@ check = ((userref) => {
     return "No valid match found"; // No match case
 })(param);
 */
+
+html`<div>VALIDATION is ${JSON.stringify(bcve)}</div>`;
+
 ```
