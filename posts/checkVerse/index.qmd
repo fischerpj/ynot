@@ -31,17 +31,39 @@ async function fetchPassage(param) {
   }
 }
 
+// INPUT
+viewof userRef = html`
+  <input 
+    type="text" 
+    value= "gen1:1!KJV"
+    class="form-control" 
+    style="width: 150px;"
+    >`
+
+// TRIGGER    
+viewof appendButton = html`
+  <button class="btn btn-primary">Append</button>`
+
+// VIEWOF
+html`<div class="row container">
+  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef}
+  ${viewof appendButton}
+  </div>`
+
+/*
 // Create interactive INPUT field using viewof
 viewof userParam = Inputs.text({ 
   label: "Search", 
   value: "gen1:1!KJV"});
+*/
 
+// FETCH & DISPLAY
 // Call the function with the user's input
-data = await fetchPassage(userParam);
+data = await fetchPassage(userRef);
 
 // Display the fetched content
 html`<div>${data.htmlraw}</div>`;
-
 ```
 
 ```{ojs}
@@ -68,7 +90,7 @@ html`<div class="row container">
 //======================================================
 //===== CHECK 
 function bcve_(input) {
-  const editions = new Set(['KJV','SG21',"NGU-DE"]);
+  const editions = new Set(['KJV','SG21',"NGU"]);
   
   // Split by multiple separators: comma, semicolon, and pipe
   const [bc,verse,edition="SG21"] = input.split(/[:!]/);

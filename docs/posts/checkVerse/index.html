@@ -200,16 +200,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">// Create interactive INPUT field using viewof</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>viewof userParam <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({ </span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Search"</span><span class="op">,</span> </span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"gen1:1!KJV"</span>})<span class="op">;</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co">// Call the function with the user's input</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetchPassage</span>(userParam)<span class="op">;</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the fetched content</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div&gt;</span><span class="sc">${</span>data<span class="op">.</span><span class="at">htmlraw</span><span class="sc">}</span><span class="vs">&lt;/div&gt;`</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">// INPUT</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>viewof userRef <span class="op">=</span> <span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;input </span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="vs">    type="text" </span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="vs">    value= "gen1:1!KJV"</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="vs">    class="form-control" </span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="vs">    style="width: 150px;"</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="vs">    &gt;`</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co">// TRIGGER    </span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>viewof appendButton <span class="op">=</span> <span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;button class="btn btn-primary"&gt;Append&lt;/button&gt;`</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co">// VIEWOF</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="row container"&gt;</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="vs">  Search&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof userRef<span class="sc">}</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof appendButton<span class="sc">}</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -245,172 +254,190 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="63" data-source-offset="-1033"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 62;"><span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetchPassage</span>(userRef)<span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the fetched content</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div&gt;</span><span class="sc">${</span>data<span class="op">.</span><span class="at">htmlraw</span><span class="sc">}</span><span class="vs">&lt;/div&gt;`</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-7" data-nodetype="expression">
+
+</div>
+</div>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="47" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 46;"><span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co">import { html } from "@observablehq/stdlib";</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">//======================================================</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">//===== INPUT </span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="co">// Create interactive INPUT field using viewof</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co">viewof param = Inputs.text({ </span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">  label: "Search", </span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co">  value: "gen1:1!KJV"});</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">// btn btn-primary btn-success</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co">viewof addButton = Inputs.button(html`&lt;button class="btn btn-primary"&gt;Add&lt;/button&gt;`)</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;div class="row container"&gt;</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co">  ${viewof param} </span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="co">  ${viewof addButton}</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co">  &lt;/div&gt;`</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co">//======================================================</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="co">//===== CHECK </span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="co">function bcve_(input) {</span></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co">  const editions = new Set(['KJV','SG21',"NGU-DE"]);</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">  </span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">  // Split by multiple separators: comma, semicolon, and pipe</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">  const [bc,verse,edition="SG21"] = input.split(/[:!]/);</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">  // emptied edition is doomed invalid </span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">  const valid_edition = editions.has(edition) ? edition : ""</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="co">  // strip trailing digits</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="co">  const book = bc.split(/(\d+)$/);</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="co">  return {</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="co">    "is_valid": ( </span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">        verse === "" || </span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="co">        valid_edition === ""</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="co">        ) ? false : true,</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="co">    "edition": valid_edition,</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="co">    "verse": verse,</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="co">    "bc": bc,</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="co">    "book": book[0],</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="co">    "input": param</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="co">  }</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="co">};</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="co">//======================================================</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="co">//===== FETCH &amp; display</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="co">// Content reactive to input</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="co">content = await (async () =&gt; {</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="co">  const mysplit = bcve_(param);</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="co">  if ( mysplit.is_valid ) {</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="co">       // Craft the URL dynamically</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="co">      const url = `https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(param)}`;</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="co">      const response = await fetch(url);</span></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="co">      const text = await response.json();</span></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="co">      return text;</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="co">  } else {</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="co">    return mysplit.is_valid</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="co">  }</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="co">})();</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="co">// Update outputDiv dynamically inside mainAnchor</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="co">//document.getElementById("outputDiv").innerHTML = content.htmlraw;</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="co">// Update inputDiv dynamically inside mainAnchor</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="co">//document.getElementById("inputDiv").append(viewof param);</span></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="co">// html`&lt;div&gt;${viewof param}&lt;/div&gt;`;</span></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;div&gt;${content.htmlraw}&lt;/div&gt;`;</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;div class="row container"&gt;</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="co">  ${JSON.stringify(bcve_(param))} </span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="co">  &lt;/div&gt;`</span></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="co">check = ((userref) =&gt; {</span></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="co">    const lowerRef = userref.toLowerCase();</span></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="co">    const bibleBooks = {</span></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="co">        "Genesis": ["Ge", "GEN"],</span></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="co">        "Exodus": ["Ex", "EXOD"],</span></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="co">        "Leviticus": ["Lv", "LEV"],</span></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="co">        "Numbers": ["Nu", "NUM"],</span></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="co">        "Deuteronomy": ["Dt", "DEUT"],</span></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="co">        "Joshua": ["Jo", "JOSH","Jos"],</span></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="co">        "Judges": ["Jg", "JUDG",'Jug'],</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ruth": ["Ru", "RUTH","Rut"],</span></span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Samuel": ["1S", "1SAM"],</span></span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Samuel": ["2M", "2SAM"],</span></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Kings": ["1K", "1KGS"],</span></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Kings": ["2K", "2KGS"],</span></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Chronicles": ["1C", "1CHRO","1Chr"],</span></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Chronicles": ["2C", "2CHRO","2Chr"],</span></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ezra": ["Ez", "EZRA","Esd"],</span></span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="co">        "Nehemiah": ["Nh", "NEH"],</span></span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="co">        "Esther": ["Es", "ESTH"],</span></span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="co">        "Job": ["Jb", "JOB"],</span></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="co">        "Psalms": ["Ps", "PSA"],</span></span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="co">        "Proverbs": ["Pv", "PROV"],</span></span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ecclesiastes": ["Ec", "ECC"],</span></span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="co">        "Song of Solomon": ["So", "SONG","Cc"],</span></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="co">        "Isaiah": ["Is", "ISA"],</span></span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="co">        "Jeremiah": ["Jr", "JER"],</span></span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a><span class="co">        "Lamentations": ["Lm", "LAM"],</span></span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ezekiel": ["Ek", "EZEK"],</span></span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="co">        "Daniel": ["Dn", "DAN"],</span></span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="co">        "Hosea": ["Ho", "HOSEA"],</span></span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a><span class="co">        "Joel": ["Jl", "JOEL"],</span></span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a><span class="co">        "Amos": ["Am", "AMOS"],</span></span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="co">        "Obadiah": ["Ob", "OBAD"],</span></span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a><span class="co">        "Jonah": ["Jn", "JONAH"],</span></span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="co">        "Micah": ["Mc", "MICAH"],</span></span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="co">        "Nahum": ["Na", "NAHUM"],</span></span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="co">        "Habakkuk": ["Ha", "HAB"],</span></span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="co">        "Zephaniah": ["Zp", "ZEPH"],</span></span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a><span class="co">        "Haggai": ["Hg", "HAG"],</span></span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="co">        "Zechariah": ["Zc", "ZECH"],</span></span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="co">        "Malachi": ["Ml", "MAL"],</span></span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="co">        "Matthew": ["Mt", "MATT"],</span></span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="co">        "Mark": ["Mk", "MARK"],</span></span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a><span class="co">        "Luke": ["Lk", "LUKE"],</span></span>
-<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a><span class="co">        "John": ["Jh", "JOHN"],</span></span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a><span class="co">        "Acts": ["Ac", "ACTS"],</span></span>
-<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a><span class="co">        "Romans": ["Rm", "ROM"],</span></span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Corinthians": ["1O", "1COR"],</span></span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Corinthians": ["2O", "2COR"],</span></span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a><span class="co">        "Galatians": ["Ga", "GAL"],</span></span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ephesians": ["Ep", "EPH"],</span></span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a><span class="co">        "Philippians": ["Ph", "PHIL"],</span></span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a><span class="co">        "Colossians": ["Cl", "COL"],</span></span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Thessalonians": ["1T", "1THES"],</span></span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Thessalonians": ["2T", "2THES"],</span></span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Timothy": ["1I", "1TIM"],</span></span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Timothy": ["2I", "2TIM"],</span></span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a><span class="co">        "Titus": ["Ti", "TIT"],</span></span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a><span class="co">        "Philemon": ["Pm", "PHILE"],</span></span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a><span class="co">        "Hebrews": ["He", "HEB"],</span></span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a><span class="co">        "James": ["Jm", "JAS"],</span></span>
-<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Peter": ["1P", "1PET"],</span></span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Peter": ["2P", "2PET"],</span></span>
-<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 John": ["1J", "1JOHN"],</span></span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 John": ["2J", "2JOHN"],</span></span>
-<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a><span class="co">        "3 John": ["3J", "3JOHN"],</span></span>
-<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a><span class="co">        "Jude": ["Ju", "JUDE"],</span></span>
-<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a><span class="co">        "Revelation": ["Rv", "REV"]</span></span>
-<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a><span class="co">    };</span></span>
-<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="co">//    return JSON.stringify(bibleBooks.Ruth) + ${param};</span></span>
-<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a><span class="co">      for (const [book, abbreviations] of Object.entries(bibleBooks)) {</span></span>
-<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a><span class="co">        if (book.toLowerCase() === lowerRef) {</span></span>
-<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a><span class="co">            return book; // Exact full name match</span></span>
-<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a><span class="co">        }</span></span>
-<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="co">        if (abbreviations.some(abbr =&gt; abbr.toLowerCase() === lowerRef)) {</span></span>
-<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="co">            return book; // Standard or alternative abbreviation match</span></span>
-<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="co">        }</span></span>
-<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="co">    }</span></span>
-<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="co">    return "No valid match found"; // No match case</span></span>
-<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a><span class="co">})(param);</span></span>
-<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;div&gt;VALIDATION is ${JSON.stringify(bcve)}&lt;/div&gt;`;</span></span>
-<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="69" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 68;"><span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="co">import { html } from "@observablehq/stdlib";</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="co">//======================================================</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a><span class="co">//===== INPUT </span></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="co">// Create interactive INPUT field using viewof</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="co">viewof param = Inputs.text({ </span></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="co">  label: "Search", </span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="co">  value: "gen1:1!KJV"});</span></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="co">// btn btn-primary btn-success</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="co">viewof addButton = Inputs.button(html`&lt;button class="btn btn-primary"&gt;Add&lt;/button&gt;`)</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;div class="row container"&gt;</span></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="co">  ${viewof param} </span></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="co">  ${viewof addButton}</span></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="co">  &lt;/div&gt;`</span></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="co">//======================================================</span></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="co">//===== CHECK </span></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="co">function bcve_(input) {</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="co">  const editions = new Set(['KJV','SG21',"NGU"]);</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="co">  </span></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="co">  // Split by multiple separators: comma, semicolon, and pipe</span></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="co">  const [bc,verse,edition="SG21"] = input.split(/[:!]/);</span></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="co">  // emptied edition is doomed invalid </span></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="co">  const valid_edition = editions.has(edition) ? edition : ""</span></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="co">  // strip trailing digits</span></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="co">  const book = bc.split(/(\d+)$/);</span></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="co">  return {</span></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="co">    "is_valid": ( </span></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="co">        verse === "" || </span></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="co">        valid_edition === ""</span></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a><span class="co">        ) ? false : true,</span></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="co">    "edition": valid_edition,</span></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="co">    "verse": verse,</span></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="co">    "bc": bc,</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="co">    "book": book[0],</span></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="co">    "input": param</span></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a><span class="co">  }</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="co">};</span></span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="co">//======================================================</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a><span class="co">//===== FETCH &amp; display</span></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="co">// Content reactive to input</span></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="co">content = await (async () =&gt; {</span></span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="co">  const mysplit = bcve_(param);</span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="co">  if ( mysplit.is_valid ) {</span></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="co">       // Craft the URL dynamically</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="co">      const url = `https://hall.pjafischer.workers.dev/passage/?param=${encodeURIComponent(param)}`;</span></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="co">      const response = await fetch(url);</span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="co">      const text = await response.json();</span></span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a><span class="co">      return text;</span></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a><span class="co">  } else {</span></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a><span class="co">    return mysplit.is_valid</span></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="co">  }</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a><span class="co">})();</span></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a><span class="co">// Update outputDiv dynamically inside mainAnchor</span></span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a><span class="co">//document.getElementById("outputDiv").innerHTML = content.htmlraw;</span></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="co">// Update inputDiv dynamically inside mainAnchor</span></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a><span class="co">//document.getElementById("inputDiv").append(viewof param);</span></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="co">// html`&lt;div&gt;${viewof param}&lt;/div&gt;`;</span></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;div&gt;${content.htmlraw}&lt;/div&gt;`;</span></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;div class="row container"&gt;</span></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="co">  ${JSON.stringify(bcve_(param))} </span></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="co">  &lt;/div&gt;`</span></span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="co">check = ((userref) =&gt; {</span></span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a><span class="co">    const lowerRef = userref.toLowerCase();</span></span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="co">    const bibleBooks = {</span></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="co">        "Genesis": ["Ge", "GEN"],</span></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="co">        "Exodus": ["Ex", "EXOD"],</span></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a><span class="co">        "Leviticus": ["Lv", "LEV"],</span></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a><span class="co">        "Numbers": ["Nu", "NUM"],</span></span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="co">        "Deuteronomy": ["Dt", "DEUT"],</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a><span class="co">        "Joshua": ["Jo", "JOSH","Jos"],</span></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a><span class="co">        "Judges": ["Jg", "JUDG",'Jug'],</span></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ruth": ["Ru", "RUTH","Rut"],</span></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Samuel": ["1S", "1SAM"],</span></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Samuel": ["2M", "2SAM"],</span></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Kings": ["1K", "1KGS"],</span></span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Kings": ["2K", "2KGS"],</span></span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Chronicles": ["1C", "1CHRO","1Chr"],</span></span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Chronicles": ["2C", "2CHRO","2Chr"],</span></span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ezra": ["Ez", "EZRA","Esd"],</span></span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a><span class="co">        "Nehemiah": ["Nh", "NEH"],</span></span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a><span class="co">        "Esther": ["Es", "ESTH"],</span></span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a><span class="co">        "Job": ["Jb", "JOB"],</span></span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a><span class="co">        "Psalms": ["Ps", "PSA"],</span></span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a><span class="co">        "Proverbs": ["Pv", "PROV"],</span></span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ecclesiastes": ["Ec", "ECC"],</span></span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a><span class="co">        "Song of Solomon": ["So", "SONG","Cc"],</span></span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a><span class="co">        "Isaiah": ["Is", "ISA"],</span></span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a><span class="co">        "Jeremiah": ["Jr", "JER"],</span></span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a><span class="co">        "Lamentations": ["Lm", "LAM"],</span></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ezekiel": ["Ek", "EZEK"],</span></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a><span class="co">        "Daniel": ["Dn", "DAN"],</span></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="co">        "Hosea": ["Ho", "HOSEA"],</span></span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a><span class="co">        "Joel": ["Jl", "JOEL"],</span></span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a><span class="co">        "Amos": ["Am", "AMOS"],</span></span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a><span class="co">        "Obadiah": ["Ob", "OBAD"],</span></span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a><span class="co">        "Jonah": ["Jn", "JONAH"],</span></span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a><span class="co">        "Micah": ["Mc", "MICAH"],</span></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a><span class="co">        "Nahum": ["Na", "NAHUM"],</span></span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a><span class="co">        "Habakkuk": ["Ha", "HAB"],</span></span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a><span class="co">        "Zephaniah": ["Zp", "ZEPH"],</span></span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a><span class="co">        "Haggai": ["Hg", "HAG"],</span></span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a><span class="co">        "Zechariah": ["Zc", "ZECH"],</span></span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a><span class="co">        "Malachi": ["Ml", "MAL"],</span></span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a><span class="co">        "Matthew": ["Mt", "MATT"],</span></span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a><span class="co">        "Mark": ["Mk", "MARK"],</span></span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="co">        "Luke": ["Lk", "LUKE"],</span></span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a><span class="co">        "John": ["Jh", "JOHN"],</span></span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a><span class="co">        "Acts": ["Ac", "ACTS"],</span></span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a><span class="co">        "Romans": ["Rm", "ROM"],</span></span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Corinthians": ["1O", "1COR"],</span></span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Corinthians": ["2O", "2COR"],</span></span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a><span class="co">        "Galatians": ["Ga", "GAL"],</span></span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a><span class="co">        "Ephesians": ["Ep", "EPH"],</span></span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a><span class="co">        "Philippians": ["Ph", "PHIL"],</span></span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a><span class="co">        "Colossians": ["Cl", "COL"],</span></span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Thessalonians": ["1T", "1THES"],</span></span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Thessalonians": ["2T", "2THES"],</span></span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Timothy": ["1I", "1TIM"],</span></span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Timothy": ["2I", "2TIM"],</span></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a><span class="co">        "Titus": ["Ti", "TIT"],</span></span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a><span class="co">        "Philemon": ["Pm", "PHILE"],</span></span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a><span class="co">        "Hebrews": ["He", "HEB"],</span></span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a><span class="co">        "James": ["Jm", "JAS"],</span></span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 Peter": ["1P", "1PET"],</span></span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 Peter": ["2P", "2PET"],</span></span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a><span class="co">        "1 John": ["1J", "1JOHN"],</span></span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a><span class="co">        "2 John": ["2J", "2JOHN"],</span></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="co">        "3 John": ["3J", "3JOHN"],</span></span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a><span class="co">        "Jude": ["Ju", "JUDE"],</span></span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a><span class="co">        "Revelation": ["Rv", "REV"]</span></span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a><span class="co">    };</span></span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a><span class="co">//    return JSON.stringify(bibleBooks.Ruth) + ${param};</span></span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a><span class="co">      for (const [book, abbreviations] of Object.entries(bibleBooks)) {</span></span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a><span class="co">        if (book.toLowerCase() === lowerRef) {</span></span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="co">            return book; // Exact full name match</span></span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a><span class="co">        }</span></span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a><span class="co">        if (abbreviations.some(abbr =&gt; abbr.toLowerCase() === lowerRef)) {</span></span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a><span class="co">            return book; // Standard or alternative abbreviation match</span></span>
+<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a><span class="co">        }</span></span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a><span class="co">    }</span></span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a><span class="co">    return "No valid match found"; // No match case</span></span>
+<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a><span class="co">})(param);</span></span>
+<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a><span class="co">html`&lt;div&gt;VALIDATION is ${JSON.stringify(bcve)}&lt;/div&gt;`;</span></span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="declaration">
 
@@ -422,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IGh0bWwgfSBmcm9tIFwiQG9ic2VydmFibGVocS9zdGRsaWJcIjtcblxuYXN5bmMgZnVuY3Rpb24gZmV0Y2hQYXNzYWdlKHBhcmFtKSB7XG4gIGNvbnN0IHVybCA9IGBodHRwczovL2hhbGwucGphZmlzY2hlci53b3JrZXJzLmRldi9wYXNzYWdlLz9wYXJhbT0ke3BhcmFtfWA7XG4gIFxuICB0cnkge1xuICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2godXJsKTtcbiAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICB0aHJvdyBuZXcgRXJyb3IoYEhUVFAgZXJyb3IhIFN0YXR1czogJHtyZXNwb25zZS5zdGF0dXN9YCk7XG4gICAgfVxuICAgIHJldHVybiBhd2FpdCByZXNwb25zZS5qc29uKCk7XG4gIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgY29uc29sZS5lcnJvcihcIkVycm9yIGZldGNoaW5nIGRhdGE6XCIsIGVycm9yKTtcbiAgICByZXR1cm4geyBlcnJvcjogXCJGYWlsZWQgdG8gZmV0Y2ggZGF0YVwiIH07XG4gIH1cbn1cblxuLy8gQ3JlYXRlIGludGVyYWN0aXZlIElOUFVUIGZpZWxkIHVzaW5nIHZpZXdvZlxudmlld29mIHVzZXJQYXJhbSA9IElucHV0cy50ZXh0KHsgXG4gIGxhYmVsOiBcIlNlYXJjaFwiLCBcbiAgdmFsdWU6IFwiZ2VuMToxIUtKVlwifSk7XG5cbi8vIENhbGwgdGhlIGZ1bmN0aW9uIHdpdGggdGhlIHVzZXIncyBpbnB1dFxuZGF0YSA9IGF3YWl0IGZldGNoUGFzc2FnZSh1c2VyUGFyYW0pO1xuXG4vLyBEaXNwbGF5IHRoZSBmZXRjaGVkIGNvbnRlbnRcbmh0bWxgPGRpdj4ke2RhdGEuaHRtbHJhd308L2Rpdj5gO1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJhID0gMDtcbi8qXG5pbXBvcnQgeyBodG1sIH0gZnJvbSBcIkBvYnNlcnZhYmxlaHEvc3RkbGliXCI7XG5cbi8vPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG4vLz09PT09IElOUFVUIFxuXG4vLyBDcmVhdGUgaW50ZXJhY3RpdmUgSU5QVVQgZmllbGQgdXNpbmcgdmlld29mXG52aWV3b2YgcGFyYW0gPSBJbnB1dHMudGV4dCh7IFxuICBsYWJlbDogXCJTZWFyY2hcIiwgXG4gIHZhbHVlOiBcImdlbjE6MSFLSlZcIn0pO1xuXG4vLyBidG4gYnRuLXByaW1hcnkgYnRuLXN1Y2Nlc3NcbnZpZXdvZiBhZGRCdXR0b24gPSBJbnB1dHMuYnV0dG9uKGh0bWxgPGJ1dHRvbiBjbGFzcz1cImJ0biBidG4tcHJpbWFyeVwiPkFkZDwvYnV0dG9uPmApXG5cbmh0bWxgPGRpdiBjbGFzcz1cInJvdyBjb250YWluZXJcIj5cbiAgJHt2aWV3b2YgcGFyYW19IFxuICAke3ZpZXdvZiBhZGRCdXR0b259XG4gIDwvZGl2PmBcblxuLy89PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbi8vPT09PT0gQ0hFQ0sgXG5mdW5jdGlvbiBiY3ZlXyhpbnB1dCkge1xuICBjb25zdCBlZGl0aW9ucyA9IG5ldyBTZXQoWydLSlYnLCdTRzIxJyxcIk5HVS1ERVwiXSk7XG4gIFxuICAvLyBTcGxpdCBieSBtdWx0aXBsZSBzZXBhcmF0b3JzOiBjb21tYSwgc2VtaWNvbG9uLCBhbmQgcGlwZVxuICBjb25zdCBbYmMsdmVyc2UsZWRpdGlvbj1cIlNHMjFcIl0gPSBpbnB1dC5zcGxpdCgvWzohXS8pO1xuICAvLyBlbXB0aWVkIGVkaXRpb24gaXMgZG9vbWVkIGludmFsaWQgXG4gIGNvbnN0IHZhbGlkX2VkaXRpb24gPSBlZGl0aW9ucy5oYXMoZWRpdGlvbikgPyBlZGl0aW9uIDogXCJcIlxuICAvLyBzdHJpcCB0cmFpbGluZyBkaWdpdHNcbiAgY29uc3QgYm9vayA9IGJjLnNwbGl0KC8oXFxkKykkLyk7XG5cbiAgcmV0dXJuIHtcbiAgICBcImlzX3ZhbGlkXCI6ICggXG4gICAgICAgIHZlcnNlID09PSBcIlwiIHx8IFxuICAgICAgICB2YWxpZF9lZGl0aW9uID09PSBcIlwiXG4gICAgICAgICkgPyBmYWxzZSA6IHRydWUsXG4gICAgXCJlZGl0aW9uXCI6IHZhbGlkX2VkaXRpb24sXG4gICAgXCJ2ZXJzZVwiOiB2ZXJzZSxcbiAgICBcImJjXCI6IGJjLFxuICAgIFwiYm9va1wiOiBib29rWzBdLFxuICAgIFwiaW5wdXRcIjogcGFyYW1cbiAgfVxufTtcblxuLy89PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbi8vPT09PT0gRkVUQ0ggJiBkaXNwbGF5XG5cbi8vIENvbnRlbnQgcmVhY3RpdmUgdG8gaW5wdXRcbmNvbnRlbnQgPSBhd2FpdCAoYXN5bmMgKCkgPT4ge1xuICBjb25zdCBteXNwbGl0ID0gYmN2ZV8ocGFyYW0pO1xuICBpZiAoIG15c3BsaXQuaXNfdmFsaWQgKSB7XG4gICAgICAgLy8gQ3JhZnQgdGhlIFVSTCBkeW5hbWljYWxseVxuICAgICAgY29uc3QgdXJsID0gYGh0dHBzOi8vaGFsbC5wamFmaXNjaGVyLndvcmtlcnMuZGV2L3Bhc3NhZ2UvP3BhcmFtPSR7ZW5jb2RlVVJJQ29tcG9uZW50KHBhcmFtKX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaCh1cmwpO1xuICAgICAgY29uc3QgdGV4dCA9IGF3YWl0IHJlc3BvbnNlLmpzb24oKTtcbiAgICAgIHJldHVybiB0ZXh0O1xuICB9IGVsc2Uge1xuICAgIHJldHVybiBteXNwbGl0LmlzX3ZhbGlkXG4gIH1cbn0pKCk7XG5cblxuLy8gVXBkYXRlIG91dHB1dERpdiBkeW5hbWljYWxseSBpbnNpZGUgbWFpbkFuY2hvclxuLy9kb2N1bWVudC5nZXRFbGVtZW50QnlJZChcIm91dHB1dERpdlwiKS5pbm5lckhUTUwgPSBjb250ZW50Lmh0bWxyYXc7XG4vLyBVcGRhdGUgaW5wdXREaXYgZHluYW1pY2FsbHkgaW5zaWRlIG1haW5BbmNob3Jcbi8vZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJpbnB1dERpdlwiKS5hcHBlbmQodmlld29mIHBhcmFtKTtcbi8vIGh0bWxgPGRpdj4ke3ZpZXdvZiBwYXJhbX08L2Rpdj5gO1xuaHRtbGA8ZGl2PiR7Y29udGVudC5odG1scmF3fTwvZGl2PmA7XG5cbmh0bWxgPGRpdiBjbGFzcz1cInJvdyBjb250YWluZXJcIj5cbiAgJHtKU09OLnN0cmluZ2lmeShiY3ZlXyhwYXJhbSkpfSBcbiAgPC9kaXY+YFxuXG4vKlxuY2hlY2sgPSAoKHVzZXJyZWYpID0+IHtcbiAgICBjb25zdCBsb3dlclJlZiA9IHVzZXJyZWYudG9Mb3dlckNhc2UoKTtcblxuICAgIGNvbnN0IGJpYmxlQm9va3MgPSB7XG4gICAgICAgIFwiR2VuZXNpc1wiOiBbXCJHZVwiLCBcIkdFTlwiXSxcbiAgICAgICAgXCJFeG9kdXNcIjogW1wiRXhcIiwgXCJFWE9EXCJdLFxuICAgICAgICBcIkxldml0aWN1c1wiOiBbXCJMdlwiLCBcIkxFVlwiXSxcbiAgICAgICAgXCJOdW1iZXJzXCI6IFtcIk51XCIsIFwiTlVNXCJdLFxuICAgICAgICBcIkRldXRlcm9ub215XCI6IFtcIkR0XCIsIFwiREVVVFwiXSxcbiAgICAgICAgXCJKb3NodWFcIjogW1wiSm9cIiwgXCJKT1NIXCIsXCJKb3NcIl0sXG4gICAgICAgIFwiSnVkZ2VzXCI6IFtcIkpnXCIsIFwiSlVER1wiLCdKdWcnXSxcbiAgICAgICAgXCJSdXRoXCI6IFtcIlJ1XCIsIFwiUlVUSFwiLFwiUnV0XCJdLFxuICAgICAgICBcIjEgU2FtdWVsXCI6IFtcIjFTXCIsIFwiMVNBTVwiXSxcbiAgICAgICAgXCIyIFNhbXVlbFwiOiBbXCIyTVwiLCBcIjJTQU1cIl0sXG4gICAgICAgIFwiMSBLaW5nc1wiOiBbXCIxS1wiLCBcIjFLR1NcIl0sXG4gICAgICAgIFwiMiBLaW5nc1wiOiBbXCIyS1wiLCBcIjJLR1NcIl0sXG4gICAgICAgIFwiMSBDaHJvbmljbGVzXCI6IFtcIjFDXCIsIFwiMUNIUk9cIixcIjFDaHJcIl0sXG4gICAgICAgIFwiMiBDaHJvbmljbGVzXCI6IFtcIjJDXCIsIFwiMkNIUk9cIixcIjJDaHJcIl0sXG4gICAgICAgIFwiRXpyYVwiOiBbXCJFelwiLCBcIkVaUkFcIixcIkVzZFwiXSxcbiAgICAgICAgXCJOZWhlbWlhaFwiOiBbXCJOaFwiLCBcIk5FSFwiXSxcbiAgICAgICAgXCJFc3RoZXJcIjogW1wiRXNcIiwgXCJFU1RIXCJdLFxuICAgICAgICBcIkpvYlwiOiBbXCJKYlwiLCBcIkpPQlwiXSxcbiAgICAgICAgXCJQc2FsbXNcIjogW1wiUHNcIiwgXCJQU0FcIl0sXG4gICAgICAgIFwiUHJvdmVyYnNcIjogW1wiUHZcIiwgXCJQUk9WXCJdLFxuICAgICAgICBcIkVjY2xlc2lhc3Rlc1wiOiBbXCJFY1wiLCBcIkVDQ1wiXSxcbiAgICAgICAgXCJTb25nIG9mIFNvbG9tb25cIjogW1wiU29cIiwgXCJTT05HXCIsXCJDY1wiXSxcbiAgICAgICAgXCJJc2FpYWhcIjogW1wiSXNcIiwgXCJJU0FcIl0sXG4gICAgICAgIFwiSmVyZW1pYWhcIjogW1wiSnJcIiwgXCJKRVJcIl0sXG4gICAgICAgIFwiTGFtZW50YXRpb25zXCI6IFtcIkxtXCIsIFwiTEFNXCJdLFxuICAgICAgICBcIkV6ZWtpZWxcIjogW1wiRWtcIiwgXCJFWkVLXCJdLFxuICAgICAgICBcIkRhbmllbFwiOiBbXCJEblwiLCBcIkRBTlwiXSxcbiAgICAgICAgXCJIb3NlYVwiOiBbXCJIb1wiLCBcIkhPU0VBXCJdLFxuICAgICAgICBcIkpvZWxcIjogW1wiSmxcIiwgXCJKT0VMXCJdLFxuICAgICAgICBcIkFtb3NcIjogW1wiQW1cIiwgXCJBTU9TXCJdLFxuICAgICAgICBcIk9iYWRpYWhcIjogW1wiT2JcIiwgXCJPQkFEXCJdLFxuICAgICAgICBcIkpvbmFoXCI6IFtcIkpuXCIsIFwiSk9OQUhcIl0sXG4gICAgICAgIFwiTWljYWhcIjogW1wiTWNcIiwgXCJNSUNBSFwiXSxcbiAgICAgICAgXCJOYWh1bVwiOiBbXCJOYVwiLCBcIk5BSFVNXCJdLFxuICAgICAgICBcIkhhYmFra3VrXCI6IFtcIkhhXCIsIFwiSEFCXCJdLFxuICAgICAgICBcIlplcGhhbmlhaFwiOiBbXCJacFwiLCBcIlpFUEhcIl0sXG4gICAgICAgIFwiSGFnZ2FpXCI6IFtcIkhnXCIsIFwiSEFHXCJdLFxuICAgICAgICBcIlplY2hhcmlhaFwiOiBbXCJaY1wiLCBcIlpFQ0hcIl0sXG4gICAgICAgIFwiTWFsYWNoaVwiOiBbXCJNbFwiLCBcIk1BTFwiXSxcbiAgICAgICAgXCJNYXR0aGV3XCI6IFtcIk10XCIsIFwiTUFUVFwiXSxcbiAgICAgICAgXCJNYXJrXCI6IFtcIk1rXCIsIFwiTUFSS1wiXSxcbiAgICAgICAgXCJMdWtlXCI6IFtcIkxrXCIsIFwiTFVLRVwiXSxcbiAgICAgICAgXCJKb2huXCI6IFtcIkpoXCIsIFwiSk9ITlwiXSxcbiAgICAgICAgXCJBY3RzXCI6IFtcIkFjXCIsIFwiQUNUU1wiXSxcbiAgICAgICAgXCJSb21hbnNcIjogW1wiUm1cIiwgXCJST01cIl0sXG4gICAgICAgIFwiMSBDb3JpbnRoaWFuc1wiOiBbXCIxT1wiLCBcIjFDT1JcIl0sXG4gICAgICAgIFwiMiBDb3JpbnRoaWFuc1wiOiBbXCIyT1wiLCBcIjJDT1JcIl0sXG4gICAgICAgIFwiR2FsYXRpYW5zXCI6IFtcIkdhXCIsIFwiR0FMXCJdLFxuICAgICAgICBcIkVwaGVzaWFuc1wiOiBbXCJFcFwiLCBcIkVQSFwiXSxcbiAgICAgICAgXCJQaGlsaXBwaWFuc1wiOiBbXCJQaFwiLCBcIlBISUxcIl0sXG4gICAgICAgIFwiQ29sb3NzaWFuc1wiOiBbXCJDbFwiLCBcIkNPTFwiXSxcbiAgICAgICAgXCIxIFRoZXNzYWxvbmlhbnNcIjogW1wiMVRcIiwgXCIxVEhFU1wiXSxcbiAgICAgICAgXCIyIFRoZXNzYWxvbmlhbnNcIjogW1wiMlRcIiwgXCIyVEhFU1wiXSxcbiAgICAgICAgXCIxIFRpbW90aHlcIjogW1wiMUlcIiwgXCIxVElNXCJdLFxuICAgICAgICBcIjIgVGltb3RoeVwiOiBbXCIySVwiLCBcIjJUSU1cIl0sXG4gICAgICAgIFwiVGl0dXNcIjogW1wiVGlcIiwgXCJUSVRcIl0sXG4gICAgICAgIFwiUGhpbGVtb25cIjogW1wiUG1cIiwgXCJQSElMRVwiXSxcbiAgICAgICAgXCJIZWJyZXdzXCI6IFtcIkhlXCIsIFwiSEVCXCJdLFxuICAgICAgICBcIkphbWVzXCI6IFtcIkptXCIsIFwiSkFTXCJdLFxuICAgICAgICBcIjEgUGV0ZXJcIjogW1wiMVBcIiwgXCIxUEVUXCJdLFxuICAgICAgICBcIjIgUGV0ZXJcIjogW1wiMlBcIiwgXCIyUEVUXCJdLFxuICAgICAgICBcIjEgSm9oblwiOiBbXCIxSlwiLCBcIjFKT0hOXCJdLFxuICAgICAgICBcIjIgSm9oblwiOiBbXCIySlwiLCBcIjJKT0hOXCJdLFxuICAgICAgICBcIjMgSm9oblwiOiBbXCIzSlwiLCBcIjNKT0hOXCJdLFxuICAgICAgICBcIkp1ZGVcIjogW1wiSnVcIiwgXCJKVURFXCJdLFxuICAgICAgICBcIlJldmVsYXRpb25cIjogW1wiUnZcIiwgXCJSRVZcIl1cbiAgICB9O1xuLy8gICAgcmV0dXJuIEpTT04uc3RyaW5naWZ5KGJpYmxlQm9va3MuUnV0aCkgKyAke3BhcmFtfTtcbiAgICBcbiAgICAgIGZvciAoY29uc3QgW2Jvb2ssIGFiYnJldmlhdGlvbnNdIG9mIE9iamVjdC5lbnRyaWVzKGJpYmxlQm9va3MpKSB7XG4gICAgICAgIGlmIChib29rLnRvTG93ZXJDYXNlKCkgPT09IGxvd2VyUmVmKSB7XG4gICAgICAgICAgICByZXR1cm4gYm9vazsgLy8gRXhhY3QgZnVsbCBuYW1lIG1hdGNoXG4gICAgICAgIH1cbiAgICAgICAgaWYgKGFiYnJldmlhdGlvbnMuc29tZShhYmJyID0+IGFiYnIudG9Mb3dlckNhc2UoKSA9PT0gbG93ZXJSZWYpKSB7XG4gICAgICAgICAgICByZXR1cm4gYm9vazsgLy8gU3RhbmRhcmQgb3IgYWx0ZXJuYXRpdmUgYWJicmV2aWF0aW9uIG1hdGNoXG4gICAgICAgIH1cbiAgICB9XG4gICAgXG4gICAgcmV0dXJuIFwiTm8gdmFsaWQgbWF0Y2ggZm91bmRcIjsgLy8gTm8gbWF0Y2ggY2FzZVxufSkocGFyYW0pO1xuKi9cblxuLypcbmh0bWxgPGRpdj5WQUxJREFUSU9OIGlzICR7SlNPTi5zdHJpbmdpZnkoYmN2ZSl9PC9kaXY+YDtcbiovXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3VzZXJQYXJhbScpIn1dfQ==
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IGh0bWwgfSBmcm9tIFwiQG9ic2VydmFibGVocS9zdGRsaWJcIjtcblxuYXN5bmMgZnVuY3Rpb24gZmV0Y2hQYXNzYWdlKHBhcmFtKSB7XG4gIGNvbnN0IHVybCA9IGBodHRwczovL2hhbGwucGphZmlzY2hlci53b3JrZXJzLmRldi9wYXNzYWdlLz9wYXJhbT0ke3BhcmFtfWA7XG4gIFxuICB0cnkge1xuICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2godXJsKTtcbiAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICB0aHJvdyBuZXcgRXJyb3IoYEhUVFAgZXJyb3IhIFN0YXR1czogJHtyZXNwb25zZS5zdGF0dXN9YCk7XG4gICAgfVxuICAgIHJldHVybiBhd2FpdCByZXNwb25zZS5qc29uKCk7XG4gIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgY29uc29sZS5lcnJvcihcIkVycm9yIGZldGNoaW5nIGRhdGE6XCIsIGVycm9yKTtcbiAgICByZXR1cm4geyBlcnJvcjogXCJGYWlsZWQgdG8gZmV0Y2ggZGF0YVwiIH07XG4gIH1cbn1cblxuLy8gSU5QVVRcbnZpZXdvZiB1c2VyUmVmID0gaHRtbGBcbiAgPGlucHV0IFxuICAgIHR5cGU9XCJ0ZXh0XCIgXG4gICAgdmFsdWU9IFwiZ2VuMToxIUtKVlwiXG4gICAgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiBcbiAgICBzdHlsZT1cIndpZHRoOiAxNTBweDtcIlxuICAgID5gXG5cbi8vIFRSSUdHRVIgICAgXG52aWV3b2YgYXBwZW5kQnV0dG9uID0gaHRtbGBcbiAgPGJ1dHRvbiBjbGFzcz1cImJ0biBidG4tcHJpbWFyeVwiPkFwcGVuZDwvYnV0dG9uPmBcblxuLy8gVklFV09GXG5odG1sYDxkaXYgY2xhc3M9XCJyb3cgY29udGFpbmVyXCI+XG4gIFNlYXJjaCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO1xuICAke3ZpZXdvZiB1c2VyUmVmfVxuICAke3ZpZXdvZiBhcHBlbmRCdXR0b259XG4gIDwvZGl2PmBcblxuLypcbi8vIENyZWF0ZSBpbnRlcmFjdGl2ZSBJTlBVVCBmaWVsZCB1c2luZyB2aWV3b2ZcbnZpZXdvZiB1c2VyUGFyYW0gPSBJbnB1dHMudGV4dCh7IFxuICBsYWJlbDogXCJTZWFyY2hcIiwgXG4gIHZhbHVlOiBcImdlbjE6MSFLSlZcIn0pO1xuKi9cblxuLy8gRkVUQ0ggJiBESVNQTEFZXG4vLyBDYWxsIHRoZSBmdW5jdGlvbiB3aXRoIHRoZSB1c2VyJ3MgaW5wdXRcbmRhdGEgPSBhd2FpdCBmZXRjaFBhc3NhZ2UodXNlclJlZik7XG5cbi8vIERpc3BsYXkgdGhlIGZldGNoZWQgY29udGVudFxuaHRtbGA8ZGl2PiR7ZGF0YS5odG1scmF3fTwvZGl2PmA7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJhID0gMDtcbi8qXG5pbXBvcnQgeyBodG1sIH0gZnJvbSBcIkBvYnNlcnZhYmxlaHEvc3RkbGliXCI7XG5cbi8vPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG4vLz09PT09IElOUFVUIFxuXG4vLyBDcmVhdGUgaW50ZXJhY3RpdmUgSU5QVVQgZmllbGQgdXNpbmcgdmlld29mXG52aWV3b2YgcGFyYW0gPSBJbnB1dHMudGV4dCh7IFxuICBsYWJlbDogXCJTZWFyY2hcIiwgXG4gIHZhbHVlOiBcImdlbjE6MSFLSlZcIn0pO1xuXG4vLyBidG4gYnRuLXByaW1hcnkgYnRuLXN1Y2Nlc3NcbnZpZXdvZiBhZGRCdXR0b24gPSBJbnB1dHMuYnV0dG9uKGh0bWxgPGJ1dHRvbiBjbGFzcz1cImJ0biBidG4tcHJpbWFyeVwiPkFkZDwvYnV0dG9uPmApXG5cbmh0bWxgPGRpdiBjbGFzcz1cInJvdyBjb250YWluZXJcIj5cbiAgJHt2aWV3b2YgcGFyYW19IFxuICAke3ZpZXdvZiBhZGRCdXR0b259XG4gIDwvZGl2PmBcblxuLy89PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbi8vPT09PT0gQ0hFQ0sgXG5mdW5jdGlvbiBiY3ZlXyhpbnB1dCkge1xuICBjb25zdCBlZGl0aW9ucyA9IG5ldyBTZXQoWydLSlYnLCdTRzIxJyxcIk5HVVwiXSk7XG4gIFxuICAvLyBTcGxpdCBieSBtdWx0aXBsZSBzZXBhcmF0b3JzOiBjb21tYSwgc2VtaWNvbG9uLCBhbmQgcGlwZVxuICBjb25zdCBbYmMsdmVyc2UsZWRpdGlvbj1cIlNHMjFcIl0gPSBpbnB1dC5zcGxpdCgvWzohXS8pO1xuICAvLyBlbXB0aWVkIGVkaXRpb24gaXMgZG9vbWVkIGludmFsaWQgXG4gIGNvbnN0IHZhbGlkX2VkaXRpb24gPSBlZGl0aW9ucy5oYXMoZWRpdGlvbikgPyBlZGl0aW9uIDogXCJcIlxuICAvLyBzdHJpcCB0cmFpbGluZyBkaWdpdHNcbiAgY29uc3QgYm9vayA9IGJjLnNwbGl0KC8oXFxkKykkLyk7XG5cbiAgcmV0dXJuIHtcbiAgICBcImlzX3ZhbGlkXCI6ICggXG4gICAgICAgIHZlcnNlID09PSBcIlwiIHx8IFxuICAgICAgICB2YWxpZF9lZGl0aW9uID09PSBcIlwiXG4gICAgICAgICkgPyBmYWxzZSA6IHRydWUsXG4gICAgXCJlZGl0aW9uXCI6IHZhbGlkX2VkaXRpb24sXG4gICAgXCJ2ZXJzZVwiOiB2ZXJzZSxcbiAgICBcImJjXCI6IGJjLFxuICAgIFwiYm9va1wiOiBib29rWzBdLFxuICAgIFwiaW5wdXRcIjogcGFyYW1cbiAgfVxufTtcblxuLy89PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbi8vPT09PT0gRkVUQ0ggJiBkaXNwbGF5XG5cbi8vIENvbnRlbnQgcmVhY3RpdmUgdG8gaW5wdXRcbmNvbnRlbnQgPSBhd2FpdCAoYXN5bmMgKCkgPT4ge1xuICBjb25zdCBteXNwbGl0ID0gYmN2ZV8ocGFyYW0pO1xuICBpZiAoIG15c3BsaXQuaXNfdmFsaWQgKSB7XG4gICAgICAgLy8gQ3JhZnQgdGhlIFVSTCBkeW5hbWljYWxseVxuICAgICAgY29uc3QgdXJsID0gYGh0dHBzOi8vaGFsbC5wamFmaXNjaGVyLndvcmtlcnMuZGV2L3Bhc3NhZ2UvP3BhcmFtPSR7ZW5jb2RlVVJJQ29tcG9uZW50KHBhcmFtKX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaCh1cmwpO1xuICAgICAgY29uc3QgdGV4dCA9IGF3YWl0IHJlc3BvbnNlLmpzb24oKTtcbiAgICAgIHJldHVybiB0ZXh0O1xuICB9IGVsc2Uge1xuICAgIHJldHVybiBteXNwbGl0LmlzX3ZhbGlkXG4gIH1cbn0pKCk7XG5cblxuLy8gVXBkYXRlIG91dHB1dERpdiBkeW5hbWljYWxseSBpbnNpZGUgbWFpbkFuY2hvclxuLy9kb2N1bWVudC5nZXRFbGVtZW50QnlJZChcIm91dHB1dERpdlwiKS5pbm5lckhUTUwgPSBjb250ZW50Lmh0bWxyYXc7XG4vLyBVcGRhdGUgaW5wdXREaXYgZHluYW1pY2FsbHkgaW5zaWRlIG1haW5BbmNob3Jcbi8vZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJpbnB1dERpdlwiKS5hcHBlbmQodmlld29mIHBhcmFtKTtcbi8vIGh0bWxgPGRpdj4ke3ZpZXdvZiBwYXJhbX08L2Rpdj5gO1xuaHRtbGA8ZGl2PiR7Y29udGVudC5odG1scmF3fTwvZGl2PmA7XG5cbmh0bWxgPGRpdiBjbGFzcz1cInJvdyBjb250YWluZXJcIj5cbiAgJHtKU09OLnN0cmluZ2lmeShiY3ZlXyhwYXJhbSkpfSBcbiAgPC9kaXY+YFxuXG4vKlxuY2hlY2sgPSAoKHVzZXJyZWYpID0+IHtcbiAgICBjb25zdCBsb3dlclJlZiA9IHVzZXJyZWYudG9Mb3dlckNhc2UoKTtcblxuICAgIGNvbnN0IGJpYmxlQm9va3MgPSB7XG4gICAgICAgIFwiR2VuZXNpc1wiOiBbXCJHZVwiLCBcIkdFTlwiXSxcbiAgICAgICAgXCJFeG9kdXNcIjogW1wiRXhcIiwgXCJFWE9EXCJdLFxuICAgICAgICBcIkxldml0aWN1c1wiOiBbXCJMdlwiLCBcIkxFVlwiXSxcbiAgICAgICAgXCJOdW1iZXJzXCI6IFtcIk51XCIsIFwiTlVNXCJdLFxuICAgICAgICBcIkRldXRlcm9ub215XCI6IFtcIkR0XCIsIFwiREVVVFwiXSxcbiAgICAgICAgXCJKb3NodWFcIjogW1wiSm9cIiwgXCJKT1NIXCIsXCJKb3NcIl0sXG4gICAgICAgIFwiSnVkZ2VzXCI6IFtcIkpnXCIsIFwiSlVER1wiLCdKdWcnXSxcbiAgICAgICAgXCJSdXRoXCI6IFtcIlJ1XCIsIFwiUlVUSFwiLFwiUnV0XCJdLFxuICAgICAgICBcIjEgU2FtdWVsXCI6IFtcIjFTXCIsIFwiMVNBTVwiXSxcbiAgICAgICAgXCIyIFNhbXVlbFwiOiBbXCIyTVwiLCBcIjJTQU1cIl0sXG4gICAgICAgIFwiMSBLaW5nc1wiOiBbXCIxS1wiLCBcIjFLR1NcIl0sXG4gICAgICAgIFwiMiBLaW5nc1wiOiBbXCIyS1wiLCBcIjJLR1NcIl0sXG4gICAgICAgIFwiMSBDaHJvbmljbGVzXCI6IFtcIjFDXCIsIFwiMUNIUk9cIixcIjFDaHJcIl0sXG4gICAgICAgIFwiMiBDaHJvbmljbGVzXCI6IFtcIjJDXCIsIFwiMkNIUk9cIixcIjJDaHJcIl0sXG4gICAgICAgIFwiRXpyYVwiOiBbXCJFelwiLCBcIkVaUkFcIixcIkVzZFwiXSxcbiAgICAgICAgXCJOZWhlbWlhaFwiOiBbXCJOaFwiLCBcIk5FSFwiXSxcbiAgICAgICAgXCJFc3RoZXJcIjogW1wiRXNcIiwgXCJFU1RIXCJdLFxuICAgICAgICBcIkpvYlwiOiBbXCJKYlwiLCBcIkpPQlwiXSxcbiAgICAgICAgXCJQc2FsbXNcIjogW1wiUHNcIiwgXCJQU0FcIl0sXG4gICAgICAgIFwiUHJvdmVyYnNcIjogW1wiUHZcIiwgXCJQUk9WXCJdLFxuICAgICAgICBcIkVjY2xlc2lhc3Rlc1wiOiBbXCJFY1wiLCBcIkVDQ1wiXSxcbiAgICAgICAgXCJTb25nIG9mIFNvbG9tb25cIjogW1wiU29cIiwgXCJTT05HXCIsXCJDY1wiXSxcbiAgICAgICAgXCJJc2FpYWhcIjogW1wiSXNcIiwgXCJJU0FcIl0sXG4gICAgICAgIFwiSmVyZW1pYWhcIjogW1wiSnJcIiwgXCJKRVJcIl0sXG4gICAgICAgIFwiTGFtZW50YXRpb25zXCI6IFtcIkxtXCIsIFwiTEFNXCJdLFxuICAgICAgICBcIkV6ZWtpZWxcIjogW1wiRWtcIiwgXCJFWkVLXCJdLFxuICAgICAgICBcIkRhbmllbFwiOiBbXCJEblwiLCBcIkRBTlwiXSxcbiAgICAgICAgXCJIb3NlYVwiOiBbXCJIb1wiLCBcIkhPU0VBXCJdLFxuICAgICAgICBcIkpvZWxcIjogW1wiSmxcIiwgXCJKT0VMXCJdLFxuICAgICAgICBcIkFtb3NcIjogW1wiQW1cIiwgXCJBTU9TXCJdLFxuICAgICAgICBcIk9iYWRpYWhcIjogW1wiT2JcIiwgXCJPQkFEXCJdLFxuICAgICAgICBcIkpvbmFoXCI6IFtcIkpuXCIsIFwiSk9OQUhcIl0sXG4gICAgICAgIFwiTWljYWhcIjogW1wiTWNcIiwgXCJNSUNBSFwiXSxcbiAgICAgICAgXCJOYWh1bVwiOiBbXCJOYVwiLCBcIk5BSFVNXCJdLFxuICAgICAgICBcIkhhYmFra3VrXCI6IFtcIkhhXCIsIFwiSEFCXCJdLFxuICAgICAgICBcIlplcGhhbmlhaFwiOiBbXCJacFwiLCBcIlpFUEhcIl0sXG4gICAgICAgIFwiSGFnZ2FpXCI6IFtcIkhnXCIsIFwiSEFHXCJdLFxuICAgICAgICBcIlplY2hhcmlhaFwiOiBbXCJaY1wiLCBcIlpFQ0hcIl0sXG4gICAgICAgIFwiTWFsYWNoaVwiOiBbXCJNbFwiLCBcIk1BTFwiXSxcbiAgICAgICAgXCJNYXR0aGV3XCI6IFtcIk10XCIsIFwiTUFUVFwiXSxcbiAgICAgICAgXCJNYXJrXCI6IFtcIk1rXCIsIFwiTUFSS1wiXSxcbiAgICAgICAgXCJMdWtlXCI6IFtcIkxrXCIsIFwiTFVLRVwiXSxcbiAgICAgICAgXCJKb2huXCI6IFtcIkpoXCIsIFwiSk9ITlwiXSxcbiAgICAgICAgXCJBY3RzXCI6IFtcIkFjXCIsIFwiQUNUU1wiXSxcbiAgICAgICAgXCJSb21hbnNcIjogW1wiUm1cIiwgXCJST01cIl0sXG4gICAgICAgIFwiMSBDb3JpbnRoaWFuc1wiOiBbXCIxT1wiLCBcIjFDT1JcIl0sXG4gICAgICAgIFwiMiBDb3JpbnRoaWFuc1wiOiBbXCIyT1wiLCBcIjJDT1JcIl0sXG4gICAgICAgIFwiR2FsYXRpYW5zXCI6IFtcIkdhXCIsIFwiR0FMXCJdLFxuICAgICAgICBcIkVwaGVzaWFuc1wiOiBbXCJFcFwiLCBcIkVQSFwiXSxcbiAgICAgICAgXCJQaGlsaXBwaWFuc1wiOiBbXCJQaFwiLCBcIlBISUxcIl0sXG4gICAgICAgIFwiQ29sb3NzaWFuc1wiOiBbXCJDbFwiLCBcIkNPTFwiXSxcbiAgICAgICAgXCIxIFRoZXNzYWxvbmlhbnNcIjogW1wiMVRcIiwgXCIxVEhFU1wiXSxcbiAgICAgICAgXCIyIFRoZXNzYWxvbmlhbnNcIjogW1wiMlRcIiwgXCIyVEhFU1wiXSxcbiAgICAgICAgXCIxIFRpbW90aHlcIjogW1wiMUlcIiwgXCIxVElNXCJdLFxuICAgICAgICBcIjIgVGltb3RoeVwiOiBbXCIySVwiLCBcIjJUSU1cIl0sXG4gICAgICAgIFwiVGl0dXNcIjogW1wiVGlcIiwgXCJUSVRcIl0sXG4gICAgICAgIFwiUGhpbGVtb25cIjogW1wiUG1cIiwgXCJQSElMRVwiXSxcbiAgICAgICAgXCJIZWJyZXdzXCI6IFtcIkhlXCIsIFwiSEVCXCJdLFxuICAgICAgICBcIkphbWVzXCI6IFtcIkptXCIsIFwiSkFTXCJdLFxuICAgICAgICBcIjEgUGV0ZXJcIjogW1wiMVBcIiwgXCIxUEVUXCJdLFxuICAgICAgICBcIjIgUGV0ZXJcIjogW1wiMlBcIiwgXCIyUEVUXCJdLFxuICAgICAgICBcIjEgSm9oblwiOiBbXCIxSlwiLCBcIjFKT0hOXCJdLFxuICAgICAgICBcIjIgSm9oblwiOiBbXCIySlwiLCBcIjJKT0hOXCJdLFxuICAgICAgICBcIjMgSm9oblwiOiBbXCIzSlwiLCBcIjNKT0hOXCJdLFxuICAgICAgICBcIkp1ZGVcIjogW1wiSnVcIiwgXCJKVURFXCJdLFxuICAgICAgICBcIlJldmVsYXRpb25cIjogW1wiUnZcIiwgXCJSRVZcIl1cbiAgICB9O1xuLy8gICAgcmV0dXJuIEpTT04uc3RyaW5naWZ5KGJpYmxlQm9va3MuUnV0aCkgKyAke3BhcmFtfTtcbiAgICBcbiAgICAgIGZvciAoY29uc3QgW2Jvb2ssIGFiYnJldmlhdGlvbnNdIG9mIE9iamVjdC5lbnRyaWVzKGJpYmxlQm9va3MpKSB7XG4gICAgICAgIGlmIChib29rLnRvTG93ZXJDYXNlKCkgPT09IGxvd2VyUmVmKSB7XG4gICAgICAgICAgICByZXR1cm4gYm9vazsgLy8gRXhhY3QgZnVsbCBuYW1lIG1hdGNoXG4gICAgICAgIH1cbiAgICAgICAgaWYgKGFiYnJldmlhdGlvbnMuc29tZShhYmJyID0+IGFiYnIudG9Mb3dlckNhc2UoKSA9PT0gbG93ZXJSZWYpKSB7XG4gICAgICAgICAgICByZXR1cm4gYm9vazsgLy8gU3RhbmRhcmQgb3IgYWx0ZXJuYXRpdmUgYWJicmV2aWF0aW9uIG1hdGNoXG4gICAgICAgIH1cbiAgICB9XG4gICAgXG4gICAgcmV0dXJuIFwiTm8gdmFsaWQgbWF0Y2ggZm91bmRcIjsgLy8gTm8gbWF0Y2ggY2FzZVxufSkocGFyYW0pO1xuKi9cblxuLypcbmh0bWxgPGRpdj5WQUxJREFUSU9OIGlzICR7SlNPTi5zdHJpbmdpZnkoYmN2ZSl9PC9kaXY+YDtcbiovXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3VzZXJSZWYnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnYXBwZW5kQnV0dG9uJykifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
