@@ -45,6 +45,7 @@ bcve = (() => {
   // strip trailing digits
   const book = bc.split(/(\d+)$/)
   
+  // elaborate RETURN value
   return {
     "valid_edition": valid_edition,
     "edition": edition,
@@ -52,18 +53,17 @@ bcve = (() => {
     "bc": bc,
     "book": book[0],
     "input": userRef
-  }
+  };
+ 
 })();
 
 book = (() => {
-  const mybcv = bcve;
-  
-  // Book validation
+  // BOOK validation
   const bibleBooks = {
         "Genesis": ["Ge", "Gn", "GEN"],
         "Exodus": ["Ex", "EXOD"],
         "Leviticus": ["Lv", "LEV"],
-        "Numbers": ["Nu", 'Nb', "NUM"],
+        "Numbers": ["Nu", "NUM"],
         "Deuteronomy": ["Dt", "DEUT"],
         "Joshua": ["Jo", "JOSH","Jos"],
         "Judges": ["Jg", "JUDG",'Jug'],
@@ -136,9 +136,11 @@ book = (() => {
     ])
   );
   
-  // search for match
+  const mybcv = bcve; //reactive 
+  
+  // search for match and RETURN UPDATE
   for (const [mybook, abbreviations] of Object.entries(lowerCaseBibleBooks)) {
-        if (abbreviations.includes(bcve.book)) {
+        if (abbreviations.includes(mybcv.book)) {
             mybcv["valid_book"] = mybook; 
             mybcv["is_valid"] = ( 
               mybcv.verse === "" || 
@@ -146,7 +148,9 @@ book = (() => {
               mybcv.valid_book === ""
               ) ? false : true;
             return mybcv
-        } else {
+          }
+        } 
+      // no match at all
             mybcv["valid_book"] = "";
             mybcv["is_valid"] = ( 
               mybcv.verse === "" || 
@@ -154,9 +158,7 @@ book = (() => {
               mybcv.valid_book === ""
               ) ? false : true;
             return mybcv
-        }
-  }
-  
+       // end of match search
 })();
 
 // FETCH & DISPLAY
@@ -166,7 +168,7 @@ fetchPassage = await (async () =>  {
   
   if ( book.is_valid ) {
     const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;
-    console.log("is_valid:" + url);
+    console.log("following is_valid:" + url);
     
     try {
       const response = await fetch(url);
@@ -187,8 +189,7 @@ fetchPassage = await (async () =>  {
 html`<div>${fetchPassage.htmlraw}</div>`;
 
 append = (() => {
-//  document.getElementById("outputDiv").innerHTML = JSON.stringify(bcve)
-  document.getElementById("outputDiv").innerHTML = JSON.stringify(book) 
+  document.getElementById("outputDiv").innerHTML = JSON.stringify(book)
   })();
 
 ```
