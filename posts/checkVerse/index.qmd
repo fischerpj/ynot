@@ -64,7 +64,7 @@ book = (() => {
         "Exodus": ["Ex", "EXOD"],
         "Leviticus": ["Lv", "LEV"],
         "Numbers": ["Nu", "NUM"],
-        "Deuteronomy": ["Dt", "DEUT"],
+        "Deuteronomy": ["Dt","DEUT"],
         "Joshua": ["Jo", "JOSH","Jos"],
         "Judges": ["Jg", "JUDG",'Jug'],
         "Ruth": ["Ru", "RUTH","Rut"],
@@ -140,7 +140,7 @@ book = (() => {
   
   // search for match and RETURN UPDATE
   for (const [mybook, abbreviations] of Object.entries(lowerCaseBibleBooks)) {
-        if (abbreviations.includes(mybcv.book)) {
+        if (abbreviations.includes(bcve.book)) {
             mybcv["valid_book"] = mybook; 
             mybcv["is_valid"] = ( 
               mybcv.verse === "" || 
