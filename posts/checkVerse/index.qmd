@@ -5,7 +5,7 @@ execute:
   echo: false
 ---
 
-> checks validity of BibleRef *THEN* fetch&display (with *observableJS).*
+> GO check validity of BibleRef *THEN* fetch&display (with *observableJS).*
 
 ::: {#inputDiv}
 :::
