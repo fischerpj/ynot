@@ -13,23 +13,23 @@ execute:
 ```{ojs}
 import { html } from "@observablehq/stdlib";
 
+/*
 viewof name = html`<input type="text" oninput="this.dispatchEvent(new CustomEvent('input'))" placeholder="Enter your name">`
 name
-md`Hello, **${name}**!`
-
+md`Hello, **${name}**`
+*/
 
 // INPUT
-viewof userRef = Inputs.text();
-
-/*
 viewof userRef = html`
   <input 
     type="text" 
+    oninput="this.dispatchEvent(new CustomEvent('input'))"
     value= "num1:1!KJV"
     class="form-control" 
     style="width: 150px;"
     >`
-*/
+
+md`Hi Ref, **${userRef}**`
 
 /*
 viewof userRef.addEventListener("touchstart", function(event) {
