@@ -1,0 +1,27 @@
+---
+title: "fastCheck"
+image: "bugsbunny.png"
+execute:
+  echo: false
+---
+
+> Second attempt to check validity of BibleRef *THEN* fetch&display (with *observableJS).*
+
+::: {#inputDiv}
+considered Void inputDiv
+:::
+
+```{ojs}
+import { html } from "@observablehq/stdlib";
+
+viewof userRef = html`<input type="text" placeholder="Type something..." />`;
+
+userRef; // This will return the input's current value
+
+md`Current userRef value: **${userRef}**`;
+
+```
+
+::: {#outputDiv}
+any output comes here
+:::
