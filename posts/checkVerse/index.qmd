@@ -17,11 +17,15 @@ import { html } from "@observablehq/stdlib";
 viewof userRef = html`
   <input 
     type="text" 
-    value= "gen1:1!KJV"
+    value= "num1:1!KJV"
     class="form-control" 
     style="width: 150px;"
     >`
-    
+
+viewof userRef.addEventListener("touchstart", function(event) {
+    event.preventDefault(); // Prevent default scrolling behavior
+}, { passive: false });    
+
 // TRIGGER    
 viewof appendButton = html`
   <button class="btn btn-primary">Append</button>`
@@ -36,6 +40,7 @@ html`<div class="row container">
 //===== CHECK 
 
 bcve = (() => {
+
   const editions = new Set(['KJV','ESV','SG21',"NGU-DE","SCH2000"]);
   
   // Split by multiple separators: comma, semicolon, and pipe
