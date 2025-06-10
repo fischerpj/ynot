@@ -14,6 +14,9 @@ execute:
 import { html } from "@observablehq/stdlib";
 
 // INPUT
+viewof userRef = Inputs.text();
+
+/*
 viewof userRef = html`
   <input 
     type="text" 
@@ -21,6 +24,7 @@ viewof userRef = html`
     class="form-control" 
     style="width: 150px;"
     >`
+*/
 
 /*
 viewof userRef.addEventListener("touchstart", function(event) {
