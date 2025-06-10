@@ -29,7 +29,7 @@ viewof userRef = html`
     style="width: 150px;"
     >`
 
-md`Hi Ref, **${userRef}**`
+md`Hi Ref, **${userRef} ${bcve.book}**`
 
 /*
 viewof userRef.addEventListener("touchstart", function(event) {
