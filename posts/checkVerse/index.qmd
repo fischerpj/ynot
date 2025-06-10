@@ -72,9 +72,91 @@ bcve = (() => {
  
 })();
 
+bibleBooks = (() => {
+  const bibleBooks  = {
+        "Genesis": ["Ge", "Gn", "GEN"],
+        "Exodus": ["Ex", "EXOD"],
+        "Leviticus": ["Lv", "LEV"],
+        "Numbers": ["Nu", "NUM"],
+        "Deuteronomy": ["Dt","DEUT"],
+        "Joshua": ["Jo", "JOSH","Jos"],
+        "Judges": ["Jg", "JUDG",'Jug'],
+        "Ruth": ["Ru", "RUTH","Rut"],
+        "1 Samuel": ["1S", "1SAM"],
+        "2 Samuel": ["2M", "2SAM"],
+        "1 Kings": ["1K", "1KGS"],
+        "2 Kings": ["2K", "2KGS"],
+        "1 Chronicles": ["1C", "1CHRO","1Chr"],
+        "2 Chronicles": ["2C", "2CHRO","2Chr"],
+        "Ezra": ["Ez", "EZRA","Esd"],
+        "Nehemiah": ["Nh", "NEH"],
+        "Esther": ["Es", "ESTH"],
+        "Job": ["Jb", "JOB"],
+        "Psalms": ["Ps", "PSA"],
+        "Proverbs": ["Pv", "PROV"],
+        "Ecclesiastes": ["Ec", "ECC"],
+        "Song of Solomon": ["So", "SONG","Cc"],
+        "Isaiah": ["Is", "ISA"],
+        "Jeremiah": ["Jr", "JER"],
+        "Lamentations": ["Lm", "LAM"],
+        "Ezekiel": ["Ek", "EZEK"],
+        "Daniel": ["Dn", "DAN"],
+        "Hosea": ["Ho", "HOSEA"],
+        "Joel": ["Jl", "JOEL"],
+        "Amos": ["Am", "AMOS"],
+        "Obadiah": ["Ob", "OBAD"],
+        "Jonah": ["Jn", "JONAH"],
+        "Micah": ["Mc", "MICAH"],
+        "Nahum": ["Na", "NAHUM"],
+        "Habakkuk": ["Ha", "HAB"],
+        "Zephaniah": ["Zp", "ZEPH"],
+        "Haggai": ["Hg", "HAG"],
+        "Zechariah": ["Zc", "ZECH"],
+        "Malachi": ["Ml", "MAL"],
+        "Matthew": ["Mt", "MATT"],
+        "Mark": ["Mk", "MARK"],
+        "Luke": ["Lk", "LUKE"],
+        "John": ["Jh", "JOHN"],
+        "Acts": ["Ac", "ACTS"],
+        "Romans": ["Rm", "ROM"],
+        "1 Corinthians": ["1O", "1COR"],
+        "2 Corinthians": ["2O", "2COR"],
+        "Galatians": ["Ga", "GAL"],
+        "Ephesians": ["Ep", "EPH"],
+        "Philippians": ["Ph", "PHIL"],
+        "Colossians": ["Cl", "COL"],
+        "1 Thessalonians": ["1T", "1THES"],
+        "2 Thessalonians": ["2T", "2THES"],
+        "1 Timothy": ["1I", "1TIM"],
+        "2 Timothy": ["2I", "2TIM"],
+        "Titus": ["Ti", "TIT"],
+        "Philemon": ["Pm", "PHILE"],
+        "Hebrews": ["He", "HEB"],
+        "James": ["Jm", "JAS"],
+        "1 Peter": ["1P", "1PET"],
+        "2 Peter": ["2P", "2PET"],
+        "1 John": ["1J", "1JOHN"],
+        "2 John": ["2J", "2JOHN"],
+        "3 John": ["3J", "3JOHN"],
+        "Jude": ["Ju", "JUDE"],
+        "Revelation": ["Rv", "REV"]
+    }
+
+  // Convert all values to lowercase
+    const lowerCaseBibleBooks = Object.fromEntries(
+      Object.entries(bibleBooks).map(([book, abbreviations]) => [
+        book,
+        abbreviations.map(abbr => abbr.toLowerCase())
+    ])
+  );
+  
+    return lowerCaseBibleBooks
+  })();
+
 book = (() => {
-  console.log(bcve.book);
+  console.log("bcve triggered" + bcve.book);
   // BOOK validation
+  /*
   const bibleBooks = {
         "Genesis": ["Ge", "Gn", "GEN"],
         "Exodus": ["Ex", "EXOD"],
@@ -151,10 +233,12 @@ book = (() => {
         abbreviations.map(abbr => abbr.toLowerCase())
     ])
   );
-  
+*/
+
   // search for match and RETURN UPDATE
-  for (const [mybook, abbreviations] of Object.entries(lowerCaseBibleBooks)) {
+  for (const [mybook, abbreviations] of Object.entries(bibleBooks)) {
         if (abbreviations.includes(bcve.book)) {
+          console.log("scan" + mybook)
             bcve["valid_book"] = mybook; 
             bcve["is_valid"] = ( 
               bcve.verse === "" || 
