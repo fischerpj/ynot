@@ -23,7 +23,7 @@ md`Hello, **${name}**`
 viewof userRef = html`
   <input 
     type="text" 
-    oninput="this.dispatchEvent(new CustomEvent('input'))"
+/*    oninput="this.dispatchEvent(new CustomEvent('input'))" */
     value= "num1:1!KJV"
     class="form-control" 
     style="width: 150px;"
