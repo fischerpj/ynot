@@ -13,6 +13,11 @@ execute:
 ```{ojs}
 import { html } from "@observablehq/stdlib";
 
+viewof name = html`<input type="text" oninput="this.dispatchEvent(new CustomEvent('input'))" placeholder="Enter your name">`
+name
+md`Hello, **${name}**!`
+
+
 // INPUT
 viewof userRef = Inputs.text();
 
