@@ -22,9 +22,11 @@ viewof userRef = html`
     style="width: 150px;"
     >`
 
+/*
 viewof userRef.addEventListener("touchstart", function(event) {
     event.preventDefault(); // Prevent default scrolling behavior
 }, { passive: false });    
+*/
 
 // TRIGGER    
 viewof appendButton = html`
@@ -38,7 +40,6 @@ html`<div class="row container">
   </div>`
 
 //===== CHECK 
-
 bcve = (() => {
 
   const editions = new Set(['KJV','ESV','SG21',"NGU-DE","SCH2000"]);
@@ -63,6 +64,7 @@ bcve = (() => {
 })();
 
 book = (() => {
+  console.log(bcve.book);
   // BOOK validation
   const bibleBooks = {
         "Genesis": ["Ge", "Gn", "GEN"],
@@ -141,28 +143,27 @@ book = (() => {
     ])
   );
   
-  const mybcv = bcve; //reactive 
-  
   // search for match and RETURN UPDATE
   for (const [mybook, abbreviations] of Object.entries(lowerCaseBibleBooks)) {
         if (abbreviations.includes(bcve.book)) {
-            mybcv["valid_book"] = mybook; 
-            mybcv["is_valid"] = ( 
-              mybcv.verse === "" || 
-              mybcv.valid_edition === "" ||
-              mybcv.valid_book === ""
+            bcve["valid_book"] = mybook; 
+            bcve["is_valid"] = ( 
+              bcve.verse === "" || 
+              bcve.valid_edition === "" ||
+              bcve.valid_book === ""
               ) ? false : true;
-            return mybcv
+            return bcve
           }
         } 
       // no match at all
-            mybcv["valid_book"] = "";
-            mybcv["is_valid"] = ( 
-              mybcv.verse === "" || 
-              mybcv.valid_edition === "" ||
-              mybcv.valid_book === ""
+            console.log("no match");
+            bcve["valid_book"] = "";
+            bcve["is_valid"] = ( 
+              bcve.verse === "" || 
+              bcve.valid_edition === "" ||
+              bcve.valid_book === ""
               ) ? false : true;
-            return mybcv
+            return bcve
        // end of match search
 })();
 
