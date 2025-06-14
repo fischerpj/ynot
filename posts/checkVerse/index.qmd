@@ -29,14 +29,6 @@ viewof userRef = html`
     style="width: 150px;"
     >`
 
-md`Hi Ref, **${userRef} ${bcve.book}**`
-
-/*
-viewof userRef.addEventListener("touchstart", function(event) {
-    event.preventDefault(); // Prevent default scrolling behavior
-}, { passive: false });    
-*/
-
 // TRIGGER    
 viewof appendButton = html`
   <button class="btn btn-primary">Append</button>`

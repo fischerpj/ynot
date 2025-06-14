@@ -16,7 +16,10 @@ import { html } from "@observablehq/stdlib";
 
 viewof userRef = html`<input type="text" placeholder="Type something..." />`;
 
+edition = userRef.split(/!/);
+
 userRef; // This will return the input's current value
+edition;
 
 md`Current userRef value: **${userRef}**`;
 

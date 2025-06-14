@@ -193,6 +193,6 @@
     "href": "posts/fastCheck/index.html",
     "title": "fastCheck",
     "section": "",
-    "text": "Second attempt to check validity of BibleRef THEN fetch&display (with observableJS).\n\n\nconsidered Void inputDiv\n\n\nimport { html } from \"@observablehq/stdlib\";\n\nviewof userRef = html`&lt;input type=\"text\" placeholder=\"Type something...\" /&gt;`;\n\nuserRef;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmd`Current userRef value: **${userRef}**`;\n\n\n\n\n\n\n\n\n\nany output comes here"
+    "text": "Second attempt to check validity of BibleRef THEN fetch&display (with observableJS).\n\n\nconsidered Void inputDiv\n\n\nimport { html } from \"@observablehq/stdlib\";\n\nviewof userRef = html`&lt;input type=\"text\" placeholder=\"Type something...\" /&gt;`;\n\nedition = userRef.split(/!/);\n\nuserRef;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nedition;\n\n\n\n\n\n\n\nmd`Current userRef value: **${userRef}**`;\n\n\n\n\n\n\n\n\n\nany output comes here"
   }
 ]
