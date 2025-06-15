@@ -14,6 +14,22 @@ inputDiv is considered Void
 ```{ojs}
 import { html } from "@observablehq/stdlib";
 
+/*
+viewof styledButton = {
+  const button = Inputs.button("Click me");
+  button.className = "btn btn-primary";
+
+  (async () => {
+    for await (const _ of Generators.input(button)) {
+      // Toggle class on each click
+      button.classList.toggle("btn btn-warning");
+    }
+  })();
+
+  return button;
+}
+*/
+
 // Constant Objects
 editions = new Set(['KJV','ESV','SG21',"NGU-DE","SCH2000"]);
 
@@ -96,10 +112,24 @@ bibleBooks  = ( () => {
   return lowerCase  
 })();
 
+/*
+viewof time = { 
+  const buttn = Inputs.button("Update", {  
+    value: null, 
+    reduce: () => {new Date;},
+    });
+  buttn.className = "btn btn-primary";
+  return buttn;
+};  
+*/
+
 viewof time = Inputs.button("Update", {  
     value: null, 
-    reduce: () => new Date,
+    reduce: () => new Date
+//    className: "btn btn-primary"
     });
+
+viewof time.className =  "btn btn-primary";
 
 // Inputs
 viewof userRef = html`<input type="text" 
