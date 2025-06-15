@@ -5,24 +5,206 @@ execute:
   echo: false
 ---
 
-> Second attempt to check validity of BibleRef *THEN* fetch&display (with *observableJS).*
+> Third attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
 
 ::: {#inputDiv}
-considered Void inputDiv
+inputDiv is considered Void
 :::
 
 ```{ojs}
 import { html } from "@observablehq/stdlib";
 
-viewof userRef = html`<input type="text" placeholder="Type something..." />`;
+// Constant Objects
+editions = new Set(['KJV','ESV','SG21',"NGU-DE","SCH2000"]);
 
-edition = userRef.split(/!/);
+bibleBooks  = ( () => {
+  const mybibleBooks = new Object(
+    {
+        "Genesis": ["Ge", "Gn", "GEN"],
+        "Exodus": ["Ex", "EXOD"],
+        "Leviticus": ["Lv", "LEV"],
+        "Numbers": ["Nu", "NUM"],
+        "Deuteronomy": ["Dt","DEUT"],
+        "Joshua": ["Jo", "JOSH","Jos"],
+        "Judges": ["Jg", "JUDG",'Jug'],
+        "Ruth": ["Ru", "RUTH","Rut"],
+        "1 Samuel": ["1S", "1SAM"],
+        "2 Samuel": ["2M", "2SAM"],
+        "1 Kings": ["1K", "1KGS"],
+        "2 Kings": ["2K", "2KGS"],
+        "1 Chronicles": ["1C", "1CHRO","1Chr"],
+        "2 Chronicles": ["2C", "2CHRO","2Chr"],
+        "Ezra": ["Ez", "EZRA","Esd"],
+        "Nehemiah": ["Nh", "NEH"],
+        "Esther": ["Es", "ESTH"],
+        "Job": ["Jb", "JOB"],
+        "Psalms": ["Ps", "PSA"],
+        "Proverbs": ["Pv", "PROV"],
+        "Ecclesiastes": ["Ec", "ECC"],
+        "Song of Solomon": ["So", "SONG","Cc"],
+        "Isaiah": ["Is", "ISA"],
+        "Jeremiah": ["Jr", "JER"],
+        "Lamentations": ["Lm", "LAM"],
+        "Ezekiel": ["Ek", "EZEK"],
+        "Daniel": ["Dn", "DAN"],
+        "Hosea": ["Ho", "HOSEA"],
+        "Joel": ["Jl", "JOEL"],
+        "Amos": ["Am", "AMOS"],
+        "Obadiah": ["Ob", "OBAD"],
+        "Jonah": ["Jn", "JONAH"],
+        "Micah": ["Mc", "MICAH"],
+        "Nahum": ["Na", "NAHUM"],
+        "Habakkuk": ["Ha", "HAB"],
+        "Zephaniah": ["Zp", "ZEPH"],
+        "Haggai": ["Hg", "HAG"],
+        "Zechariah": ["Zc", "ZECH"],
+        "Malachi": ["Ml", "MAL"],
+        "Matthew": ["Mt", "MATT"],
+        "Mark": ["Mk", "MARK"],
+        "Luke": ["Lk", "LUKE"],
+        "John": ["Jh", "JOHN"],
+        "Acts": ["Ac", "ACTS"],
+        "Romans": ["Rm", "ROM"],
+        "1 Corinthians": ["1Co", "1COR"],
+        "2 Corinthians": ["2Co", "2COR"],
+        "Galatians": ["Ga", "GAL"],
+        "Ephesians": ["Ep", "EPH"],
+        "Philippians": ["Ph", "PHIL"],
+        "Colossians": ["Cl", "COL"],
+        "1 Thessalonians": ["1Th", "1THES"],
+        "2 Thessalonians": ["2Th", "2THES"],
+        "1 Timothy": ["1Ti", "1TIM"],
+        "2 Timothy": ["2Ii", "2TIM"],
+        "Titus": ["Ti", "TIT"],
+        "Philemon": ["Pm", "PHILE"],
+        "Hebrews": ["He","Hb", "HEB"],
+        "James": ["Jm", 'Jc', "JAS"],
+        "1 Peter": ["1P", "1PET"],
+        "2 Peter": ["2P", "2PET"],
+        "1 John": ["1J", "1JOHN"],
+        "2 John": ["2J", "2JOHN"],
+        "3 John": ["3J", "3JOHN"],
+        "Jude": ["Ju", "JUDE"],
+        "Revelation": ["Rv", "REV"] });
+  
+  // Convert all values to lowercase
+  const lowerCase = Object.fromEntries(
+      Object.entries(mybibleBooks).map(([mybook, abbreviations]) => [
+        mybook,
+        abbreviations.map(abbr => abbr.toLowerCase())
+    ]));
+  return lowerCase  
+})();
 
-userRef; // This will return the input's current value
-edition;
+// Inputs
+viewof userRef = html`<input type="text" 
+  class="form-control" 
+  style="width: 200px;"
+  placeholder="Type something..." 
+  value="ps42:1!KJV"/>`;
 
-md`Current userRef value: **${userRef}**`;
+// TRIGGER    
+viewof appendButton = html`
+  <button class="btn btn-primary">Append</button>`
 
+// VIEWOF
+html`<div class="row container">
+  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef}
+  ${viewof appendButton}
+  </div>`
+  
+// valid edition  
+valid_edition =  (() => {
+  const edition = userRef.split(/!/,2).reverse()[0].toUpperCase();
+//  const valid_edition = editions.has(edition) ? edition : ""
+//  return valid_edition
+  
+   switch (true) {
+   case edition === "":
+      console.log("valid: empty");
+      return "ESV"
+    case  edition === null:
+      console.log("valid: null");
+      return "ESV"
+    case editions.has(edition):
+      console.log("valid: input");
+      return edition  
+    default:
+      console.log("valid: false");
+      return "KJV"
+  }
+  
+})();
+
+ref = userRef.split(/!/)[0];
+verse = ref.split(/[:]/)[1];
+bc = ref.split(/[:]/,2)[0];
+
+// strip trailing digits
+book = bc.replace(/\d+$/,"");
+ch = bc.match(/\d+$/)[0];
+
+valid_book = (() => {
+  // search for match and RETURN UPDATE
+  for (const [mybook, abbreviations] of Object.entries(bibleBooks)) {
+        if (abbreviations.includes(book)) {
+            return mybook
+          }
+        } 
+      // no match at all
+            console.log("no match");
+        return ""
+       // end of match search
+})();
+
+bcve = (()=> {
+  
+  return {
+  is_valid: ( 
+    verse === "" || 
+    valid_edition === "" ||
+    valid_book === ""
+    ) ? false : true,     
+  valid_edition,
+  verse,
+  book,
+  valid_book,
+  ch,
+  bc,
+  ref
+}})();
+
+append = (() => {
+  document.getElementById("outputDiv").innerHTML = JSON.stringify(bcve)
+  })();
+  
+// FETCH & DISPLAY
+// Call the function with the user's input
+fetchPassage = await (async () =>  {
+//  console.log(JSON.stringify(mysplit));
+  
+  if ( bcve.is_valid ) {
+    const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;
+    console.log("following is_valid:" + url);
+    
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+        return { error: "Failed to fetch data" };
+    }
+  } else {
+      return "ref is invalid"
+  }
+
+})();
+
+// Display the fetched content
+html`<div>${fetchPassage.htmlraw}</div>`;  
 ```
 
 ::: {#outputDiv}
