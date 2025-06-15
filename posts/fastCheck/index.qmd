@@ -5,7 +5,7 @@ execute:
   echo: false
 ---
 
-> Third attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
+> Fourth attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
 
 ::: {#inputDiv}
 inputDiv is considered Void
@@ -99,10 +99,9 @@ bibleBooks  = ( () => {
 // Inputs
 viewof userRef = html`<input type="text" 
   class="form-control" 
-  style="width: 200px;"
-  placeholder="Type something..." 
+  style="width: 150px;"
   value="ps42:1!KJV"/>`;
-
+  
 // TRIGGER    
 viewof appendButton = html`
   <button class="btn btn-primary">Append</button>`
@@ -117,9 +116,7 @@ html`<div class="row container">
 // valid edition  
 valid_edition =  (() => {
   const edition = userRef.split(/!/,2).reverse()[0].toUpperCase();
-//  const valid_edition = editions.has(edition) ? edition : ""
-//  return valid_edition
-  
+
    switch (true) {
    case edition === "":
       console.log("valid: empty");
@@ -159,7 +156,6 @@ valid_book = (() => {
 })();
 
 bcve = (()=> {
-  
   return {
   is_valid: ( 
     verse === "" || 
