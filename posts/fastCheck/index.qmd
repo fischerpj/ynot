@@ -96,6 +96,11 @@ bibleBooks  = ( () => {
   return lowerCase  
 })();
 
+viewof time = Inputs.button("Update", {  
+    value: null, 
+    reduce: () => new Date,
+    });
+
 // Inputs
 viewof userRef = html`<input type="text" 
   class="form-control" 
@@ -104,13 +109,16 @@ viewof userRef = html`<input type="text"
   
 // TRIGGER    
 viewof appendButton = html`
-  <button class="btn btn-primary">Append</button>`
+  <button 
+    class="btn btn-primary" 
+    >Append</button>`
 
 // VIEWOF
 html`<div class="row container">
   Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ${viewof userRef}
   ${viewof appendButton}
+  ${viewof time}
   </div>`
   
 // valid edition  
@@ -171,8 +179,14 @@ bcve = (()=> {
   ref
 }})();
 
+raw = (()=> {
+  const result = bcve;
+  return result.htmlraw
+  })();
+
 append = (() => {
-  document.getElementById("outputDiv").innerHTML = JSON.stringify(bcve)
+  const display = document.getElementById("outputDiv");
+  display.innerHTML = JSON.stringify(bcve);
   })();
   
 // FETCH & DISPLAY
@@ -201,6 +215,7 @@ fetchPassage = await (async () =>  {
 
 // Display the fetched content
 html`<div>${fetchPassage.htmlraw}</div>`;  
+html`<div>${time}</div>`;  
 ```
 
 ::: {#outputDiv}
