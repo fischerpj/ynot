@@ -14,6 +14,21 @@ inputDiv is considered Void
 ```{ojs}
 import { html } from "@observablehq/stdlib";
 
+viewof show = Inputs.button("OnDemand", {label: "Show"});
+
+value = valid_book;  // Replace with any reactive logic you'd like
+
+mutable displayedValue = null
+
+update = {
+  if (show) {
+    mutable displayedValue = value
+  }
+  null  // avoid displaying anything from this cell
+}
+
+update;
+
 /*
 viewof styledButton = {
   const button = Inputs.button("Click me");
@@ -116,20 +131,12 @@ bibleBooks  = ( () => {
 viewof time = { 
   const buttn = Inputs.button("Update", {  
     value: null, 
-    reduce: () => {new Date;},
+    reduce: () => new Date
     });
   buttn.className = "btn btn-primary";
   return buttn;
 };  
 */
-
-viewof time = Inputs.button("Update", {  
-    value: null, 
-    reduce: () => new Date
-//    className: "btn btn-primary"
-    });
-
-viewof time.className =  "btn btn-primary";
 
 // Inputs
 viewof userRef = html`<input type="text" 
@@ -148,7 +155,6 @@ html`<div class="row container">
   Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ${viewof userRef}
   ${viewof appendButton}
-  ${viewof time}
   </div>`
   
 // valid edition  
@@ -218,7 +224,10 @@ append = (() => {
   const display = document.getElementById("outputDiv");
   display.innerHTML = JSON.stringify(bcve);
   })();
-  
+
+
+//  display.insertAdjacentHTML("beforeend", fetchPassage.htmlraw);
+
 // FETCH & DISPLAY
 // Call the function with the user's input
 fetchPassage = await (async () =>  {
@@ -245,7 +254,6 @@ fetchPassage = await (async () =>  {
 
 // Display the fetched content
 html`<div>${fetchPassage.htmlraw}</div>`;  
-html`<div>${time}</div>`;  
 ```
 
 ::: {#outputDiv}
