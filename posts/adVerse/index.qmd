@@ -1,0 +1,60 @@
+---
+title: "adVerse"
+image: "f1car.jpeg"
+execute:
+  echo: false
+---
+
+> Resume *observableJS* mix (e.g. import class! fetch&display).
+
+::: {#inputDiv}
+inputDiv is considered Void
+:::
+
+```{ojs}
+import { html } from "@observablehq/stdlib";
+
+// Inputs
+viewof userRef_new = html`<input type="text" 
+  class="form-control" 
+  style="width: 150px;"
+  value="ps40:1!KJV"/>`;
+  
+// VIEWOF
+html`<div class="row container">
+  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef_new}
+  </div>`  
+```
+
+```{ojs}
+valid_param = userRef_new;
+
+// VIEWOF
+html`<div class="row container">
+  Validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${valid_param}
+  </div>`  
+```
+
+::: {#outputDiv}
+any output comes here
+:::
+
+```{ojs}
+import { Ref } from "./ref.js";
+
+// Step 4: Create object and use its methods for side-effects fetch&display
+myRef = {
+  const mi = new Ref(userRef_new);
+  await mi.fetch_parallel();   // Wait for data to be fetched
+  mi.displayData();
+  return mi
+};
+
+/*
+(async () => {
+  await myRef.fetch_parallel();   // Wait for data to be fetched
+})();
+*/
+```

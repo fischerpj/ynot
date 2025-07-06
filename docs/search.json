@@ -7,11 +7,179 @@
     "text": "Give access to Bible Texts, version, display, search, pdf as well as to Strong_Numbers and Bible sites. The refs’ full syntax respects “canon”:“ps1:1-3!SG21@bgw”. Workflow is 1.input 2.button.listener 3.iframe.src gets updated. Conclusion: Keep the Input+Button; Use the &lt;iframe for exploration\n\n  Get API"
   },
   {
-    "objectID": "posts/jsfapi/index.html",
-    "href": "posts/jsfapi/index.html",
-    "title": "jsfapi",
+    "objectID": "posts/cuisine/index.html",
+    "href": "posts/cuisine/index.html",
+    "title": "cuisine",
     "section": "",
-    "text": "jsfapi is the raw json API to BibleGateway, hosted by netlify.\n\nhere with outdated technology of iframe which is R_independent! Develop this feature with comments."
+    "text": "Recettes de cuisine éprouvées."
+  },
+  {
+    "objectID": "posts/IT/index.html",
+    "href": "posts/IT/index.html",
+    "title": "IT",
+    "section": "",
+    "text": "Everything related to technology."
+  },
+  {
+    "objectID": "posts/iframe/index.html",
+    "href": "posts/iframe/index.html",
+    "title": "Iframe",
+    "section": "",
+    "text": "First use of an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\n\nConclusion: we abandon iframe technology."
+  },
+  {
+    "objectID": "posts/bible-api/index.html",
+    "href": "posts/bible-api/index.html",
+    "title": "bible API",
+    "section": "",
+    "text": "Bible API technologies.\n\n\n\n\n\n\nconsole.log(\"toto\")\nconst app = new App();\n\n// app.m_fetchPassage(\"ps42!KJV\");\n\n\n\nconsole.log(\"toto2\")\nfetchData(\"ps42!KJV\");"
+  },
+  {
+    "objectID": "posts/memo_verse/index.html",
+    "href": "posts/memo_verse/index.html",
+    "title": "memo_verse",
+    "section": "",
+    "text": "This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
+  },
+  {
+    "objectID": "posts/priorités/index.html",
+    "href": "posts/priorités/index.html",
+    "title": "priorités",
+    "section": "",
+    "text": "Organise the tree of priorities\n\nimportant first"
+  },
+  {
+    "objectID": "posts/buttonDisplay/index.html",
+    "href": "posts/buttonDisplay/index.html",
+    "title": "button display",
+    "section": "",
+    "text": "Fourth attempt to fastCheck validity of BibleRef THEN fetch&display (with observableJS).\n\n\ninputDiv is considered Void\n\n\nimport { html } from \"@observablehq/stdlib\";\n\n// CONSTANT Objects\neditions = new Set(['KJV','ESV','SG21',\"NGU-DE\",\"SCH2000\"]);\n\nbibleBooks  = ( () =&gt; {\n  const mybibleBooks = new Object(\n    {\n        \"Genesis\": [\"Ge\", \"Gn\", \"GEN\"],\n        \"Exodus\": [\"Ex\", \"EXOD\"],\n        \"Leviticus\": [\"Lv\", \"LEV\"],\n        \"Numbers\": [\"Nu\", \"NUM\"],\n        \"Deuteronomy\": [\"Dt\",\"DEUT\"],\n        \"Joshua\": [\"Jo\", \"JOSH\",\"Jos\"],\n        \"Judges\": [\"Jg\", \"JUDG\",'Jug'],\n        \"Ruth\": [\"Ru\", \"RUTH\",\"Rut\"],\n        \"1 Samuel\": [\"1S\", \"1SAM\"],\n        \"2 Samuel\": [\"2M\", \"2SAM\"],\n        \"1 Kings\": [\"1K\", \"1KGS\"],\n        \"2 Kings\": [\"2K\", \"2KGS\"],\n        \"1 Chronicles\": [\"1C\", \"1CHRO\",\"1Chr\"],\n        \"2 Chronicles\": [\"2C\", \"2CHRO\",\"2Chr\"],\n        \"Ezra\": [\"Ez\", \"EZRA\",\"Esd\"],\n        \"Nehemiah\": [\"Nh\", \"NEH\"],\n        \"Esther\": [\"Es\", \"ESTH\"],\n        \"Job\": [\"Jb\", \"JOB\"],\n        \"Psalms\": [\"Ps\", \"PSA\"],\n        \"Proverbs\": [\"Pv\", \"PROV\"],\n        \"Ecclesiastes\": [\"Ec\", \"ECC\"],\n        \"Song of Solomon\": [\"So\", \"SONG\",\"Cc\"],\n        \"Isaiah\": [\"Is\", \"ISA\"],\n        \"Jeremiah\": [\"Jr\", \"JER\"],\n        \"Lamentations\": [\"Lm\", \"LAM\"],\n        \"Ezekiel\": [\"Ek\", \"EZEK\"],\n        \"Daniel\": [\"Dn\", \"DAN\"],\n        \"Hosea\": [\"Ho\", \"HOSEA\"],\n        \"Joel\": [\"Jl\", \"JOEL\"],\n        \"Amos\": [\"Am\", \"AMOS\"],\n        \"Obadiah\": [\"Ob\", \"OBAD\"],\n        \"Jonah\": [\"Jn\", \"JONAH\"],\n        \"Micah\": [\"Mc\", \"MICAH\"],\n        \"Nahum\": [\"Na\", \"NAHUM\"],\n        \"Habakkuk\": [\"Ha\", \"HAB\"],\n        \"Zephaniah\": [\"Zp\", \"ZEPH\"],\n        \"Haggai\": [\"Hg\", \"HAG\"],\n        \"Zechariah\": [\"Zc\", \"ZECH\"],\n        \"Malachi\": [\"Ml\", \"MAL\"],\n        \"Matthew\": [\"Mt\", \"MATT\"],\n        \"Mark\": [\"Mk\", \"MARK\"],\n        \"Luke\": [\"Lk\", \"LUKE\"],\n        \"John\": [\"Jh\", \"JOHN\"],\n        \"Acts\": [\"Ac\", \"ACTS\"],\n        \"Romans\": [\"Rm\", \"ROM\"],\n        \"1 Corinthians\": [\"1Co\", \"1COR\"],\n        \"2 Corinthians\": [\"2Co\", \"2COR\"],\n        \"Galatians\": [\"Ga\", \"GAL\"],\n        \"Ephesians\": [\"Ep\", \"EPH\"],\n        \"Philippians\": [\"Ph\", \"PHIL\"],\n        \"Colossians\": [\"Cl\", \"COL\"],\n        \"1 Thessalonians\": [\"1Th\", \"1THES\"],\n        \"2 Thessalonians\": [\"2Th\", \"2THES\"],\n        \"1 Timothy\": [\"1Ti\", \"1TIM\"],\n        \"2 Timothy\": [\"2Ii\", \"2TIM\"],\n        \"Titus\": [\"Ti\", \"TIT\"],\n        \"Philemon\": [\"Pm\", \"PHILE\"],\n        \"Hebrews\": [\"He\",\"Hb\", \"HEB\"],\n        \"James\": [\"Jm\", 'Jc', \"JAS\"],\n        \"1 Peter\": [\"1P\", \"1PET\"],\n        \"2 Peter\": [\"2P\", \"2PET\"],\n        \"1 John\": [\"1J\", \"1JOHN\"],\n        \"2 John\": [\"2J\", \"2JOHN\"],\n        \"3 John\": [\"3J\", \"3JOHN\"],\n        \"Jude\": [\"Ju\", \"JUDE\"],\n        \"Revelation\": [\"Rv\", \"REV\"] });\n  \n  // Convert all values to lowercase\n  const lowerCase = Object.fromEntries(\n      Object.entries(mybibleBooks).map(([mybook, abbreviations]) =&gt; [\n        mybook,\n        abbreviations.map(abbr =&gt; abbr.toLowerCase())\n    ]));\n  return lowerCase  \n})();\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof userRef = html`&lt;input type=\"text\" \n  class=\"form-control\" \n  style=\"width: 150px;\"\n  value=\"ps42:1!KJV\"/&gt;`;\n\n/*  \nviewof time = Inputs.button(\"Append\", {  \n    value: null, \n    reduce: () =&gt; { \n      const val = viewof userRef.value;\n      return val\n      }\n    });\n*/\n\nviewof reset = Inputs.button(\"Reset\", {  \n    value: null, \n    reduce: () =&gt; { \n      const display = document.getElementById(\"outputDiv\");\n      display.innerHTML = \"\";\n      }\n    });\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`&lt;div class=\"row container\"&gt;\n  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef}\n  ${viewof reset}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\nappend = {\n//  const snapshot = await Promises.when(userRef);\n  const display = document.getElementById(\"outputDiv\");\n//  display.insertAdjacentHTML(\"beforeend\", snapshot);\n//  console.log(\"Non-reactive snapshot:\", snapshot);\n  };\n  \n// DISPLAY of  the fetched content\nhtml`&lt;div&gt;${fetchPassage.htmlraw}&lt;/div&gt;`;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvalid_edition =  (() =&gt; {\n  const edition = userRef.split(/!/,2).reverse()[0].toUpperCase();\n\n   switch (true) {\n   case edition === \"\":\n      console.log(\"valid: empty\");\n      return \"ESV\"\n    case  edition === null:\n      console.log(\"valid: null\");\n      return \"ESV\"\n    case editions.has(edition):\n      console.log(\"valid: input\");\n      return edition  \n    default:\n      console.log(\"valid: false\");\n      return \"KJV\"\n  }\n})();\n\nref = userRef.split(/!/)[0];\nverse = ref.split(/[:]/)[1];\nbc = ref.split(/[:]/,2)[0];\n\n// strip trailing digits\nbook = bc.replace(/\\d+$/,\"\");\nch = bc.match(/\\d+$/)[0];\n\nvalid_book = (() =&gt; {\n  // search for match and RETURN UPDATE\n  for (const [mybook, abbreviations] of Object.entries(bibleBooks)) {\n        if (abbreviations.includes(book)) {\n            return mybook\n          }\n        } \n      // no match at all\n            console.log(\"no match\");\n        return \"\"\n       // end of match search\n})();\n\nbcve = (()=&gt; {\n  return {\n  is_valid: ( \n    verse === \"\" || \n    valid_edition === \"\" ||\n    valid_book === \"\"\n    ) ? false : true,     \n  valid_edition,\n  verse,\n  book,\n  valid_book,\n  ch,\n  bc,\n  ref\n}})();\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// FETCH\n\n// FETCH & DISPLAY\n// Call the function with the user's input\nfetchPassage = await (async () =&gt;  {\n//  console.log(JSON.stringify(mysplit));\n  \n  if ( bcve.is_valid ) {\n    const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;\n    console.log(\"following is_valid:\" + url);\n    \n    try {\n      const response = await fetch(url);\n      if (!response.ok) {\n        throw new Error(`HTTP error! Status: ${response.status}`);\n      }\n      return await response.json();\n    } catch (error) {\n        return { error: \"Failed to fetch data\" };\n    }\n  } else {\n      return \"ref is invalid\"\n  }\n\n})();\n\n\n\n\n\n\n\nany output comes here"
+  },
+  {
+    "objectID": "posts/cke/index.html",
+    "href": "posts/cke/index.html",
+    "title": "Welcome To EditorJS",
+    "section": "",
+    "text": "Proof of Concept of EditorJS\n\nThis is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.\nrelies on yaml =&gt; format: html: include: include-on-header:\n\nEditor.js in Node.js\n\n\n\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
+  },
+  {
+    "objectID": "posts/checkBCV/index.html",
+    "href": "posts/checkBCV/index.html",
+    "title": "bCheck",
+    "section": "",
+    "text": "plain BCV.js function\n\n\ninputDiv is considered Void\n\n\n\nfunction bcv_(arg) {\n     const canon = {\n       ref: arg,\n       canon: \"!\" + edition_(arg)\n     };\n    const miref = ref_(arg);\n    return  { ...canon, ...miref }\n}    \n\n// valid edition  \nfunction edition_(ref) {\n  const edition = ref.split(/!/,2).reverse()[0].toUpperCase();\n  const editions = editions_();\n\n   switch (true) {\n   case edition === \"\":\n      return \"ESV\"\n    case  edition === null:\n      return \"SG21\"\n    case editions.has(edition):\n      return edition  \n    default:\n      return \"SG21\"\n  }\n};\n\nfunction ref_(rf) {\n  const ref = rf.split(/!/)[0];\n  const verse = rf.split(/[:]/)[1];\n  const bc = rf.split(/[:]/)[0];\n  // strip trailing digits\n  const book = bc.replace(/\\d+$/,\"\");\n  const ch = bc.match(/\\d+$/)[0];\n  return {verse, ch, book}\n}\n\n// DATA as functions\nfunction editions_() {\n  return new Set(['KJV','ESV','SG21',\"NGU-DE\",\"SCH2000\"]);\n};\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof userRef = html`&lt;input type=\"text\" \n  class=\"form-control\" \n  style=\"width: 150px;\"\n  value=\"ps42:1!KJV\"/&gt;`;\n\n// OUTPUTS\noutDiv = document.getElementById(\"outputDiv\");\n\n// DATA\nbcv = JSON.stringify(bcv_(userRef));\nbcv;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nany output comes here"
+  },
+  {
+    "objectID": "posts/romans_note/index.html",
+    "href": "posts/romans_note/index.html",
+    "title": "Romans Note",
+    "section": "",
+    "text": "This is a Global Note on Romans (using EditorJS and localStorage autosave mechanisms)\n\n\nthis is inputDiv\nthis is editorDiv"
+  },
+  {
+    "objectID": "posts/excursions/index.html",
+    "href": "posts/excursions/index.html",
+    "title": "excursions",
+    "section": "",
+    "text": "The root of discoveries.\n\n\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres."
+  },
+  {
+    "objectID": "posts/storage/index.html",
+    "href": "posts/storage/index.html",
+    "title": "Storage with Javascript",
+    "section": "",
+    "text": "Demonstrate the feasibility of user interaction (input, action) with LocalStorage (set, get).\n\n\nModify the DOM: take an input, trigger a button to echo the value and save to LocalStorage\n\n\n\nSubmit to LocalStorage\n\n\n\n\nRead Back from LocalStorage: Trigger the retrieval and echo the value\n\n\nRetrieve from LocalStorage\n\n\n\nOne script inserted here handles that all.\n\n\nmake it a content script extension."
+  },
+  {
+    "objectID": "posts/bible-look/index.html",
+    "href": "posts/bible-look/index.html",
+    "title": "bible look",
+    "section": "",
+    "text": "Bible Search and Lookup technologies."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Ynot (Why not!) is my personal gitHub repo to store infos as issues, that are anchored to any pages of my other websites.\nYnot is sourced from docker rv5/ynot..\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncheckVerse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStorage with Javascript\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nGlobal Note\n\n\n\n\n\n\n\n\n\n\n\nMay 17, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nexcursions\n\n\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nRomans Note\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nrésidence Etoile\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbCheck\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To EditorJS\n\n\n\n\n\n\n\n\n\n\n\nMay 16, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nbutton display\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\npriorités\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ngospel banner\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nraw content\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nDOM via Javascript\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nmemo_verse\n\n\n\n\n\n\n\n\n\n\n\nDec 28, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nfastCheck\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbible API\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nSuccession\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIT\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nadVerse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBible access\n\n\n\n\n\n\n\n\n\n\n\nMay 21, 2025\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/checkVerse/index.html",
+    "href": "posts/checkVerse/index.html",
+    "title": "checkVerse",
+    "section": "",
+    "text": "GO check validity of BibleRef THEN fetch&display (with observableJS).\n\n\n\n\n\nimport { html } from \"@observablehq/stdlib\";\n\n/*\nviewof name = html`&lt;input type=\"text\" oninput=\"this.dispatchEvent(new CustomEvent('input'))\" placeholder=\"Enter your name\"&gt;`\nname\nmd`Hello, **${name}**`\n*/\n\n// INPUT\nviewof userRef = html`\n  &lt;input \n    type=\"text\" \n/*    oninput=\"this.dispatchEvent(new CustomEvent('input'))\" */\n    value= \"num1:1!KJV\"\n    class=\"form-control\" \n    style=\"width: 150px;\"\n    &gt;`\n\n// TRIGGER    \nviewof appendButton = html`\n  &lt;button class=\"btn btn-primary\"&gt;Append&lt;/button&gt;`\n\n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef}\n  ${viewof appendButton}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbcve = (() =&gt; {\n\n  const editions = new Set(['KJV','ESV','SG21',\"NGU-DE\",\"SCH2000\"]);\n  \n  // Split by multiple separators: comma, semicolon, and pipe\n  const [bc,verse,edition=\"SG21\"] = userRef.split(/[:!]/);\n  // emptied edition is doomed invalid \n  const valid_edition = editions.has(edition) ? edition : \"\"\n  // strip trailing digits\n  const book = bc.split(/(\\d+)$/)\n  \n  // elaborate RETURN value\n  return {\n    \"valid_edition\": valid_edition,\n    \"edition\": edition,\n    \"verse\": verse,\n    \"bc\": bc,\n    \"book\": book[0],\n    \"input\": userRef\n  };\n \n})();\n\nbibleBooks = (() =&gt; {\n  const bibleBooks  = {\n        \"Genesis\": [\"Ge\", \"Gn\", \"GEN\"],\n        \"Exodus\": [\"Ex\", \"EXOD\"],\n        \"Leviticus\": [\"Lv\", \"LEV\"],\n        \"Numbers\": [\"Nu\", \"NUM\"],\n        \"Deuteronomy\": [\"Dt\",\"DEUT\"],\n        \"Joshua\": [\"Jo\", \"JOSH\",\"Jos\"],\n        \"Judges\": [\"Jg\", \"JUDG\",'Jug'],\n        \"Ruth\": [\"Ru\", \"RUTH\",\"Rut\"],\n        \"1 Samuel\": [\"1S\", \"1SAM\"],\n        \"2 Samuel\": [\"2M\", \"2SAM\"],\n        \"1 Kings\": [\"1K\", \"1KGS\"],\n        \"2 Kings\": [\"2K\", \"2KGS\"],\n        \"1 Chronicles\": [\"1C\", \"1CHRO\",\"1Chr\"],\n        \"2 Chronicles\": [\"2C\", \"2CHRO\",\"2Chr\"],\n        \"Ezra\": [\"Ez\", \"EZRA\",\"Esd\"],\n        \"Nehemiah\": [\"Nh\", \"NEH\"],\n        \"Esther\": [\"Es\", \"ESTH\"],\n        \"Job\": [\"Jb\", \"JOB\"],\n        \"Psalms\": [\"Ps\", \"PSA\"],\n        \"Proverbs\": [\"Pv\", \"PROV\"],\n        \"Ecclesiastes\": [\"Ec\", \"ECC\"],\n        \"Song of Solomon\": [\"So\", \"SONG\",\"Cc\"],\n        \"Isaiah\": [\"Is\", \"ISA\"],\n        \"Jeremiah\": [\"Jr\", \"JER\"],\n        \"Lamentations\": [\"Lm\", \"LAM\"],\n        \"Ezekiel\": [\"Ek\", \"EZEK\"],\n        \"Daniel\": [\"Dn\", \"DAN\"],\n        \"Hosea\": [\"Ho\", \"HOSEA\"],\n        \"Joel\": [\"Jl\", \"JOEL\"],\n        \"Amos\": [\"Am\", \"AMOS\"],\n        \"Obadiah\": [\"Ob\", \"OBAD\"],\n        \"Jonah\": [\"Jn\", \"JONAH\"],\n        \"Micah\": [\"Mc\", \"MICAH\"],\n        \"Nahum\": [\"Na\", \"NAHUM\"],\n        \"Habakkuk\": [\"Ha\", \"HAB\"],\n        \"Zephaniah\": [\"Zp\", \"ZEPH\"],\n        \"Haggai\": [\"Hg\", \"HAG\"],\n        \"Zechariah\": [\"Zc\", \"ZECH\"],\n        \"Malachi\": [\"Ml\", \"MAL\"],\n        \"Matthew\": [\"Mt\", \"MATT\"],\n        \"Mark\": [\"Mk\", \"MARK\"],\n        \"Luke\": [\"Lk\", \"LUKE\"],\n        \"John\": [\"Jh\", \"JOHN\"],\n        \"Acts\": [\"Ac\", \"ACTS\"],\n        \"Romans\": [\"Rm\", \"ROM\"],\n        \"1 Corinthians\": [\"1O\", \"1COR\"],\n        \"2 Corinthians\": [\"2O\", \"2COR\"],\n        \"Galatians\": [\"Ga\", \"GAL\"],\n        \"Ephesians\": [\"Ep\", \"EPH\"],\n        \"Philippians\": [\"Ph\", \"PHIL\"],\n        \"Colossians\": [\"Cl\", \"COL\"],\n        \"1 Thessalonians\": [\"1T\", \"1THES\"],\n        \"2 Thessalonians\": [\"2T\", \"2THES\"],\n        \"1 Timothy\": [\"1I\", \"1TIM\"],\n        \"2 Timothy\": [\"2I\", \"2TIM\"],\n        \"Titus\": [\"Ti\", \"TIT\"],\n        \"Philemon\": [\"Pm\", \"PHILE\"],\n        \"Hebrews\": [\"He\", \"HEB\"],\n        \"James\": [\"Jm\", \"JAS\"],\n        \"1 Peter\": [\"1P\", \"1PET\"],\n        \"2 Peter\": [\"2P\", \"2PET\"],\n        \"1 John\": [\"1J\", \"1JOHN\"],\n        \"2 John\": [\"2J\", \"2JOHN\"],\n        \"3 John\": [\"3J\", \"3JOHN\"],\n        \"Jude\": [\"Ju\", \"JUDE\"],\n        \"Revelation\": [\"Rv\", \"REV\"]\n    }\n\n  // Convert all values to lowercase\n    const lowerCaseBibleBooks = Object.fromEntries(\n      Object.entries(bibleBooks).map(([book, abbreviations]) =&gt; [\n        book,\n        abbreviations.map(abbr =&gt; abbr.toLowerCase())\n    ])\n  );\n  \n    return lowerCaseBibleBooks\n  })();\n\nbook = (() =&gt; {\n  console.log(\"bcve triggered\" + bcve.book);\n  // BOOK validation\n \n  // search for match and RETURN UPDATE\n  for (const [mybook, abbreviations] of Object.entries(bibleBooks)) {\n        if (abbreviations.includes(bcve.book)) {\n          console.log(\"scan\" + mybook)\n            bcve[\"valid_book\"] = mybook; \n            bcve[\"is_valid\"] = ( \n              bcve.verse === \"\" || \n              bcve.valid_edition === \"\" ||\n              bcve.valid_book === \"\"\n              ) ? false : true;\n            return bcve\n          }\n        } \n      // no match at all\n            console.log(\"no match\");\n            bcve[\"valid_book\"] = \"\";\n            bcve[\"is_valid\"] = ( \n              bcve.verse === \"\" || \n              bcve.valid_edition === \"\" ||\n              bcve.valid_book === \"\"\n              ) ? false : true;\n            return bcve\n       // end of match search\n})();\n\n// FETCH & DISPLAY\n// Call the function with the user's input\nfetchPassage = await (async () =&gt;  {\n//  console.log(JSON.stringify(mysplit));\n  \n  if ( book.is_valid ) {\n    const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;\n    console.log(\"following is_valid:\" + url);\n    \n    try {\n      const response = await fetch(url);\n      if (!response.ok) {\n        throw new Error(`HTTP error! Status: ${response.status}`);\n      }\n      return await response.json();\n    } catch (error) {\n        return { error: \"Failed to fetch data\" };\n    }\n  } else {\n      return \"ref is invalid\"\n  }\n\n})();\n\n// Display the fetched content\nhtml`&lt;div&gt;${fetchPassage.htmlraw}&lt;/div&gt;`;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nappend = (() =&gt; {\n  document.getElementById(\"outputDiv\").innerHTML = JSON.stringify(book)\n  })();\n\n\n\n\n\n\n\n\n\nfunction storage_(){\n  return localStorage.getItem(\"refidArray\")\n} \n\n//viewof time = Inputs.button(\"Update\", {value: null, reduce: () =&gt; new Date})\n//viewof time = Inputs.button(\"Update\", {value: new Date, reduce: () =&gt; storage_()})\n//html`&lt;div&gt;${time}&lt;/div&gt;`;\n\n//======================================================\n\n//======================================================\n\n\n//======================================================\n//===== FETCH & display\n\n\n\n\n\n\n\nany output comes here"
+  },
+  {
+    "objectID": "posts/global-note/index.html",
+    "href": "posts/global-note/index.html",
+    "title": "Global Note",
+    "section": "",
+    "text": "This is a Global Note, using EditorJS and localStorage autosave mechanism.\n\n\nthis is inputDiv\nthis is editorDiv"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/etoile/index.html",
+    "href": "posts/etoile/index.html",
+    "title": "résidence Etoile",
+    "section": "",
+    "text": "Point de départ de l’habitation au Clos de l’Etoile"
+  },
+  {
+    "objectID": "posts/immobilier/index.html",
+    "href": "posts/immobilier/index.html",
+    "title": "immobilier",
+    "section": "",
+    "text": "Point de départ du projet d’habitation à Montpellier.\n\nhttps://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html\nhttps://www.seloger.com/classified-search?distributionTypes=Buy,Buy_Auction&estateTypes=House&locations=AD08FR13752"
+  },
+  {
+    "objectID": "posts/cke/index_cke.html",
+    "href": "posts/cke/index_cke.html",
+    "title": "Welcome To CKeditor",
+    "section": "",
+    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
+  },
+  {
+    "objectID": "posts/notes/index.html",
+    "href": "posts/notes/index.html",
+    "title": "notes",
+    "section": "",
+    "text": "I merely capture at random my ideas here as comments below."
+  },
+  {
+    "objectID": "posts/gospel-banner/index.html",
+    "href": "posts/gospel-banner/index.html",
+    "title": "gospel banner",
+    "section": "",
+    "text": "The animated web presentation of biblical claims is posted at https://xminpi.netlify.app/ppt/gospel-banner/\n\nCapture additional content under comments."
+  },
+  {
+    "objectID": "posts/DOM via Javascript/index.html",
+    "href": "posts/DOM via Javascript/index.html",
+    "title": "DOM via Javascript",
+    "section": "",
+    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\nConclusion: Abandon ObersvableJS technology because of CSS-styling hurdle."
+  },
+  {
+    "objectID": "posts/fastCheck/index.html",
+    "href": "posts/fastCheck/index.html",
+    "title": "fastCheck",
+    "section": "",
+    "text": "AFTER Fourth attempt to fastCheck validity of BibleRef THEN fetch&display (with observableJS).\n\n\ninputDiv is considered Void\n\n\nimport { html } from \"@observablehq/stdlib\";\n\n// Constant Objects\neditions = new Set(['KJV','ESV','SG21',\"NGU-DE\",\"SCH2000\"]);\n\nbibleBooks  = (() =&gt; {\n  const mybibleBooks = new Object(\n    {\n        \"Genesis\": [\"Ge\", \"Gn\", \"GEN\"],\n        \"Exodus\": [\"Ex\", \"EXOD\"],\n        \"Leviticus\": [\"Lv\", \"LEV\"],\n        \"Numbers\": [\"Nu\", \"NUM\"],\n        \"Deuteronomy\": [\"Dt\",\"DEUT\"],\n        \"Joshua\": [\"Jo\", \"JOSH\",\"Jos\"],\n        \"Judges\": [\"Jg\", \"JUDG\",'Jug'],\n        \"Ruth\": [\"Ru\", \"RUTH\",\"Rut\"],\n        \"1 Samuel\": [\"1S\", \"1SAM\"],\n        \"2 Samuel\": [\"2M\", \"2SAM\"],\n        \"1 Kings\": [\"1K\", \"1KGS\"],\n        \"2 Kings\": [\"2K\", \"2KGS\"],\n        \"1 Chronicles\": [\"1C\", \"1CHRO\",\"1Chr\"],\n        \"2 Chronicles\": [\"2C\", \"2CHRO\",\"2Chr\"],\n        \"Ezra\": [\"Ez\", \"EZRA\",\"Esd\"],\n        \"Nehemiah\": [\"Nh\", \"NEH\"],\n        \"Esther\": [\"Es\", \"ESTH\"],\n        \"Job\": [\"Jb\", \"JOB\"],\n        \"Psalms\": [\"Ps\", \"PSA\"],\n        \"Proverbs\": [\"Pv\", \"PROV\"],\n        \"Ecclesiastes\": [\"Ec\", \"ECC\"],\n        \"Song of Solomon\": [\"So\", \"SONG\",\"Cc\"],\n        \"Isaiah\": [\"Is\", \"ISA\"],\n        \"Jeremiah\": [\"Jr\", \"JER\"],\n        \"Lamentations\": [\"Lm\", \"LAM\"],\n        \"Ezekiel\": [\"Ek\", \"EZEK\"],\n        \"Daniel\": [\"Dn\", \"DAN\"],\n        \"Hosea\": [\"Ho\", \"HOSEA\"],\n        \"Joel\": [\"Jl\", \"JOEL\"],\n        \"Amos\": [\"Am\", \"AMOS\"],\n        \"Obadiah\": [\"Ob\", \"OBAD\"],\n        \"Jonah\": [\"Jn\", \"JONAH\"],\n        \"Micah\": [\"Mc\", \"MICAH\"],\n        \"Nahum\": [\"Na\", \"NAHUM\"],\n        \"Habakkuk\": [\"Ha\", \"HAB\"],\n        \"Zephaniah\": [\"Zp\", \"ZEPH\"],\n        \"Haggai\": [\"Hg\", \"HAG\"],\n        \"Zechariah\": [\"Zc\", \"ZECH\"],\n        \"Malachi\": [\"Ml\", \"MAL\"],\n        \"Matthew\": [\"Mt\", \"MATT\"],\n        \"Mark\": [\"Mk\", \"MARK\"],\n        \"Luke\": [\"Lk\", \"LUKE\"],\n        \"John\": [\"Jh\", \"JOHN\"],\n        \"Acts\": [\"Ac\", \"ACTS\"],\n        \"Romans\": [\"Rm\", \"ROM\"],\n        \"1 Corinthians\": [\"1Co\", \"1COR\"],\n        \"2 Corinthians\": [\"2Co\", \"2COR\"],\n        \"Galatians\": [\"Ga\", \"GAL\"],\n        \"Ephesians\": [\"Ep\", \"EPH\"],\n        \"Philippians\": [\"Ph\", \"PHIL\"],\n        \"Colossians\": [\"Cl\", \"COL\"],\n        \"1 Thessalonians\": [\"1Th\", \"1THES\"],\n        \"2 Thessalonians\": [\"2Th\", \"2THES\"],\n        \"1 Timothy\": [\"1Ti\", \"1TIM\"],\n        \"2 Timothy\": [\"2Ii\", \"2TIM\"],\n        \"Titus\": [\"Ti\", \"TIT\"],\n        \"Philemon\": [\"Pm\", \"PHILE\"],\n        \"Hebrews\": [\"He\",\"Hb\", \"HEB\"],\n        \"James\": [\"Jm\", 'Jc', \"JAS\"],\n        \"1 Peter\": [\"1P\", \"1PET\"],\n        \"2 Peter\": [\"2P\", \"2PET\"],\n        \"1 John\": [\"1J\", \"1JOHN\"],\n        \"2 John\": [\"2J\", \"2JOHN\"],\n        \"3 John\": [\"3J\", \"3JOHN\"],\n        \"Jude\": [\"Ju\", \"JUDE\"],\n        \"Revelation\": [\"Rv\", \"REV\"] \n    });\n  \n  // Convert all values to lowercase\n  const lowerCase = Object.fromEntries(\n      Object.entries(mybibleBooks).map(([mybook, abbreviations]) =&gt; [\n        mybook,\n        abbreviations.map(abbr =&gt; abbr.toLowerCase())\n    ]));\n  return lowerCase  \n})();\n \n// Inputs\nviewof userRef = html`&lt;input type=\"text\" \n  class=\"form-control\" \n  style=\"width: 150px;\"\n  value=\"ps42:1!KJV\"/&gt;`;\n\ndisplay = document.getElementById(\"outputDiv\");\n\nviewof append = Inputs.button(\"Append\", {  \n    value: null, \n    reduce: () =&gt; { \n      const snapRef = viewof userRef.value;\n //     display.textContent = `See ${snapRef}`;\n      const span = html`&lt;p&gt;${viewof userRef.value} &lt;/p&gt;`;\n      display.appendChild(span);\n      return snapRef\n    }\n    });\n\n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef}\n  ${viewof append}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvalid_edition =  (() =&gt; {\n  const edition = userRef.split(/!/,2).reverse()[0].toUpperCase();\n\n   switch (true) {\n   case edition === \"\":\n      console.log(\"valid: empty\");\n      return \"ESV\"\n    case  edition === null:\n      console.log(\"valid: null\");\n      return \"ESV\"\n    case editions.has(edition):\n      console.log(\"valid: input\");\n      return edition  \n    default:\n      console.log(\"valid: false\");\n      return \"KJV\"\n  }\n})();\n\nref = userRef.split(/!/)[0];\nverse = ref.split(/[:]/)[1];\nbc = ref.split(/[:]/)[0];\n\n// strip trailing digits\nbook = bc.replace(/\\d+$/,\"\");\nch = bc.match(/\\d+$/)[0];\n\nvalid_book = (() =&gt; {\n  // search for match and RETURN UPDATE\n  for (const [mybook, abbreviations] of Object.entries(bibleBooks)) {\n        if (abbreviations.includes(book)) {\n            return mybook\n          }\n        } \n      // no match at all\n            console.log(\"no match\");\n        return \"\"\n       // end of match search\n})();\n\nbcve = (()=&gt; {\n  return {\n  is_valid: ( \n    verse === \"\" || \n    valid_edition === \"\" ||\n    valid_book === \"\"\n    ) ? false : true,     \n  valid_edition,\n  verse,\n  book,\n  valid_book,\n  ch,\n  bc,\n  ref\n}})();\n\n// FETCH & DISPLAY\n// Call the function with the user's input\nfetchPassage = await (async () =&gt;  {\n\n  if ( bcve.is_valid ) {\n    const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;\n    console.log(\"following is_valid:\" + url);\n    \n    try {\n      const response = await fetch(url);\n      if (!response.ok) {\n        throw new Error(`HTTP error! Status: ${response.status}`);\n      }\n      return await response.json();\n    } catch (error) {\n        return { error: \"Failed to fetch data\" };\n    }\n  } else {\n      return \"ref is invalid\"\n  }\n\n})();\n\n// Display the fetched content\nhtml`&lt;div&gt;${fetchPassage.htmlraw}&lt;/div&gt;`;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nany output comes here\n\n#####==================== SHARES =================================#####\n#####==================== NEW UI =================================#####\n\nInput_Field\n\n\nviewof userRef_new = html`&lt;input type=\"text\" \n  class=\"form-control\" \n  style=\"width: 150px;\"\n  value=\"ps40:1!KJV\"/&gt;`;\n  \n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef_new}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRef_Validated\n\n\nvalid_param = userRef_new;\nvalid_param;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFetch_&_Display (see console)"
+  },
+  {
+    "objectID": "posts/succession/index.html",
+    "href": "posts/succession/index.html",
+    "title": "Succession",
+    "section": "",
+    "text": "Everything related to succession Fischer-Durrenberger."
   },
   {
     "objectID": "posts/observables/index.html",
@@ -35,164 +203,17 @@
     "text": "button.click\n\nviewof myButton = Inputs.button(\"Count me!\");\n\n// By default, shows the #clicks\nmyButton\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmyHtml = html`&lt;div&gt;\n  &lt;h1&gt;Hello, Observable!&lt;/h1&gt;\n  &lt;p&gt;This is a paragraph followed by AN IFRAME within a div element.&lt;/p&gt;\n  &lt;iframe src=\"https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21\" title=\"STATIC IFRAME jsfapi\" width=\"400\" height=\"150\"&gt;\n&lt;/div&gt;`;\n\n// Display the HTML element\nmyHtml\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// Fetch the data dynamically mydata = (await fetch(myurl)).json();\n// Display the htmlraw property inside a div html${mydata.htmlraw}; ```"
   },
   {
-    "objectID": "posts/succession/index.html",
-    "href": "posts/succession/index.html",
-    "title": "Succession",
+    "objectID": "posts/jsfapi/index.html",
+    "href": "posts/jsfapi/index.html",
+    "title": "jsfapi",
     "section": "",
-    "text": "Everything related to succession Fischer-Durrenberger."
+    "text": "jsfapi is the raw json API to BibleGateway, hosted by netlify.\n\nhere with outdated technology of iframe which is R_independent! Develop this feature with comments."
   },
   {
-    "objectID": "posts/fastCheck/index.html",
-    "href": "posts/fastCheck/index.html",
-    "title": "fastCheck",
+    "objectID": "posts/adVerse/index.html",
+    "href": "posts/adVerse/index.html",
+    "title": "adVerse",
     "section": "",
-    "text": "Fourth attempt to fastCheck validity of BibleRef THEN fetch&display (with observableJS).\n\n\ninputDiv is considered Void\n\n\nimport { html } from \"@observablehq/stdlib\";\n\nviewof show = Inputs.button(\"OnDemand\", {label: \"Show\"});\n\nvalue = valid_book;  // Replace with any reactive logic you'd like\n\nmutable displayedValue = null\n\nupdate = {\n  if (show) {\n    mutable displayedValue = value\n  }\n  null  // avoid displaying anything from this cell\n}\n\nupdate;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\neditions = new Set(['KJV','ESV','SG21',\"NGU-DE\",\"SCH2000\"]);\n\nbibleBooks  = ( () =&gt; {\n  const mybibleBooks = new Object(\n    {\n        \"Genesis\": [\"Ge\", \"Gn\", \"GEN\"],\n        \"Exodus\": [\"Ex\", \"EXOD\"],\n        \"Leviticus\": [\"Lv\", \"LEV\"],\n        \"Numbers\": [\"Nu\", \"NUM\"],\n        \"Deuteronomy\": [\"Dt\",\"DEUT\"],\n        \"Joshua\": [\"Jo\", \"JOSH\",\"Jos\"],\n        \"Judges\": [\"Jg\", \"JUDG\",'Jug'],\n        \"Ruth\": [\"Ru\", \"RUTH\",\"Rut\"],\n        \"1 Samuel\": [\"1S\", \"1SAM\"],\n        \"2 Samuel\": [\"2M\", \"2SAM\"],\n        \"1 Kings\": [\"1K\", \"1KGS\"],\n        \"2 Kings\": [\"2K\", \"2KGS\"],\n        \"1 Chronicles\": [\"1C\", \"1CHRO\",\"1Chr\"],\n        \"2 Chronicles\": [\"2C\", \"2CHRO\",\"2Chr\"],\n        \"Ezra\": [\"Ez\", \"EZRA\",\"Esd\"],\n        \"Nehemiah\": [\"Nh\", \"NEH\"],\n        \"Esther\": [\"Es\", \"ESTH\"],\n        \"Job\": [\"Jb\", \"JOB\"],\n        \"Psalms\": [\"Ps\", \"PSA\"],\n        \"Proverbs\": [\"Pv\", \"PROV\"],\n        \"Ecclesiastes\": [\"Ec\", \"ECC\"],\n        \"Song of Solomon\": [\"So\", \"SONG\",\"Cc\"],\n        \"Isaiah\": [\"Is\", \"ISA\"],\n        \"Jeremiah\": [\"Jr\", \"JER\"],\n        \"Lamentations\": [\"Lm\", \"LAM\"],\n        \"Ezekiel\": [\"Ek\", \"EZEK\"],\n        \"Daniel\": [\"Dn\", \"DAN\"],\n        \"Hosea\": [\"Ho\", \"HOSEA\"],\n        \"Joel\": [\"Jl\", \"JOEL\"],\n        \"Amos\": [\"Am\", \"AMOS\"],\n        \"Obadiah\": [\"Ob\", \"OBAD\"],\n        \"Jonah\": [\"Jn\", \"JONAH\"],\n        \"Micah\": [\"Mc\", \"MICAH\"],\n        \"Nahum\": [\"Na\", \"NAHUM\"],\n        \"Habakkuk\": [\"Ha\", \"HAB\"],\n        \"Zephaniah\": [\"Zp\", \"ZEPH\"],\n        \"Haggai\": [\"Hg\", \"HAG\"],\n        \"Zechariah\": [\"Zc\", \"ZECH\"],\n        \"Malachi\": [\"Ml\", \"MAL\"],\n        \"Matthew\": [\"Mt\", \"MATT\"],\n        \"Mark\": [\"Mk\", \"MARK\"],\n        \"Luke\": [\"Lk\", \"LUKE\"],\n        \"John\": [\"Jh\", \"JOHN\"],\n        \"Acts\": [\"Ac\", \"ACTS\"],\n        \"Romans\": [\"Rm\", \"ROM\"],\n        \"1 Corinthians\": [\"1Co\", \"1COR\"],\n        \"2 Corinthians\": [\"2Co\", \"2COR\"],\n        \"Galatians\": [\"Ga\", \"GAL\"],\n        \"Ephesians\": [\"Ep\", \"EPH\"],\n        \"Philippians\": [\"Ph\", \"PHIL\"],\n        \"Colossians\": [\"Cl\", \"COL\"],\n        \"1 Thessalonians\": [\"1Th\", \"1THES\"],\n        \"2 Thessalonians\": [\"2Th\", \"2THES\"],\n        \"1 Timothy\": [\"1Ti\", \"1TIM\"],\n        \"2 Timothy\": [\"2Ii\", \"2TIM\"],\n        \"Titus\": [\"Ti\", \"TIT\"],\n        \"Philemon\": [\"Pm\", \"PHILE\"],\n        \"Hebrews\": [\"He\",\"Hb\", \"HEB\"],\n        \"James\": [\"Jm\", 'Jc', \"JAS\"],\n        \"1 Peter\": [\"1P\", \"1PET\"],\n        \"2 Peter\": [\"2P\", \"2PET\"],\n        \"1 John\": [\"1J\", \"1JOHN\"],\n        \"2 John\": [\"2J\", \"2JOHN\"],\n        \"3 John\": [\"3J\", \"3JOHN\"],\n        \"Jude\": [\"Ju\", \"JUDE\"],\n        \"Revelation\": [\"Rv\", \"REV\"] });\n  \n  // Convert all values to lowercase\n  const lowerCase = Object.fromEntries(\n      Object.entries(mybibleBooks).map(([mybook, abbreviations]) =&gt; [\n        mybook,\n        abbreviations.map(abbr =&gt; abbr.toLowerCase())\n    ]));\n  return lowerCase  \n})();\n\n/*\nviewof time = { \n  const buttn = Inputs.button(\"Update\", {  \n    value: null, \n    reduce: () =&gt; new Date\n    });\n  buttn.className = \"btn btn-primary\";\n  return buttn;\n};  \n*/\n\n// Inputs\nviewof userRef = html`&lt;input type=\"text\" \n  class=\"form-control\" \n  style=\"width: 150px;\"\n  value=\"ps42:1!KJV\"/&gt;`;\n  \n// TRIGGER    \nviewof appendButton = html`\n  &lt;button \n    class=\"btn btn-primary\" \n    &gt;Append&lt;/button&gt;`\n\n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef}\n  ${viewof appendButton}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvalid_edition =  (() =&gt; {\n  const edition = userRef.split(/!/,2).reverse()[0].toUpperCase();\n\n   switch (true) {\n   case edition === \"\":\n      console.log(\"valid: empty\");\n      return \"ESV\"\n    case  edition === null:\n      console.log(\"valid: null\");\n      return \"ESV\"\n    case editions.has(edition):\n      console.log(\"valid: input\");\n      return edition  \n    default:\n      console.log(\"valid: false\");\n      return \"KJV\"\n  }\n  \n})();\n\nref = userRef.split(/!/)[0];\nverse = ref.split(/[:]/)[1];\nbc = ref.split(/[:]/,2)[0];\n\n// strip trailing digits\nbook = bc.replace(/\\d+$/,\"\");\nch = bc.match(/\\d+$/)[0];\n\nvalid_book = (() =&gt; {\n  // search for match and RETURN UPDATE\n  for (const [mybook, abbreviations] of Object.entries(bibleBooks)) {\n        if (abbreviations.includes(book)) {\n            return mybook\n          }\n        } \n      // no match at all\n            console.log(\"no match\");\n        return \"\"\n       // end of match search\n})();\n\nbcve = (()=&gt; {\n  return {\n  is_valid: ( \n    verse === \"\" || \n    valid_edition === \"\" ||\n    valid_book === \"\"\n    ) ? false : true,     \n  valid_edition,\n  verse,\n  book,\n  valid_book,\n  ch,\n  bc,\n  ref\n}})();\n\nraw = (()=&gt; {\n  const result = bcve;\n  return result.htmlraw\n  })();\n\nappend = (() =&gt; {\n  const display = document.getElementById(\"outputDiv\");\n  display.innerHTML = JSON.stringify(bcve);\n  })();\n\n\n//  display.insertAdjacentHTML(\"beforeend\", fetchPassage.htmlraw);\n\n// FETCH & DISPLAY\n// Call the function with the user's input\nfetchPassage = await (async () =&gt;  {\n//  console.log(JSON.stringify(mysplit));\n  \n  if ( bcve.is_valid ) {\n    const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;\n    console.log(\"following is_valid:\" + url);\n    \n    try {\n      const response = await fetch(url);\n      if (!response.ok) {\n        throw new Error(`HTTP error! Status: ${response.status}`);\n      }\n      return await response.json();\n    } catch (error) {\n        return { error: \"Failed to fetch data\" };\n    }\n  } else {\n      return \"ref is invalid\"\n  }\n\n})();\n\n// Display the fetched content\nhtml`&lt;div&gt;${fetchPassage.htmlraw}&lt;/div&gt;`;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nany output comes here"
-  },
-  {
-    "objectID": "posts/DOM via Javascript/index.html",
-    "href": "posts/DOM via Javascript/index.html",
-    "title": "DOM via Javascript",
-    "section": "",
-    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\nConclusion: Abandon ObersvableJS technology because of CSS-styling hurdle."
-  },
-  {
-    "objectID": "posts/gospel-banner/index.html",
-    "href": "posts/gospel-banner/index.html",
-    "title": "gospel banner",
-    "section": "",
-    "text": "The animated web presentation of biblical claims is posted at https://xminpi.netlify.app/ppt/gospel-banner/\n\nCapture additional content under comments."
-  },
-  {
-    "objectID": "posts/notes/index.html",
-    "href": "posts/notes/index.html",
-    "title": "notes",
-    "section": "",
-    "text": "I merely capture at random my ideas here as comments below."
-  },
-  {
-    "objectID": "posts/cke/index.html",
-    "href": "posts/cke/index.html",
-    "title": "Welcome To EditorJS",
-    "section": "",
-    "text": "Proof of Concept of EditorJS\n\nThis is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.\nrelies on yaml =&gt; format: html: include: include-on-header:\n\nEditor.js in Node.js\n\n\n\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
-  },
-  {
-    "objectID": "posts/etoile/index.html",
-    "href": "posts/etoile/index.html",
-    "title": "résidence Etoile",
-    "section": "",
-    "text": "Point de départ de l’habitation au Clos de l’Etoile"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/global-note/index.html",
-    "href": "posts/global-note/index.html",
-    "title": "Global Note",
-    "section": "",
-    "text": "This is a Global Note, using EditorJS and localStorage autosave mechanism.\n\n\nthis is inputDiv\nthis is editorDiv"
-  },
-  {
-    "objectID": "posts/checkVerse/index.html",
-    "href": "posts/checkVerse/index.html",
-    "title": "checkVerse",
-    "section": "",
-    "text": "GO check validity of BibleRef THEN fetch&display (with observableJS).\n\n\n\n\n\nimport { html } from \"@observablehq/stdlib\";\n\n/*\nviewof name = html`&lt;input type=\"text\" oninput=\"this.dispatchEvent(new CustomEvent('input'))\" placeholder=\"Enter your name\"&gt;`\nname\nmd`Hello, **${name}**`\n*/\n\n// INPUT\nviewof userRef = html`\n  &lt;input \n    type=\"text\" \n/*    oninput=\"this.dispatchEvent(new CustomEvent('input'))\" */\n    value= \"num1:1!KJV\"\n    class=\"form-control\" \n    style=\"width: 150px;\"\n    &gt;`\n\n// TRIGGER    \nviewof appendButton = html`\n  &lt;button class=\"btn btn-primary\"&gt;Append&lt;/button&gt;`\n\n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef}\n  ${viewof appendButton}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbcve = (() =&gt; {\n\n  const editions = new Set(['KJV','ESV','SG21',\"NGU-DE\",\"SCH2000\"]);\n  \n  // Split by multiple separators: comma, semicolon, and pipe\n  const [bc,verse,edition=\"SG21\"] = userRef.split(/[:!]/);\n  // emptied edition is doomed invalid \n  const valid_edition = editions.has(edition) ? edition : \"\"\n  // strip trailing digits\n  const book = bc.split(/(\\d+)$/)\n  \n  // elaborate RETURN value\n  return {\n    \"valid_edition\": valid_edition,\n    \"edition\": edition,\n    \"verse\": verse,\n    \"bc\": bc,\n    \"book\": book[0],\n    \"input\": userRef\n  };\n \n})();\n\nbibleBooks = (() =&gt; {\n  const bibleBooks  = {\n        \"Genesis\": [\"Ge\", \"Gn\", \"GEN\"],\n        \"Exodus\": [\"Ex\", \"EXOD\"],\n        \"Leviticus\": [\"Lv\", \"LEV\"],\n        \"Numbers\": [\"Nu\", \"NUM\"],\n        \"Deuteronomy\": [\"Dt\",\"DEUT\"],\n        \"Joshua\": [\"Jo\", \"JOSH\",\"Jos\"],\n        \"Judges\": [\"Jg\", \"JUDG\",'Jug'],\n        \"Ruth\": [\"Ru\", \"RUTH\",\"Rut\"],\n        \"1 Samuel\": [\"1S\", \"1SAM\"],\n        \"2 Samuel\": [\"2M\", \"2SAM\"],\n        \"1 Kings\": [\"1K\", \"1KGS\"],\n        \"2 Kings\": [\"2K\", \"2KGS\"],\n        \"1 Chronicles\": [\"1C\", \"1CHRO\",\"1Chr\"],\n        \"2 Chronicles\": [\"2C\", \"2CHRO\",\"2Chr\"],\n        \"Ezra\": [\"Ez\", \"EZRA\",\"Esd\"],\n        \"Nehemiah\": [\"Nh\", \"NEH\"],\n        \"Esther\": [\"Es\", \"ESTH\"],\n        \"Job\": [\"Jb\", \"JOB\"],\n        \"Psalms\": [\"Ps\", \"PSA\"],\n        \"Proverbs\": [\"Pv\", \"PROV\"],\n        \"Ecclesiastes\": [\"Ec\", \"ECC\"],\n        \"Song of Solomon\": [\"So\", \"SONG\",\"Cc\"],\n        \"Isaiah\": [\"Is\", \"ISA\"],\n        \"Jeremiah\": [\"Jr\", \"JER\"],\n        \"Lamentations\": [\"Lm\", \"LAM\"],\n        \"Ezekiel\": [\"Ek\", \"EZEK\"],\n        \"Daniel\": [\"Dn\", \"DAN\"],\n        \"Hosea\": [\"Ho\", \"HOSEA\"],\n        \"Joel\": [\"Jl\", \"JOEL\"],\n        \"Amos\": [\"Am\", \"AMOS\"],\n        \"Obadiah\": [\"Ob\", \"OBAD\"],\n        \"Jonah\": [\"Jn\", \"JONAH\"],\n        \"Micah\": [\"Mc\", \"MICAH\"],\n        \"Nahum\": [\"Na\", \"NAHUM\"],\n        \"Habakkuk\": [\"Ha\", \"HAB\"],\n        \"Zephaniah\": [\"Zp\", \"ZEPH\"],\n        \"Haggai\": [\"Hg\", \"HAG\"],\n        \"Zechariah\": [\"Zc\", \"ZECH\"],\n        \"Malachi\": [\"Ml\", \"MAL\"],\n        \"Matthew\": [\"Mt\", \"MATT\"],\n        \"Mark\": [\"Mk\", \"MARK\"],\n        \"Luke\": [\"Lk\", \"LUKE\"],\n        \"John\": [\"Jh\", \"JOHN\"],\n        \"Acts\": [\"Ac\", \"ACTS\"],\n        \"Romans\": [\"Rm\", \"ROM\"],\n        \"1 Corinthians\": [\"1O\", \"1COR\"],\n        \"2 Corinthians\": [\"2O\", \"2COR\"],\n        \"Galatians\": [\"Ga\", \"GAL\"],\n        \"Ephesians\": [\"Ep\", \"EPH\"],\n        \"Philippians\": [\"Ph\", \"PHIL\"],\n        \"Colossians\": [\"Cl\", \"COL\"],\n        \"1 Thessalonians\": [\"1T\", \"1THES\"],\n        \"2 Thessalonians\": [\"2T\", \"2THES\"],\n        \"1 Timothy\": [\"1I\", \"1TIM\"],\n        \"2 Timothy\": [\"2I\", \"2TIM\"],\n        \"Titus\": [\"Ti\", \"TIT\"],\n        \"Philemon\": [\"Pm\", \"PHILE\"],\n        \"Hebrews\": [\"He\", \"HEB\"],\n        \"James\": [\"Jm\", \"JAS\"],\n        \"1 Peter\": [\"1P\", \"1PET\"],\n        \"2 Peter\": [\"2P\", \"2PET\"],\n        \"1 John\": [\"1J\", \"1JOHN\"],\n        \"2 John\": [\"2J\", \"2JOHN\"],\n        \"3 John\": [\"3J\", \"3JOHN\"],\n        \"Jude\": [\"Ju\", \"JUDE\"],\n        \"Revelation\": [\"Rv\", \"REV\"]\n    }\n\n  // Convert all values to lowercase\n    const lowerCaseBibleBooks = Object.fromEntries(\n      Object.entries(bibleBooks).map(([book, abbreviations]) =&gt; [\n        book,\n        abbreviations.map(abbr =&gt; abbr.toLowerCase())\n    ])\n  );\n  \n    return lowerCaseBibleBooks\n  })();\n\nbook = (() =&gt; {\n  console.log(\"bcve triggered\" + bcve.book);\n  // BOOK validation\n \n  // search for match and RETURN UPDATE\n  for (const [mybook, abbreviations] of Object.entries(bibleBooks)) {\n        if (abbreviations.includes(bcve.book)) {\n          console.log(\"scan\" + mybook)\n            bcve[\"valid_book\"] = mybook; \n            bcve[\"is_valid\"] = ( \n              bcve.verse === \"\" || \n              bcve.valid_edition === \"\" ||\n              bcve.valid_book === \"\"\n              ) ? false : true;\n            return bcve\n          }\n        } \n      // no match at all\n            console.log(\"no match\");\n            bcve[\"valid_book\"] = \"\";\n            bcve[\"is_valid\"] = ( \n              bcve.verse === \"\" || \n              bcve.valid_edition === \"\" ||\n              bcve.valid_book === \"\"\n              ) ? false : true;\n            return bcve\n       // end of match search\n})();\n\n// FETCH & DISPLAY\n// Call the function with the user's input\nfetchPassage = await (async () =&gt;  {\n//  console.log(JSON.stringify(mysplit));\n  \n  if ( book.is_valid ) {\n    const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;\n    console.log(\"following is_valid:\" + url);\n    \n    try {\n      const response = await fetch(url);\n      if (!response.ok) {\n        throw new Error(`HTTP error! Status: ${response.status}`);\n      }\n      return await response.json();\n    } catch (error) {\n        return { error: \"Failed to fetch data\" };\n    }\n  } else {\n      return \"ref is invalid\"\n  }\n\n})();\n\n// Display the fetched content\nhtml`&lt;div&gt;${fetchPassage.htmlraw}&lt;/div&gt;`;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nappend = (() =&gt; {\n  document.getElementById(\"outputDiv\").innerHTML = JSON.stringify(book)\n  })();\n\n\n\n\n\n\n\n\n\nfunction storage_(){\n  return localStorage.getItem(\"refidArray\")\n} \n\n//viewof time = Inputs.button(\"Update\", {value: null, reduce: () =&gt; new Date})\n//viewof time = Inputs.button(\"Update\", {value: new Date, reduce: () =&gt; storage_()})\n//html`&lt;div&gt;${time}&lt;/div&gt;`;\n\n//======================================================\n\n//======================================================\n\n\n//======================================================\n//===== FETCH & display\n\n\n\n\n\n\n\nany output comes here"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Ynot (Why not!) is my personal gitHub repo to store infos as issues, that are anchored to any pages of my other websites.\nYnot is sourced from docker rv5/ynot..\n\n\n\n\n\n\n\n\n\n\n\n\nbible look\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncheckVerse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStorage with Javascript\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nGlobal Note\n\n\n\n\n\n\n\n\n\n\n\nMay 17, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nexcursions\n\n\n\n\n\n\n\n\n\n\n\nOct 21, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\nRomans Note\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nrésidence Etoile\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nimmobilier\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To EditorJS\n\n\n\n\n\n\n\n\n\n\n\nMay 16, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To CKeditor\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nnotes\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\npriorités\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ngospel banner\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nraw content\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nDOM via Javascript\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nmemo_verse\n\n\n\n\n\n\n\n\n\n\n\nDec 28, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nfastCheck\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbible API\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2025\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nSuccession\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIframe\n\n\n\n\n\n\n\n\n\n\n\nOct 9, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nObservables\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nIT\n\n\n\n\n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\njsfapi\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\ncuisine\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2024\n\n\ngranPiero\n\n\n\n\n\n\n\n\n\n\n\n\nBible access\n\n\n\n\n\n\n\n\n\n\n\nMay 21, 2025\n\n\ngranPiero\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/bible-look/index.html",
-    "href": "posts/bible-look/index.html",
-    "title": "bible look",
-    "section": "",
-    "text": "Bible Search and Lookup technologies."
-  },
-  {
-    "objectID": "posts/storage/index.html",
-    "href": "posts/storage/index.html",
-    "title": "Storage with Javascript",
-    "section": "",
-    "text": "Demonstrate the feasibility of user interaction (input, action) with LocalStorage (set, get).\n\n\nModify the DOM: take an input, trigger a button to echo the value and save to LocalStorage\n\n\n\nSubmit to LocalStorage\n\n\n\n\nRead Back from LocalStorage: Trigger the retrieval and echo the value\n\n\nRetrieve from LocalStorage\n\n\n\nOne script inserted here handles that all.\n\n\nmake it a content script extension."
-  },
-  {
-    "objectID": "posts/excursions/index.html",
-    "href": "posts/excursions/index.html",
-    "title": "excursions",
-    "section": "",
-    "text": "The root of discoveries.\n\n\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres."
-  },
-  {
-    "objectID": "posts/romans_note/index.html",
-    "href": "posts/romans_note/index.html",
-    "title": "Romans Note",
-    "section": "",
-    "text": "This is a Global Note on Romans (using EditorJS and localStorage autosave mechanisms)\n\n\nthis is inputDiv\nthis is editorDiv"
-  },
-  {
-    "objectID": "posts/immobilier/index.html",
-    "href": "posts/immobilier/index.html",
-    "title": "immobilier",
-    "section": "",
-    "text": "Point de départ du projet d’habitation à Montpellier.\n\nhttps://www.avendrealouer.fr/professionnels/montpellier-34/loc-101-16124.html"
-  },
-  {
-    "objectID": "posts/cke/index_cke.html",
-    "href": "posts/cke/index_cke.html",
-    "title": "Welcome To CKeditor",
-    "section": "",
-    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
-  },
-  {
-    "objectID": "posts/priorités/index.html",
-    "href": "posts/priorités/index.html",
-    "title": "priorités",
-    "section": "",
-    "text": "Organise the tree of priorities\n\nimportant first"
-  },
-  {
-    "objectID": "posts/memo_verse/index.html",
-    "href": "posts/memo_verse/index.html",
-    "title": "memo_verse",
-    "section": "",
-    "text": "This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
-  },
-  {
-    "objectID": "posts/bible-api/index.html",
-    "href": "posts/bible-api/index.html",
-    "title": "bible API",
-    "section": "",
-    "text": "Bible API technologies.\n\n\n\n\n\n\nconsole.log(\"toto\")\nconst app = new App();\n\n// app.m_fetchPassage(\"ps42!KJV\");\n\n\n\nconsole.log(\"toto2\")\nfetchData(\"ps42!KJV\");"
-  },
-  {
-    "objectID": "posts/iframe/index.html",
-    "href": "posts/iframe/index.html",
-    "title": "Iframe",
-    "section": "",
-    "text": "First use of an iframe element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV\n\n\n\nConclusion: we abandon iframe technology."
-  },
-  {
-    "objectID": "posts/IT/index.html",
-    "href": "posts/IT/index.html",
-    "title": "IT",
-    "section": "",
-    "text": "Everything related to technology."
-  },
-  {
-    "objectID": "posts/cuisine/index.html",
-    "href": "posts/cuisine/index.html",
-    "title": "cuisine",
-    "section": "",
-    "text": "Recettes de cuisine éprouvées."
+    "text": "Resume observableJS mix (e.g. import class! fetch&display).\n\n\ninputDiv is considered Void\n\n\nimport { html } from \"@observablehq/stdlib\";\n\n// Inputs\nviewof userRef_new = html`&lt;input type=\"text\" \n  class=\"form-control\" \n  style=\"width: 150px;\"\n  value=\"ps40:1!KJV\"/&gt;`;\n  \n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef_new}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvalid_param = userRef_new;\n\n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${valid_param}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nany output comes here\n\n\nimport { Ref } from \"./ref.js\";\n\n// Step 4: Create object and use its methods for side-effects fetch&display\nmyRef = {\n  const mi = new Ref(userRef_new);\n  await mi.fetch_parallel();   // Wait for data to be fetched\n  mi.displayData();\n  return mi\n};"
   }
 ]

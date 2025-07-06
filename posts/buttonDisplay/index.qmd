@@ -1,11 +1,11 @@
 ---
-title: "fastCheck"
+title: "button display"
 image: "bugsbunny.png"
 execute:
   echo: false
 ---
 
-> AFTER Fourth attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
+> Fourth attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
 
 ::: {#inputDiv}
 inputDiv is considered Void
@@ -14,10 +14,10 @@ inputDiv is considered Void
 ```{ojs}
 import { html } from "@observablehq/stdlib";
 
-// Constant Objects
+// CONSTANT Objects
 editions = new Set(['KJV','ESV','SG21',"NGU-DE","SCH2000"]);
 
-bibleBooks  = (() => {
+bibleBooks  = ( () => {
   const mybibleBooks = new Object(
     {
         "Genesis": ["Ge", "Gn", "GEN"],
@@ -85,8 +85,7 @@ bibleBooks  = (() => {
         "2 John": ["2J", "2JOHN"],
         "3 John": ["3J", "3JOHN"],
         "Jude": ["Ju", "JUDE"],
-        "Revelation": ["Rv", "REV"] 
-    });
+        "Revelation": ["Rv", "REV"] });
   
   // Convert all values to lowercase
   const lowerCase = Object.fromEntries(
@@ -96,34 +95,58 @@ bibleBooks  = (() => {
     ]));
   return lowerCase  
 })();
- 
-// Inputs
+
+```
+
+```{ojs}
+// INPUTS 
 viewof userRef = html`<input type="text" 
   class="form-control" 
   style="width: 150px;"
   value="ps42:1!KJV"/>`;
 
-display = document.getElementById("outputDiv");
-
-viewof append = Inputs.button("Append", {  
+/*  
+viewof time = Inputs.button("Append", {  
     value: null, 
     reduce: () => { 
-      const snapRef = viewof userRef.value;
- //     display.textContent = `See ${snapRef}`;
-      const span = html`<p>${viewof userRef.value} </p>`;
-      display.appendChild(span);
-      return snapRef
-    }
+      const val = viewof userRef.value;
+      return val
+      }
     });
+*/
 
-// VIEWOF
+viewof reset = Inputs.button("Reset", {  
+    value: null, 
+    reduce: () => { 
+      const display = document.getElementById("outputDiv");
+      display.innerHTML = "";
+      }
+    });    
+```
+
+```{ojs}
+// VIEWOF ONPUTS
+
 html`<div class="row container">
   Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ${viewof userRef}
-  ${viewof append}
+  ${viewof reset}
   </div>`
   
-// valid edition  
+append = {
+//  const snapshot = await Promises.when(userRef);
+  const display = document.getElementById("outputDiv");
+//  display.insertAdjacentHTML("beforeend", snapshot);
+//  console.log("Non-reactive snapshot:", snapshot);
+  };
+  
+// DISPLAY of  the fetched content
+html`<div>${fetchPassage.htmlraw}</div>`;  
+
+```
+
+```{ojs}
+// VALIDATION   
 valid_edition =  (() => {
   const edition = userRef.split(/!/,2).reverse()[0].toUpperCase();
 
@@ -145,7 +168,7 @@ valid_edition =  (() => {
 
 ref = userRef.split(/!/)[0];
 verse = ref.split(/[:]/)[1];
-bc = ref.split(/[:]/)[0];
+bc = ref.split(/[:]/,2)[0];
 
 // strip trailing digits
 book = bc.replace(/\d+$/,"");
@@ -180,10 +203,16 @@ bcve = (()=> {
   ref
 }})();
 
+```
+
+```{ojs}
+// FETCH
+
 // FETCH & DISPLAY
 // Call the function with the user's input
 fetchPassage = await (async () =>  {
-
+//  console.log(JSON.stringify(mysplit));
+  
   if ( bcve.is_valid ) {
     const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;
     console.log("following is_valid:" + url);
@@ -202,83 +231,8 @@ fetchPassage = await (async () =>  {
   }
 
 })();
-
-// Display the fetched content
-html`<div>${fetchPassage.htmlraw}</div>`;  
-
 ```
 
 ::: {#outputDiv}
 any output comes here
 :::
-
-#####==================== SHARES =================================#####
-
-#####==================== NEW UI =================================#####
-
-1.  Input_Field
-
-```{ojs}
-// Inputs
-viewof userRef_new = html`<input type="text" 
-  class="form-control" 
-  style="width: 150px;"
-  value="ps40:1!KJV"/>`;
-  
-// VIEWOF
-html`<div class="row container">
-  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  ${viewof userRef_new}
-  </div>`  
-```
-
-2.  Ref_Validated
-
-```{ojs}
-valid_param = userRef_new;
-valid_param;
-```
-
-```{=html}
-<script src="valid.js"></script>
-```
-
-3.  Fetch\_&\_Display (see console)
-
-```{=javascript}
-class Ref {
-  // takes an array of validated reference(s) as argument
-  constructor(input = [ 'Hos14!SG21', 'Neh13!SG21','Rev22:4!KJV' ]) {
-    this.inputs = Array.isArray(input) ? input : [input];
-    this.baseUrl = 'https://hall.pjafischer.workers.dev/passage/';
-  }
-
-  async fetch_parallel() {
-    const fetchPromises = this.inputs.map(input => {
-      const url = `${this.baseUrl}?param=${encodeURIComponent(input)}`;
-      return fetch(url)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error for ${input}! status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .catch(error => {
-          console.error(`Fetch error for ${input}:`, error);
-          return null;
-        });
-    });
-
-    return Promise.all(fetchPromises);
-  }
-}
-
-// Assuming the Ref class has already been defined
-
-// Test with a single reference
-(async () => {
-  const ref = new Ref('gen1:1');
-  const [result] = await ref.fetch_parallel();
-  console.log('Single Reference Result:\n', result);
-})();
-```
