@@ -1,11 +1,13 @@
 ---
 title: "adVerse"
+date: "2025-07-08"
+categories: [bible]
 image: "f1car.jpeg"
 execute:
   echo: false
 ---
 
-> Resume *observableJS* mix (e.g. import class! fetch&display).
+> mix of *observableJS* (e.g. import class!, fetch&display).
 
 ::: {#inputDiv}
 inputDiv is considered Void
@@ -42,19 +44,40 @@ any output comes here
 :::
 
 ```{ojs}
-import { Ref } from "./ref.js";
+import { Ref, Bcve, Books, BibleBooksCodes } from "./ref.js";
+// FUNCTIONS are in BibleBooksCodes.js, a Module handling BibleBooksCodes functions.
 
-// Step 4: Create object and use its methods for side-effects fetch&display
-myRef = {
+miRef = { 
   const mi = new Ref(userRef_new);
   await mi.fetch_parallel();   // Wait for data to be fetched
   mi.displayData();
-  return mi
-};
+  return mi; // Return the object as the cell's value
+}
+miRef;
 
-/*
-(async () => {
-  await myRef.fetch_parallel();   // Wait for data to be fetched
-})();
-*/
+mbcv = {
+  const mb = new Bcve(userRef_new);
+  mb.hi()
+  return mb;
+}
+mbcv;
+
+mbooks = {
+  const mbk = new Books();
+  return mbk;
+}
+mbooks;
+
+bbc = {
+  mbcv;
+  // DATA is imported from BibleBooksCodes_Tables.js
+  const BBC = new BibleBooksCodes();
+  //	console.log(BBC.whoami_());
+  const BBClist	= BBC.getBBBlist();
+  const BBCsample = BBC.getBBBsample_(2);
+//  console.log(BBC.getBBBFromText(mbcv.book));
+  return BBC.getBBBFromText(mbcv.book)
+}
+bbc;
+
 ```
