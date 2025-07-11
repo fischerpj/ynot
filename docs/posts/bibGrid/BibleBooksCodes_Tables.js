@@ -503,7 +503,7 @@ const BibleBooksCodesTables =
       "typicalSection": "OT"
     },
     "22": {
-      "referenceAbbreviation": "SON",
+      "referenceAbbreviation": "SNG",
       "shortAbbreviation": "So",
       "originalLanguageCode": "hbo",
       "bookName": "שִׁיר הַשִּׁירִים",
@@ -512,7 +512,7 @@ const BibleBooksCodesTables =
       "OSISAbbreviation": "Song",
       "SwordAbbreviation": "Song",
       "CCELNumberString": "22",
-      "USFMAbbreviation": "SON",
+      "USFMAbbreviation": "Sng",
       "USFMNumberString": "22",
       "USXNumberString": "022",
       "UnboundCodeString": "22O",
@@ -669,7 +669,7 @@ const BibleBooksCodesTables =
       "typicalSection": "OT"
     },
     "29": {
-      "referenceAbbreviation": "JOE",
+      "referenceAbbreviation": "JOL",
       "shortAbbreviation": "Jol",
       "originalLanguageCode": "hbo",
       "bookName": "יוֹאֵל",
@@ -738,7 +738,7 @@ const BibleBooksCodesTables =
       "typicalSection": "OT"
     },
     "32": {
-      "referenceAbbreviation": "JON",
+      "referenceAbbreviation": "JNA",
       "shortAbbreviation": "Jon",
       "originalLanguageCode": "hbo",
       "bookName": "יוֹנָה",
@@ -945,7 +945,7 @@ const BibleBooksCodesTables =
       "typicalSection": "NT"
     },
     "41": {
-      "referenceAbbreviation": "MAR",
+      "referenceAbbreviation": "MRK",
       "shortAbbreviation": "Mk",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Μᾶρκον",
@@ -954,7 +954,7 @@ const BibleBooksCodesTables =
       "OSISAbbreviation": "Mark",
       "SwordAbbreviation": "Mark",
       "CCELNumberString": "41",
-      "USFMAbbreviation": "MAR",
+      "USFMAbbreviation": "Mrk",
       "USFMNumberString": "42",
       "USXNumberString": "041",
       "UnboundCodeString": "41N",
@@ -993,7 +993,7 @@ const BibleBooksCodesTables =
       "typicalSection": "NT"
     },
     "43": {
-      "referenceAbbreviation": "JOH",
+      "referenceAbbreviation": "JHN",
       "shortAbbreviation": "Jn",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Ἰωάννην",
@@ -1002,13 +1002,13 @@ const BibleBooksCodesTables =
       "OSISAbbreviation": "John",
       "SwordAbbreviation": "John",
       "CCELNumberString": "43",
-      "USFMAbbreviation": "JOH",
+      "USFMAbbreviation": "Jhn",
       "USFMNumberString": "44",
       "USXNumberString": "043",
       "UnboundCodeString": "43N",
       "BibleditNumberString": "43",
       "NETBibleAbbreviation": "Joh",
-      "DrupalBibleAbbreviation": "JOH",
+      "DrupalBibleAbbreviation": "Jhn",
       "ByzantineAbbreviation": "JOH",
       "numExpectedChapters": "21",
       "possibleAlternativeBooks": null,
@@ -1501,7 +1501,7 @@ const BibleBooksCodesTables =
       "typicalSection": "NT"
     },
     "65": {
-      "referenceAbbreviation": "JUD",
+      "referenceAbbreviation": "JDE",
       "shortAbbreviation": "Jud",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰούδας",
@@ -6043,7 +6043,7 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "קֹהֶלֶת / Qoholeth",
       "typicalSection": "OT"
     },
-    "SON": {
+    "SNG": {
       "originalLanguageCode": "hbo",
       "bookName": "שִׁיר הַשִּׁירִים",
       "referenceNumber": 22,
@@ -6053,7 +6053,7 @@ const BibleBooksCodesTables =
       "OSISAbbreviation": "Song",
       "SwordAbbreviation": "Song",
       "CCELNumberString": "22",
-      "USFMAbbreviation": "SON",
+      "USFMAbbreviation": "Sng",
       "USFMNumberString": "22",
       "USXNumberString": "022",
       "UnboundCodeString": "22O",
@@ -6209,7 +6209,7 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "Hosea",
       "typicalSection": "OT"
     },
-    "JOE": {
+    "JOL": {
       "originalLanguageCode": "hbo",
       "bookName": "יוֹאֵל",
       "referenceNumber": 29,
@@ -6278,7 +6278,7 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "Obadiah",
       "typicalSection": "OT"
     },
-    "JON": {
+    "JNA": {
       "originalLanguageCode": "hbo",
       "bookName": "יוֹנָה",
       "referenceNumber": 32,
@@ -6485,7 +6485,7 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "Matthew",
       "typicalSection": "NT"
     },
-    "MAR": {
+    "MRK": {
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Μᾶρκον",
       "referenceNumber": 41,
@@ -6495,7 +6495,7 @@ const BibleBooksCodesTables =
       "OSISAbbreviation": "Mark",
       "SwordAbbreviation": "Mark",
       "CCELNumberString": "41",
-      "USFMAbbreviation": "MAR",
+      "USFMAbbreviation": "Mrk",
       "USFMNumberString": "42",
       "USXNumberString": "041",
       "UnboundCodeString": "41N",
@@ -6533,7 +6533,7 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "Luke",
       "typicalSection": "NT"
     },
-    "JOH": {
+    "JHN": {
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Ἰωάννην",
       "referenceNumber": 43,
@@ -6543,13 +6543,13 @@ const BibleBooksCodesTables =
       "OSISAbbreviation": "John",
       "SwordAbbreviation": "John",
       "CCELNumberString": "43",
-      "USFMAbbreviation": "JOH",
+      "USFMAbbreviation": "Jhn",
       "USFMNumberString": "44",
       "USXNumberString": "043",
       "UnboundCodeString": "43N",
       "BibleditNumberString": "43",
       "NETBibleAbbreviation": "Joh",
-      "DrupalBibleAbbreviation": "JOH",
+      "DrupalBibleAbbreviation": "Jhn",
       "ByzantineAbbreviation": "JOH",
       "numExpectedChapters": "21",
       "possibleAlternativeBooks": null,
@@ -7041,7 +7041,7 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "3 John",
       "typicalSection": "NT"
     },
-    "JUD": {
+    "JDE": {
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰούδας",
       "referenceNumber": 65,
@@ -11126,7 +11126,7 @@ const BibleBooksCodesTables =
     "PSS",
     "PRO",
     "ECC",
-    "SON",
+    "SNG",
     "ISA",
     "JER",
     "LAM",
@@ -11137,10 +11137,10 @@ const BibleBooksCodesTables =
     "DNC",
     "P12",
     "HOS",
-    "JOE",
+    "JOL",
     "AMO",
     "OBA",
-    "JON",
+    "JNA",
     "MIC",
     "NAH",
     "HAB",
@@ -11243,9 +11243,9 @@ const BibleBooksCodesTables =
     "MQ2",
     "MQ3",
     "MAT",
-    "MAR",
+    "MRK",
     "LUK",
-    "JOH",
+    "JHN",
     "LKA",
     "ACT",
     "ROM",
@@ -11268,7 +11268,7 @@ const BibleBooksCodesTables =
     "JN1",
     "JN2",
     "JN3",
-    "JUD",
+    "JDE",
     "REV",
     "LAO",
     "COP",
@@ -11417,7 +11417,7 @@ const BibleBooksCodesTables =
     ],
     "SONG": [
       22,
-      "SON"
+      "SNG"
     ],
     "ISA": [
       23,
@@ -11445,7 +11445,7 @@ const BibleBooksCodesTables =
     ],
     "JOEL": [
       29,
-      "JOE"
+      "JOL"
     ],
     "AMOS": [
       30,
@@ -11457,7 +11457,7 @@ const BibleBooksCodesTables =
     ],
     "JONAH": [
       32,
-      "JON"
+      "JNA"
     ],
     "MIC": [
       33,
@@ -11493,7 +11493,7 @@ const BibleBooksCodesTables =
     ],
     "MARK": [
       41,
-      "MAR"
+      "MRK"
     ],
     "LUKE": [
       42,
@@ -11501,7 +11501,7 @@ const BibleBooksCodesTables =
     ],
     "JOHN": [
       43,
-      "JOH"
+      "JHN"
     ],
     "ACTS": [
       44,
@@ -11589,7 +11589,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE": [
       65,
-      "JUD"
+      "JDE"
     ],
     "REV": [
       66,
@@ -11781,7 +11781,7 @@ const BibleBooksCodesTables =
     ],
     "SONG": [
       22,
-      "SON"
+      "SNG"
     ],
     "ISA": [
       23,
@@ -11809,7 +11809,7 @@ const BibleBooksCodesTables =
     ],
     "JOEL": [
       29,
-      "JOE"
+      "JOL"
     ],
     "AMOS": [
       30,
@@ -11821,7 +11821,7 @@ const BibleBooksCodesTables =
     ],
     "JONAH": [
       32,
-      "JON"
+      "JNA"
     ],
     "MIC": [
       33,
@@ -11857,7 +11857,7 @@ const BibleBooksCodesTables =
     ],
     "MARK": [
       41,
-      "MAR"
+      "MRK"
     ],
     "LUKE": [
       42,
@@ -11865,7 +11865,7 @@ const BibleBooksCodesTables =
     ],
     "JOHN": [
       43,
-      "JOH"
+      "JHN"
     ],
     "ACTS": [
       44,
@@ -11953,7 +11953,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE": [
       65,
-      "JUD"
+      "JDE"
     ],
     "REV": [
       66,
@@ -12164,7 +12164,7 @@ const BibleBooksCodesTables =
     ],
     "SONG": [
       22,
-      "SON"
+      "SNG"
     ],
     "ISA": [
       23,
@@ -12192,7 +12192,7 @@ const BibleBooksCodesTables =
     ],
     "JOEL": [
       29,
-      "JOE"
+      "JOL"
     ],
     "AMOS": [
       30,
@@ -12204,7 +12204,7 @@ const BibleBooksCodesTables =
     ],
     "JONAH": [
       32,
-      "JON"
+      "JNA"
     ],
     "MIC": [
       33,
@@ -12240,7 +12240,7 @@ const BibleBooksCodesTables =
     ],
     "MARK": [
       41,
-      "MAR"
+      "MRK"
     ],
     "LUKE": [
       42,
@@ -12248,7 +12248,7 @@ const BibleBooksCodesTables =
     ],
     "JOHN": [
       43,
-      "JOH"
+      "JHN"
     ],
     "ACTS": [
       44,
@@ -12336,7 +12336,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE": [
       65,
-      "JUD"
+      "JDE"
     ],
     "REV": [
       66,
@@ -12824,7 +12824,7 @@ const BibleBooksCodesTables =
     ],
     "22": [
       22,
-      "SON"
+      "SNG"
     ],
     "23": [
       23,
@@ -12852,7 +12852,7 @@ const BibleBooksCodesTables =
     ],
     "29": [
       29,
-      "JOE"
+      "JOL"
     ],
     "30": [
       30,
@@ -12864,7 +12864,7 @@ const BibleBooksCodesTables =
     ],
     "32": [
       32,
-      "JON"
+      "JNA"
     ],
     "33": [
       33,
@@ -12900,7 +12900,7 @@ const BibleBooksCodesTables =
     ],
     "41": [
       41,
-      "MAR"
+      "MRK"
     ],
     "42": [
       42,
@@ -12908,7 +12908,7 @@ const BibleBooksCodesTables =
     ],
     "43": [
       43,
-      "JOH"
+      "JHN"
     ],
     "44": [
       44,
@@ -12996,7 +12996,7 @@ const BibleBooksCodesTables =
     ],
     "65": [
       65,
-      "JUD"
+      "JDE"
     ],
     "66": [
       66,
@@ -13191,9 +13191,9 @@ const BibleBooksCodesTables =
       "ECC",
       "21"
     ],
-    "SON": [
+    "SNG": [
       22,
-      "SON",
+      "SNG",
       "22"
     ],
     "ISA": [
@@ -13226,9 +13226,9 @@ const BibleBooksCodesTables =
       "HOS",
       "28"
     ],
-    "JOE": [
+    "JOL": [
       29,
-      "JOE",
+      "JOL",
       "29"
     ],
     "AMO": [
@@ -13243,7 +13243,7 @@ const BibleBooksCodesTables =
     ],
     "JON": [
       32,
-      "JON",
+      "JNA",
       "32"
     ],
     "MIC": [
@@ -13286,9 +13286,9 @@ const BibleBooksCodesTables =
       "MAT",
       "41"
     ],
-    "MAR": [
+    "MRK": [
       41,
-      "MAR",
+      "MRK",
       "42"
     ],
     "LUK": [
@@ -13296,9 +13296,9 @@ const BibleBooksCodesTables =
       "LUK",
       "43"
     ],
-    "JOH": [
+    "JHN": [
       43,
-      "JOH",
+      "JHN",
       "44"
     ],
     "ACT": [
@@ -13408,7 +13408,7 @@ const BibleBooksCodesTables =
     ],
     "JUD": [
       65,
-      "JUD",
+      "JDE",
       "66"
     ],
     "REV": [
@@ -13912,8 +13912,8 @@ const BibleBooksCodesTables =
     ],
     "22": [
       22,
-      "SON",
-      "SON"
+      "SNG",
+      "Sng"
     ],
     "23": [
       23,
@@ -13947,7 +13947,7 @@ const BibleBooksCodesTables =
     ],
     "29": [
       29,
-      "JOE",
+      "JOL",
       "Jol"
     ],
     "30": [
@@ -13962,7 +13962,7 @@ const BibleBooksCodesTables =
     ],
     "32": [
       32,
-      "JON",
+      "JNA",
       "Jon"
     ],
     "33": [
@@ -14007,8 +14007,8 @@ const BibleBooksCodesTables =
     ],
     "42": [
       41,
-      "MAR",
-      "MAR"
+      "MRK",
+      "Mrk"
     ],
     "43": [
       42,
@@ -14017,8 +14017,8 @@ const BibleBooksCodesTables =
     ],
     "44": [
       43,
-      "JOH",
-      "JOH"
+      "JHN",
+      "Jhn"
     ],
     "45": [
       44,
@@ -14127,7 +14127,7 @@ const BibleBooksCodesTables =
     ],
     "66": [
       65,
-      "JUD",
+      "JDE",
       "Jud"
     ],
     "67": [
@@ -14492,8 +14492,8 @@ const BibleBooksCodesTables =
     ],
     "022": [
       22,
-      "SON",
-      "SON"
+      "SNG",
+      "Sng"
     ],
     "023": [
       23,
@@ -14527,7 +14527,7 @@ const BibleBooksCodesTables =
     ],
     "029": [
       29,
-      "JOE",
+      "JOL",
       "Jol"
     ],
     "030": [
@@ -14542,7 +14542,7 @@ const BibleBooksCodesTables =
     ],
     "032": [
       32,
-      "JON",
+      "JNA",
       "Jon"
     ],
     "033": [
@@ -14587,8 +14587,8 @@ const BibleBooksCodesTables =
     ],
     "041": [
       41,
-      "MAR",
-      "MAR"
+      "MRK",
+      "Mrk"
     ],
     "042": [
       42,
@@ -14597,8 +14597,8 @@ const BibleBooksCodesTables =
     ],
     "043": [
       43,
-      "JOH",
-      "JOH"
+      "JHN",
+      "Jhn"
     ],
     "044": [
       44,
@@ -14707,7 +14707,7 @@ const BibleBooksCodesTables =
     ],
     "065": [
       65,
-      "JUD",
+      "JDE",
       "Jud"
     ],
     "066": [
@@ -15019,8 +15019,8 @@ const BibleBooksCodesTables =
     ],
     "22O": [
       22,
-      "SON",
-      "SON"
+      "SNG",
+      "Sng"
     ],
     "23O": [
       23,
@@ -15054,7 +15054,7 @@ const BibleBooksCodesTables =
     ],
     "29O": [
       29,
-      "JOE",
+      "JOL",
       "Jol"
     ],
     "30O": [
@@ -15069,7 +15069,7 @@ const BibleBooksCodesTables =
     ],
     "32O": [
       32,
-      "JON",
+      "JNA",
       "Jon"
     ],
     "33O": [
@@ -15114,8 +15114,8 @@ const BibleBooksCodesTables =
     ],
     "41N": [
       41,
-      "MAR",
-      "MAR"
+      "MRK",
+      "Mrk"
     ],
     "42N": [
       42,
@@ -15124,8 +15124,8 @@ const BibleBooksCodesTables =
     ],
     "43N": [
       43,
-      "JOH",
-      "JOH"
+      "JHN",
+      "Jhn"
     ],
     "44N": [
       44,
@@ -15234,7 +15234,7 @@ const BibleBooksCodesTables =
     ],
     "65N": [
       65,
-      "JUD",
+      "JDE",
       "Jud"
     ],
     "66N": [
@@ -15451,8 +15451,8 @@ const BibleBooksCodesTables =
     ],
     "22": [
       22,
-      "SON",
-      "SON"
+      "SNG",
+      "Sng"
     ],
     "23": [
       23,
@@ -15486,7 +15486,7 @@ const BibleBooksCodesTables =
     ],
     "29": [
       29,
-      "JOE",
+      "JOL",
       "Jol"
     ],
     "30": [
@@ -15501,7 +15501,7 @@ const BibleBooksCodesTables =
     ],
     "32": [
       32,
-      "JON",
+      "JNA",
       "Jon"
     ],
     "33": [
@@ -15546,8 +15546,8 @@ const BibleBooksCodesTables =
     ],
     "41": [
       41,
-      "MAR",
-      "MAR"
+      "MRK",
+      "Mrk"
     ],
     "42": [
       42,
@@ -15556,8 +15556,8 @@ const BibleBooksCodesTables =
     ],
     "43": [
       43,
-      "JOH",
-      "JOH"
+      "JHN",
+      "Jhn"
     ],
     "44": [
       44,
@@ -15666,7 +15666,7 @@ const BibleBooksCodesTables =
     ],
     "65": [
       65,
-      "JUD",
+      "JDE",
       "Jud"
     ],
     "66": [
@@ -15875,7 +15875,7 @@ const BibleBooksCodesTables =
     ],
     "SOS": [
       22,
-      "SON"
+      "SNG"
     ],
     "ISA": [
       23,
@@ -15903,7 +15903,7 @@ const BibleBooksCodesTables =
     ],
     "JOE": [
       29,
-      "JOE"
+      "JOL"
     ],
     "AMO": [
       30,
@@ -15915,7 +15915,7 @@ const BibleBooksCodesTables =
     ],
     "JON": [
       32,
-      "JON"
+      "JNA"
     ],
     "MIC": [
       33,
@@ -15951,7 +15951,7 @@ const BibleBooksCodesTables =
     ],
     "MAR": [
       41,
-      "MAR"
+      "MRK"
     ],
     "LUK": [
       42,
@@ -15959,7 +15959,7 @@ const BibleBooksCodesTables =
     ],
     "JOH": [
       43,
-      "JOH"
+      "JHN"
     ],
     "ACT": [
       44,
@@ -16047,7 +16047,7 @@ const BibleBooksCodesTables =
     ],
     "JUD": [
       65,
-      "JUD"
+      "JDE"
     ],
     "REV": [
       66,
@@ -16144,7 +16144,7 @@ const BibleBooksCodesTables =
     ],
     "SON": [
       22,
-      "SON"
+      "SNG"
     ],
     "ISA": [
       23,
@@ -16172,7 +16172,7 @@ const BibleBooksCodesTables =
     ],
     "JOE": [
       29,
-      "JOE"
+      "JOL"
     ],
     "AMO": [
       30,
@@ -16184,7 +16184,7 @@ const BibleBooksCodesTables =
     ],
     "JON": [
       32,
-      "JON"
+      "JNA"
     ],
     "MIC": [
       33,
@@ -16220,15 +16220,15 @@ const BibleBooksCodesTables =
     ],
     "MAK": [
       41,
-      "MAR"
+      "MRK"
     ],
     "LUK": [
       42,
       "LUK"
     ],
-    "JOH": [
+    "JHN": [
       43,
-      "JOH"
+      "JHN"
     ],
     "ACT": [
       44,
@@ -16316,7 +16316,7 @@ const BibleBooksCodesTables =
     ],
     "JUD": [
       65,
-      "JUD"
+      "JDE"
     ],
     "REV": [
       66,
@@ -16410,7 +16410,7 @@ const BibleBooksCodesTables =
     ],
     "SOL": [
       22,
-      "SON"
+      "SNG"
     ],
     "ISA": [
       23,
@@ -16438,7 +16438,7 @@ const BibleBooksCodesTables =
     ],
     "JOE": [
       29,
-      "JOE"
+      "JOL"
     ],
     "AMO": [
       30,
@@ -16450,7 +16450,7 @@ const BibleBooksCodesTables =
     ],
     "JON": [
       32,
-      "JON"
+      "JNA"
     ],
     "MIC": [
       33,
@@ -16486,7 +16486,7 @@ const BibleBooksCodesTables =
     ],
     "MAR": [
       41,
-      "MAR"
+      "MRK"
     ],
     "LUK": [
       42,
@@ -16494,7 +16494,7 @@ const BibleBooksCodesTables =
     ],
     "JOH": [
       43,
-      "JOH"
+      "JHN"
     ],
     "ACT": [
       44,
@@ -16582,7 +16582,7 @@ const BibleBooksCodesTables =
     ],
     "JUD": [
       65,
-      "JUD"
+      "JDE"
     ],
     "REV": [
       66,
@@ -16720,7 +16720,7 @@ const BibleBooksCodesTables =
     ],
     "MR": [
       41,
-      "MAR"
+      "MRK"
     ],
     "LU": [
       42,
@@ -16728,7 +16728,7 @@ const BibleBooksCodesTables =
     ],
     "JOH": [
       43,
-      "JOH"
+      "JHN"
     ],
     "AC": [
       44,
@@ -16816,7 +16816,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE": [
       65,
-      "JUD"
+      "JDE"
     ],
     "RE": [
       66,
@@ -16910,7 +16910,7 @@ const BibleBooksCodesTables =
     ],
     "SONG OF SOLOMON / SONG OF SONGS / CANTICLES / CANTICLE OF CANTICLES": [
       22,
-      "SON"
+      "SNG"
     ],
     "ISAIAH": [
       23,
@@ -16938,7 +16938,7 @@ const BibleBooksCodesTables =
     ],
     "JOEL": [
       29,
-      "JOE"
+      "JOL"
     ],
     "AMOS": [
       30,
@@ -16950,7 +16950,7 @@ const BibleBooksCodesTables =
     ],
     "JONAH": [
       32,
-      "JON"
+      "JNA"
     ],
     "MICAH": [
       33,
@@ -16986,7 +16986,7 @@ const BibleBooksCodesTables =
     ],
     "MARK": [
       41,
-      "MAR"
+      "MRK"
     ],
     "LUKE": [
       42,
@@ -16994,7 +16994,7 @@ const BibleBooksCodesTables =
     ],
     "JOHN": [
       43,
-      "JOH"
+      "JHN"
     ],
     "ACTS / ACTS OF THE APOSTLES": [
       44,
@@ -17082,7 +17082,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE / JUDAS": [
       65,
-      "JUD"
+      "JDE"
     ],
     "REVELATION / REVELATION OF JOHN / APOCALYPSE OF ST. JOHN": [
       66,
@@ -17848,12 +17848,12 @@ const BibleBooksCodesTables =
     "PRO": "PRO",
     "ECCL": "ECC",
     "ECC": "ECC",
-    "SONG": "SON",
-    "SON": "SON",
-    "CT": "SON",
-    "SOS": "SON",
-    "SON": "SON",
-    "SOL": "SON",
+    "SONG": "SNG",
+    "SNG": "SNG",
+    "CT": "SNG",
+    "SOS": "SNG",
+    "SON": "SNG",
+    "SOL": "SNG",
     "ISA": "ISA",
     "ES": "ISA",
     "JER": "JER",
@@ -17863,15 +17863,16 @@ const BibleBooksCodesTables =
     "EZE": "EZE",
     "DAN": "DAN",
     "HOS": "HOS",
-    "JOEL": "JOE",
-    "JL": "JOE",
-    "JOL": "JOE",
+    "JOEL": "JOL",
+    "JL": "JOL",
+    "JOL": "JOL",
+    "JOE": "JOL",
     "AMOS": "AMO",
     "AMO": "AMO",
     "OBAD": "OBA",
     "OBA": "OBA",
-    "JONAH": "JON",
-    "JON": "JON",
+    "JONAH": "JNA",
+    "JON": "JNA",
     "MIC": "MIC",
     "NAH": "NAH",
     "NAM": "NAH",
@@ -17885,19 +17886,19 @@ const BibleBooksCodesTables =
     "MATT": "MAT",
     "MAT": "MAT",
     "MT": "MAT",
-    "MARK": "MAR",
-    "MAR": "MAR",
-    "MAR": "MAR",
-    "MAK": "MAR",
-    "MARC": "MAR",
-    "MC": "MAR",
-    "MR": "MAR",
+    "MARK": "MRK",
+    "MRK": "MRK",
+    "MAR": "MRK",
+    "MAK": "MRK",
+    "MARC": "MRK",
+    "MC": "MRK",
+    "MR": "MRK",
     "LUKE": "LUK",
     "LUK": "LUK",
     "LU": "LUK",
-    "JOHN": "JOH",
-    "JOH": "JOH",
-    "JOH": "JOH",
+    "JOHN": "JHN",
+    "JHN": "JHN",
+    "JOH": "JHN",
     "ACTS": "ACT",
     "ACT": "ACT",
     "AC": "ACT",
@@ -17959,8 +17960,8 @@ const BibleBooksCodesTables =
     "3JOHN": "JN3",
     "3JN": "JN3",
     "3JO": "JN3",
-    "JUDE": "JUD",
-    "JUD": "JUD",
+    "JUDE": "JDE",
+    "JUD": "JDE",
     "REV": "REV",
     "RE": "REV",
     "ESTHGR": "ESG",
@@ -18163,7 +18164,6 @@ const BibleBooksCodesTables =
     "RT": "RUT",
     "1K": "KI1",
     "2K": "KI2",
-    "ESD": "EZR",
     "NH": "NEH",
     "NHM": "NEH",
     "ES": "ISA",
@@ -18172,11 +18172,11 @@ const BibleBooksCodesTables =
     "PR": "PRO",
     "PRV": "PRO",
     "EC": "ECC",
-    "SL": "SON",
-    "SS": "SON",
-    "CANT": "SON",
-    "CAN": "SON",
-    "CT": "SON",
+    "SL": "SNG",
+    "SS": "SNG",
+    "CANT": "SNG",
+    "CAN": "SNG",
+    "": "SNG",
     "IS": "ISA",
     "JR": "JER",
     "JRM": "JER",
@@ -18186,12 +18186,12 @@ const BibleBooksCodesTables =
     "DN": "DAN",
     "DNL": "DAN",
     "HS": "HOS",
-    "JL": "JOE",
+    "JL": "JOL",
     "AM": "AMO",
     "AMS": "AMO",
     "OB": "OBA",
     "OBD": "OBA",
-    "JNH": "JON",
+    "JNH": "JNA",
     "MI": "MIC",
     "MCH": "MIC",
     "HBK": "HAB",
@@ -18203,7 +18203,7 @@ const BibleBooksCodesTables =
     "ML": "MAL",
     "MTT": "MAT",
     "LK": "LUK",
-    "JN": "JOH",
+    "JN": "JHN",
     "RM": "ROM",
     "RMN": "ROM",
     "GL": "GAL",
@@ -18221,7 +18221,7 @@ const BibleBooksCodesTables =
     "1J": "JN1",
     "2J": "JN2",
     "3J": "JN3",
-    "JD": "JUD",
+    "JD": "JDE",
     "RV": "REV",
     "PRAZ": "PAZ",
     "PRS": "PSO",

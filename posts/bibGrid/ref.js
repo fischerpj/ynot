@@ -48,7 +48,7 @@ export class Ref {
     // Create LI for each data item
     this.data.forEach(item => {
       const li = document.createElement('li');
-      li.innerHTML = item.ref + item.htmlraw; // or any other property
+      li.innerHTML = item.htmlraw; // or any other property
       ul.appendChild(li);
     });
 
@@ -196,7 +196,7 @@ export class BibleBooksCodes {
 	}
 	
 	getBBBneg_(bbb = this.getBBBsample_()) {
-		return bbb.map(xx=> this.getNEGAbbreviation(xx));
+		return bbb.map((xx)=> { return { NEG: this.getNEGAbbreviation(xx)}});
 	}
 
   getBBBmax_(bbb = this.getBBBsample_()) {
@@ -899,19 +899,15 @@ export class BibleBooksCodes {
 /////  END of MY ADDED METHODS
 }
 
-function isdigit(char) {
-  return !isNaN(parseInt(char));
-}
-
-export function tidyBBB(BBB) {
+function tidyBBB(BBB) {
   /*
   Change book codes like SA1 to the conventional 1SA.
    BBB is always three characters starting with an UPPERCASE LETTER.
   */
-  return isdigit(BBB[2]) ? BBB[2] + BBB.slice(0, 2) : BBB;
+  return BBB[2].isdigit() ? BBB[2] + BBB.slice(0, 2) : BBB;
 }
 
-export function tidyBBBs(BBBs) {
+function tidyBBBs(BBBs) {
   /*
   Change a list of book codes like SA1 to the conventional 1SA.
   */

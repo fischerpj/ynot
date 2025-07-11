@@ -1,16 +1,14 @@
 ---
 title: "adVerse"
-date: "2025-07-08"
-categories: [bible]
 image: "f1car.jpeg"
 execute:
   echo: false
 ---
 
-> mix of *observableJS* (e.g. import class!, fetch&display).
+> *observableJS* mixing import class, fetch&display.
 
 ::: {#inputDiv}
-inputDiv is considered Void
+any input comes here
 :::
 
 ```{ojs}
@@ -20,7 +18,7 @@ import { html } from "@observablehq/stdlib";
 viewof userRef_new = html`<input type="text" 
   class="form-control" 
   style="width: 150px;"
-  value="ps40:1!KJV"/>`;
+  value="ps40"/>`;
   
 // VIEWOF
 html`<div class="row container">
@@ -30,7 +28,15 @@ html`<div class="row container">
 ```
 
 ```{ojs}
-valid_param = userRef_new;
+//valid_param = userRef_new;
+
+valid_param = {
+  const mb = new Bcve(userRef_new);
+//  return mb;
+  const BBC = new BibleBooksCodes();
+  return BBC.getBBBFromText(mb.book);
+//  return mb.param
+}
 
 // VIEWOF
 html`<div class="row container">
@@ -44,40 +50,63 @@ any output comes here
 :::
 
 ```{ojs}
-import { Ref, Bcve, Books, BibleBooksCodes } from "./ref.js";
+import { Ref, Bcve, Books, BibleBooksCodes, tidyBBBs, tidyBBB } from "./ref.js";
 // FUNCTIONS are in BibleBooksCodes.js, a Module handling BibleBooksCodes functions.
 
+/*
+mbcv = {
+  const mb = new Bcve(userRef_new);
+//  return mb;
+//  const BBC = new BibleBooksCodes();
+//  return BBC.getBBBFromText(mb.book);
+  return mb
+}
+*/
+
+/*
 miRef = { 
-  const mi = new Ref(userRef_new);
+  const mb = new Bcve(userRef_new);
+  const mi = new Ref(mb.param);
   await mi.fetch_parallel();   // Wait for data to be fetched
   mi.displayData();
   return mi; // Return the object as the cell's value
 }
 miRef;
-
-mbcv = {
-  const mb = new Bcve(userRef_new);
-  mb.hi()
-  return mb;
-}
-mbcv;
-
+*/
+/*
 mbooks = {
   const mbk = new Books();
   return mbk;
 }
 mbooks;
+*/
 
+
+```
+
+```{ojs}
+// array of multiple refs to fetch in parallel
 bbc = {
-  mbcv;
   // DATA is imported from BibleBooksCodes_Tables.js
   const BBC = new BibleBooksCodes();
-  //	console.log(BBC.whoami_());
   const BBClist	= BBC.getBBBlist();
-  const BBCsample = BBC.getBBBsample_(2);
+  const BBCsample = BBC.getBBBsample_(24);
+
+  const BBCosis = BBC.getBBBosis_(BBCsample);
+//  return BBC.getBBBneg_(BBCsample);
+  const tibbb = BBCsample.map((x) => tidyBBB(x)+"1:1");
+  console.log(tibbb);
+  const mi = new Ref(tibbb);
+  await mi.fetch_parallel();   // Wait for data to be fetched
+  await mi.displayData();
+//  BBC.getSingleChapterBooksList() 
+  return  mi
+
+//  const BBCneg = BBC.getBBBneg_(BBCsample);
+//  return BBC.getBBBFromText(mbcv.book)
 //  console.log(BBC.getBBBFromText(mbcv.book));
-  return BBC.getBBBFromText(mbcv.book)
+//  return BBCsample;
+//  return BBC.getNEGAbbreviation("GEN")
 }
 bbc;
-
 ```

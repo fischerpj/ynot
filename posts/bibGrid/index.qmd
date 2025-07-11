@@ -1,0 +1,54 @@
+---
+title: "bibGrid"
+date: "2025-07-09"
+categories: [bible]
+image: "f1car.jpeg"
+execute:
+  echo: false
+---
+
+> Grid of Bible Books, Abbreviations, Chapter_Max.
+
+::: {#inputDiv}
+inputDiv is considered Void
+:::
+
+```{ojs}
+import { html } from "@observablehq/stdlib";
+
+// Inputs
+viewof userRef_new = html`<input type="text" 
+  class="form-control" 
+  style="width: 150px;"
+  value="ps40:1!KJV"/>`;
+  
+// VIEWOF
+html`<div class="row container">
+  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef_new}
+  </div>`  
+```
+
+```{ojs}
+import { Ref, Bcve, Books, BibleBooksCodes } from "./ref.js";
+
+//valid_param = userRef_new;
+
+valid_param = {
+  const mb = new Bcve(userRef_new);
+//  return mb;
+///  const BBC = new BibleBooksCodes();
+//  return BBC.getBBBFromText(mb.book);
+  return mb.param
+}
+
+// VIEWOF
+html`<div class="row container">
+  Validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${valid_param}
+  </div>`  
+```
+
+::: {#outputDiv}
+any output comes here
+:::

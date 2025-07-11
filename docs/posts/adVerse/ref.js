@@ -48,7 +48,7 @@ export class Ref {
     // Create LI for each data item
     this.data.forEach(item => {
       const li = document.createElement('li');
-      li.innerHTML = item.htmlraw; // or any other property
+      li.innerHTML = item.ref + item.htmlraw; // or any other property
       ul.appendChild(li);
     });
 
@@ -72,8 +72,8 @@ export class Bcve {
       this.chap = bc.match(/\d+$/)[0];
       const BBC = new BibleBooksCodes();
       this.bbc = BBC.getBBBFromText(this.book);
-      this.abbr = BBC.getShortAbbreviation(this.bbc);
-      this.param = this.abbr + this.chap + ":" + this.verse + "!" + this.edition;
+      this.abbr = BBC.getUSFMAbbreviation(this.bbc);
+      this.param = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
     }
     
    hi() { 
@@ -193,6 +193,10 @@ export class BibleBooksCodes {
 
   getBBBosis_(bbb = this.getBBBsample_()) {
 		return bbb.map(xx=>this.getOSISAbbreviation(xx));
+	}
+	
+	getBBBneg_(bbb = this.getBBBsample_()) {
+		return bbb.map(xx=> this.getNEGAbbreviation(xx));
 	}
 
   getBBBmax_(bbb = this.getBBBsample_()) {
@@ -320,6 +324,13 @@ export class BibleBooksCodes {
     return this.dataDicts["referenceAbbreviationDict"][BBB]["OSISAbbreviation"];
   }
 
+  getNEGAbbreviation(BBB) {
+    /* BEWARE: from referenceNumberDict
+    /*  Return the NEG abbreviation string for the given book code (referenceAbbreviation).  */
+    const NNN = this.getReferenceNumber(BBB);
+    return this.dataDicts["referenceAbbreviationDict"][BBB]["NEGAbbreviation"];
+  }
+  
   getSwordAbbreviation(BBB) {
     /*  Return the Sword abbreviation string for the given book code (referenceAbbreviation).  */
     return this.dataDicts["referenceAbbreviationDict"][BBB]["SwordAbbreviation"];
@@ -888,15 +899,19 @@ export class BibleBooksCodes {
 /////  END of MY ADDED METHODS
 }
 
-function tidyBBB(BBB) {
+function isdigit(char) {
+  return !isNaN(parseInt(char));
+}
+
+export function tidyBBB(BBB) {
   /*
   Change book codes like SA1 to the conventional 1SA.
    BBB is always three characters starting with an UPPERCASE LETTER.
   */
-  return BBB[2].isdigit() ? BBB[2] + BBB.slice(0, 2) : BBB;
+  return isdigit(BBB[2]) ? BBB[2] + BBB.slice(0, 2) : BBB;
 }
 
-function tidyBBBs(BBBs) {
+export function tidyBBBs(BBBs) {
   /*
   Change a list of book codes like SA1 to the conventional 1SA.
   */

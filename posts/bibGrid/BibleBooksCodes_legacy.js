@@ -1,108 +1,3 @@
-// 1. Ref.js
-// 2. BibliBooksCodes.js
-
-//======================   Ref.Js
-// Ref class and methods can be imported in quarto ojs
-
-export class Ref {
-  // takes an array of validated reference(s) as argument
-  // Step 1: Define URLs-params as a property
-  constructor(
-    input = [ 'Hos14!SG21', 'Neh13!SG21','Rev22:4!KJV' ],
-    edition_default="SG21") {
-      this.inputs = Array.isArray(input) ? input : [input];
-      this.baseUrl = 'https://hall.pjafischer.workers.dev/passage/';
-      this.urls = this.inputs.map(input => `${this.baseUrl}?param=${encodeURIComponent(input)}`);
-      this.data = [];
-      this.outputDiv = document.getElementById('outputDiv');
-      this.edition_default = edition_default;
-    }
-
-  // Step 2: Method to fetch and populate data
-  async fetch_parallel() {
-    // attempt to fetch the urls
-    try {
-      const responses = await Promise.all(
-        this.urls.map(url => fetch(url).then(res => res.json()))
-      );
-      this.data = responses;
-    } catch (error) {
-      console.error('Fetch failed:', error);
-    }
-  }
-  
-   // Step 3: Display method that ensures data is ready
-  displayData() {
-    const outputDiv = document.getElementById('outputDiv');
-    if (!outputDiv) {
-      console.error('No element with id="outputdiv" found.');
-      return;
-    }
-
-    // Clear previous content
-    outputDiv.innerHTML = '';
-
-    // Create UL
-    const ul = document.createElement('ul');
-
-    // Create LI for each data item
-    this.data.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item.ref + item.htmlraw; // or any other property
-      ul.appendChild(li);
-    });
-
-    // Append UL to outputDiv
-    outputDiv.appendChild(ul);
-  } // end of Display
-}
-
-export class Bcve {
-  constructor(
-    input = 'Hos14!SG21',
-    edition_default ="SG21"){
-      this.input = input.toLowerCase();
-      this.edition_default = edition_default;
-      this.edition_();  // spot valid edition first
-      const bcv = this.input.split('!',2)[0];
-      this.verse =  bcv.split(':',2)[1]; // spot verse candidate second
-      const bc = bcv.split(':',2)[0];
-      // strip trailing digits
-      this.book = bc.replace(/\d+$/,"");
-      this.chap = bc.match(/\d+$/)[0];
-      const BBC = new BibleBooksCodes();
-      this.bbc = BBC.getBBBFromText(this.book);
-      this.abbr = BBC.getUSFMAbbreviation(this.bbc);
-      this.param = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
-    }
-    
-   hi() { 
-     console.log("toto");
-   } 
-
-   edition_() {
-    // edition
-    const lower = this.input.split('!',2).reverse()[0];
-    switch (lower) {
-      case "":
-      case undefined :
-      case null:
-        this.edition =  this.edition_default;
-        break;
-      case "kjv":
-      case "sg21":
-      case "ngu-de":
-      case "esv":
-        this.edition = lower;
-        break;
-      default:
-        this.edition = "invalid";
-        break;
-    }
-   } 
-}
-
-//======================   BibleBooksCodes.Js
 /*
 Module handling BibleBooksCodes functions.
 
@@ -193,10 +88,6 @@ export class BibleBooksCodes {
 
   getBBBosis_(bbb = this.getBBBsample_()) {
 		return bbb.map(xx=>this.getOSISAbbreviation(xx));
-	}
-	
-	getBBBneg_(bbb = this.getBBBsample_()) {
-		return bbb.map(xx=> this.getNEGAbbreviation(xx));
 	}
 
   getBBBmax_(bbb = this.getBBBsample_()) {
@@ -324,13 +215,6 @@ export class BibleBooksCodes {
     return this.dataDicts["referenceAbbreviationDict"][BBB]["OSISAbbreviation"];
   }
 
-  getNEGAbbreviation(BBB) {
-    /* BEWARE: from referenceNumberDict
-    /*  Return the NEG abbreviation string for the given book code (referenceAbbreviation).  */
-    const NNN = this.getReferenceNumber(BBB);
-    return this.dataDicts["referenceAbbreviationDict"][BBB]["NEGAbbreviation"];
-  }
-  
   getSwordAbbreviation(BBB) {
     /*  Return the Sword abbreviation string for the given book code (referenceAbbreviation).  */
     return this.dataDicts["referenceAbbreviationDict"][BBB]["SwordAbbreviation"];
@@ -899,19 +783,18 @@ export class BibleBooksCodes {
 /////  END of MY ADDED METHODS
 }
 
-function isdigit(char) {
-  return !isNaN(parseInt(char));
-}
 
-export function tidyBBB(BBB) {
+
+
+function tidyBBB(BBB) {
   /*
   Change book codes like SA1 to the conventional 1SA.
    BBB is always three characters starting with an UPPERCASE LETTER.
   */
-  return isdigit(BBB[2]) ? BBB[2] + BBB.slice(0, 2) : BBB;
+  return BBB[2].isdigit() ? BBB[2] + BBB.slice(0, 2) : BBB;
 }
 
-export function tidyBBBs(BBBs) {
+function tidyBBBs(BBBs) {
   /*
   Change a list of book codes like SA1 to the conventional 1SA.
   */
@@ -929,78 +812,8 @@ export function tidyBBBs(BBBs) {
   }.call(this);
 }
 
+
 //module.exports = BibleBooksCodes;
+
 //export default BibleBooksCodes;
 
-// extra
-
-export class Books {
-  constructor(input = 'Gen') {
-    this.bibleBooks  = {
-        "Genesis": ["Ge", "Gn", "GEN"],
-        "Exodus": ["Ex", "EXOD"],
-        "Leviticus": ["Lv", "LEV"],
-        "Numbers": ["Nu", "NUM"],
-        "Deuteronomy": ["Dt","DEUT"],
-        "Joshua": ["Jo", "JOSH","Jos"],
-        "Judges": ["Jg", "JUDG",'Jug'],
-        "Ruth": ["Ru", "RUTH","Rut"],
-        "1 Samuel": ["1S", "1SAM"],
-        "2 Samuel": ["2M", "2SAM"],
-        "1 Kings": ["1K", "1KGS"],
-        "2 Kings": ["2K", "2KGS"],
-        "1 Chronicles": ["1C", "1CHRO","1Chr"],
-        "2 Chronicles": ["2C", "2CHRO","2Chr"],
-        "Ezra": ["Ez", "EZRA","Esd"],
-        "Nehemiah": ["Nh", "NEH"],
-        "Esther": ["Es", "ESTH"],
-        "Job": ["Jb", "JOB"],
-        "Psalms": ["Ps", "PSA"],
-        "Proverbs": ["Pv", "PROV"],
-        "Ecclesiastes": ["Ec", "ECC"],
-        "Song of Solomon": ["So", "SONG","Cc"],
-        "Isaiah": ["Is", "ISA"],
-        "Jeremiah": ["Jr", "JER"],
-        "Lamentations": ["Lm", "LAM"],
-        "Ezekiel": ["Ek", "EZEK"],
-        "Daniel": ["Dn", "DAN"],
-        "Hosea": ["Ho", "HOSEA"],
-        "Joel": ["Jl", "JOEL"],
-        "Amos": ["Am", "AMOS"],
-        "Obadiah": ["Ob", "OBAD"],
-        "Jonah": ["Jn", "JONAH"],
-        "Micah": ["Mc", "MICAH"],
-        "Nahum": ["Na", "NAHUM"],
-        "Habakkuk": ["Ha", "HAB"],
-        "Zephaniah": ["Zp", "ZEPH"],
-        "Haggai": ["Hg", "HAG"],
-        "Zechariah": ["Zc", "ZECH"],
-        "Malachi": ["Ml", "MAL"],
-        "Matthew": ["Mt", "MATT"],
-        "Mark": ["Mk", "MARK"],
-        "Luke": ["Lk", "LUKE"],
-        "John": ["Jh", "JOHN"],
-        "Acts": ["Ac", "ACTS"],
-        "Romans": ["Rm", "ROM"],
-        "1 Corinthians": ["1O", "1COR"],
-        "2 Corinthians": ["2O", "2COR"],
-        "Galatians": ["Ga", "GAL"],
-        "Ephesians": ["Ep", "EPH"],
-        "Philippians": ["Ph", "PHIL"],
-        "Colossians": ["Cl", "COL"],
-        "1 Thessalonians": ["1T", "1THES"],
-        "2 Thessalonians": ["2T", "2THES"],
-        "1 Timothy": ["1I", "1TIM"],
-        "2 Timothy": ["2I", "2TIM"],
-        "Titus": ["Ti", "TIT"],
-        "Philemon": ["Pm", "PHILE"],
-        "Hebrews": ["He", "HEB"],
-        "James": ["Jm", "JAS"],
-        "1 Peter": ["1P", "1PET"],
-        "2 Peter": ["2P", "2PET"],
-        "1 John": ["1J", "1JOHN"],
-        "2 John": ["2J", "2JOHN"],
-        "3 John": ["3J", "3JOHN"],
-        "Jude": ["Ju", "JUDE"],
-        "Revelation": ["Rv", "REV"]
-    }}}

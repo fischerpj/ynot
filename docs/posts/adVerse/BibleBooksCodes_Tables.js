@@ -6,6 +6,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ge",
       "originalLanguageCode": "hbo",
       "bookName": "בְּרֵאשִׁית",
+      "NEGAbbreviation": "Gn",
       "SBLAbbreviation": "Gen",
       "OSISAbbreviation": "Gen",
       "SwordAbbreviation": "Gen",
@@ -28,6 +29,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ex",
       "originalLanguageCode": "hbo",
       "bookName": "שְׁמֹות",
+      "NEGAbbreviation": "Ex",
       "SBLAbbreviation": "Exod",
       "OSISAbbreviation": "Exod",
       "SwordAbbreviation": "Exod",
@@ -50,6 +52,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Le",
       "originalLanguageCode": "hbo",
       "bookName": "וַיִּקְרָא",
+      "NEGAbbreviation": "Lv",
       "SBLAbbreviation": "Lev",
       "OSISAbbreviation": "Lev",
       "SwordAbbreviation": "Lev",
@@ -72,6 +75,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Nu",
       "originalLanguageCode": "hbo",
       "bookName": "בְּמִדְבַּר",
+      "NEGAbbreviation": "Nb",
       "SBLAbbreviation": "Num",
       "OSISAbbreviation": "Num",
       "SwordAbbreviation": "Num",
@@ -94,6 +98,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Dt",
       "originalLanguageCode": "hbo",
       "bookName": "דְּבָרִים",
+      "NEGAbbreviation": "Dt",
       "SBLAbbreviation": "Deut",
       "OSISAbbreviation": "Deut",
       "SwordAbbreviation": "Deut",
@@ -116,6 +121,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Jos",
       "originalLanguageCode": "hbo",
       "bookName": "יְהוֹשֻעַ",
+      "NEGAbbreviation": "Jos",
       "SBLAbbreviation": "Josh",
       "OSISAbbreviation": "Josh",
       "SwordAbbreviation": "Josh",
@@ -140,6 +146,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Jdg",
       "originalLanguageCode": "hbo",
       "bookName": "שֹׁפְטִים",
+      "NEGAbbreviation": "Jg",
       "SBLAbbreviation": "Judg",
       "OSISAbbreviation": "Judg",
       "SwordAbbreviation": "Judg",
@@ -164,6 +171,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ru",
       "originalLanguageCode": "hbo",
       "bookName": "רוּת",
+      "NEGAbbreviation": "Rt",
       "SBLAbbreviation": "Ruth",
       "OSISAbbreviation": "Ruth",
       "SwordAbbreviation": "Ruth",
@@ -186,6 +194,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "1Sa",
       "originalLanguageCode": "hbo",
       "bookName": "שְׁמוּאֵל א",
+      "NEGAbbreviation": "1S",
       "SBLAbbreviation": "1 Sam",
       "OSISAbbreviation": "1Sam",
       "SwordAbbreviation": "1Sam",
@@ -208,6 +217,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "2Sa",
       "originalLanguageCode": "hbo",
       "bookName": "שְׁמוּאֵל ב",
+      "NEGAbbreviation": "2S",
       "SBLAbbreviation": "2 Sam",
       "OSISAbbreviation": "2Sam",
       "SwordAbbreviation": "2Sam",
@@ -230,6 +240,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "1Ki",
       "originalLanguageCode": "hbo",
       "bookName": "מְלָכִים א",
+      "NEGAbbreviation": "1R",
       "SBLAbbreviation": "1 Kgs",
       "OSISAbbreviation": "1Kgs",
       "SwordAbbreviation": "1Kgs",
@@ -252,6 +263,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "2Ki",
       "originalLanguageCode": "hbo",
       "bookName": "מְלָכִים ב",
+      "NEGAbbreviation": "2R",
       "SBLAbbreviation": "2 Kgs",
       "OSISAbbreviation": "2Kgs",
       "SwordAbbreviation": "2Kgs",
@@ -274,6 +286,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "1Ch",
       "originalLanguageCode": "hbo",
       "bookName": "דִּבְרֵי הַיָּמִים א",
+      "NEGAbbreviation": "1Ch",
       "SBLAbbreviation": "1 Chr",
       "OSISAbbreviation": "1Chr",
       "SwordAbbreviation": "1Chr",
@@ -296,6 +309,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "2Ch",
       "originalLanguageCode": "hbo",
       "bookName": "דִּבְרֵי הַיָּמִים ב",
+      "NEGAbbreviation": "2Ch",
       "SBLAbbreviation": "2 Chr",
       "OSISAbbreviation": "2Chr",
       "SwordAbbreviation": "2Chr",
@@ -318,6 +332,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ezr",
       "originalLanguageCode": "hbo",
       "bookName": "עֶזְרָא",
+      "NEGAbbreviation": "Esd",
       "SBLAbbreviation": "Ezra",
       "OSISAbbreviation": "Ezra",
       "SwordAbbreviation": "Ezra",
@@ -342,6 +357,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ne",
       "originalLanguageCode": "hbo",
       "bookName": "נְחֶמְיָה",
+      "NEGAbbreviation": "Ne",
       "SBLAbbreviation": "Neh",
       "OSISAbbreviation": "Neh",
       "SwordAbbreviation": "Neh",
@@ -366,6 +382,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Es",
       "originalLanguageCode": "hbo",
       "bookName": "אֶסְתֵר",
+      "NEGAbbreviation": "Est",
       "SBLAbbreviation": "Esth",
       "OSISAbbreviation": "Esth",
       "SwordAbbreviation": "Esth",
@@ -392,6 +409,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Jb",
       "originalLanguageCode": "hbo",
       "bookName": "אִיּוֹב",
+      "NEGAbbreviation": "Job",
       "SBLAbbreviation": "Job",
       "OSISAbbreviation": "Job",
       "SwordAbbreviation": "Job",
@@ -414,6 +432,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ps",
       "originalLanguageCode": "hbo",
       "bookName": "תְהִלִּים",
+      "NEGAbbreviation": "Ps",
       "SBLAbbreviation": "Ps",
       "OSISAbbreviation": "Ps",
       "SwordAbbreviation": "Ps",
@@ -442,6 +461,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Pr",
       "originalLanguageCode": "hbo",
       "bookName": "מִשְׁלֵי",
+      "NEGAbbreviation": "Pr",
       "SBLAbbreviation": "Prov",
       "OSISAbbreviation": "Prov",
       "SwordAbbreviation": "Prov",
@@ -464,6 +484,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ec",
       "originalLanguageCode": "hbo",
       "bookName": "קֹהֶלֶת",
+      "NEGAbbreviation": "Ec",
       "SBLAbbreviation": "Eccl",
       "OSISAbbreviation": "Eccl",
       "SwordAbbreviation": "Eccl",
@@ -482,15 +503,16 @@ const BibleBooksCodesTables =
       "typicalSection": "OT"
     },
     "22": {
-      "referenceAbbreviation": "SNG",
+      "referenceAbbreviation": "SON",
       "shortAbbreviation": "So",
       "originalLanguageCode": "hbo",
       "bookName": "שִׁיר הַשִּׁירִים",
+      "NEGAbbreviation": "Ct",
       "SBLAbbreviation": "Song",
       "OSISAbbreviation": "Song",
       "SwordAbbreviation": "Song",
       "CCELNumberString": "22",
-      "USFMAbbreviation": "Sng",
+      "USFMAbbreviation": "SON",
       "USFMNumberString": "22",
       "USXNumberString": "022",
       "UnboundCodeString": "22O",
@@ -508,6 +530,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Is",
       "originalLanguageCode": "hbo",
       "bookName": "יְשַׁעְיָהוּ",
+      "NEGAbbreviation": "Es",
       "SBLAbbreviation": "Isa",
       "OSISAbbreviation": "Isa",
       "SwordAbbreviation": "Isa",
@@ -530,6 +553,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Je",
       "originalLanguageCode": "hbo",
       "bookName": "יִרְמְיָהוּ",
+      "NEGAbbreviation": "Jr",
       "SBLAbbreviation": "Jer",
       "OSISAbbreviation": "Jer",
       "SwordAbbreviation": "Jer",
@@ -552,6 +576,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "La",
       "originalLanguageCode": "hbo",
       "bookName": "אֵיכָה",
+      "NEGAbbreviation": "Lm",
       "SBLAbbreviation": "Lam",
       "OSISAbbreviation": "Lam",
       "SwordAbbreviation": "Lam",
@@ -574,6 +599,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Eze",
       "originalLanguageCode": "hbo",
       "bookName": "יְחֶזְקֵאל",
+      "NEGAbbreviation": "Ez",
       "SBLAbbreviation": "Ezek",
       "OSISAbbreviation": "Ezek",
       "SwordAbbreviation": "Ezek",
@@ -596,6 +622,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Da",
       "originalLanguageCode": "hbo",
       "bookName": "דָּנִיֵּאל",
+      "NEGAbbreviation": "Dn",
       "SBLAbbreviation": "Dan",
       "OSISAbbreviation": "Dan",
       "SwordAbbreviation": "Dan",
@@ -623,6 +650,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ho",
       "originalLanguageCode": "hbo",
       "bookName": "הוֹשֵׁעַ",
+      "NEGAbbreviation": "Os",
       "SBLAbbreviation": "Hos",
       "OSISAbbreviation": "Hos",
       "SwordAbbreviation": "Hos",
@@ -641,10 +669,11 @@ const BibleBooksCodesTables =
       "typicalSection": "OT"
     },
     "29": {
-      "referenceAbbreviation": "JOL",
+      "referenceAbbreviation": "JOE",
       "shortAbbreviation": "Jol",
       "originalLanguageCode": "hbo",
       "bookName": "יוֹאֵל",
+      "NEGAbbreviation": "Jl",
       "SBLAbbreviation": "Joel",
       "OSISAbbreviation": "Joel",
       "SwordAbbreviation": "Joel",
@@ -667,6 +696,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Am",
       "originalLanguageCode": "hbo",
       "bookName": "עָמוֹס",
+      "NEGAbbreviation": "Am",
       "SBLAbbreviation": "Amos",
       "OSISAbbreviation": "Amos",
       "SwordAbbreviation": "Amos",
@@ -689,6 +719,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ob",
       "originalLanguageCode": "hbo",
       "bookName": "עֹבַדְיָה",
+      "NEGAbbreviation": "Ab",
       "SBLAbbreviation": "Obad",
       "OSISAbbreviation": "Obad",
       "SwordAbbreviation": "Obad",
@@ -707,10 +738,11 @@ const BibleBooksCodesTables =
       "typicalSection": "OT"
     },
     "32": {
-      "referenceAbbreviation": "JNA",
+      "referenceAbbreviation": "JON",
       "shortAbbreviation": "Jon",
       "originalLanguageCode": "hbo",
       "bookName": "יוֹנָה",
+      "NEGAbbreviation": "Jon",
       "SBLAbbreviation": "Jonah",
       "OSISAbbreviation": "Jonah",
       "SwordAbbreviation": "Jonah",
@@ -733,6 +765,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Mi",
       "originalLanguageCode": "hbo",
       "bookName": "מִיכָה",
+      "NEGAbbreviation": "Mi",
       "SBLAbbreviation": "Mic",
       "OSISAbbreviation": "Mic",
       "SwordAbbreviation": "Mic",
@@ -755,6 +788,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Na",
       "originalLanguageCode": "hbo",
       "bookName": "נַחוּם",
+      "NEGAbbreviation": "Na",
       "SBLAbbreviation": "Nah",
       "OSISAbbreviation": "Nah",
       "SwordAbbreviation": "Nah",
@@ -777,6 +811,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Hab",
       "originalLanguageCode": "hbo",
       "bookName": "חֲבַקּוּק",
+      "NEGAbbreviation": "Ha",
       "SBLAbbreviation": "Hab",
       "OSISAbbreviation": "Hab",
       "SwordAbbreviation": "Hab",
@@ -799,6 +834,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Zep",
       "originalLanguageCode": "hbo",
       "bookName": "צְפַנְיָה",
+      "NEGAbbreviation": "So",
       "SBLAbbreviation": "Zeph",
       "OSISAbbreviation": "Zeph",
       "SwordAbbreviation": "Zeph",
@@ -821,6 +857,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Hag",
       "originalLanguageCode": "hbo",
       "bookName": "חַגַּי",
+      "NEGAbbreviation": "Ag",
       "SBLAbbreviation": "Hag",
       "OSISAbbreviation": "Hag",
       "SwordAbbreviation": "Hag",
@@ -843,6 +880,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Zec",
       "originalLanguageCode": "hbo",
       "bookName": "זְכַרְיָה",
+      "NEGAbbreviation": "Za",
       "SBLAbbreviation": "Zech",
       "OSISAbbreviation": "Zech",
       "SwordAbbreviation": "Zech",
@@ -865,6 +903,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Mal",
       "originalLanguageCode": "hbo",
       "bookName": "מַלְאָכִי",
+      "NEGAbbreviation": "Ml",
       "SBLAbbreviation": "Mal",
       "OSISAbbreviation": "Mal",
       "SwordAbbreviation": "Mal",
@@ -887,6 +926,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Mt",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Μαθθαῖον",
+      "NEGAbbreviation": "Mt",
       "SBLAbbreviation": "Matt",
       "OSISAbbreviation": "Matt",
       "SwordAbbreviation": "Matt",
@@ -905,15 +945,16 @@ const BibleBooksCodesTables =
       "typicalSection": "NT"
     },
     "41": {
-      "referenceAbbreviation": "MRK",
+      "referenceAbbreviation": "MAR",
       "shortAbbreviation": "Mk",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Μᾶρκον",
+      "NEGAbbreviation": "Mc",
       "SBLAbbreviation": "Mark",
       "OSISAbbreviation": "Mark",
       "SwordAbbreviation": "Mark",
       "CCELNumberString": "41",
-      "USFMAbbreviation": "Mrk",
+      "USFMAbbreviation": "MAR",
       "USFMNumberString": "42",
       "USXNumberString": "041",
       "UnboundCodeString": "41N",
@@ -931,6 +972,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Lk",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Λουκᾶν",
+      "NEGAbbreviation": "Lc",
       "SBLAbbreviation": "Luke",
       "OSISAbbreviation": "Luke",
       "SwordAbbreviation": "Luke",
@@ -951,21 +993,22 @@ const BibleBooksCodesTables =
       "typicalSection": "NT"
     },
     "43": {
-      "referenceAbbreviation": "JHN",
+      "referenceAbbreviation": "JOH",
       "shortAbbreviation": "Jn",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Ἰωάννην",
+      "NEGAbbreviation": "Jn",
       "SBLAbbreviation": "John",
       "OSISAbbreviation": "John",
       "SwordAbbreviation": "John",
       "CCELNumberString": "43",
-      "USFMAbbreviation": "Jhn",
+      "USFMAbbreviation": "JOH",
       "USFMNumberString": "44",
       "USXNumberString": "043",
       "UnboundCodeString": "43N",
       "BibleditNumberString": "43",
       "NETBibleAbbreviation": "Joh",
-      "DrupalBibleAbbreviation": "Jhn",
+      "DrupalBibleAbbreviation": "JOH",
       "ByzantineAbbreviation": "JOH",
       "numExpectedChapters": "21",
       "possibleAlternativeBooks": null,
@@ -977,6 +1020,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ac",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πράξεις Ἀποστόλων",
+      "NEGAbbreviation": "Ac",
       "SBLAbbreviation": "Acts",
       "OSISAbbreviation": "Acts",
       "SwordAbbreviation": "Acts",
@@ -1001,6 +1045,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ro",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Ῥωμαίους",
+      "NEGAbbreviation": "Rm",
       "SBLAbbreviation": "Rom",
       "OSISAbbreviation": "Rom",
       "SwordAbbreviation": "Rom",
@@ -1023,6 +1068,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "1Co",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Κορινθίους α",
+      "NEGAbbreviation": "1Co",
       "SBLAbbreviation": "1 Cor",
       "OSISAbbreviation": "1Cor",
       "SwordAbbreviation": "1Cor",
@@ -1045,6 +1091,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "2Co",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Κορινθίους β",
+      "NEGAbbreviation": "2Co",
       "SBLAbbreviation": "2 Cor",
       "OSISAbbreviation": "2Cor",
       "SwordAbbreviation": "2Cor",
@@ -1067,6 +1114,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Ga",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Γαλάτας",
+      "NEGAbbreviation": "Ga",
       "SBLAbbreviation": "Gal",
       "OSISAbbreviation": "Gal",
       "SwordAbbreviation": "Gal",
@@ -1089,6 +1137,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Eph",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Ἐφεσίους",
+      "NEGAbbreviation": "Ep",
       "SBLAbbreviation": "Eph",
       "OSISAbbreviation": "Eph",
       "SwordAbbreviation": "Eph",
@@ -1111,6 +1160,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Php",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Φιλιππησίους",
+      "NEGAbbreviation": "Ph",
       "SBLAbbreviation": "Phil",
       "OSISAbbreviation": "Phil",
       "SwordAbbreviation": "Phil",
@@ -1133,6 +1183,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Col",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Κολοσσαεῖς",
+      "NEGAbbreviation": "Col",
       "SBLAbbreviation": "Col",
       "OSISAbbreviation": "Col",
       "SwordAbbreviation": "Col",
@@ -1155,6 +1206,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "1Th",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Θεσσαλονικεῖς α",
+      "NEGAbbreviation": "1Th",
       "SBLAbbreviation": "1 Thess",
       "OSISAbbreviation": "1Thess",
       "SwordAbbreviation": "1Thess",
@@ -1177,6 +1229,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "2Th",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Θεσσαλονικεῖς β",
+      "NEGAbbreviation": "2Th",
       "SBLAbbreviation": "2 Thess",
       "OSISAbbreviation": "2Thess",
       "SwordAbbreviation": "2Thess",
@@ -1199,6 +1252,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "1Ti",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Τιμόθεον α",
+      "NEGAbbreviation": "1Tm",
       "SBLAbbreviation": "1 Tim",
       "OSISAbbreviation": "1Tim",
       "SwordAbbreviation": "1Tim",
@@ -1221,6 +1275,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "2Ti",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Τιμόθεον β",
+      "NEGAbbreviation": "2Tm",
       "SBLAbbreviation": "2 Tim",
       "OSISAbbreviation": "2Tim",
       "SwordAbbreviation": "2Tim",
@@ -1243,6 +1298,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Tit",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Τίτον",
+      "NEGAbbreviation": "Tt",
       "SBLAbbreviation": "Titus",
       "OSISAbbreviation": "Titus",
       "SwordAbbreviation": "Titus",
@@ -1265,6 +1321,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Phm",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Φιλήμονα",
+      "NEGAbbreviation": "Phm",
       "SBLAbbreviation": "Phlm",
       "OSISAbbreviation": "Phlm",
       "SwordAbbreviation": "Phlm",
@@ -1287,6 +1344,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Heb",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Ἑβραίους",
+      "NEGAbbreviation": "Hé",
       "SBLAbbreviation": "Heb",
       "OSISAbbreviation": "Heb",
       "SwordAbbreviation": "Heb",
@@ -1309,6 +1367,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Jas",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰακώβου",
+      "NEGAbbreviation": "Jc",
       "SBLAbbreviation": "Jas",
       "OSISAbbreviation": "Jas",
       "SwordAbbreviation": "Jas",
@@ -1331,6 +1390,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "1Pe",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πέτρου α",
+      "NEGAbbreviation": "1P",
       "SBLAbbreviation": "1 Pet",
       "OSISAbbreviation": "1Pet",
       "SwordAbbreviation": "1Pet",
@@ -1353,6 +1413,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "2Pe",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πέτρου β",
+      "NEGAbbreviation": "2P",
       "SBLAbbreviation": "2 Pet",
       "OSISAbbreviation": "2Pet",
       "SwordAbbreviation": "2Pet",
@@ -1375,6 +1436,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "1Jn",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰωάννου α",
+      "NEGAbbreviation": "1Jn",
       "SBLAbbreviation": "1 John",
       "OSISAbbreviation": "1John",
       "SwordAbbreviation": "1John",
@@ -1397,6 +1459,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "2Jn",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰωάννου β",
+      "NEGAbbreviation": "2Jn",
       "SBLAbbreviation": "2 John",
       "OSISAbbreviation": "2John",
       "SwordAbbreviation": "2John",
@@ -1419,6 +1482,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "3Jn",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰωάννου γ",
+      "NEGAbbreviation": "3Jn",
       "SBLAbbreviation": "3 John",
       "OSISAbbreviation": "3John",
       "SwordAbbreviation": "3John",
@@ -1437,10 +1501,11 @@ const BibleBooksCodesTables =
       "typicalSection": "NT"
     },
     "65": {
-      "referenceAbbreviation": "JDE",
+      "referenceAbbreviation": "JUD",
       "shortAbbreviation": "Jud",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰούδας",
+      "NEGAbbreviation": "Jud",
       "SBLAbbreviation": "Jude",
       "OSISAbbreviation": "Jude",
       "SwordAbbreviation": "Jude",
@@ -1463,6 +1528,7 @@ const BibleBooksCodesTables =
       "shortAbbreviation": "Re",
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἀποκάλυψις Ἰωάννου",
+      "NEGAbbreviation": "Ap",
       "SBLAbbreviation": "Rev",
       "OSISAbbreviation": "Rev",
       "SwordAbbreviation": "Rev",
@@ -5481,6 +5547,7 @@ const BibleBooksCodesTables =
       "bookName": "בְּרֵאשִׁית",
       "referenceNumber": 1,
       "shortAbbreviation": "Ge",
+      "NEGAbbreviation": "Gn",
       "SBLAbbreviation": "Gen",
       "OSISAbbreviation": "Gen",
       "SwordAbbreviation": "Gen",
@@ -5503,6 +5570,7 @@ const BibleBooksCodesTables =
       "bookName": "שְׁמֹות",
       "referenceNumber": 2,
       "shortAbbreviation": "Ex",
+      "NEGAbbreviation": "Ex",
       "SBLAbbreviation": "Exod",
       "OSISAbbreviation": "Exod",
       "SwordAbbreviation": "Exod",
@@ -5525,6 +5593,7 @@ const BibleBooksCodesTables =
       "bookName": "וַיִּקְרָא",
       "referenceNumber": 3,
       "shortAbbreviation": "Le",
+      "NEGAbbreviation": "Lv",
       "SBLAbbreviation": "Lev",
       "OSISAbbreviation": "Lev",
       "SwordAbbreviation": "Lev",
@@ -5547,6 +5616,7 @@ const BibleBooksCodesTables =
       "bookName": "בְּמִדְבַּר",
       "referenceNumber": 4,
       "shortAbbreviation": "Nu",
+      "NEGAbbreviation": "Nb",
       "SBLAbbreviation": "Num",
       "OSISAbbreviation": "Num",
       "SwordAbbreviation": "Num",
@@ -5569,6 +5639,7 @@ const BibleBooksCodesTables =
       "bookName": "דְּבָרִים",
       "referenceNumber": 5,
       "shortAbbreviation": "Dt",
+      "NEGAbbreviation": "Dt",
       "SBLAbbreviation": "Deut",
       "OSISAbbreviation": "Deut",
       "SwordAbbreviation": "Deut",
@@ -5590,6 +5661,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "יְהוֹשֻעַ",
       "referenceNumber": 6,
+      "NEGAbbreviation": "Jos",
       "shortAbbreviation": "Jos",
       "SBLAbbreviation": "Josh",
       "OSISAbbreviation": "Josh",
@@ -5614,6 +5686,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "שֹׁפְטִים",
       "referenceNumber": 7,
+      "NEGAbbreviation": "Jg",
       "shortAbbreviation": "Jdg",
       "SBLAbbreviation": "Judg",
       "OSISAbbreviation": "Judg",
@@ -5638,6 +5711,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "רוּת",
       "referenceNumber": 8,
+      "NEGAbbreviation": "Rt",
       "shortAbbreviation": "Ru",
       "SBLAbbreviation": "Ruth",
       "OSISAbbreviation": "Ruth",
@@ -5660,6 +5734,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "שְׁמוּאֵל א",
       "referenceNumber": 9,
+      "NEGAbbreviation": "1S",
       "shortAbbreviation": "1Sa",
       "SBLAbbreviation": "1 Sam",
       "OSISAbbreviation": "1Sam",
@@ -5682,6 +5757,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "שְׁמוּאֵל ב",
       "referenceNumber": 10,
+      "NEGAbbreviation": "2S",
       "shortAbbreviation": "2Sa",
       "SBLAbbreviation": "2 Sam",
       "OSISAbbreviation": "2Sam",
@@ -5704,6 +5780,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "מְלָכִים א",
       "referenceNumber": 11,
+      "NEGAbbreviation": "1R",
       "shortAbbreviation": "1Ki",
       "SBLAbbreviation": "1 Kgs",
       "OSISAbbreviation": "1Kgs",
@@ -5726,6 +5803,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "מְלָכִים ב",
       "referenceNumber": 12,
+      "NEGAbbreviation": "2R",
       "shortAbbreviation": "2Ki",
       "SBLAbbreviation": "2 Kgs",
       "OSISAbbreviation": "2Kgs",
@@ -5748,6 +5826,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "דִּבְרֵי הַיָּמִים א",
       "referenceNumber": 13,
+      "NEGAbbreviation": "1Ch",
       "shortAbbreviation": "1Ch",
       "SBLAbbreviation": "1 Chr",
       "OSISAbbreviation": "1Chr",
@@ -5770,6 +5849,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "דִּבְרֵי הַיָּמִים ב",
       "referenceNumber": 14,
+      "NEGAbbreviation": "2Ch",
       "shortAbbreviation": "2Ch",
       "SBLAbbreviation": "2 Chr",
       "OSISAbbreviation": "2Chr",
@@ -5792,6 +5872,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "עֶזְרָא",
       "referenceNumber": 15,
+      "NEGAbbreviation": "Esd",
       "shortAbbreviation": "Ezr",
       "SBLAbbreviation": "Ezra",
       "OSISAbbreviation": "Ezra",
@@ -5816,6 +5897,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "נְחֶמְיָה",
       "referenceNumber": 16,
+      "NEGAbbreviation": "Ne",
       "shortAbbreviation": "Ne",
       "SBLAbbreviation": "Neh",
       "OSISAbbreviation": "Neh",
@@ -5840,7 +5922,8 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "אֶסְתֵר",
       "referenceNumber": 17,
-      "shortAbbreviation": "Es",
+      "NEGAbbreviation": "Est",
+      "shortAbbreviation": "Est",
       "SBLAbbreviation": "Esth",
       "OSISAbbreviation": "Esth",
       "SwordAbbreviation": "Esth",
@@ -5866,6 +5949,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "אִיּוֹב",
       "referenceNumber": 18,
+      "NEGAbbreviation": "Job",
       "shortAbbreviation": "Jb",
       "SBLAbbreviation": "Job",
       "OSISAbbreviation": "Job",
@@ -5888,6 +5972,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "תְהִלִּים",
       "referenceNumber": 19,
+      "NEGAbbreviation": "Ps",
       "shortAbbreviation": "Ps",
       "SBLAbbreviation": "Ps",
       "OSISAbbreviation": "Ps",
@@ -5916,6 +6001,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "מִשְׁלֵי",
       "referenceNumber": 20,
+      "NEGAbbreviation": "Pr",
       "shortAbbreviation": "Pr",
       "SBLAbbreviation": "Prov",
       "OSISAbbreviation": "Prov",
@@ -5938,6 +6024,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "קֹהֶלֶת",
       "referenceNumber": 21,
+      "NEGAbbreviation": "Ec",
       "shortAbbreviation": "Ec",
       "SBLAbbreviation": "Eccl",
       "OSISAbbreviation": "Eccl",
@@ -5956,16 +6043,17 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "קֹהֶלֶת / Qoholeth",
       "typicalSection": "OT"
     },
-    "SNG": {
+    "SON": {
       "originalLanguageCode": "hbo",
       "bookName": "שִׁיר הַשִּׁירִים",
       "referenceNumber": 22,
+      "NEGAbbreviation": "Ct",
       "shortAbbreviation": "So",
       "SBLAbbreviation": "Song",
       "OSISAbbreviation": "Song",
       "SwordAbbreviation": "Song",
       "CCELNumberString": "22",
-      "USFMAbbreviation": "Sng",
+      "USFMAbbreviation": "SON",
       "USFMNumberString": "22",
       "USXNumberString": "022",
       "UnboundCodeString": "22O",
@@ -5982,6 +6070,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "יְשַׁעְיָהוּ",
       "referenceNumber": 23,
+      "NEGAbbreviation": "Es",
       "shortAbbreviation": "Is",
       "SBLAbbreviation": "Isa",
       "OSISAbbreviation": "Isa",
@@ -6004,6 +6093,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "יִרְמְיָהוּ",
       "referenceNumber": 24,
+      "NEGAbbreviation": "Jr",
       "shortAbbreviation": "Je",
       "SBLAbbreviation": "Jer",
       "OSISAbbreviation": "Jer",
@@ -6026,6 +6116,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "אֵיכָה",
       "referenceNumber": 25,
+      "NEGAbbreviation": "Lm",
       "shortAbbreviation": "La",
       "SBLAbbreviation": "Lam",
       "OSISAbbreviation": "Lam",
@@ -6048,6 +6139,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "יְחֶזְקֵאל",
       "referenceNumber": 26,
+      "NEGAbbreviation": "Ez",
       "shortAbbreviation": "Eze",
       "SBLAbbreviation": "Ezek",
       "OSISAbbreviation": "Ezek",
@@ -6070,6 +6162,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "דָּנִיֵּאל",
       "referenceNumber": 27,
+      "NEGAbbreviation": "Dn",
       "shortAbbreviation": "Da",
       "SBLAbbreviation": "Dan",
       "OSISAbbreviation": "Dan",
@@ -6097,6 +6190,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "הוֹשֵׁעַ",
       "referenceNumber": 28,
+      "NEGAbbreviation": "Os",
       "shortAbbreviation": "Ho",
       "SBLAbbreviation": "Hos",
       "OSISAbbreviation": "Hos",
@@ -6115,10 +6209,11 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "Hosea",
       "typicalSection": "OT"
     },
-    "JOL": {
+    "JOE": {
       "originalLanguageCode": "hbo",
       "bookName": "יוֹאֵל",
       "referenceNumber": 29,
+      "NEGAbbreviation": "Jl",
       "shortAbbreviation": "Jol",
       "SBLAbbreviation": "Joel",
       "OSISAbbreviation": "Joel",
@@ -6141,7 +6236,8 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "עָמוֹס",
       "referenceNumber": 30,
-      "shortAbbreviation": "Am",
+      "NEGAbbreviation": "Am",
+     "shortAbbreviation": "Am",
       "SBLAbbreviation": "Amos",
       "OSISAbbreviation": "Amos",
       "SwordAbbreviation": "Amos",
@@ -6163,6 +6259,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "עֹבַדְיָה",
       "referenceNumber": 31,
+      "NEGAbbreviation": "Ab",
       "shortAbbreviation": "Ob",
       "SBLAbbreviation": "Obad",
       "OSISAbbreviation": "Obad",
@@ -6181,10 +6278,11 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "Obadiah",
       "typicalSection": "OT"
     },
-    "JNA": {
+    "JON": {
       "originalLanguageCode": "hbo",
       "bookName": "יוֹנָה",
       "referenceNumber": 32,
+      "NEGAbbreviation": "Jon",
       "shortAbbreviation": "Jon",
       "SBLAbbreviation": "Jonah",
       "OSISAbbreviation": "Jonah",
@@ -6207,6 +6305,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "מִיכָה",
       "referenceNumber": 33,
+      "NEGAbbreviation": "Mi",
       "shortAbbreviation": "Mi",
       "SBLAbbreviation": "Mic",
       "OSISAbbreviation": "Mic",
@@ -6229,6 +6328,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "נַחוּם",
       "referenceNumber": 34,
+      "NEGAbbreviation": "Na",
       "shortAbbreviation": "Na",
       "SBLAbbreviation": "Nah",
       "OSISAbbreviation": "Nah",
@@ -6251,6 +6351,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "חֲבַקּוּק",
       "referenceNumber": 35,
+      "NEGAbbreviation": "Ha",
       "shortAbbreviation": "Hab",
       "SBLAbbreviation": "Hab",
       "OSISAbbreviation": "Hab",
@@ -6273,6 +6374,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "צְפַנְיָה",
       "referenceNumber": 36,
+      "NEGAbbreviation": "So",
       "shortAbbreviation": "Zep",
       "SBLAbbreviation": "Zeph",
       "OSISAbbreviation": "Zeph",
@@ -6295,6 +6397,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "חַגַּי",
       "referenceNumber": 37,
+      "NEGAbbreviation": "Ag",
       "shortAbbreviation": "Hag",
       "SBLAbbreviation": "Hag",
       "OSISAbbreviation": "Hag",
@@ -6317,6 +6420,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "זְכַרְיָה",
       "referenceNumber": 38,
+      "NEGAbbreviation": "Za",
       "shortAbbreviation": "Zec",
       "SBLAbbreviation": "Zech",
       "OSISAbbreviation": "Zech",
@@ -6339,6 +6443,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "hbo",
       "bookName": "מַלְאָכִי",
       "referenceNumber": 39,
+      "NEGAbbreviation": "Ml",
       "shortAbbreviation": "Mal",
       "SBLAbbreviation": "Mal",
       "OSISAbbreviation": "Mal",
@@ -6361,6 +6466,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Μαθθαῖον",
       "referenceNumber": 40,
+      "NEGAbbreviation": "Mt",
       "shortAbbreviation": "Mt",
       "SBLAbbreviation": "Matt",
       "OSISAbbreviation": "Matt",
@@ -6379,16 +6485,17 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "Matthew",
       "typicalSection": "NT"
     },
-    "MRK": {
+    "MAR": {
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Μᾶρκον",
       "referenceNumber": 41,
+      "NEGAbbreviation": "Mc",
       "shortAbbreviation": "Mk",
       "SBLAbbreviation": "Mark",
       "OSISAbbreviation": "Mark",
       "SwordAbbreviation": "Mark",
       "CCELNumberString": "41",
-      "USFMAbbreviation": "Mrk",
+      "USFMAbbreviation": "MAR",
       "USFMNumberString": "42",
       "USXNumberString": "041",
       "UnboundCodeString": "41N",
@@ -6405,6 +6512,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Λουκᾶν",
       "referenceNumber": 42,
+      "NEGAbbreviation": "Lc",
       "shortAbbreviation": "Lk",
       "SBLAbbreviation": "Luke",
       "OSISAbbreviation": "Luke",
@@ -6425,22 +6533,23 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "Luke",
       "typicalSection": "NT"
     },
-    "JHN": {
+    "JOH": {
       "originalLanguageCode": "el-x-koine",
       "bookName": "Κατὰ Ἰωάννην",
       "referenceNumber": 43,
+      "NEGAbbreviation": "Jn",
       "shortAbbreviation": "Jn",
       "SBLAbbreviation": "John",
       "OSISAbbreviation": "John",
       "SwordAbbreviation": "John",
       "CCELNumberString": "43",
-      "USFMAbbreviation": "Jhn",
+      "USFMAbbreviation": "JOH",
       "USFMNumberString": "44",
       "USXNumberString": "043",
       "UnboundCodeString": "43N",
       "BibleditNumberString": "43",
       "NETBibleAbbreviation": "Joh",
-      "DrupalBibleAbbreviation": "Jhn",
+      "DrupalBibleAbbreviation": "JOH",
       "ByzantineAbbreviation": "JOH",
       "numExpectedChapters": "21",
       "possibleAlternativeBooks": null,
@@ -6451,6 +6560,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πράξεις Ἀποστόλων",
       "referenceNumber": 44,
+      "NEGAbbreviation": "Ac",
       "shortAbbreviation": "Ac",
       "SBLAbbreviation": "Acts",
       "OSISAbbreviation": "Acts",
@@ -6475,6 +6585,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Ῥωμαίους",
       "referenceNumber": 45,
+      "NEGAbbreviation": "Rm",
       "shortAbbreviation": "Ro",
       "SBLAbbreviation": "Rom",
       "OSISAbbreviation": "Rom",
@@ -6497,6 +6608,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Κορινθίους α",
       "referenceNumber": 46,
+      "NEGAbbreviation": "1Co",
       "shortAbbreviation": "1Co",
       "SBLAbbreviation": "1 Cor",
       "OSISAbbreviation": "1Cor",
@@ -6519,6 +6631,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Κορινθίους β",
       "referenceNumber": 47,
+      "NEGAbbreviation": "2Co",
       "shortAbbreviation": "2Co",
       "SBLAbbreviation": "2 Cor",
       "OSISAbbreviation": "2Cor",
@@ -6541,6 +6654,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Γαλάτας",
       "referenceNumber": 48,
+      "NEGAbbreviation": "Ga",
       "shortAbbreviation": "Ga",
       "SBLAbbreviation": "Gal",
       "OSISAbbreviation": "Gal",
@@ -6563,6 +6677,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Ἐφεσίους",
       "referenceNumber": 49,
+      "NEGAbbreviation": "Ep",
       "shortAbbreviation": "Eph",
       "SBLAbbreviation": "Eph",
       "OSISAbbreviation": "Eph",
@@ -6585,6 +6700,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Φιλιππησίους",
       "referenceNumber": 50,
+      "NEGAbbreviation": "Ph",
       "shortAbbreviation": "Php",
       "SBLAbbreviation": "Phil",
       "OSISAbbreviation": "Phil",
@@ -6607,6 +6723,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Κολοσσαεῖς",
       "referenceNumber": 51,
+      "NEGAbbreviation": "Col",
       "shortAbbreviation": "Col",
       "SBLAbbreviation": "Col",
       "OSISAbbreviation": "Col",
@@ -6629,6 +6746,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Θεσσαλονικεῖς α",
       "referenceNumber": 52,
+      "NEGAbbreviation": "1Th",
       "shortAbbreviation": "1Th",
       "SBLAbbreviation": "1 Thess",
       "OSISAbbreviation": "1Thess",
@@ -6651,6 +6769,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Θεσσαλονικεῖς β",
       "referenceNumber": 53,
+      "NEGAbbreviation": "2Th",
       "shortAbbreviation": "2Th",
       "SBLAbbreviation": "2 Thess",
       "OSISAbbreviation": "2Thess",
@@ -6673,7 +6792,8 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Τιμόθεον α",
       "referenceNumber": 54,
-      "shortAbbreviation": "1Ti",
+        "NEGAbbreviation": "1Tm",
+    "shortAbbreviation": "1Ti",
       "SBLAbbreviation": "1 Tim",
       "OSISAbbreviation": "1Tim",
       "SwordAbbreviation": "1Tim",
@@ -6695,6 +6815,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Τιμόθεον β",
       "referenceNumber": 55,
+      "NEGAbbreviation": "2Tm",
       "shortAbbreviation": "2Ti",
       "SBLAbbreviation": "2 Tim",
       "OSISAbbreviation": "2Tim",
@@ -6717,6 +6838,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Τίτον",
       "referenceNumber": 56,
+      "NEGAbbreviation": "Tt",
       "shortAbbreviation": "Tit",
       "SBLAbbreviation": "Titus",
       "OSISAbbreviation": "Titus",
@@ -6739,7 +6861,8 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Φιλήμονα",
       "referenceNumber": 57,
-      "shortAbbreviation": "Phm",
+        "NEGAbbreviation": "Phm",
+    "shortAbbreviation": "Phm",
       "SBLAbbreviation": "Phlm",
       "OSISAbbreviation": "Phlm",
       "SwordAbbreviation": "Phlm",
@@ -6761,6 +6884,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πρὸς Ἑβραίους",
       "referenceNumber": 58,
+      "NEGAbbreviation": "Hé",
       "shortAbbreviation": "Heb",
       "SBLAbbreviation": "Heb",
       "OSISAbbreviation": "Heb",
@@ -6783,6 +6907,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰακώβου",
       "referenceNumber": 59,
+      "NEGAbbreviation": "Jc",
       "shortAbbreviation": "Jas",
       "SBLAbbreviation": "Jas",
       "OSISAbbreviation": "Jas",
@@ -6805,6 +6930,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πέτρου α",
       "referenceNumber": 60,
+      "NEGAbbreviation": "1P",
       "shortAbbreviation": "1Pe",
       "SBLAbbreviation": "1 Pet",
       "OSISAbbreviation": "1Pet",
@@ -6827,6 +6953,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Πέτρου β",
       "referenceNumber": 61,
+      "NEGAbbreviation": "2P",
       "shortAbbreviation": "2Pe",
       "SBLAbbreviation": "2 Pet",
       "OSISAbbreviation": "2Pet",
@@ -6849,6 +6976,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰωάννου α",
       "referenceNumber": 62,
+      "NEGAbbreviation": "1Jn",
       "shortAbbreviation": "1Jn",
       "SBLAbbreviation": "1 John",
       "OSISAbbreviation": "1John",
@@ -6871,6 +6999,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰωάννου β",
       "referenceNumber": 63,
+      "NEGAbbreviation": "2Jn",
       "shortAbbreviation": "2Jn",
       "SBLAbbreviation": "2 John",
       "OSISAbbreviation": "2John",
@@ -6893,6 +7022,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰωάννου γ",
       "referenceNumber": 64,
+      "NEGAbbreviation": "3Jn",
       "shortAbbreviation": "3Jn",
       "SBLAbbreviation": "3 John",
       "OSISAbbreviation": "3John",
@@ -6911,10 +7041,11 @@ const BibleBooksCodesTables =
       "bookNameEnglishGuide": "3 John",
       "typicalSection": "NT"
     },
-    "JDE": {
+    "JUD": {
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἰούδας",
       "referenceNumber": 65,
+      "NEGAbbreviation": "Jud",
       "shortAbbreviation": "Jud",
       "SBLAbbreviation": "Jude",
       "OSISAbbreviation": "Jude",
@@ -6937,6 +7068,7 @@ const BibleBooksCodesTables =
       "originalLanguageCode": "el-x-koine",
       "bookName": "Ἀποκάλυψις Ἰωάννου",
       "referenceNumber": 66,
+      "NEGAbbreviation": "Ap",
       "shortAbbreviation": "Re",
       "SBLAbbreviation": "Rev",
       "OSISAbbreviation": "Rev",
@@ -10994,7 +11126,7 @@ const BibleBooksCodesTables =
     "PSS",
     "PRO",
     "ECC",
-    "SNG",
+    "SON",
     "ISA",
     "JER",
     "LAM",
@@ -11005,10 +11137,10 @@ const BibleBooksCodesTables =
     "DNC",
     "P12",
     "HOS",
-    "JOL",
+    "JOE",
     "AMO",
     "OBA",
-    "JNA",
+    "JON",
     "MIC",
     "NAH",
     "HAB",
@@ -11111,9 +11243,9 @@ const BibleBooksCodesTables =
     "MQ2",
     "MQ3",
     "MAT",
-    "MRK",
+    "MAR",
     "LUK",
-    "JHN",
+    "JOH",
     "LKA",
     "ACT",
     "ROM",
@@ -11136,7 +11268,7 @@ const BibleBooksCodesTables =
     "JN1",
     "JN2",
     "JN3",
-    "JDE",
+    "JUD",
     "REV",
     "LAO",
     "COP",
@@ -11285,7 +11417,7 @@ const BibleBooksCodesTables =
     ],
     "SONG": [
       22,
-      "SNG"
+      "SON"
     ],
     "ISA": [
       23,
@@ -11313,7 +11445,7 @@ const BibleBooksCodesTables =
     ],
     "JOEL": [
       29,
-      "JOL"
+      "JOE"
     ],
     "AMOS": [
       30,
@@ -11325,7 +11457,7 @@ const BibleBooksCodesTables =
     ],
     "JONAH": [
       32,
-      "JNA"
+      "JON"
     ],
     "MIC": [
       33,
@@ -11361,7 +11493,7 @@ const BibleBooksCodesTables =
     ],
     "MARK": [
       41,
-      "MRK"
+      "MAR"
     ],
     "LUKE": [
       42,
@@ -11369,7 +11501,7 @@ const BibleBooksCodesTables =
     ],
     "JOHN": [
       43,
-      "JHN"
+      "JOH"
     ],
     "ACTS": [
       44,
@@ -11457,7 +11589,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE": [
       65,
-      "JDE"
+      "JUD"
     ],
     "REV": [
       66,
@@ -11649,7 +11781,7 @@ const BibleBooksCodesTables =
     ],
     "SONG": [
       22,
-      "SNG"
+      "SON"
     ],
     "ISA": [
       23,
@@ -11677,7 +11809,7 @@ const BibleBooksCodesTables =
     ],
     "JOEL": [
       29,
-      "JOL"
+      "JOE"
     ],
     "AMOS": [
       30,
@@ -11689,7 +11821,7 @@ const BibleBooksCodesTables =
     ],
     "JONAH": [
       32,
-      "JNA"
+      "JON"
     ],
     "MIC": [
       33,
@@ -11725,7 +11857,7 @@ const BibleBooksCodesTables =
     ],
     "MARK": [
       41,
-      "MRK"
+      "MAR"
     ],
     "LUKE": [
       42,
@@ -11733,7 +11865,7 @@ const BibleBooksCodesTables =
     ],
     "JOHN": [
       43,
-      "JHN"
+      "JOH"
     ],
     "ACTS": [
       44,
@@ -11821,7 +11953,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE": [
       65,
-      "JDE"
+      "JUD"
     ],
     "REV": [
       66,
@@ -12032,7 +12164,7 @@ const BibleBooksCodesTables =
     ],
     "SONG": [
       22,
-      "SNG"
+      "SON"
     ],
     "ISA": [
       23,
@@ -12060,7 +12192,7 @@ const BibleBooksCodesTables =
     ],
     "JOEL": [
       29,
-      "JOL"
+      "JOE"
     ],
     "AMOS": [
       30,
@@ -12072,7 +12204,7 @@ const BibleBooksCodesTables =
     ],
     "JONAH": [
       32,
-      "JNA"
+      "JON"
     ],
     "MIC": [
       33,
@@ -12108,7 +12240,7 @@ const BibleBooksCodesTables =
     ],
     "MARK": [
       41,
-      "MRK"
+      "MAR"
     ],
     "LUKE": [
       42,
@@ -12116,7 +12248,7 @@ const BibleBooksCodesTables =
     ],
     "JOHN": [
       43,
-      "JHN"
+      "JOH"
     ],
     "ACTS": [
       44,
@@ -12204,7 +12336,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE": [
       65,
-      "JDE"
+      "JUD"
     ],
     "REV": [
       66,
@@ -12692,7 +12824,7 @@ const BibleBooksCodesTables =
     ],
     "22": [
       22,
-      "SNG"
+      "SON"
     ],
     "23": [
       23,
@@ -12720,7 +12852,7 @@ const BibleBooksCodesTables =
     ],
     "29": [
       29,
-      "JOL"
+      "JOE"
     ],
     "30": [
       30,
@@ -12732,7 +12864,7 @@ const BibleBooksCodesTables =
     ],
     "32": [
       32,
-      "JNA"
+      "JON"
     ],
     "33": [
       33,
@@ -12768,7 +12900,7 @@ const BibleBooksCodesTables =
     ],
     "41": [
       41,
-      "MRK"
+      "MAR"
     ],
     "42": [
       42,
@@ -12776,7 +12908,7 @@ const BibleBooksCodesTables =
     ],
     "43": [
       43,
-      "JHN"
+      "JOH"
     ],
     "44": [
       44,
@@ -12864,7 +12996,7 @@ const BibleBooksCodesTables =
     ],
     "65": [
       65,
-      "JDE"
+      "JUD"
     ],
     "66": [
       66,
@@ -13059,9 +13191,9 @@ const BibleBooksCodesTables =
       "ECC",
       "21"
     ],
-    "SNG": [
+    "SON": [
       22,
-      "SNG",
+      "SON",
       "22"
     ],
     "ISA": [
@@ -13094,9 +13226,9 @@ const BibleBooksCodesTables =
       "HOS",
       "28"
     ],
-    "JOL": [
+    "JOE": [
       29,
-      "JOL",
+      "JOE",
       "29"
     ],
     "AMO": [
@@ -13111,7 +13243,7 @@ const BibleBooksCodesTables =
     ],
     "JON": [
       32,
-      "JNA",
+      "JON",
       "32"
     ],
     "MIC": [
@@ -13154,9 +13286,9 @@ const BibleBooksCodesTables =
       "MAT",
       "41"
     ],
-    "MRK": [
+    "MAR": [
       41,
-      "MRK",
+      "MAR",
       "42"
     ],
     "LUK": [
@@ -13164,9 +13296,9 @@ const BibleBooksCodesTables =
       "LUK",
       "43"
     ],
-    "JHN": [
+    "JOH": [
       43,
-      "JHN",
+      "JOH",
       "44"
     ],
     "ACT": [
@@ -13276,7 +13408,7 @@ const BibleBooksCodesTables =
     ],
     "JUD": [
       65,
-      "JDE",
+      "JUD",
       "66"
     ],
     "REV": [
@@ -13780,8 +13912,8 @@ const BibleBooksCodesTables =
     ],
     "22": [
       22,
-      "SNG",
-      "Sng"
+      "SON",
+      "SON"
     ],
     "23": [
       23,
@@ -13815,7 +13947,7 @@ const BibleBooksCodesTables =
     ],
     "29": [
       29,
-      "JOL",
+      "JOE",
       "Jol"
     ],
     "30": [
@@ -13830,7 +13962,7 @@ const BibleBooksCodesTables =
     ],
     "32": [
       32,
-      "JNA",
+      "JON",
       "Jon"
     ],
     "33": [
@@ -13875,8 +14007,8 @@ const BibleBooksCodesTables =
     ],
     "42": [
       41,
-      "MRK",
-      "Mrk"
+      "MAR",
+      "MAR"
     ],
     "43": [
       42,
@@ -13885,8 +14017,8 @@ const BibleBooksCodesTables =
     ],
     "44": [
       43,
-      "JHN",
-      "Jhn"
+      "JOH",
+      "JOH"
     ],
     "45": [
       44,
@@ -13995,7 +14127,7 @@ const BibleBooksCodesTables =
     ],
     "66": [
       65,
-      "JDE",
+      "JUD",
       "Jud"
     ],
     "67": [
@@ -14360,8 +14492,8 @@ const BibleBooksCodesTables =
     ],
     "022": [
       22,
-      "SNG",
-      "Sng"
+      "SON",
+      "SON"
     ],
     "023": [
       23,
@@ -14395,7 +14527,7 @@ const BibleBooksCodesTables =
     ],
     "029": [
       29,
-      "JOL",
+      "JOE",
       "Jol"
     ],
     "030": [
@@ -14410,7 +14542,7 @@ const BibleBooksCodesTables =
     ],
     "032": [
       32,
-      "JNA",
+      "JON",
       "Jon"
     ],
     "033": [
@@ -14455,8 +14587,8 @@ const BibleBooksCodesTables =
     ],
     "041": [
       41,
-      "MRK",
-      "Mrk"
+      "MAR",
+      "MAR"
     ],
     "042": [
       42,
@@ -14465,8 +14597,8 @@ const BibleBooksCodesTables =
     ],
     "043": [
       43,
-      "JHN",
-      "Jhn"
+      "JOH",
+      "JOH"
     ],
     "044": [
       44,
@@ -14575,7 +14707,7 @@ const BibleBooksCodesTables =
     ],
     "065": [
       65,
-      "JDE",
+      "JUD",
       "Jud"
     ],
     "066": [
@@ -14887,8 +15019,8 @@ const BibleBooksCodesTables =
     ],
     "22O": [
       22,
-      "SNG",
-      "Sng"
+      "SON",
+      "SON"
     ],
     "23O": [
       23,
@@ -14922,7 +15054,7 @@ const BibleBooksCodesTables =
     ],
     "29O": [
       29,
-      "JOL",
+      "JOE",
       "Jol"
     ],
     "30O": [
@@ -14937,7 +15069,7 @@ const BibleBooksCodesTables =
     ],
     "32O": [
       32,
-      "JNA",
+      "JON",
       "Jon"
     ],
     "33O": [
@@ -14982,8 +15114,8 @@ const BibleBooksCodesTables =
     ],
     "41N": [
       41,
-      "MRK",
-      "Mrk"
+      "MAR",
+      "MAR"
     ],
     "42N": [
       42,
@@ -14992,8 +15124,8 @@ const BibleBooksCodesTables =
     ],
     "43N": [
       43,
-      "JHN",
-      "Jhn"
+      "JOH",
+      "JOH"
     ],
     "44N": [
       44,
@@ -15102,7 +15234,7 @@ const BibleBooksCodesTables =
     ],
     "65N": [
       65,
-      "JDE",
+      "JUD",
       "Jud"
     ],
     "66N": [
@@ -15319,8 +15451,8 @@ const BibleBooksCodesTables =
     ],
     "22": [
       22,
-      "SNG",
-      "Sng"
+      "SON",
+      "SON"
     ],
     "23": [
       23,
@@ -15354,7 +15486,7 @@ const BibleBooksCodesTables =
     ],
     "29": [
       29,
-      "JOL",
+      "JOE",
       "Jol"
     ],
     "30": [
@@ -15369,7 +15501,7 @@ const BibleBooksCodesTables =
     ],
     "32": [
       32,
-      "JNA",
+      "JON",
       "Jon"
     ],
     "33": [
@@ -15414,8 +15546,8 @@ const BibleBooksCodesTables =
     ],
     "41": [
       41,
-      "MRK",
-      "Mrk"
+      "MAR",
+      "MAR"
     ],
     "42": [
       42,
@@ -15424,8 +15556,8 @@ const BibleBooksCodesTables =
     ],
     "43": [
       43,
-      "JHN",
-      "Jhn"
+      "JOH",
+      "JOH"
     ],
     "44": [
       44,
@@ -15534,7 +15666,7 @@ const BibleBooksCodesTables =
     ],
     "65": [
       65,
-      "JDE",
+      "JUD",
       "Jud"
     ],
     "66": [
@@ -15743,7 +15875,7 @@ const BibleBooksCodesTables =
     ],
     "SOS": [
       22,
-      "SNG"
+      "SON"
     ],
     "ISA": [
       23,
@@ -15771,7 +15903,7 @@ const BibleBooksCodesTables =
     ],
     "JOE": [
       29,
-      "JOL"
+      "JOE"
     ],
     "AMO": [
       30,
@@ -15783,7 +15915,7 @@ const BibleBooksCodesTables =
     ],
     "JON": [
       32,
-      "JNA"
+      "JON"
     ],
     "MIC": [
       33,
@@ -15819,7 +15951,7 @@ const BibleBooksCodesTables =
     ],
     "MAR": [
       41,
-      "MRK"
+      "MAR"
     ],
     "LUK": [
       42,
@@ -15827,7 +15959,7 @@ const BibleBooksCodesTables =
     ],
     "JOH": [
       43,
-      "JHN"
+      "JOH"
     ],
     "ACT": [
       44,
@@ -15915,7 +16047,7 @@ const BibleBooksCodesTables =
     ],
     "JUD": [
       65,
-      "JDE"
+      "JUD"
     ],
     "REV": [
       66,
@@ -16012,7 +16144,7 @@ const BibleBooksCodesTables =
     ],
     "SON": [
       22,
-      "SNG"
+      "SON"
     ],
     "ISA": [
       23,
@@ -16040,7 +16172,7 @@ const BibleBooksCodesTables =
     ],
     "JOE": [
       29,
-      "JOL"
+      "JOE"
     ],
     "AMO": [
       30,
@@ -16052,7 +16184,7 @@ const BibleBooksCodesTables =
     ],
     "JON": [
       32,
-      "JNA"
+      "JON"
     ],
     "MIC": [
       33,
@@ -16088,15 +16220,15 @@ const BibleBooksCodesTables =
     ],
     "MAK": [
       41,
-      "MRK"
+      "MAR"
     ],
     "LUK": [
       42,
       "LUK"
     ],
-    "JHN": [
+    "JOH": [
       43,
-      "JHN"
+      "JOH"
     ],
     "ACT": [
       44,
@@ -16184,7 +16316,7 @@ const BibleBooksCodesTables =
     ],
     "JUD": [
       65,
-      "JDE"
+      "JUD"
     ],
     "REV": [
       66,
@@ -16278,7 +16410,7 @@ const BibleBooksCodesTables =
     ],
     "SOL": [
       22,
-      "SNG"
+      "SON"
     ],
     "ISA": [
       23,
@@ -16306,7 +16438,7 @@ const BibleBooksCodesTables =
     ],
     "JOE": [
       29,
-      "JOL"
+      "JOE"
     ],
     "AMO": [
       30,
@@ -16318,7 +16450,7 @@ const BibleBooksCodesTables =
     ],
     "JON": [
       32,
-      "JNA"
+      "JON"
     ],
     "MIC": [
       33,
@@ -16354,7 +16486,7 @@ const BibleBooksCodesTables =
     ],
     "MAR": [
       41,
-      "MRK"
+      "MAR"
     ],
     "LUK": [
       42,
@@ -16362,7 +16494,7 @@ const BibleBooksCodesTables =
     ],
     "JOH": [
       43,
-      "JHN"
+      "JOH"
     ],
     "ACT": [
       44,
@@ -16450,7 +16582,7 @@ const BibleBooksCodesTables =
     ],
     "JUD": [
       65,
-      "JDE"
+      "JUD"
     ],
     "REV": [
       66,
@@ -16588,7 +16720,7 @@ const BibleBooksCodesTables =
     ],
     "MR": [
       41,
-      "MRK"
+      "MAR"
     ],
     "LU": [
       42,
@@ -16596,7 +16728,7 @@ const BibleBooksCodesTables =
     ],
     "JOH": [
       43,
-      "JHN"
+      "JOH"
     ],
     "AC": [
       44,
@@ -16684,7 +16816,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE": [
       65,
-      "JDE"
+      "JUD"
     ],
     "RE": [
       66,
@@ -16778,7 +16910,7 @@ const BibleBooksCodesTables =
     ],
     "SONG OF SOLOMON / SONG OF SONGS / CANTICLES / CANTICLE OF CANTICLES": [
       22,
-      "SNG"
+      "SON"
     ],
     "ISAIAH": [
       23,
@@ -16806,7 +16938,7 @@ const BibleBooksCodesTables =
     ],
     "JOEL": [
       29,
-      "JOL"
+      "JOE"
     ],
     "AMOS": [
       30,
@@ -16818,7 +16950,7 @@ const BibleBooksCodesTables =
     ],
     "JONAH": [
       32,
-      "JNA"
+      "JON"
     ],
     "MICAH": [
       33,
@@ -16854,7 +16986,7 @@ const BibleBooksCodesTables =
     ],
     "MARK": [
       41,
-      "MRK"
+      "MAR"
     ],
     "LUKE": [
       42,
@@ -16862,7 +16994,7 @@ const BibleBooksCodesTables =
     ],
     "JOHN": [
       43,
-      "JHN"
+      "JOH"
     ],
     "ACTS / ACTS OF THE APOSTLES": [
       44,
@@ -16950,7 +17082,7 @@ const BibleBooksCodesTables =
     ],
     "JUDE / JUDAS": [
       65,
-      "JDE"
+      "JUD"
     ],
     "REVELATION / REVELATION OF JOHN / APOCALYPSE OF ST. JOHN": [
       66,
@@ -17671,6 +17803,8 @@ const BibleBooksCodesTables =
     "EXO": "EXO",
     "LEV": "LEV",
     "NUM": "NUM",
+    "NB": "NUM",
+    "NU": "NUM",
     "DEUT": "DEU",
     "DEU": "DEU",
     "JOSH": "JOS",
@@ -17691,11 +17825,13 @@ const BibleBooksCodesTables =
     "1 KGS": "KI1",
     "1KGS": "KI1",
     "1KI": "KI1",
+    "1R": "KI1",
     "1KG": "KI1",
     "2 KGS": "KI2",
     "2KGS": "KI2",
     "2KI": "KI2",
     "2KG": "KI2",
+    "2R": "KI2",
     "1 CHR": "CH1",
     "1CHR": "CH1",
     "1CH": "CH1",
@@ -17712,12 +17848,14 @@ const BibleBooksCodesTables =
     "PRO": "PRO",
     "ECCL": "ECC",
     "ECC": "ECC",
-    "SONG": "SNG",
-    "SNG": "SNG",
-    "SOS": "SNG",
-    "SON": "SNG",
-    "SOL": "SNG",
+    "SONG": "SON",
+    "SON": "SON",
+    "CT": "SON",
+    "SOS": "SON",
+    "SON": "SON",
+    "SOL": "SON",
     "ISA": "ISA",
+    "ES": "ISA",
     "JER": "JER",
     "LAM": "LAM",
     "EZEK": "EZE",
@@ -17725,15 +17863,15 @@ const BibleBooksCodesTables =
     "EZE": "EZE",
     "DAN": "DAN",
     "HOS": "HOS",
-    "JOEL": "JOL",
-    "JOL": "JOL",
-    "JOE": "JOL",
+    "JOEL": "JOE",
+    "JL": "JOE",
+    "JOL": "JOE",
     "AMOS": "AMO",
     "AMO": "AMO",
     "OBAD": "OBA",
     "OBA": "OBA",
-    "JONAH": "JNA",
-    "JON": "JNA",
+    "JONAH": "JON",
+    "JON": "JON",
     "MIC": "MIC",
     "NAH": "NAH",
     "NAM": "NAH",
@@ -17747,19 +17885,19 @@ const BibleBooksCodesTables =
     "MATT": "MAT",
     "MAT": "MAT",
     "MT": "MAT",
-    "MARK": "MRK",
-    "MRK": "MRK",
-    "MAR": "MRK",
-    "MAK": "MRK",
-    "MARC": "MRK",
-    "MC": "MRK",
-    "MR": "MRK",
+    "MARK": "MAR",
+    "MAR": "MAR",
+    "MAR": "MAR",
+    "MAK": "MAR",
+    "MARC": "MAR",
+    "MC": "MAR",
+    "MR": "MAR",
     "LUKE": "LUK",
     "LUK": "LUK",
     "LU": "LUK",
-    "JOHN": "JHN",
-    "JHN": "JHN",
-    "JOH": "JHN",
+    "JOHN": "JOH",
+    "JOH": "JOH",
+    "JOH": "JOH",
     "ACTS": "ACT",
     "ACT": "ACT",
     "AC": "ACT",
@@ -17802,6 +17940,7 @@ const BibleBooksCodesTables =
     "HEB": "HEB",
     "JAS": "JAM",
     "JAM": "JAM",
+    "JC": "JAM",
     "1 PET": "PE1",
     "1PET": "PE1",
     "1PE": "PE1",
@@ -17820,8 +17959,8 @@ const BibleBooksCodesTables =
     "3JOHN": "JN3",
     "3JN": "JN3",
     "3JO": "JN3",
-    "JUDE": "JDE",
-    "JUD": "JDE",
+    "JUDE": "JUD",
+    "JUD": "JUD",
     "REV": "REV",
     "RE": "REV",
     "ESTHGR": "ESG",
@@ -18024,19 +18163,20 @@ const BibleBooksCodesTables =
     "RT": "RUT",
     "1K": "KI1",
     "2K": "KI2",
+    "ESD": "EZR",
     "NH": "NEH",
     "NHM": "NEH",
-    "ES": "EST",
+    "ES": "ISA",
     "JB": "JOB",
     "PSLM": "PSA",
     "PR": "PRO",
     "PRV": "PRO",
     "EC": "ECC",
-    "SL": "SNG",
-    "SS": "SNG",
-    "CANT": "SNG",
-    "CAN": "SNG",
-    "": "SNG",
+    "SL": "SON",
+    "SS": "SON",
+    "CANT": "SON",
+    "CAN": "SON",
+    "CT": "SON",
     "IS": "ISA",
     "JR": "JER",
     "JRM": "JER",
@@ -18046,12 +18186,12 @@ const BibleBooksCodesTables =
     "DN": "DAN",
     "DNL": "DAN",
     "HS": "HOS",
-    "JL": "JOL",
+    "JL": "JOE",
     "AM": "AMO",
     "AMS": "AMO",
     "OB": "OBA",
     "OBD": "OBA",
-    "JNH": "JNA",
+    "JNH": "JON",
     "MI": "MIC",
     "MCH": "MIC",
     "HBK": "HAB",
@@ -18063,7 +18203,7 @@ const BibleBooksCodesTables =
     "ML": "MAL",
     "MTT": "MAT",
     "LK": "LUK",
-    "JN": "JHN",
+    "JN": "JOH",
     "RM": "ROM",
     "RMN": "ROM",
     "GL": "GAL",
@@ -18081,7 +18221,7 @@ const BibleBooksCodesTables =
     "1J": "JN1",
     "2J": "JN2",
     "3J": "JN3",
-    "JD": "JDE",
+    "JD": "JUD",
     "RV": "REV",
     "PRAZ": "PAZ",
     "PRS": "PSO",
