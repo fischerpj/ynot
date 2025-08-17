@@ -18281,7 +18281,7 @@ export class Ref {
     // Create LI for each data item
     this.data.forEach(item => {
       const li = document.createElement('li');
-      li.innerHTML = item.ref + item.content; // or any other property
+      li.innerHTML = item.ref + " " + item.content; // or any other property
       ul.appendChild(li);
     });
 

@@ -1,6 +1,6 @@
 ---
 title: "adVerse2"
-date: "2025-08-15"
+date: "2025-08-17"
 image: "f1car.jpeg"
 execute:
   echo: false
