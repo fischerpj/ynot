@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>adVerse – ynot</title>
+<title>Book_Ref – ynot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">adVerse</h1>
+      <h1 class="title">Book_Ref</h1>
                       </div>
   </div>
     
@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <blockquote class="blockquote">
-<p><em>observableJS</em> mixing import class, fetch&amp;display.</p>
+<p>supersedes adVerse incl.observableJS and class.js</p>
 </blockquote>
 <div id="inputDiv">
 <p>any input comes here</p>
@@ -183,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code hidden" id="cb1" data-startfrom="16" data-source-offset="-27"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 15;"><span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { html } <span class="im">from</span> <span class="st">"@observablehq/stdlib"</span><span class="op">;</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Inputs</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>viewof userRef_new <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;input type="text" </span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>viewof userRef <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;input type="text" </span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="vs">  class="form-control" </span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="vs">  style="width: 150px;"</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="vs">  value="ps40"/&gt;`</span><span class="op">;</span></span>
@@ -191,8 +191,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">// VIEWOF</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="row container"&gt;</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="vs">  Lookup&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof userRef_new<span class="sc">}</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof userRef<span class="sc">}</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>userRef<span class="sc">}</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -215,16 +216,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div id="outputDiv">
+<p>any output comes here</p>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="36" data-source-offset="-63"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 35;"><span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>valid_param <span class="op">=</span> {</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mb <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(userRef_new)<span class="op">;</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co">//  return mb;</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">////  const BBC = new BibleBooksCodes();</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBC.getBBBFromText(mb.book);</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> mb</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>valid_param<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="38" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { BookRef } <span class="im">from</span> <span class="st">"./Book_Ref.js"</span><span class="op">;</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>bbc <span class="op">=</span> {</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">//  const BBC = new BibleBooksCodes(8);</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> BBC <span class="op">=</span> <span class="kw">new</span> <span class="fu">BookRef</span>(<span class="dv">7</span>)<span class="op">;</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">//  const BBClist   = BBC.getBBBlist();</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">//  const sam = BBC.getBBBsample_(6);</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> BBC</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>bbc<span class="op">.</span><span class="at">random</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -234,86 +239,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-2-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
-<div id="outputDiv">
-<p>any output comes here</p>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="59" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 58;"><span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Bcve } <span class="im">from</span> <span class="st">"./ref.js"</span><span class="op">;</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="co">// FUNCTIONS are in BibleBooksCodes.js, a Module handling BibleBooksCodes functions.</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>mbcv <span class="op">=</span> {</span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mb <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(userRef_new)<span class="op">;</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="co">//  return mb;</span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="co">//  const BBC = new BibleBooksCodes();</span></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBC.getBBBFromText(mb.book);</span></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> mb</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-1" data-nodetype="declaration">
+<div id="ojs-cell-2-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-3-2" data-nodetype="declaration">
+<div id="ojs-cell-2-3" data-nodetype="expression">
 
 </div>
 </div>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="93" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 92;"><span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Ref<span class="op">,</span> Books<span class="op">,</span> BibleBooksCodes<span class="op">,</span> tidyBBBs<span class="op">,</span> tidyBBB } <span class="im">from</span> <span class="st">"./ref.js"</span><span class="op">;</span></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="co">// array of multiple refs to fetch in parallel</span></span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>bbc <span class="op">=</span> {</span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>  <span class="co">// DATA is imported from BibleBooksCodes_Tables.js</span></span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> BBC <span class="op">=</span> <span class="kw">new</span> <span class="fu">BibleBooksCodes</span>()<span class="op">;</span></span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> BBClist <span class="op">=</span> BBC<span class="op">.</span><span class="fu">getBBBlist</span>()<span class="op">;</span></span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> BBCsample <span class="op">=</span> BBC<span class="op">.</span><span class="fu">getBBBsample_</span>(<span class="dv">24</span>)<span class="op">;</span></span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> BBCosis <span class="op">=</span> BBC<span class="op">.</span><span class="fu">getBBBosis_</span>(BBCsample)<span class="op">;</span></span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBC.getBBBneg_(BBCsample);</span></span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> tibbb <span class="op">=</span> BBCsample<span class="op">.</span><span class="fu">map</span>((x) <span class="kw">=&gt;</span> <span class="fu">tidyBBB</span>(x)<span class="op">+</span><span class="st">"1:1"</span>)<span class="op">;</span></span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(tibbb)<span class="op">;</span></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mi <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(tibbb)<span class="op">;</span></span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>  <span class="cf">await</span> mi<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>  <span class="cf">await</span> mi<span class="op">.</span><span class="fu">displayData</span>()<span class="op">;</span></span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a><span class="co">//  BBC.getSingleChapterBooksList() </span></span>
-<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span>  mi</span>
-<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="co">//  const BBCneg = BBC.getBBBneg_(BBCsample);</span></span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBC.getBBBFromText(mbcv.book)</span></span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a><span class="co">//  console.log(BBC.getBBBFromText(mbcv.book));</span></span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBCsample;</span></span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBC.getNEGAbbreviation("GEN")</span></span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>bbc<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="48" data-source-offset="-223"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 47;"><span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>bbc<span class="op">.</span><span class="at">inputs</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-4-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-3" data-nodetype="expression">
+<div id="ojs-cell-2-4" data-nodetype="expression">
 
 </div>
 </div>
@@ -324,11 +265,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vPT09PT09PT09PT09PT09PT09IElOUFVUXG5pbXBvcnQgeyBodG1sIH0gZnJvbSBcIkBvYnNlcnZhYmxlaHEvc3RkbGliXCI7XG5cbi8vIElucHV0c1xudmlld29mIHVzZXJSZWZfbmV3ID0gaHRtbGA8aW5wdXQgdHlwZT1cInRleHRcIiBcbiAgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiBcbiAgc3R5bGU9XCJ3aWR0aDogMTUwcHg7XCJcbiAgdmFsdWU9XCJwczQwXCIvPmA7XG4gIFxuLy8gVklFV09GXG5odG1sYDxkaXYgY2xhc3M9XCJyb3cgY29udGFpbmVyXCI+XG4gIExvb2t1cCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO1xuICAke3ZpZXdvZiB1c2VyUmVmX25ld31cbiAgPC9kaXY+YCAgXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLz09PT09PT09PT09PT09PT09PSBWQUxJREFUSU9OXG5cbi8vdmFsaWRfcGFyYW0gPSB1c2VyUmVmX25ldztcblxudmFsaWRfcGFyYW0gPSB7XG4gIGNvbnN0IG1iID0gbmV3IEJjdmUodXNlclJlZl9uZXcpO1xuLy8gIHJldHVybiBtYjtcbi8vLy8gIGNvbnN0IEJCQyA9IG5ldyBCaWJsZUJvb2tzQ29kZXMoKTtcbi8vICByZXR1cm4gQkJDLmdldEJCQkZyb21UZXh0KG1iLmJvb2spO1xuICByZXR1cm4gbWJcbn1cblxudmFsaWRfcGFyYW07XG4vKlxuLy8gVklFV09GXG5odG1sYDxkaXYgY2xhc3M9XCJyb3cgY29udGFpbmVyXCI+XG4gIFZhbGlkYXRpb24mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDtcbiAgJHt2YWxpZF9wYXJhbX1cbiAgPC9kaXY+YFxuKi8gIFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaW1wb3J0IHsgQmN2ZSB9IGZyb20gXCIuL3JlZi5qc1wiO1xuLy8gRlVOQ1RJT05TIGFyZSBpbiBCaWJsZUJvb2tzQ29kZXMuanMsIGEgTW9kdWxlIGhhbmRsaW5nIEJpYmxlQm9va3NDb2RlcyBmdW5jdGlvbnMuXG5cblxubWJjdiA9IHtcbiAgY29uc3QgbWIgPSBuZXcgQmN2ZSh1c2VyUmVmX25ldyk7XG4vLyAgcmV0dXJuIG1iO1xuLy8gIGNvbnN0IEJCQyA9IG5ldyBCaWJsZUJvb2tzQ29kZXMoKTtcbi8vICByZXR1cm4gQkJDLmdldEJCQkZyb21UZXh0KG1iLmJvb2spO1xuICByZXR1cm4gbWJcbn1cblxuLypcbm1pUmVmID0geyBcbiAgY29uc3QgbWIgPSBuZXcgQmN2ZSh1c2VyUmVmX25ldyk7XG4gIGNvbnN0IG1pID0gbmV3IFJlZihtYi5wYXJhbSk7XG4gIGF3YWl0IG1pLmZldGNoX3BhcmFsbGVsKCk7ICAgLy8gV2FpdCBmb3IgZGF0YSB0byBiZSBmZXRjaGVkXG4gIG1pLmRpc3BsYXlEYXRhKCk7XG4gIHJldHVybiBtaTsgLy8gUmV0dXJuIHRoZSBvYmplY3QgYXMgdGhlIGNlbGwncyB2YWx1ZVxufVxubWlSZWY7XG4qL1xuLypcbm1ib29rcyA9IHtcbiAgY29uc3QgbWJrID0gbmV3IEJvb2tzKCk7XG4gIHJldHVybiBtYms7XG59XG5tYm9va3M7XG4qL1xuXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IFJlZiwgQm9va3MsIEJpYmxlQm9va3NDb2RlcywgdGlkeUJCQnMsIHRpZHlCQkIgfSBmcm9tIFwiLi9yZWYuanNcIjtcblxuLy8gYXJyYXkgb2YgbXVsdGlwbGUgcmVmcyB0byBmZXRjaCBpbiBwYXJhbGxlbFxuYmJjID0ge1xuICAvLyBEQVRBIGlzIGltcG9ydGVkIGZyb20gQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1xuICBjb25zdCBCQkMgPSBuZXcgQmlibGVCb29rc0NvZGVzKCk7XG4gIGNvbnN0IEJCQ2xpc3RcdD0gQkJDLmdldEJCQmxpc3QoKTtcbiAgY29uc3QgQkJDc2FtcGxlID0gQkJDLmdldEJCQnNhbXBsZV8oMjQpO1xuXG4gIGNvbnN0IEJCQ29zaXMgPSBCQkMuZ2V0QkJCb3Npc18oQkJDc2FtcGxlKTtcbi8vICByZXR1cm4gQkJDLmdldEJCQm5lZ18oQkJDc2FtcGxlKTtcbiAgY29uc3QgdGliYmIgPSBCQkNzYW1wbGUubWFwKCh4KSA9PiB0aWR5QkJCKHgpK1wiMToxXCIpO1xuICBjb25zb2xlLmxvZyh0aWJiYik7XG4gIGNvbnN0IG1pID0gbmV3IFJlZih0aWJiYik7XG4gIGF3YWl0IG1pLmZldGNoX3BhcmFsbGVsKCk7ICAgLy8gV2FpdCBmb3IgZGF0YSB0byBiZSBmZXRjaGVkXG4gIGF3YWl0IG1pLmRpc3BsYXlEYXRhKCk7XG4vLyAgQkJDLmdldFNpbmdsZUNoYXB0ZXJCb29rc0xpc3QoKSBcbiAgcmV0dXJuICBtaVxuXG4vLyAgY29uc3QgQkJDbmVnID0gQkJDLmdldEJCQm5lZ18oQkJDc2FtcGxlKTtcbi8vICByZXR1cm4gQkJDLmdldEJCQkZyb21UZXh0KG1iY3YuYm9vaylcbi8vICBjb25zb2xlLmxvZyhCQkMuZ2V0QkJCRnJvbVRleHQobWJjdi5ib29rKSk7XG4vLyAgcmV0dXJuIEJCQ3NhbXBsZTtcbi8vICByZXR1cm4gQkJDLmdldE5FR0FiYnJldmlhdGlvbihcIkdFTlwiKVxufVxuYmJjO1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd1c2VyUmVmX25ldycpIn1dfQ==
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vPT09PT09PT09PT09PT09PT09IElOUFVUXG5pbXBvcnQgeyBodG1sIH0gZnJvbSBcIkBvYnNlcnZhYmxlaHEvc3RkbGliXCI7XG5cbi8vIElucHV0c1xudmlld29mIHVzZXJSZWYgPSBodG1sYDxpbnB1dCB0eXBlPVwidGV4dFwiIFxuICBjbGFzcz1cImZvcm0tY29udHJvbFwiIFxuICBzdHlsZT1cIndpZHRoOiAxNTBweDtcIlxuICB2YWx1ZT1cInBzNDBcIi8+YDtcbiAgXG4vLyBWSUVXT0Zcbmh0bWxgPGRpdiBjbGFzcz1cInJvdyBjb250YWluZXJcIj5cbiAgTG9va3VwJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7XG4gICR7dmlld29mIHVzZXJSZWZ9XG4gICR7dXNlclJlZn1cbiAgPC9kaXY+YCAgXG4gIFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaW1wb3J0IHsgQm9va1JlZiB9IGZyb20gXCIuL0Jvb2tfUmVmLmpzXCI7XG5cbmJiYyA9IHtcbi8vICBjb25zdCBCQkMgPSBuZXcgQmlibGVCb29rc0NvZGVzKDgpO1xuICBjb25zdCBCQkMgPSBuZXcgQm9va1JlZig3KTtcbi8vICBjb25zdCBCQkNsaXN0XHQ9IEJCQy5nZXRCQkJsaXN0KCk7XG4vLyAgY29uc3Qgc2FtID0gQkJDLmdldEJCQnNhbXBsZV8oNik7XG4gIHJldHVybiBCQkNcbn1cbmJiYy5yYW5kb207XG5iYmMuaW5wdXRzO1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3VzZXJSZWYnKSJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../posts/adVerse";
+window._ojs.paths.runtimeToDoc = "../../posts/Book_Ref";
 window._ojs.paths.runtimeToRoot = "../..";
 window._ojs.paths.docToRoot = "../..";
 window._ojs.selfContained = false;

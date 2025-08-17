@@ -1,11 +1,12 @@
 ---
-title: "adVerse"
+title: "adVerse2"
+date: "2025-08-15"
 image: "f1car.jpeg"
 execute:
   echo: false
 ---
 
-> *observableJS* mixing import class, fetch&display.
+> *observableJS* mixing import class from BibleBooksCodes_Tables.js, target minhall fetch&display. DO: fix BBCstatic
 
 ::: {#inputDiv}
 any input comes here
@@ -26,29 +27,8 @@ html`<div class="row container">
   Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ${viewof userRef_new}
   </div>`  
-```
 
-```{ojs}
-//================== VALIDATION
-
-//valid_param = userRef_new;
-
-valid_param = {
-  const mb = new Bcve(userRef_new);
-//  return mb;
-////  const BBC = new BibleBooksCodes();
-//  return BBC.getBBBFromText(mb.book);
-  return mb
-}
-
-valid_param;
-/*
-// VIEWOF
-html`<div class="row container">
-  Validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  ${valid_param}
-  </div>`
-*/  
+// userRef_new;  
 ```
 
 ::: {#outputDiv}
@@ -56,41 +36,20 @@ any output comes here
 :::
 
 ```{ojs}
-import { Bcve } from "./ref.js";
-// FUNCTIONS are in BibleBooksCodes.js, a Module handling BibleBooksCodes functions.
+// DATA is imported from BibleBooksCodes_Tables.js
+import { Bcve, BibleBooksCodes } from "./BibleBooksCodes_Tables.js";
 
-
-mbcv = {
+//================== VALIDATION
+valid_param = {
   const mb = new Bcve(userRef_new);
-//  return mb;
-//  const BBC = new BibleBooksCodes();
-//  return BBC.getBBBFromText(mb.book);
   return mb
 }
 
-/*
-miRef = { 
-  const mb = new Bcve(userRef_new);
-  const mi = new Ref(mb.param);
-  await mi.fetch_parallel();   // Wait for data to be fetched
-  mi.displayData();
-  return mi; // Return the object as the cell's value
-}
-miRef;
-*/
-/*
-mbooks = {
-  const mbk = new Books();
-  return mbk;
-}
-mbooks;
-*/
-
-
+valid_param;
 ```
 
 ```{ojs}
-import { Ref, Books, BibleBooksCodes, tidyBBBs, tidyBBB } from "./ref.js";
+import { Ref, Books, tidyBBBs, tidyBBB } from "./BibleBooksCodes_Tables.js";
 
 // array of multiple refs to fetch in parallel
 bbc = {
@@ -116,4 +75,5 @@ bbc = {
 //  return BBC.getNEGAbbreviation("GEN")
 }
 bbc;
+
 ```

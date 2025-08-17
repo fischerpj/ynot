@@ -126,6 +126,7 @@ This was because early versions of HTML ID fields used to need
 (and most identifiers in computer languages still require that).
 */
 
+
 const LAST_MODIFIED_DATE = "2022-02-18";
 const SHORT_PROGRAM_NAME = "BibleBooksCodes";
 const PROGRAM_NAME = "Bible Books Codes handler";
@@ -133,7 +134,7 @@ const PROGRAM_VERSION = "0.87";
 const PROGRAM_NAME_VERSION = `${SHORT_PROGRAM_NAME} v${PROGRAM_VERSION}`;
 const DEBUGGING_THIS_MODULE = false;
 
-import BibleBooksCodesTables from './BibleBooksCodes_Tables.js';
+//import BibleBooksCodesTables from './BibleBooksCodes_Tables.js';
 
 export class BibleBooksCodes {
   /*

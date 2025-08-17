@@ -1,5 +1,4 @@
-const BibleBooksCodesTables = 
-{
+const BibleBooksCodesTables = {
   "referenceNumberDict": {
     "1": {
       "referenceAbbreviation": "GEN",
@@ -18229,6 +18228,7 @@ const BibleBooksCodesTables =
     "PRE": "EUT"
   }
 };
-//module.exports = BibleBooksCodesTables;
+
+// module.exports = BibleBooksCodesTables;
 
 export default BibleBooksCodesTables;

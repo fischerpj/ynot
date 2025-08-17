@@ -1,0 +1,50 @@
+---
+title: "Book_Ref"
+image: "f1car.jpeg"
+execute:
+  echo: false
+---
+
+> supersedes adVerse incl.observableJS and class.js
+
+::: {#inputDiv}
+any input comes here
+:::
+
+```{ojs}
+//================== INPUT
+import { html } from "@observablehq/stdlib";
+
+// Inputs
+viewof userRef = html`<input type="text" 
+  class="form-control" 
+  style="width: 150px;"
+  value="ps40"/>`;
+  
+// VIEWOF
+html`<div class="row container">
+  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef}
+  ${userRef}
+  </div>`  
+  
+```
+
+::: {#outputDiv}
+any output comes here
+:::
+
+```{ojs}
+import { BookRef } from "./Book_Ref.js";
+
+bbc = {
+//  const BBC = new BibleBooksCodes(8);
+  const BBC = new BookRef(7);
+//  const BBClist	= BBC.getBBBlist();
+//  const sam = BBC.getBBBsample_(6);
+  return BBC
+}
+bbc.random;
+bbc.inputs;
+
+```

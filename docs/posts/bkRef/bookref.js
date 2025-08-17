@@ -1,116 +1,3 @@
-// 1. Ref.js
-// 2. BibliBooksCodes.js
-
-//======================   Ref.Js
-// Ref class and methods can be imported in quarto ojs
-
-export class Ref {
-  // takes an array of validated reference(s) as argument
-  // Step 1: Define URLs-params as a property
-  constructor(
-    input = [ 'Hos14!SG21', 'Neh13!SG21','Rev22:4!KJV' ],
-    edition_default="SG21") {
-      this.inputs = Array.isArray(input) ? input : [input];
-      this.baseUrl = 'https://hall.pjafischer.workers.dev/passage/';
-      this.urls = this.inputs.map(input => `${this.baseUrl}?param=${encodeURIComponent(input)}`);
-      this.data = [];
-      this.outputDiv = document.getElementById('outputDiv');
-      this.edition_default = edition_default;
-    }
-
-  // Step 2: Method to fetch and populate data
-  async fetch_parallel() {
-    // attempt to fetch the urls
-    try {
-      const responses = await Promise.all(
-        this.urls.map(url => fetch(url).then(res => res.json()))
-      );
-      this.data = responses;
-    } catch (error) {
-      console.error('Fetch failed:', error);
-    }
-  }
-  
-   // Step 3: Display method that ensures data is ready
-  displayData() {
-    const outputDiv = document.getElementById('outputDiv');
-    if (!outputDiv) {
-      console.error('No element with id="outputdiv" found.');
-      return;
-    }
-
-    // Clear previous content
-    outputDiv.innerHTML = '';
-
-    // Create UL
-    const ul = document.createElement('ul');
-
-    // Create LI for each data item
-    this.data.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item.ref + item.htmlraw; // or any other property
-      ul.appendChild(li);
-    });
-
-    // Append UL to outputDiv
-    outputDiv.appendChild(ul);
-  } // end of Display
-}
-
-export class Bcve {
-
-  input = null;
-  ref_edition = ['', ''];
-  bc_verse = ['', ''];
-
-  constructor(
-    input = 'Hos14!SG21',
-    edition_default ="SG21"){
-      this.input = input.toLowerCase();
-      this.edition_default = edition_default;
-      [this.ref_edition[0], this.ref_edition[1]] = this.input.split('!', 2).concat('');
-      [this.bc_verse[0], this.bc_verse[1]] = this.ref_edition[0].split(':', 2).concat('');
-      this.edition = this.edition_();      // spot valid edition first
-      this.book = this.bc_verse[0].replace(/\d+$/,''); // strip trailing digits if present
-      this.chap = this.bc_verse[0].match(/\d+$/) === null ? "" : this.bc_verse[0].match(/\d+$/)[0];
-      this.verse = this.bc_verse[1];
-      const BBC = new BibleBooksCodes(); 
-      this.bbc = BBC.getBBBFromText(this.book);
-//      this.abbr = BBC.getUSFMAbbreviation(this.bbc);
-//      this.param = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
-      this.param = this.param_() // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
-    }
-    
-   hi() { 
-     console.log("toto");
-   } 
-   
-   param_() {
-     const res = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
-     return res.replace(/:!/,"!")
-   }
-   
-   edition_() {
-    // grasp edition
-    const upper = this.ref_edition[1].toUpperCase();
-    switch (upper) {
-      case "":
-      case undefined :
-      case null:
-        return this.edition_default;
-      case "KJV":
-      case "SG21":
-      case "NGU-DE":
-      case "NGU":
-      case "ESV":
-        return upper;
-      default:
-        return "invalid";
-    }
-   } 
-}
-
-//======================   BibleBooksCodes.Js
 /*
 Module handling BibleBooksCodes functions.
 
@@ -126,14 +13,16 @@ This was because early versions of HTML ID fields used to need
 (and most identifiers in computer languages still require that).
 */
 
+/*
 const LAST_MODIFIED_DATE = "2022-02-18";
 const SHORT_PROGRAM_NAME = "BibleBooksCodes";
 const PROGRAM_NAME = "Bible Books Codes handler";
 const PROGRAM_VERSION = "0.87";
 const PROGRAM_NAME_VERSION = `${SHORT_PROGRAM_NAME} v${PROGRAM_VERSION}`;
 const DEBUGGING_THIS_MODULE = false;
+*/
 
-import BibleBooksCodesTables from './BibleBooksCodes_Tables.js';
+import BibleBooksCodesTables  from "./BibleBooksCodes_Tables.js";
 
 export class BibleBooksCodes {
   /*
@@ -142,7 +31,9 @@ export class BibleBooksCodes {
    Note: BBB is used in this class to represent the three-character referenceAbbreviation.
   */  
   
-  constructor() {
+  static edition_default = "ESV";
+  
+  constructor(random = 5) {
     /*
     Loads the JSON data file and imports it to dictionary format (if not done already).
     */
@@ -150,10 +41,16 @@ export class BibleBooksCodes {
 
 //    this.dataDicts = require('./BibleBooksCodes_Tables');
 	 this.dataDicts = BibleBooksCodesTables;
-
+	 this.random = random;
+	 if (random > 0) {
+	    const inputs = this.getBBBsample_(random);
+      this.series = inputs.map((xx)=> BibleBooksCodes.tidyBBB(xx));
+	 } else { 
+	    this.series = [null]; 
+	 }
     // console.warn(`(`this.dataDicts=${typeof this.dataDicts} with ${Object.keys(this.dataDicts).length} keys: ${Object.keys(this.dataDicts)}`);
     }
-
+    
   toString() {
     /*
     This method returns the string representation of a Bible book code.
@@ -479,7 +376,7 @@ export class BibleBooksCodes {
 
     if (matchCount === 1) {
       return foundBBB;
-    }
+    } else return "invalid"
   }
 
   getExpectedChaptersList(BBB) {
@@ -701,7 +598,7 @@ export class BibleBooksCodes {
      Returns None (rather than an empty list) if there's none.
     */
 //    console.log("getTypicalSection(" + BBB + ")", this.dataDicts["referenceAbbreviationDict"][BBB]);
-    return this.dataDicts["referenceAbbreviationDict"][BBB]["typicalSection"];
+    return BBB in this.dataDicts["referenceAbbreviationDict"] ? this.dataDicts["referenceAbbreviationDict"][BBB]["typicalSection"] : "invalid";
   }
 
   continuesThroughChapters(BBB) {
@@ -884,8 +781,114 @@ export class BibleBooksCodes {
 //     }
 //   }
 
-////// BEGIN of MY ADDED METHODS
-	seqArray_(n=6) {
+////// BEGIN of MY PF ADDED METHODS
+   static edition_(input_edition) {
+    // grasp edition
+    const upper = input_edition.toUpperCase();
+    switch (upper) {
+      case "":
+      case undefined :
+      case null:
+        return BibleBooksCodes.edition_default;
+      case "KJV":
+      case "SG21":
+      case "NGU-DE":
+      case "NGU":
+      case "ESV":
+        return upper;
+      default:
+        return "invalid";
+    }
+   } 
+   
+  bcve_(
+    input = 'Hos14:1!KJV',
+    target = 'bgw',
+    edition_default = BibleBooksCodes.edition_default) {
+      
+    const ref_edition = ['', ''];
+    const bc_verse = ['', ''];
+    const urlBase = this.urlBase;
+    const from = this.from;
+    
+    const my_input = input.toLowerCase();
+    [ref_edition[0], ref_edition[1]] = my_input.split('!', 2).concat('');
+    [bc_verse[0], bc_verse[1]] = ref_edition[0].split(':', 2).concat('');
+    const edition = BibleBooksCodes.edition_(ref_edition[1]);      // spot valid edition first
+    const book = bc_verse[0].concat('0').replace(/\d+$/,''); // strip trailing digits if present
+    const chap = bc_verse[0].match(/\d+$/) === null ? "" : bc_verse[0].match(/\d+$/)[0];
+    const verse = bc_verse[1];
+    const bbb_original = this.getBBBFromText(book);
+    const bbb_tidy = BibleBooksCodes.tidyBBB(bbb_original);
+    const bcve = [bbb_tidy, chap, verse, edition];
+
+    const section = this.getTypicalSection(bbb_original);
+    
+    // establish validity
+//    const ngu_invalid = section === "NT" && edition === "NGU-DE" ? true : false;
+    let valid = false;
+    if (section === "OT" && edition === "NGU-DE") {          
+      valid = false
+    } else if (!bcve.some(val => val === "invalid")) {
+      valid = true
+    } else {
+      valid = false
+    }
+
+    const ref = valid ? (bbb_tidy + chap + ":" + verse).replace(/:$/,"") : "invalid";
+
+    let queryString ='invalid';
+ 
+    switch (from) {
+      case "bgw": {
+        const result = new URLSearchParams({
+            search: ref,
+            version: edition
+          });
+          queryString = result.toString();
+          break;
+        } 
+      case 'hall': {  
+        const mipar = ref + "!" + edition;
+        const result = new URLSearchParams({
+            param: mipar
+          });
+          queryString = result.toString();
+          break;
+      }
+      case 'default':
+        queryString: "invalid"
+    }                                                         // end of switch
+    
+    const urlFull = urlBase.concat("?").concat(queryString);  // href to its full extent
+    const href = valid ? urlFull : "invalid: ".concat(input);  
+
+    //      this.abbr = BBC.getUSFMAbbreviation(this.bbc);
+//      this.param = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
+//      this.param = this.param_() // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
+    
+    return {
+      input,
+//      ref_edition,
+//      bc_verse,
+      edition,
+//      book,
+//      bbb_original,
+      bbb_tidy,
+      chap,
+      verse,
+//      bcve,
+//      ref, 
+//      urlBase,
+//      queryString,
+      section,
+      valid,
+      href
+//      bbb,
+    }
+  }
+  
+  seqArray_(n=6) {
 		return Array.from({ length: n }, (_, i) => i + 1);
 	}
 
@@ -904,19 +907,20 @@ export class BibleBooksCodes {
 			return "Hello Pepo"
 		}
 		
-/////  END of MY ADDED METHODS
-}
-
-function isdigit(char) {
-  return !isNaN(parseInt(char));
-}
-
-export function tidyBBB(BBB) {
+	static tidyBBB(BBB) {
   /*
   Change book codes like SA1 to the conventional 1SA.
    BBB is always three characters starting with an UPPERCASE LETTER.
   */
   return isdigit(BBB[2]) ? BBB[2] + BBB.slice(0, 2) : BBB;
+}
+	
+		
+/////  END of MY ADDED METHODS
+}
+
+function isdigit(char) {
+  return !isNaN(parseInt(char));
 }
 
 export function tidyBBBs(BBBs) {
@@ -1012,3 +1016,75 @@ export class Books {
         "Jude": ["Ju", "JUDE"],
         "Revelation": ["Rv", "REV"]
     }}}
+    
+/// 1.====================================================================
+
+export class Book_Ref extends BibleBooksCodes {
+  // takes an array of validated reference(s) as argument
+  // Step 1: Define URLs-params as a property
+  
+  // Possible sources of Biblical Texts
+  static source = { 
+    hall: 'https://hall.pjafischer.workers.dev/passage/?param=ps42!kjv',
+    bgw: 'https://www.biblegateway.com/passage/?search=ps42&version=kjv'
+  };
+  
+  constructor(
+    input = [ 'Hos14!NGU-DE', 'Neh!SG21','Rev22:4!NGU-DE' ],
+    edition_default="SG21",
+    size= 0,
+    from = "hall") {
+      
+      super(size);                                    // create instance of parent class
+      
+      this.from = from;                               // external source of biblical texts
+      
+      try {                                           // build urlBase depending on source chosen
+        const myUrl = new URL(Book_Ref.source[from]);
+        this.urlBase = myUrl.origin + myUrl.pathname;
+      } catch (err) {
+        console.error('URL parsing failed:', err.message);
+      }
+      
+      if ( size == 0) {                               // take input from first argument in list 
+         this.series = Array.isArray(input) ? input : [input];
+      }     
+            
+      this.param = this.series.map((inp) => this.bcve_(inp));         // Big place of VALIDATION
+      this.urls = this.param.map((par) => par.href);                  // just array of hrefs
+      }
+    
+  static fromRandom( size= 5, 
+                     from = 'hall') {                                // Create a RANDOM series
+    return new Book_Ref(null, "SG21", size, from);
+  }  
+  
+  static fromInput( input = [ 'Neh!SG21','Hos13!NGU-DE','Rev21:4!KJV','2Cor13:2!ESV','XEV2:1!ESV' ],
+                    from = 'hall') {
+    return new Book_Ref(input, "SG21", 0, from);                    // TRansform INPUT into series
+  }  
+  
+  // Method 1 transferred to ynot
+  async singleFetch() {
+  	const url = this.urls[0];
+	  console.log(url);
+	  const result = {};
+	  const startTime = performance.now();						// start_timestamp
+
+	  try {
+     const response = await fetch(url);
+      if (!response.ok) {
+		    result.data = null;
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      result.data = await response.json();
+	  } catch (error) {
+	  	result.data = null;
+		  console.error(`Error fetching data from ${url}:`, error.message);
+	  }  finally {															// end of catch + 1
+		  result.duration = Math.trunc(performance.now() - startTime);
+		  return result
+	 } 		
+}                                                   // end of async
+  
+}                                                                   // end of Class 'Ref'    

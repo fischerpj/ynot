@@ -58,46 +58,54 @@ export class Ref {
 }
 
 export class Bcve {
+
+  input = null;
+  ref_edition = ['', ''];
+  bc_verse = ['', ''];
+
   constructor(
     input = 'Hos14!SG21',
     edition_default ="SG21"){
       this.input = input.toLowerCase();
       this.edition_default = edition_default;
-      this.edition_();  // spot valid edition first
-      const bcv = this.input.split('!',2)[0];
-      this.verse =  bcv.split(':',2)[1]; // spot verse candidate second
-      const bc = bcv.split(':',2)[0];
-      // strip trailing digits
-      this.book = bc.replace(/\d+$/,"");
-      this.chap = bc.match(/\d+$/)[0];
-      const BBC = new BibleBooksCodes();
+      [this.ref_edition[0], this.ref_edition[1]] = this.input.split('!', 2).concat('');
+      [this.bc_verse[0], this.bc_verse[1]] = this.ref_edition[0].split(':', 2).concat('');
+      this.edition = this.edition_();      // spot valid edition first
+      this.book = this.bc_verse[0].replace(/\d+$/,''); // strip trailing digits if present
+      this.chap = this.bc_verse[0].match(/\d+$/) === null ? "" : this.bc_verse[0].match(/\d+$/)[0];
+      this.verse = this.bc_verse[1];
+      const BBC = new BibleBooksCodes(); 
       this.bbc = BBC.getBBBFromText(this.book);
-      this.abbr = BBC.getUSFMAbbreviation(this.bbc);
-      this.param = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
+//      this.abbr = BBC.getUSFMAbbreviation(this.bbc);
+//      this.param = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
+      this.param = this.param_() // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
     }
     
    hi() { 
      console.log("toto");
    } 
-
+   
+   param_() {
+     const res = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
+     return res.replace(/:!/,"!")
+   }
+   
    edition_() {
-    // edition
-    const lower = this.input.split('!',2).reverse()[0];
-    switch (lower) {
+    // grasp edition
+    const upper = this.ref_edition[1].toUpperCase();
+    switch (upper) {
       case "":
       case undefined :
       case null:
-        this.edition =  this.edition_default;
-        break;
-      case "kjv":
-      case "sg21":
-      case "ngu-de":
-      case "esv":
-        this.edition = lower;
-        break;
+        return this.edition_default;
+      case "KJV":
+      case "SG21":
+      case "NGU-DE":
+      case "NGU":
+      case "ESV":
+        return upper;
       default:
-        this.edition = "invalid";
-        break;
+        return "invalid";
     }
    } 
 }

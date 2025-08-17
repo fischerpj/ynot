@@ -5,7 +5,7 @@ execute:
   echo: false
 ---
 
-> Fourth attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
+> Fourth attempt to fastCheck validity of BibleRef (valid_book, is_valid) *THEN* fetch&display (with *observableJS).*
 
 ::: {#inputDiv}
 inputDiv is considered Void

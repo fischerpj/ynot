@@ -1,5 +1,14 @@
-const BibleBooksCodesTables = 
-{
+// bbbRef combines BBBdictionnary into Ref Class. 
+
+///====================================================================
+export class BibleBooksCodes {
+  /*
+  Class for handling BibleBooksCodes.
+   This class doesn't deal at all with XML, only with JSON.
+   Note: BBB is used in this class to represent the three-character referenceAbbreviation.
+  */  
+  
+  static dataDicts = {
   "referenceNumberDict": {
     "1": {
       "referenceAbbreviation": "GEN",
@@ -18229,6 +18238,800 @@ const BibleBooksCodesTables =
     "PRE": "EUT"
   }
 };
-//module.exports = BibleBooksCodesTables;
+  
+  constructor() {
+    /*
+    Loads the JSON data file and imports it to dictionary format (if not done already).
+    */
+//    console.warn(`("Loading BibleBooksCodes…");
 
-export default BibleBooksCodesTables;
+//    this.constuctor.dataDicts = require('./BibleBooksCodes_Tables');
+// desactivated in favor of static	 this.constuctor.dataDicts = BibleBooksCodesTables;
+
+    // console.warn(`(`this.constuctor.dataDicts=${typeof this.constuctor.dataDicts} with ${Object.keys(this.constuctor.dataDicts).length} keys: ${Object.keys(this.constuctor.dataDicts)}`);
+    }
+
+  static toString() {
+    /*
+    This method returns the string representation of a Bible book code.
+     @return: the name of a Bible object formatted as a string
+    @rtype: string
+    */
+    let indent, result;
+    indent = 2;
+    result = "BibleBooksCodes object";
+    result += (result ? "\n" : "") + " " * indent + `Number of entries = ${Object.keys(this.constuctor.dataDicts["referenceAbbreviationDict"]).length}`
+    return result;
+  }
+
+  static get length() {
+    /*
+    Return the number of available codes.
+    */
+    console.assert(Object.keys(this.constuctor.dataDicts["referenceAbbreviationDict"]).length === Object.keys(this.constuctor.dataDicts["referenceNumberDict"]).length);
+    return Object.keys(this.constuctor.dataDicts["referenceAbbreviationDict"]).length;
+  }
+
+  static contains(BBB) {
+    /*  Returns True or False.  */
+    return BBB in this.constuctor.dataDicts["referenceAbbreviationDict"];
+  }
+
+  getBBBlist(nn= 66) {
+    /*  Returns a list of BBBs. */
+    const result = [];
+    for (const BBB of Object.keys(this.constuctor.dataDicts["referenceAbbreviationDict"])) {
+      result.push(BBB);
+    }
+    return result.slice(0,nn)
+  }
+
+  getBBBsample_(m= 66, len=66) {
+		const BBCindex = this.indexSample_(m,len);
+		const BBClist = this.getBBBlist();
+		return BBCindex.map(i=>BBClist[i]);
+	}
+
+  static getBBBshort_(bbb = this.getBBBsample_()) {
+		return bbb.map(xx=>this.getShortAbbreviation(xx));
+	}
+
+  static getBBBosis_(bbb = this.getBBBsample_()) {
+		return bbb.map(xx=>this.getOSISAbbreviation(xx));
+	}
+	
+	static getBBBneg_(bbb = this.getBBBsample_()) {
+		return bbb.map(xx=> this.getNEGAbbreviation(xx));
+	}
+
+  static getBBBmax_(bbb = this.getBBBsample_()) {
+		return bbb.map(xx=>this.getOSISAbbreviation(xx)+this.getMaxChapters(xx));
+	}
+	
+  static getBBBurl_(bbb = this.getBBBsample_(), version="KJV") {
+		const base=  "https://hall.pjafischer.workers.dev/passage/"
+		return bbb.map(xx=> base+"?param="+this.getOSISAbbreviation(xx)+this.getMaxChapters(xx)+"!"+version);
+	}
+	
+	static getBC_(bbb = this.getBBBsample_(), version="SG21") {
+//		const base=  "https://hall.pjafischer.workers.dev/passage/"
+		return bbb.map(xx=> this.getOSISAbbreviation(xx)+this.getMaxChapters(xx)+"!"+version);
+	}
+	
+  static isValidBBB(BBB) {
+    /*
+    Returns True or False.
+    */
+    return BBB in this.constuctor.dataDicts["referenceAbbreviationDict"];
+  }
+
+  static getBBBFromReferenceNumber(referenceNumber) {
+    /*
+    Return the referenceAbbreviation for the given book number (referenceNumber).
+     This is probably only useful in the range 1..66 (GEN..REV).
+    (After that, it specifies our arbitrary order.)
+    */
+    if (typeof referenceNumber === "string" || referenceNumber instanceof String) {
+      referenceNumber = Number.parseInt(referenceNumber);
+    }
+
+    if (!(1 <= referenceNumber && referenceNumber <= 999)) {
+      throw ValueError;
+    }
+
+    return this.constuctor.dataDicts["referenceNumberDict"][referenceNumber]["referenceAbbreviation"];
+  }
+
+  static getAllReferenceAbbreviations() {
+    /*  Returns a list of all possible BBB codes.  */
+    /*  Returns a list of BBBs. */
+    const result = [];
+    for (const BBB of Object.keys(this.constuctor.dataDicts["referenceAbbreviationDict"])) {
+      result.push(BBB);
+    }
+    return result;
+  }
+
+  static getReferenceNumber(BBB) {
+    /*  Return the referenceNumber 1..999 for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["referenceNumber"];
+  }
+
+  static getSequenceList(myList = null) {
+    /*
+    Return a list of BBB codes in a sequence that could be used for the print order if no further information is available.
+    If you supply a list of books, it puts your actual book codes into the default order.
+    Your list can simply be a list of BBB strings, or a list of tuples with the BBB as the first entry in the tuple.
+    */
+    let BBB, BBB2, resultList;
+    // console.log(`getSequenceList(${myList})`);
+
+    if (myList === null) {
+      return this.constuctor.dataDicts["sequenceList"];
+    }
+
+    if (!myList) {
+      return [];
+    }
+
+    for (let something, c = 0, a = myList, b = a.length; c < b; ++c) {
+      something = a[c];
+      BBB = typeof something === "string" || something instanceof String ? something : something[0];
+
+      console.assert(this.isValidBBB(BBB), null);
+    }
+
+    resultList = [];
+
+    for (let BBB1, c = 0, a = this.constuctor.dataDicts["sequenceList"], b = a.length; c < b; ++c) {
+      BBB1 = a[c];
+
+      for (let something, f = 0, d = myList, e = d.length; f < e; f += 1) {
+        something = d[f];
+        BBB2 = typeof something === "string" || something instanceof String ? something : something[0];
+
+        if (BBB2 === BBB1) {
+          resultList.push(something);
+          break;
+        }
+      }
+    }
+
+    console.assert(resultList.length === myList.length, null);
+
+    return resultList;
+  }
+
+  static _getFullEntry(BBB) {
+    /*
+    Return the full dictionary for the given book (code).
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB];
+  }
+
+  static getCCELNumber(BBB) {
+    /*  Return the CCEL number string for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["CCELNumberString"];
+  }
+
+  static getShortAbbreviation(BBB) {
+    /*  Return the short abbreviation string for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["shortAbbreviation"];
+  }
+
+  static getSBLAbbreviation(BBB) {
+    /*  Return the SBL abbreviation string for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["SBLAbbreviation"];
+  }
+
+  static getOSISAbbreviation(BBB) {
+    /*  Return the OSIS abbreviation string for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["OSISAbbreviation"];
+  }
+
+  static getNEGAbbreviation(BBB) {
+    /* BEWARE: from referenceNumberDict
+    /*  Return the NEG abbreviation string for the given book code (referenceAbbreviation).  */
+    const NNN = this.getReferenceNumber(BBB);
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["NEGAbbreviation"];
+  }
+  
+  static getSwordAbbreviation(BBB) {
+    /*  Return the Sword abbreviation string for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["SwordAbbreviation"];
+  }
+
+  static getUSFMAbbreviation(BBB) {
+    /*  Return the USFM abbreviation string for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["USFMAbbreviation"];
+  }
+
+  static getUSFMNumStr(BBB) {
+    /*  Return the two-digit USFM number string for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["USFMNumberString"];
+  }
+
+  static getUSXNumStr(BBB) {
+    /*  Return the three-digit USX number string for the given book code (referenceAbbreviation).  */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["USXNumberString"];
+  }
+
+  static getUnboundBibleCode(BBB) {
+    /*
+    Return the three character (two-digits and one uppercase letter) Unbound Bible code
+    for the given book code (referenceAbbreviation).
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["UnboundCodeString"];
+  }
+
+  static getBibleditNumStr(BBB) {
+    /*
+    Return the one or two-digit Bibledit number string for the given book code (referenceAbbreviation).
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["BibleditNumberString"];
+  }
+
+  static getNETBibleAbbreviation(BBB) {
+    /*
+    Return the NET Bible abbreviation string for the given book code (referenceAbbreviation).
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["NETBibleAbbreviation"];
+  }
+
+  static getDrupalBibleAbbreviation(BBB) {
+    /*
+    Return the DrupalBible abbreviation string for the given book code (referenceAbbreviation).
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["DrupalBibleAbbreviation"];
+  }
+
+  static getByzantineAbbreviation(BBB) {
+    /*
+    Return the Byzantine abbreviation string for the given book code (referenceAbbreviation).
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["ByzantineAbbreviation"];
+  }
+
+  static getBBBFromOSISAbbreviation(osisAbbreviation, strict = false) {
+    /*
+    Return the reference abbreviation string for the given OSIS book code string.
+     Also tries the Sword book codes unless strict is set to True.
+    */
+//    console.log(osisAbbreviation, this.constuctor.dataDicts["OSISAbbreviationDict"][osisAbbreviation.toUpperCase()]);
+    if (strict)
+        return this.constuctor.dataDicts["OSISAbbreviationDict"][osisAbbreviation.toUpperCase()][1];
+    //else {
+    try { return this.constuctor.dataDicts["OSISAbbreviationDict"][osisAbbreviation.toUpperCase()][1];
+    } catch (e) {
+        return this.constuctor.dataDicts["SwordAbbreviationDict"][osisAbbreviation.toUpperCase()][1];
+    }
+  }
+
+  static getBBBFromUSFMAbbreviation(USFMAbbreviation, strict = false) {
+    /*
+    Return the reference abbreviation string for the given USFM (Paratext) book code string.
+    */
+    let result;
+
+    console.assert(USFMAbbreviation.length === 3, null);
+
+    result = this.constuctor.dataDicts["USFMAbbreviationDict"][USFMAbbreviation.upper()][1];
+
+    if (typeof result === "string" || result instanceof String) {
+      return result;
+    }
+
+    if (strict) {
+      console.warn(`getBBBFromUSFMAbbreviation is assuming that the best fit for USFM ID '{USFMAbbreviation}' is the first entry in ${result}`);
+    }
+
+    return result[0];
+  }
+
+  static getBBBFromUnboundBibleCode(UnboundBibleCode) {
+    /*
+    Return the reference abbreviation string for the given Unbound Bible book code string.
+    */
+    return this.constuctor.dataDicts["UnboundCodeDict"][UnboundBibleCode.upper()][1];
+  }
+
+  static getBBBFromDrupalBibleCode(DrupalBibleCode) {
+    /*
+    Return the reference abbreviation string for the given DrupalBible book code string.
+    */
+    return this.constuctor.dataDicts["DrupalBibleAbbreviationDict"][DrupalBibleCode.upper()][1];
+  }
+
+  static getBBBFromText(someText) {
+    /*
+    Attempt to return the BBB reference abbreviation string for the given book information (text).
+     Only works for English.
+    BibleBooksNames.py has a more generic version.
+     Returns BBB or None.
+    */
+    let SomeUppercaseText, foundBBB, matchCount;
+    // console.log(`BibleBooksCodes.getBBBFromText( ${someText} )`);
+    console.assert(someText && (typeof someText === "string" || someText instanceof String), null);
+
+    SomeUppercaseText = someText.toUpperCase();
+
+    if (SomeUppercaseText in this.constuctor.dataDicts["referenceAbbreviationDict"]) {
+      return SomeUppercaseText;
+    }
+
+    if (SomeUppercaseText in this.constuctor.dataDicts["allAbbreviationsDict"]) {
+      return this.constuctor.dataDicts["allAbbreviationsDict"][SomeUppercaseText];
+    }
+
+    [matchCount, foundBBB] = [0, null];
+
+    for (let BBB, c = 0, a = this.constuctor.dataDicts["referenceAbbreviationDict"], b = a.length; c < b; ++c) {
+      BBB = a[c];
+
+      if (BBB in SomeUppercaseText) {
+        matchCount += 1;
+        foundBBB = BBB;
+      }
+    }
+
+    if (matchCount === 1) {
+      return foundBBB;
+    }
+  }
+
+  static getExpectedChaptersList(BBB) {
+    /*
+    Gets a list with the number of expected chapters for the given book code (referenceAbbreviation).
+    The number(s) of expected chapters is left in string form (not int).
+     Why is it a list?
+    Because some books have alternate possible numbers of chapters depending on the Biblical tradition.
+    */
+    let eC;
+
+    // if (!"numExpectedChapters" in this.constuctor.dataDicts["referenceAbbreviationDict"][BBB] || this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["numExpectedChapters"] === null) {
+    //   return [];
+    // }
+
+    eC = this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["numExpectedChapters"];
+
+    if (eC) {
+      return function () {
+        let a = [],
+            b = eC.split(",");
+
+        for (let c = 0, d = b.length; c < d; ++c) {
+          let v = b[c];
+
+          a.push(v);
+        }
+
+        return a;
+      }.call(this);
+    }
+  }
+
+  static getMaxChapters(BBB) {
+    /*
+    Returns an integer with the maximum number of chapters to be expected for this book.
+    */
+    let intNC, maxChapters;
+    maxChapters = -1;
+
+    for (let numChapters, c = 0, a = this.getExpectedChaptersList(BBB), b = a.length; c < b; ++c) {
+      numChapters = a[c];
+
+      try {
+        intNC = Number.parseInt(numChapters);
+      } catch (e) {
+        if (e instanceof ValueError) {
+          intNC = -1;
+        } else {
+          throw e;
+        }
+      }
+
+      if (intNC > maxChapters) {
+        maxChapters = intNC;
+      }
+    }
+
+    return maxChapters;
+  }
+
+  static getSingleChapterBooksList() {
+    /*
+    Makes up and returns a list of single chapter book codes (BBB).
+    */
+    const results = [];
+    for (const BBB of this.getAllReferenceAbbreviations())
+      if (this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["numExpectedChapters"] !== null && this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["numExpectedChapters"] === "1")
+        results.push(BBB);
+    return results;
+  }
+
+  static isSingleChapterBook(BBB) {
+    /*
+    Returns True or False if the number of chapters for the book is only one.
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["numExpectedChapters"] === "1";
+  }
+
+  static isChapterVerseBook(BBB) {
+    /*
+    Returns True or False if this book is expected to have chapters and verses.
+    */
+    return "numExpectedChapters" in this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]
+        && this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["numExpectedChapters"] !== null;
+  }
+
+  static getOSISSingleChapterBooksList() {
+    /*  Gets a list of OSIS single chapter book abbreviations.  */
+    let osisAbbrev, results;
+    results = [];
+
+    for (let BBB, c = 0, a = this.getSingleChapterBooksList(), b = a.length; c < b; ++c) {
+      BBB = a[c];
+      osisAbbrev = this.getOSISAbbreviation(BBB);
+
+      if (osisAbbrev !== null) {
+        results.push(osisAbbrev);
+      }
+    }
+
+    return results;
+  }
+
+  static getAllOSISBooksCodes() {
+    /*
+    Return a list of all available OSIS book codes (in no particular order).
+    */
+    return function () {
+      let a = [],
+          b = this.constuctor.dataDicts["OSISAbbreviationDict"];
+
+      for (let c = 0, d = b.length; c < d; ++c) {
+        let bk = b[c];
+
+        a.push(bk);
+      }
+
+      return a;
+    }.call(this);
+  }
+
+  static getAllUSFMBooksCodes(toUpper = false) {
+    /*
+    Return a list of all available USFM book codes.
+    */
+    let pA, result;
+    result = [];
+    pA = values["USFMAbbreviation"];
+
+    if (pA !== null) {
+      if (toUpper) {
+        pA = pA.upper();
+      }
+
+      if (!in_es6(pA, result)) {
+        result.push(pA);
+      }
+    }
+
+    return result;
+  }
+
+  static getAllUSFMBooksCodeNumberTriples() {
+    /*
+    Return a list of all available USFM book codes.
+     The list contains tuples of:
+    USFMAbbreviation, USFMNumber, referenceAbbreviation/BBB
+    */
+    const found=[], result=[];
+    for (const [BBB, values] of Object.entries(this.constuctor.dataDicts['referenceAbbreviationDict'])) {
+        const pA = values["USFMAbbreviation"];
+        const pN = values["USFMNumberString"];
+
+        if (pA !== null && pN !== null) {
+        if (!found.hasOwnProperty(pA)) {
+            result.push([pA, pN, BBB]);
+            found.push(pA);
+            }
+        }
+    }
+
+    return result;
+  }
+
+  static getAllUSXBooksCodeNumberTriples() {
+    /*
+    Return a list of all available USX book codes.
+     The list contains tuples of: USFMAbbreviation, USXNumber, referenceAbbreviation
+    */
+     const found=[], result=[];
+     for (const [BBB, values] of Object.entries(this.constuctor.dataDicts['referenceAbbreviationDict'])) {
+        const pA = values["USFMAbbreviation"];
+        const pN = values["USXNumberString"];
+
+        if (pA !== null && pN !== null) {
+        if (!found.hasOwnProperty(pA)) {
+            result.push([pA, pN, BBB]);
+            found.push(pA);
+            }
+        }
+    }
+    return result;
+  }
+
+  static getAllBibleditBooksCodeNumberTriples(nn=66) {
+    /*
+    Return a list of all available Bibledit book codes.
+     The list contains tuples of: USFMAbbreviation, BibleditNumber, referenceAbbreviation
+    */
+     const found=[], result=[];
+     for (const [BBB, values] of Object.entries(this.constuctor.dataDicts['referenceAbbreviationDict'])) {
+         const pA = values["USFMAbbreviation"];
+         const pN = values["BibleditNumberString"];
+
+        if (pA !== null && pN !== null) {
+            if (!found.hasOwnProperty(pA)) {
+                result.push([pA, pN, BBB]);
+                found.push(pA);
+            }
+        }
+    }
+
+    return result.slice(0,nn);
+  }
+
+  static getPossibleAlternativeBooksCodes(BBB) {
+    /*
+    Return a list of any book reference codes for possible similar alternative books.
+     Returns None (rather than an empty list) if there's none.
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["possibleAlternativeBooks"];
+  }
+
+  static getTypicalSection(BBB) {
+    /*
+    Return typical section abbreviation.
+    OT, OT+, NT, NT+, DC, PS, FRT, BAK
+     Returns None (rather than an empty list) if there's none.
+    */
+//    console.log("getTypicalSection(" + BBB + ")", this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]);
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["typicalSection"];
+  }
+
+  static continuesThroughChapters(BBB) {
+    /*
+    Returns True if the storyline of the book continues through chapters,
+    i.e., the chapter divisions are artificial.
+     Returns False for books like Psalms where chapters are actual units.
+     Note that this is a bit of a hack,
+    because ideally this information should be encoded in the XML file, not here in the code.
+    TODO: Fix this
+    */
+    if (BBB in ["PSA", "PS2", "LAM"]) {
+      return false;
+    }
+
+    return true;
+  }
+
+  static BCVReferenceToInt(BCVReferenceTuple) {
+    /*
+    Convert a BCV or BCVS reference to an integer
+    especially so that references can be sorted.
+    */
+    let BBB, C, S, V, V1, intC, intS, intV, result;
+
+    try {
+      [BBB, C, V] = BCVReferenceTuple;
+      S = "";
+    } catch (e) {
+      [BBB, C, V, S] = BCVReferenceTuple;
+      console.log(BCVReferenceTuple);
+      halt;
+    }
+
+    result = this.getReferenceNumber(BBB);
+
+    try {
+      intC = Number.parseInt(C);
+    } catch (e) {
+      if (e instanceof ValueError) {
+        console.log(repr(C));
+        halt;
+      } else {
+        throw e;
+      }
+    }
+
+    result = result * 100 + intC;
+    V1 = V.split("-")[0];
+
+    try {
+      intV = Number.parseInt(V1);
+    } catch (e) {
+      if (e instanceof ValueError) {
+        console.log(repr(V));
+        halt;
+      } else {
+        throw e;
+      }
+    }
+
+    result = result * 150 + intV;
+
+    try {
+      intS = S ? {
+        "a": 0,
+        "b": 1
+      }[S.lower()] : 0;
+    } catch (e) {
+      if (e instanceof ValueError) {
+        console.log(repr(S));
+        halt;
+      } else {
+        throw e;
+      }
+    }
+
+    result = result * 10 + intS;
+    return result;
+  }
+
+  static sortBCVReferences(referencesList) {
+    /*
+    Sort an iterable containing 3-tuples of BBB,C,V
+    or 4-tuples of BBB,C,V,S
+    */
+    let sortedList;
+    sortedList = sorted(referencesList, {
+      "key": this.BCVReferenceToInt
+    });
+    return sortedList;
+  }
+
+  static getBookName(BBB) {
+    /*
+    Returns the original language name for a book.
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["bookName"];
+  }
+
+  static getEnglishName_NR(BBB) {
+    /*
+    Returns the first English name for a book. (Options are separated by forward slashes.)
+     Remember: These names are only intended as comments or for some basic module processing.
+    They are not intended to be used for a proper international human interface.
+    The first one in the list is supposed to be the more common.
+    */
+    return this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["bookNameEnglishGuide"].split("/", 1)[0].trim();
+  }
+
+  static getEnglishNameList_NR(BBB) {
+    /*
+    Returns a list of possible English names for a book.
+     Remember: These names are only intended as comments or for some basic module processing.
+    They are not intended to be used for a proper international human interface.
+    The first one in the list is supposed to be the more common.
+    */
+    return function () {
+      let a = [],
+          b = this.constuctor.dataDicts["referenceAbbreviationDict"][BBB]["bookNameEnglishGuide"].split("/");
+
+      for (let c = 0, d = b.length; c < d; ++c) {
+        const name = b[c];
+
+        a.push(name.trim());
+      }
+
+      return a;
+    }.call(this);
+  }
+
+  static isOldTestament_NR(BBB) {
+    /*
+    Returns True if the given referenceAbbreviation indicates a European Protestant Old Testament book (39).
+    NOTE: This is not truly international so it's not a recommended function.
+    */
+    return this.getReferenceNumber(BBB)>=1 && this.getReferenceNumber(BBB) <= 39;
+  }
+
+  static isNewTestament_NR(BBB) {
+    /*
+    Returns True if the given referenceAbbreviation indicates a European Protestant New Testament book (27).
+    NOTE: This is not truly international so it's not a recommended function.
+    */
+    return this.getReferenceNumber(BBB)>=40 && this.getReferenceNumber(BBB) <= 66;
+  }
+
+  static isDeuterocanon_NR(BBB) {
+    /*
+    Returns True if the given referenceAbbreviation indicates a European Deuterocanon/Apocrypha book (15).
+    NOTE: This is not truly international so it's not a recommended function.
+    */
+    return BBB in ["TOB", "JDT", "ESG", "WIS", "SIR", "BAR", "LJE", "PAZ", "SUS", "BEL", "MA1", "MA2", "GES", "LES", "MAN"];
+  }
+
+//   createLists(outputFolder = null) {
+//     /*
+//     Writes a list of Bible Books Codes to a text file in the BOSOutputFiles folder
+//     and also to an HTML-formatted table.
+//     */
+//     if (!outputFolder) {
+//       outputFolder = "BOSOutputFiles/";
+//     }
+
+//     if (!os.access(outputFolder, os.F_OK)) {
+//       os.makedirs(outputFolder);
+//     }
+
+//     if (0) {
+//       txtFile.write("NUM BBB English name\n");
+//       htmlFile.write("<html><body><table border=\"1\">\n<tr><th>NUM</th><th>BBB</th><th>English name</th></tr>\n");
+
+//       for (let BBB, c = 0, a = this.constuctor.dataDicts["referenceAbbreviationDict"], b = a.length; c < b; ++c) {
+//         BBB = a[c];
+//         txtFile.write("{:3} ${} ${}\n".format(this.getReferenceNumber(BBB), BBB, this.getEnglishName_NR(BBB)));
+//         htmlFile.write("<tr><td>${}</td><td>${}</td><td>${}</td></tr>\n".format(this.getReferenceNumber(BBB), BBB, this.getEnglishName_NR(BBB)));
+//       }
+
+//       htmlFile.write("</table></body></html>\n");
+//     }
+//   }
+
+////// BEGIN of MY ADDED METHODS
+	seqArray_(n=6) {
+		return Array.from({ length: n }, (_, i) => i + 1);
+	}
+
+// returns an array sample of m integers out of range 1 to len
+	indexSample_(m, len=66) {
+		const miarray = Array.from({ length: len }, (_, i) => i);
+
+	if (m > len) {
+    throw new Error("m cannot be greater than the array length");
+	}
+	const shuffled = [...miarray].sort(() => 0.5 - Math.random());
+	return shuffled.slice(0, m);
+	}
+	
+	static whoami_() {
+			return "Hello Pepo"
+		}
+		
+/////  END of MY ADDED METHODS
+}
+///====================================================================
+
+export class bbbRef {
+  static dict = {
+    key1: 'value1',
+    key2: 'value2',
+    key3: 'value3'
+  };
+
+  constructor() {
+    const keys = Object.keys(bbbRef.dict);
+//s    const randomKey = keys[Math.floor(Math.random() * keys.length)];
+    this.random = this.constructor.randomKey;
+  }
+
+  static get getDict() {
+    return this.dict;
+  }
+
+  static get randomKey() {
+    const keys = Object.keys(this.dict);
+    return keys[Math.floor(Math.random() * keys.length)];
+  }
+
+  static get randomEntry() {
+    const key = this.randomKey;
+    return { key, value: this.dict[key] };
+  }
+}
+
+// Example usage:
+console.log(bbbRef.randomEntry); // Example: { key: 'key2', value: 'value2' }

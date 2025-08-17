@@ -18229,6 +18229,7 @@ const BibleBooksCodesTables =
     "PRE": "EUT"
   }
 };
-//module.exports = BibleBooksCodesTables;
+
+// module.exports = BibleBooksCodesTables;
 
 export default BibleBooksCodesTables;
