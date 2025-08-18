@@ -1,12 +1,12 @@
 ---
 title: "adVerse2"
-date: "2025-08-18"
+date: "2025-08-15"
 image: "f1car.jpeg"
 execute:
   echo: false
 ---
 
-> *observableJS* mixing import class from BibleBooksCodes_Tables.js, target minhall fetch&display. DO: fix BBCstatic
+> *observableJS* mixing import class, fetch&display.
 
 ::: {#inputDiv}
 any input comes here
@@ -27,8 +27,29 @@ html`<div class="row container">
   Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ${viewof userRef_new}
   </div>`  
+```
 
-// userRef_new;  
+```{ojs}
+//================== VALIDATION
+
+//valid_param = userRef_new;
+
+valid_param = {
+  const mb = new Bcve(userRef_new);
+//  return mb;
+////  const BBC = new BibleBooksCodes();
+//  return BBC.getBBBFromText(mb.book);
+  return mb
+}
+
+valid_param;
+/*
+// VIEWOF
+html`<div class="row container">
+  Validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${valid_param}
+  </div>`
+*/  
 ```
 
 ::: {#outputDiv}
@@ -36,27 +57,48 @@ any output comes here
 :::
 
 ```{ojs}
-// DATA is imported from BibleBooksCodes_Tables.js
-import { Bcve, BibleBooksCodes } from "./BibleBooksCodes_Tables.js";
+import { Bcve } from "./ref.js";
+// FUNCTIONS are in BibleBooksCodes.js, a Module handling BibleBooksCodes functions.
 
-//================== VALIDATION
-valid_param = {
+
+mbcv = {
   const mb = new Bcve(userRef_new);
+//  return mb;
+//  const BBC = new BibleBooksCodes();
+//  return BBC.getBBBFromText(mb.book);
   return mb
 }
 
-valid_param;
+/*
+miRef = { 
+  const mb = new Bcve(userRef_new);
+  const mi = new Ref(mb.param);
+  await mi.fetch_parallel();   // Wait for data to be fetched
+  mi.displayData();
+  return mi; // Return the object as the cell's value
+}
+miRef;
+*/
+/*
+mbooks = {
+  const mbk = new Books();
+  return mbk;
+}
+mbooks;
+*/
+
+
 ```
 
 ```{ojs}
-import { Ref, Books, tidyBBBs, tidyBBB } from "./BibleBooksCodes_Tables.js";
+import { Ref, Books, BibleBooksCodes, tidyBBBs, tidyBBB } from "./ref.js";
 
 // array of multiple refs to fetch in parallel
 bbc = {
   // DATA is imported from BibleBooksCodes_Tables.js
   const BBC = new BibleBooksCodes();
   const BBClist	= BBC.getBBBlist();
-  const BBCsample = BBC.getBBBsample_(66);
+  const BBCsample = BBC.getBBBsample_(24);
 
   const BBCosis = BBC.getBBBosis_(BBCsample);
 //  return BBC.getBBBneg_(BBCsample);
@@ -75,9 +117,4 @@ bbc = {
 //  return BBC.getNEGAbbreviation("GEN")
 }
 bbc;
-
-```
-
-```{=html}
-<script src="bare_script.js"></script>
 ```
