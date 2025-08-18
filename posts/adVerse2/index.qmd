@@ -77,7 +77,3 @@ bbc = {
 bbc;
 
 ```
-
-```{=html}
-<script src="bare_script.js"></script>
-```
