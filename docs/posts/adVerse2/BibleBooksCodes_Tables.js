@@ -18273,7 +18273,7 @@ export class Ref {
     }
 
     // Clear previous content
-    outputDiv.innerHTML = '';
+//    outputDiv.innerHTML = '';
 
     // Create UL
     const ul = document.createElement('ul');
