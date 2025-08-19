@@ -18247,12 +18247,12 @@ export class Ref {
       this.baseUrl = 'https://hsub.pjafischer.workers.dev/bgw/api/';
       this.urls = this.inputs.map(input => `${this.baseUrl}?param=${encodeURIComponent(input)}`);
       this.data = [];
-      this.outputDiv = document.getElementById('outputDiv');
+//      this.outputDiv = document.getElementById('outputDiv');
       this.edition_default = edition_default;
     }
 
   // Step 2: Method to fetch and populate data
-  async fetch_parallel() {
+ async fetch_parallel() {
     // attempt to fetch the urls
     try {
       const responses = await Promise.all(
@@ -18265,15 +18265,17 @@ export class Ref {
   }
   
    // Step 3: Display method that ensures data is ready
+   // Step 3: Display method that ensures data is ready
   displayData() {
     const outputDiv = document.getElementById('outputDiv');
+    
     if (!outputDiv) {
       console.error('No element with id="outputdiv" found.');
       return;
     }
 
     // Clear previous content
-//    outputDiv.innerHTML = '';
+    outputDiv.innerHTML = '';
 
     // Create UL
     const ul = document.createElement('ul');
@@ -18281,12 +18283,12 @@ export class Ref {
     // Create LI for each data item
     this.data.forEach(item => {
       const li = document.createElement('li');
-      li.innerHTML =  "<strong>" + item.ref + "</strong>&nbsp;" + item.content; // or any other property
+      li.innerHTML = `<strong>${item.ref} </strong>` + item.content; // or any other property
       ul.appendChild(li);
     });
 
     // Append UL to outputDiv
-    outputDiv.appendChild(ul);
+    outputDiv.appendChild( ul);
   } // end of Display
 }
 
@@ -18312,14 +18314,14 @@ export class Bcve {
       this.bbc = BBC.isOldTestament_NR(this.bbc_approx) || BBC.isNewTestament_NR(this.bbc_approx) ? this.bbc_approx : "undefined";
 //      this.abbr = BBC.getUSFMAbbreviation(this.bbc);
 //      this.param = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
-      this.param = this.param_() // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
+      this.param = this.param_(); // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
       this.is_valid = !this.param.includes("undefined");
     }
     
    hi() { 
      console.log("toto");
    } 
-   
+
    param_() {
      const res = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
      return res.replace(/:!/,"!")

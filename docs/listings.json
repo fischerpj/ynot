@@ -27,7 +27,6 @@
       "/posts/bkRef/index.html",
       "/posts/bible-api/index.html",
       "/posts/adVerse2/index.html",
-      "/posts/adVerse2/index_badlegacy.html",
       "/posts/succession/index.html",
       "/posts/iframe/index.html",
       "/posts/observables/index.html",
@@ -35,9 +34,7 @@
       "/posts/jsfapi/index.html",
       "/posts/cuisine/index.html",
       "/posts/adVerse/index.html",
-      "/posts/bible-access/index.html",
-      "/posts/adVerseJs/index.html",
-      "/posts/adVerseJs/index_badlegacy.html"
+      "/posts/bible-access/index.html"
     ]
   }
 ]

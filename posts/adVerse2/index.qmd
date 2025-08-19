@@ -1,6 +1,6 @@
 ---
 title: "adVerse2"
-date: "2025-08-18"
+date: "2025-08-19"
 image: "f1car.jpeg"
 execute:
   echo: false
@@ -29,6 +29,7 @@ html`<div class="row container">
   </div>`  
 
 // userRef_new;  
+
 ```
 
 ::: {#outputDiv}
@@ -36,22 +37,37 @@ any output comes here
 :::
 
 ```{ojs}
+import { Bcve } from "./BibleBooksCodes_Tables.js";
+
 // DATA is imported from BibleBooksCodes_Tables.js
-import { Bcve, BibleBooksCodes } from "./BibleBooksCodes_Tables.js";
 
 //================== VALIDATION
 valid_param = {
   const mb = new Bcve(userRef_new);
-  return mb
+  const valid = mb.param
+  return valid
 }
 
 valid_param;
+
+miref = {
+  // DATA is imported from BibleBooksCodes_Tables.js
+      const mir = new Ref(valid_param);
+      await mir.fetch_parallel();   // Wait for data to be fetched
+      mir.displayData(); 
+//      return mir
+}
+
 ```
 
 ```{ojs}
-import { Ref, Books, tidyBBBs, tidyBBB } from "./BibleBooksCodes_Tables.js";
+import { Ref, Books, BibleBooksCodes, tidyBBBs, tidyBBB } from "./BibleBooksCodes_Tables.js";
+
+dummy = 0
 
 // array of multiple refs to fetch in parallel
+
+/*
 bbc = {
   // DATA is imported from BibleBooksCodes_Tables.js
   const BBC = new BibleBooksCodes();
@@ -61,7 +77,7 @@ bbc = {
   const BBCosis = BBC.getBBBosis_(BBCsample);
 //  return BBC.getBBBneg_(BBCsample);
   const tibbb = BBCsample.map((x) => tidyBBB(x)+"1:1");
-  console.log(tibbb);
+//  console.log(tibbb);
   const mi = new Ref(tibbb);
   await mi.fetch_parallel();   // Wait for data to be fetched
   await mi.displayData();
@@ -75,5 +91,5 @@ bbc = {
 //  return BBC.getNEGAbbreviation("GEN")
 }
 bbc;
-
+*/
 ```
