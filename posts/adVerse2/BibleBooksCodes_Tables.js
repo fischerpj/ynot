@@ -18310,10 +18310,8 @@ export class Bcve {
       this.chap = this.bc_verse[0].match(/\d+$/) === null ? "" : this.bc_verse[0].match(/\d+$/)[0];
       this.verse = this.bc_verse[1];
       const BBC = new BibleBooksCodes(); 
-      this.bbc_approx = BBC.getBBBFromText(this.book);
-      this.bbc = BBC.isOldTestament_NR(this.bbc_approx) || BBC.isNewTestament_NR(this.bbc_approx) ? this.bbc_approx : "undefined";
-//      this.abbr = BBC.getUSFMAbbreviation(this.bbc);
-//      this.param = this.bbc + this.chap + ":" + this.verse + "!" + this.edition;
+      this.osis = new OsisBibleBooks(this.book).osisAbbr;
+      this.bbc = this.osis ? BBC.getBBBFromOSISAbbreviation(this.osis) : "undefined";
       this.param = this.param_(); // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
       this.is_valid = !this.param.includes("undefined");
     }
@@ -19183,8 +19181,77 @@ export function tidyBBBs(BBBs) {
 
 // extra
 
-export class Books {
+export class OsisBibleBooks {
   constructor(input = 'Gen') {
+    this.osisBooks = {
+  Gen:   { name: "Genèse",                   alternate: ["Gn","Ge","Gen"],    chapters: { SG21:50, KJV:50, ESV:50, NGU_DE:50 } },
+  Exod:  { name: "Exode",                    alternate: ["Ex",'Exo'],    chapters: { SG21:40, KJV:40, ESV:40, NGU_DE:40 } },
+  Lev:   { name: "Lévitique",                alternate: ["Lv"],    chapters: { SG21:27, KJV:27, ESV:27, NGU_DE:27 } },
+  Num:   { name: "Nombres",                  alternate: ["Nb"],    chapters: { SG21:36, KJV:36, ESV:36, NGU_DE:36 } },
+  Deut:  { name: "Deutéronome",              alternate: ["Dt",'Deu'],    chapters: { SG21:34, KJV:34, ESV:34, NGU_DE:34 } },
+  Josh:  { name: "Josué",                    alternate: ["Jos"],   chapters: { SG21:24, KJV:24, ESV:24, NGU_DE:24 } },
+  Judg:  { name: "Juges",                    alternate: ["Jg",'Jug'],    chapters: { SG21:21, KJV:21, ESV:21, NGU_DE:21 } },
+  Ruth:  { name: "Ruth",                     alternate: ["Rt"],    chapters: { SG21:4,  KJV:4,  ESV:4,  NGU_DE:4  } },
+  "1Sam":{ name: "1 Samuel",                 alternate: ["1Sa",'1S'],   chapters: { SG21:31, KJV:31, ESV:31, NGU_DE:31 } },
+  "2Sam":{ name: "2 Samuel",                 alternate: ["2Sa",'2S'],   chapters: { SG21:24, KJV:24, ESV:24, NGU_DE:24 } },
+  "1Kgs":{ name: "1 Rois",                   alternate: ["1Ki","1K","1KGS","1R"],   chapters: { SG21:22, KJV:22, ESV:22, NGU_DE:22 } },
+  "2Kgs":{ name: "2 Rois",                   alternate: ["2Ki","2K","2KGS","2R"],   chapters: { SG21:25, KJV:25, ESV:25, NGU_DE:25 } },
+  "1Chr":{ name: "1 Chroniques",             alternate: ["1Ch"],   chapters: { SG21:29, KJV:29, ESV:29, NGU_DE:29 } },
+  "2Chr":{ name: "2 Chroniques",             alternate: ["2Ch"],   chapters: { SG21:36, KJV:36, ESV:36, NGU_DE:36 } },
+  Ezra:  { name: "Esdras",                   alternate: ["Esd"],   chapters: { SG21:10, KJV:10, ESV:10, NGU_DE:10 } },
+  Neh:   { name: "Néhémie",                  alternate: ["Ne"],    chapters: { SG21:13, KJV:13, ESV:13, NGU_DE:13 } },
+  Esth:  { name: "Esther",                   alternate: ["Est"],   chapters: { SG21:10, KJV:10, ESV:10, NGU_DE:10 } },
+  Job:   { name: "Job",                      alternate: ["Jb","Job"],    chapters: { SG21:42, KJV:42, ESV:42, NGU_DE:42 } },
+  Ps:    { name: "Psaumes",                  alternate: ["Ps"],    chapters: { SG21:150,KJV:150,ESV:150,NGU_DE:150} },
+  Prov:  { name: "Proverbes",                alternate: ["Pr"],    chapters: { SG21:31, KJV:31, ESV:31, NGU_DE:31 } },
+  Eccl:  { name: "Ecclésiaste",              alternate: ["Qo",'Ec','Ecc'],    chapters: { SG21:12, KJV:12, ESV:12, NGU_DE:12 } },
+  Song:  { name: "Cantique des Cantiques",   alternate: ["Cant",'Ct','Cc'],  chapters: { SG21:8,  KJV:8,  ESV:8,  NGU_DE:8  } },
+  Isa:   { name: "Ésaïe",                    alternate: ["Is","Es"],    chapters: { SG21:66, KJV:66, ESV:66, NGU_DE:66 } },
+  Jer:   { name: "Jérémie",                  alternate: ["Jr","Jer"],    chapters: { SG21:52, KJV:52, ESV:52, NGU_DE:52 } },
+  Lam:   { name: "Lamentations",             alternate: ["La",'Lm',"Lam"],    chapters: { SG21:5,  KJV:5,  ESV:5,  NGU_DE:5  } },
+  Ezek:  { name: "Ézéchiel",                 alternate: ["Eze","Ez"],   chapters: { SG21:48, KJV:48, ESV:48, NGU_DE:48 } },
+  Dan:   { name: "Daniel",                   alternate: ["Da","Dan","Dn"],    chapters: { SG21:12, KJV:12, ESV:12, NGU_DE:12 } },
+  Hos:   { name: "Osée",                     alternate: ["Ho","Os"],    chapters: { SG21:14, KJV:14, ESV:14, NGU_DE:14 } },
+  Joel:  { name: "Joël",                     alternate: ["Jl"],    chapters: { SG21:3,  KJV:3,  ESV:3,  NGU_DE:3  } },
+  Amos:  { name: "Amos",                     alternate: ["Am"],    chapters: { SG21:9,  KJV:9,  ESV:9,  NGU_DE:9  } },
+  Obad:  { name: "Abdias",                   alternate: ["Ob","Ab"],    chapters: { SG21:1,  KJV:1,  ESV:1,  NGU_DE:1  } },
+  Jonah: { name: "Jonas",                    alternate: ["Jon"],   chapters: { SG21:4,  KJV:4,  ESV:4,  NGU_DE:4  } },
+  Mic:   { name: "Michée",                   alternate: ["Mi"],    chapters: { SG21:7,  KJV:7,  ESV:7,  NGU_DE:7  } },
+  Nah:   { name: "Nahum",                    alternate: ["Na"],    chapters: { SG21:3,  KJV:3,  ESV:3,  NGU_DE:3  } },
+  Hab:   { name: "Habacuc",                  alternate: ["Hab"],   chapters: { SG21:3,  KJV:3,  ESV:3,  NGU_DE:3  } },
+  Zeph:  { name: "Sophonie",                 alternate: ["Zep",'So'],   chapters: { SG21:3,  KJV:3,  ESV:3,  NGU_DE:3  } },
+  Hag:   { name: "Aggée",                    alternate: ["Hag",'Ag'],   chapters: { SG21:2,  KJV:2,  ESV:2,  NGU_DE:2  } },
+  Zech:  { name: "Zacharie",                 alternate: ["Zec",'Za','Zac'],   chapters: { SG21:14, KJV:14, ESV:14, NGU_DE:14 } },
+  Mal:   { name: "Malachie",                 alternate: ["Mal"],   chapters: { SG21:4,  KJV:4,  ESV:4,  NGU_DE:4  } },
+  Matt:  { name: "Matthieu",                 alternate: ["Mt","Mat","Matt"],    chapters: { SG21:28, KJV:28, ESV:28, NGU_DE:28 } },
+  Mark:  { name: "Marc",                     alternate: ["Mk","Mc",'Marc'],    chapters: { SG21:16, KJV:16, ESV:16, NGU_DE:16 } },
+  Luke:  { name: "Luc",                      alternate: ["Lk","Luc","Lc"],    chapters: { SG21:24, KJV:24, ESV:24, NGU_DE:24 } },
+  John:  { name: "Jean",                     alternate: ["Jn"],    chapters: { SG21:21, KJV:21, ESV:21, NGU_DE:21 } },
+  Acts:  { name: "Actes",                    alternate: ["Ac",'Act'],    chapters: { SG21:28, KJV:28, ESV:28, NGU_DE:28 } },
+  Rom:   { name: "Romains",                  alternate: ["Ro",'Rom'],    chapters: { SG21:16, KJV:16, ESV:16, NGU_DE:16 } },
+  "1Cor":{ name: "1 Corinthiens",            alternate: ["1Co"],   chapters: { SG21:16, KJV:16, ESV:16, NGU_DE:16 } },
+  "2Cor":{ name: "2 Corinthiens",            alternate: ["2Co"],   chapters: { SG21:13, KJV:13, ESV:13, NGU_DE:13 } },
+  Gal:   { name: "Galates",                  alternate: ["Ga"],    chapters: { SG21:6,  KJV:6,  ESV:6,  NGU_DE:6  } },
+  Eph:   { name: "Éphésiens",                alternate: ["Ep"],    chapters: { SG21:6,  KJV:6,  ESV:6,  NGU_DE:6  } },
+  Phil:  { name: "Philippiens",              alternate: ["Php"],   chapters: { SG21:4,  KJV:4,  ESV:4,  NGU_DE:4  } },
+  Col:   { name: "Colossiens",               alternate: ["Col"],   chapters: { SG21:4,  KJV:4,  ESV:4,  NGU_DE:4  } },
+  "1Thess":{ name: "1 Thessaloniciens",       alternate: ["1Th"],   chapters: { SG21:5,  KJV:5,  ESV:5,  NGU_DE:5  } },
+  "2Thess":{ name: "2 Thessaloniciens",       alternate: ["2Th"],   chapters: { SG21:3,  KJV:3,  ESV:3,  NGU_DE:3  } },
+  "1Tim":{ name: "1 Timothée",               alternate: ["1Ti"],   chapters: { SG21:6,  KJV:6,  ESV:6,  NGU_DE:6  } },
+  "2Tim":{ name: "2 Timothée",               alternate: ["2Ti"],   chapters: { SG21:4,  KJV:4,  ESV:4,  NGU_DE:4  } },
+  Titus: { name: "Tite",                     alternate: ["Tit"],   chapters: { SG21:3,  KJV:3,  ESV:3,  NGU_DE:3  } },
+  Phlm:  { name: "Philémon",                 alternate: ["Phm"],   chapters: { SG21:1,  KJV:1,  ESV:1,  NGU_DE:1  } },
+  Heb:   { name: "Hébreux",                  alternate: ["Heb"],   chapters: { SG21:13, KJV:13, ESV:13, NGU_DE:13 } },
+  Jas:   { name: "Jacques",                  alternate: ["Jas",'Jac'],   chapters: { SG21:5,  KJV:5,  ESV:5,  NGU_DE:5  } },
+  "1Pet":{ name: "1 Pierre",                 alternate: ["1Pe","1Pi"],   chapters: { SG21:5,  KJV:5,  ESV:5,  NGU_DE:5  } },
+  "2Pet":{ name: "2 Pierre",                 alternate: ["2Pe",'2Pi'],   chapters: { SG21:3,  KJV:3,  ESV:3,  NGU_DE:3  } },
+  "1John":{ name: "1 Jean",                  alternate: ["1Jn"],   chapters: { SG21:5,  KJV:5,  ESV:5,  NGU_DE:5  } },
+  "2John":{ name: "2 Jean",                  alternate: ["2Jn"],   chapters: { SG21:1,  KJV:1,  ESV:1,  NGU_DE:1  } },
+  "3John":{ name: "3 Jean",                  alternate: ["3Jn"],   chapters: { SG21:1,  KJV:1,  ESV:1,  NGU_DE:1  } },
+  Jude:  { name: "Jude",                     alternate: ["Jud"],   chapters: { SG21:1,  KJV:1,  ESV:1,  NGU_DE:1  } },
+  Rev:   { name: "Apocalypse",               alternate: ["Apoc","Ap","Apo","Rv", "REV", "Rev"],  chapters: { SG21:22, KJV:22, ESV:22, NGU_DE:22 } }
+};
+    
     this.bibleBooks  = {
         "Genesis": ["Ge", "Gn", "GEN"],
         "Exodus": ["Ex", "EXOD"],
@@ -19251,6 +19318,26 @@ export class Books {
         "2 John": ["2J", "2JOHN"],
         "3 John": ["3J", "3JOHN"],
         "Jude": ["Ju", "JUDE"],
-        "Revelation": ["Rv", "REV"]
-    }}}
+        "Revelation": ["Rv", "REV", "Apo","Rev"]
+    }
+    this.osisAbbr = this.getOsisFromAlternate(input)
+  }
+  // lookup helper: returns OSIS code if given any known abbreviation
+  getOsisFromAlternate(abbrev) {
+    for (const [osis, info] of Object.entries(this.osisBooks)) {
+      const osisLower = osis.toLowerCase()
+      const abbrevLower = abbrev.toLowerCase()
+      const infoLower = info.alternate.map(xx => xx.toLowerCase())
+      if ( osisLower === abbrevLower || infoLower.includes(abbrevLower)) {
+        return osis;
+      }
+    }
+    return null;
+  }
+  
+} // end of class
 
+
+// example
+//console.log(getOsisFromAlternate("Gn"));      // "Gen"
+//console.log(bibleBooks["Gen"].chapters.ESV);  // 50

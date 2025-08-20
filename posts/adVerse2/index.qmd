@@ -55,16 +55,14 @@ miref = {
       const mir = new Ref(valid_param);
       await mir.fetch_parallel();   // Wait for data to be fetched
       mir.displayData(); 
-//      return mir
 }
 
 ```
 
 ```{ojs}
-import { Ref, Books, BibleBooksCodes, tidyBBBs, tidyBBB } from "./BibleBooksCodes_Tables.js";
+import { Ref, OsisBibleBooks, BibleBooksCodes, tidyBBBs, tidyBBB } from "./BibleBooksCodes_Tables.js";
 
-dummy = 0
-
+dummy = 0;
 // array of multiple refs to fetch in parallel
 
 /*
