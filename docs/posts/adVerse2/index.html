@@ -274,21 +274,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="63" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 62;"><span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Ref<span class="op">,</span> OsisBibleBooks<span class="op">,</span> BibleBooksCodes<span class="op">,</span> tidyBBBs<span class="op">,</span> tidyBBB } <span class="im">from</span> <span class="st">"./BibleBooksCodes_Tables.js"</span><span class="op">;</span></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>dummy <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="62" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Ref<span class="op">,</span> OsisBibleBooks<span class="op">,</span> BibleBooksCodes<span class="op">,</span> tidyBBBs<span class="op">,</span> tidyBBB } <span class="im">from</span> <span class="st">"./BibleBooksCodes_Tables.js"</span><span class="op">;</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="co">// array of multiple refs to fetch in parallel</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="co">bbc = {</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="co">  // DATA is imported from BibleBooksCodes_Tables.js</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="co">  const BBC = new BibleBooksCodes();</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="co">//  const BBClist   = BBC.getBBBlist();</span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="co">  const BBCsample = BBC.getBBBsample_(66);</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="co">  const BBCosis = BBC.getBBBosis_(BBCsample);</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBC.getBBBneg_(BBCsample);</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="co">  const tibbb = BBCsample.map((x) =&gt; tidyBBB(x)+"1:1");</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="co">  console.log(tibbb);</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="co">  const mi = new Ref(tibbb);</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="co">  await mi.fetch_parallel();   // Wait for data to be fetched</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="co">  mi.displayData();</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="co">//  BBC.getSingleChapterBooksList() </span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="co">//  return  mi</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="co">//  const BBCneg = BBC.getBBBneg_(BBCsample);</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBC.getBBBFromText(mbcv.book)</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="co">//  console.log(BBC.getBBBFromText(mbcv.book));</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBCsample;</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="co">//  return BBC.getNEGAbbreviation("GEN")</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-1" data-nodetype="declaration">
+<div id="ojs-cell-3" data-nodetype="declaration">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-2" data-nodetype="declaration">
-
-</div>
 </div>
 </div>
 </div>
@@ -297,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vPT09PT09PT09PT09PT09PT09IElOUFVUXG5pbXBvcnQgeyBodG1sIH0gZnJvbSBcIkBvYnNlcnZhYmxlaHEvc3RkbGliXCI7XG5cbi8vIElucHV0c1xudmlld29mIHVzZXJSZWZfbmV3ID0gaHRtbGA8aW5wdXQgdHlwZT1cInRleHRcIiBcbiAgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiBcbiAgc3R5bGU9XCJ3aWR0aDogMTUwcHg7XCJcbiAgdmFsdWU9XCJwczQwXCIvPmA7XG4gIFxuLy8gVklFV09GXG5odG1sYDxkaXYgY2xhc3M9XCJyb3cgY29udGFpbmVyXCI+XG4gIExvb2t1cCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO1xuICAke3ZpZXdvZiB1c2VyUmVmX25ld31cbiAgPC9kaXY+YCAgXG5cbi8vIHVzZXJSZWZfbmV3OyAgXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IEJjdmUgfSBmcm9tIFwiLi9CaWJsZUJvb2tzQ29kZXNfVGFibGVzLmpzXCI7XG5cbi8vIERBVEEgaXMgaW1wb3J0ZWQgZnJvbSBCaWJsZUJvb2tzQ29kZXNfVGFibGVzLmpzXG5cbi8vPT09PT09PT09PT09PT09PT09IFZBTElEQVRJT05cbnZhbGlkX3BhcmFtID0ge1xuICBjb25zdCBtYiA9IG5ldyBCY3ZlKHVzZXJSZWZfbmV3KTtcbiAgY29uc3QgdmFsaWQgPSBtYi5wYXJhbVxuICByZXR1cm4gdmFsaWRcbn1cblxudmFsaWRfcGFyYW07XG5cbm1pcmVmID0ge1xuICAvLyBEQVRBIGlzIGltcG9ydGVkIGZyb20gQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1xuICAgICAgY29uc3QgbWlyID0gbmV3IFJlZih2YWxpZF9wYXJhbSk7XG4gICAgICBhd2FpdCBtaXIuZmV0Y2hfcGFyYWxsZWwoKTsgICAvLyBXYWl0IGZvciBkYXRhIHRvIGJlIGZldGNoZWRcbiAgICAgIG1pci5kaXNwbGF5RGF0YSgpOyBcbn1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaW1wb3J0IHsgUmVmLCBPc2lzQmlibGVCb29rcywgQmlibGVCb29rc0NvZGVzLCB0aWR5QkJCcywgdGlkeUJCQiB9IGZyb20gXCIuL0JpYmxlQm9va3NDb2Rlc19UYWJsZXMuanNcIjtcblxuZHVtbXkgPSAwO1xuLy8gYXJyYXkgb2YgbXVsdGlwbGUgcmVmcyB0byBmZXRjaCBpbiBwYXJhbGxlbFxuXG4vKlxuYmJjID0ge1xuICAvLyBEQVRBIGlzIGltcG9ydGVkIGZyb20gQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1xuICBjb25zdCBCQkMgPSBuZXcgQmlibGVCb29rc0NvZGVzKCk7XG4gIGNvbnN0IEJCQ2xpc3RcdD0gQkJDLmdldEJCQmxpc3QoKTtcbiAgY29uc3QgQkJDc2FtcGxlID0gQkJDLmdldEJCQnNhbXBsZV8oNjYpO1xuXG4gIGNvbnN0IEJCQ29zaXMgPSBCQkMuZ2V0QkJCb3Npc18oQkJDc2FtcGxlKTtcbi8vICByZXR1cm4gQkJDLmdldEJCQm5lZ18oQkJDc2FtcGxlKTtcbiAgY29uc3QgdGliYmIgPSBCQkNzYW1wbGUubWFwKCh4KSA9PiB0aWR5QkJCKHgpK1wiMToxXCIpO1xuLy8gIGNvbnNvbGUubG9nKHRpYmJiKTtcbiAgY29uc3QgbWkgPSBuZXcgUmVmKHRpYmJiKTtcbiAgYXdhaXQgbWkuZmV0Y2hfcGFyYWxsZWwoKTsgICAvLyBXYWl0IGZvciBkYXRhIHRvIGJlIGZldGNoZWRcbiAgYXdhaXQgbWkuZGlzcGxheURhdGEoKTtcbi8vICBCQkMuZ2V0U2luZ2xlQ2hhcHRlckJvb2tzTGlzdCgpIFxuICByZXR1cm4gIG1pXG5cbi8vICBjb25zdCBCQkNuZWcgPSBCQkMuZ2V0QkJCbmVnXyhCQkNzYW1wbGUpO1xuLy8gIHJldHVybiBCQkMuZ2V0QkJCRnJvbVRleHQobWJjdi5ib29rKVxuLy8gIGNvbnNvbGUubG9nKEJCQy5nZXRCQkJGcm9tVGV4dChtYmN2LmJvb2spKTtcbi8vICByZXR1cm4gQkJDc2FtcGxlO1xuLy8gIHJldHVybiBCQkMuZ2V0TkVHQWJicmV2aWF0aW9uKFwiR0VOXCIpXG59XG5iYmM7XG4qL1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd1c2VyUmVmX25ldycpIn1dfQ==
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vPT09PT09PT09PT09PT09PT09IElOUFVUXG5pbXBvcnQgeyBodG1sIH0gZnJvbSBcIkBvYnNlcnZhYmxlaHEvc3RkbGliXCI7XG5cbi8vIElucHV0c1xudmlld29mIHVzZXJSZWZfbmV3ID0gaHRtbGA8aW5wdXQgdHlwZT1cInRleHRcIiBcbiAgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiBcbiAgc3R5bGU9XCJ3aWR0aDogMTUwcHg7XCJcbiAgdmFsdWU9XCJwczQwXCIvPmA7XG4gIFxuLy8gVklFV09GXG5odG1sYDxkaXYgY2xhc3M9XCJyb3cgY29udGFpbmVyXCI+XG4gIExvb2t1cCZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO1xuICAke3ZpZXdvZiB1c2VyUmVmX25ld31cbiAgPC9kaXY+YCAgXG5cbi8vIHVzZXJSZWZfbmV3OyAgXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IEJjdmUgfSBmcm9tIFwiLi9CaWJsZUJvb2tzQ29kZXNfVGFibGVzLmpzXCI7XG5cbi8vIERBVEEgaXMgaW1wb3J0ZWQgZnJvbSBCaWJsZUJvb2tzQ29kZXNfVGFibGVzLmpzXG5cbi8vPT09PT09PT09PT09PT09PT09IFZBTElEQVRJT05cbnZhbGlkX3BhcmFtID0ge1xuICBjb25zdCBtYiA9IG5ldyBCY3ZlKHVzZXJSZWZfbmV3KTtcbiAgY29uc3QgdmFsaWQgPSBtYi5wYXJhbVxuICByZXR1cm4gdmFsaWRcbn1cblxudmFsaWRfcGFyYW07XG5cbm1pcmVmID0ge1xuICAvLyBEQVRBIGlzIGltcG9ydGVkIGZyb20gQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1xuICAgICAgY29uc3QgbWlyID0gbmV3IFJlZih2YWxpZF9wYXJhbSk7XG4gICAgICBhd2FpdCBtaXIuZmV0Y2hfcGFyYWxsZWwoKTsgICAvLyBXYWl0IGZvciBkYXRhIHRvIGJlIGZldGNoZWRcbiAgICAgIG1pci5kaXNwbGF5RGF0YSgpOyBcbn1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaW1wb3J0IHsgUmVmLCBPc2lzQmlibGVCb29rcywgQmlibGVCb29rc0NvZGVzLCB0aWR5QkJCcywgdGlkeUJCQiB9IGZyb20gXCIuL0JpYmxlQm9va3NDb2Rlc19UYWJsZXMuanNcIjtcblxuLy8gYXJyYXkgb2YgbXVsdGlwbGUgcmVmcyB0byBmZXRjaCBpbiBwYXJhbGxlbFxuXG4vKlxuYmJjID0ge1xuICAvLyBEQVRBIGlzIGltcG9ydGVkIGZyb20gQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1xuICBjb25zdCBCQkMgPSBuZXcgQmlibGVCb29rc0NvZGVzKCk7XG4vLyAgY29uc3QgQkJDbGlzdFx0PSBCQkMuZ2V0QkJCbGlzdCgpO1xuICBjb25zdCBCQkNzYW1wbGUgPSBCQkMuZ2V0QkJCc2FtcGxlXyg2Nik7XG5cbiAgY29uc3QgQkJDb3NpcyA9IEJCQy5nZXRCQkJvc2lzXyhCQkNzYW1wbGUpO1xuLy8gIHJldHVybiBCQkMuZ2V0QkJCbmVnXyhCQkNzYW1wbGUpO1xuICBjb25zdCB0aWJiYiA9IEJCQ3NhbXBsZS5tYXAoKHgpID0+IHRpZHlCQkIoeCkrXCIxOjFcIik7XG4gIGNvbnNvbGUubG9nKHRpYmJiKTtcbiAgY29uc3QgbWkgPSBuZXcgUmVmKHRpYmJiKTtcbiAgYXdhaXQgbWkuZmV0Y2hfcGFyYWxsZWwoKTsgICAvLyBXYWl0IGZvciBkYXRhIHRvIGJlIGZldGNoZWRcbiAgbWkuZGlzcGxheURhdGEoKTtcbi8vICBCQkMuZ2V0U2luZ2xlQ2hhcHRlckJvb2tzTGlzdCgpIFxuLy8gIHJldHVybiAgbWlcblxuLy8gIGNvbnN0IEJCQ25lZyA9IEJCQy5nZXRCQkJuZWdfKEJCQ3NhbXBsZSk7XG4vLyAgcmV0dXJuIEJCQy5nZXRCQkJGcm9tVGV4dChtYmN2LmJvb2spXG4vLyAgY29uc29sZS5sb2coQkJDLmdldEJCQkZyb21UZXh0KG1iY3YuYm9vaykpO1xuLy8gIHJldHVybiBCQkNzYW1wbGU7XG4vLyAgcmV0dXJuIEJCQy5nZXRORUdBYmJyZXZpYXRpb24oXCJHRU5cIilcbn1cbiovXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3VzZXJSZWZfbmV3JykifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

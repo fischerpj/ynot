@@ -18278,6 +18278,8 @@ export class Ref {
     outputDiv.innerHTML = '';
 
     // Create UL
+    const div_wrapper = document.createElement('div');
+    div_wrapper.id = crypto.randomUUID();
     const ul = document.createElement('ul');
 
     // Create LI for each data item
@@ -18288,7 +18290,8 @@ export class Ref {
     });
 
     // Append UL to outputDiv
-    outputDiv.appendChild( ul);
+    div_wrapper.appendChild( ul);
+    outputDiv.prepend(div_wrapper);
   } // end of Display
 }
 
@@ -18311,7 +18314,8 @@ export class Bcve {
       this.verse = this.bc_verse[1];
       const BBC = new BibleBooksCodes(); 
       this.osis = new OsisBibleBooks(this.book).osisAbbr;
-      this.bbc = this.osis ? BBC.getBBBFromOSISAbbreviation(this.osis) : "undefined";
+      this.bbc = this.osis ? tidyBBB(BBC.getBBBFromOSISAbbreviation(this.osis)) : "undefined";
+//      this.tidy = tidyBBB(this.bbc);
       this.param = this.param_(); // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
       this.is_valid = !this.param.includes("undefined");
     }
