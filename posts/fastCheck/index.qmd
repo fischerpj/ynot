@@ -5,7 +5,7 @@ execute:
   echo: false
 ---
 
-> AFTER Fourth attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
+> Resume 2534 AFTER Fourth attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
 
 ::: {#inputDiv}
 inputDiv is considered Void
@@ -106,15 +106,19 @@ viewof userRef = html`<input type="text"
 display = document.getElementById("outputDiv");
 
 viewof append = Inputs.button("Append", {  
-    value: null, 
-    reduce: () => { 
+//    value: null, 
+    value: [],
+    reduce: (list) => { 
       const snapRef = viewof userRef.value;
  //     display.textContent = `See ${snapRef}`;
       const span = html`<p>${viewof userRef.value} </p>`;
       display.appendChild(span);
-      return snapRef
+//      return snapRef
+      return [...list, snapRef]
     }
     });
+
+append;  
 
 // VIEWOF
 html`<div class="row container">
@@ -122,7 +126,7 @@ html`<div class="row container">
   ${viewof userRef}
   ${viewof append}
   </div>`
-  
+
 // valid edition  
 valid_edition =  (() => {
   const edition = userRef.split(/!/,2).reverse()[0].toUpperCase();
@@ -185,7 +189,8 @@ bcve = (()=> {
 fetchPassage = await (async () =>  {
 
   if ( bcve.is_valid ) {
-    const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;
+//    const url = `https://hall.pjafischer.workers.dev/passage/?param=${userRef}`;
+    const url = `https://hsub.pjafischer.workers.dev/bgw/api/?param=${userRef}`;
     console.log("following is_valid:" + url);
     
     try {

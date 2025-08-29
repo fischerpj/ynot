@@ -1,0 +1,55 @@
+---
+title: "formVerse"
+date: "2025-08-23"
+image: "accumulator.png"
+execute:
+  echo: false
+---
+
+> Resume 2534 as merger of fastCheck and adVerse2
+
+::: {#inputDiv}
+inputDiv is considered Void
+:::
+
+```{ojs}
+import { html } from "@observablehq/stdlib";
+import { Bcve } from "./BibleBooksCodes_Tables.js";
+
+// Editable input field
+viewof userInput = Inputs.text({
+  placeholder: "Enter a number",
+  value: ""
+})
+
+// Button with built-in reduce that stores converted values
+viewof addConverted = Inputs.button({
+  label: "Convert & Add",
+  reduce: (list = [], event) => {
+    const raw = userInput;
+    const converted = raw;
+    return [...list, converted]
+  }
+})
+
+// VIEWOF
+html`<div class="row container">
+  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userInput}
+  ${viewof addConverted}
+  </div>`
+
+addConverted
+```
+
+::: {#outputDiv}
+any output comes here
+:::
+
+1.  InputRef
+2.  ValidRef =\>fetch display RT in previewDiv
+3.  AccuButton =\> refArray+ validRef
+4.  AccuArray display json
+5.  =\> Réf collection fetch
+6.  ContentArray 
+7.  Output.div append ...li 

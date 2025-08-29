@@ -18248,6 +18248,7 @@ export class Ref {
       this.urls = this.inputs.map(input => `${this.baseUrl}?param=${encodeURIComponent(input)}`);
       this.data = [];
 //      this.outputDiv = document.getElementById('outputDiv');
+      this.outputContent = document.createElement('div');
       this.edition_default = edition_default;
     }
 
@@ -18267,19 +18268,21 @@ export class Ref {
    // Step 3: Display method that ensures data is ready
    // Step 3: Display method that ensures data is ready
   displayData() {
-    const outputDiv = document.getElementById('outputDiv');
-    
+//    const outputDiv = document.getElementById('outputDiv');
+  
+/*    
     if (!outputDiv) {
       console.error('No element with id="outputdiv" found.');
       return;
     }
+*/
 
     // Clear previous content
-    outputDiv.innerHTML = '';
+    this.outputContent.innerHTML = '';
+    this.outputContent.id = crypto.randomUUID();
 
     // Create UL
-    const div_wrapper = document.createElement('div');
-    div_wrapper.id = crypto.randomUUID();
+//    const div_wrapper = document.createElement('div');
     const ul = document.createElement('ul');
 
     // Create LI for each data item
@@ -18290,8 +18293,8 @@ export class Ref {
     });
 
     // Append UL to outputDiv
-    div_wrapper.appendChild( ul);
-    outputDiv.prepend(div_wrapper);
+//    div_wrapper.appendChild( ul);
+     this.outputContent.prepend(ul);
   } // end of Display
 }
 

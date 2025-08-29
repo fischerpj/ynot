@@ -18288,7 +18288,7 @@ export class Ref {
     // Create LI for each data item
     this.data.forEach(item => {
       const li = document.createElement('li');
-      li.innerHTML = `<strong>${item.ref} </strong>` + item.content; // or any other property
+      li.innerHTML = `<strong>${item.ref}</strong> ${item.content} <em>${item.version}</em>`; // or any other property
       ul.appendChild(li);
     });
 
@@ -18311,7 +18311,7 @@ export class Bcve {
       this.edition_default = edition_default;
       [this.ref_edition[0], this.ref_edition[1]] = this.input.split('!', 2).concat('');
       [this.bc_verse[0], this.bc_verse[1]] = this.ref_edition[0].split(':', 2).concat('');
-      this.edition = this.edition_();      // spot valid edition first
+      this.edition = this.edition_();                 // spot valid edition first
       this.book = this.bc_verse[0].replace(/\d+$/,''); // strip trailing digits if present
       this.chap = this.bc_verse[0].match(/\d+$/) === null ? "" : this.bc_verse[0].match(/\d+$/)[0];
       this.verse = this.bc_verse[1];
@@ -18347,7 +18347,7 @@ export class Bcve {
       case "ESV":
         return upper;
       default:
-        return "invalid";
+        return "undefined";
     }
    } 
 }

@@ -1,0 +1,80 @@
+---
+title: "accuVerse"
+date: "2025-08-23"
+image: "accumulator.png"
+execute:
+  echo: false
+---
+
+> Resume 2534 as merger of fastCheck and adVerse2
+
+::: {#inputDiv}
+inputDiv is considered Void
+:::
+
+```{ojs}
+import { Inputs } from "@observablehq/inputs";
+import { html } from "@observablehq/stdlib";
+import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
+
+
+//================== 1. INPUTS
+// Editable input field
+viewof RefInput = Inputs.text({
+  value: "ps42:1!KJV"
+  })
+
+//================== 2. VALIDATION
+viewof RefAccu = Inputs.button("Append", {  
+    value: [],
+    reduce: (list) => {
+      const input = viewof RefInput.value;
+      const validated = new Bcve(input);
+      const result = validated.is_valid ? [validated.param, ...list ] : [...list]
+      return result
+  //    return [validated.param, ...list ]
+      }
+    });
+
+// VIEWOF
+html`<div class="row container">
+  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof RefInput}
+  ${viewof RefAccu}
+  </div>`
+
+//RefAccu;
+```
+
+```{ojs}
+//================== 3. FETCH
+
+RefData = {
+  // DATA is imported from BibleBooksCodes_Tables.js
+//      const refArray =  RefAccu;
+      const mir = new Ref(RefAccu);
+      await mir.fetch_parallel();   // Wait for data to be fetched
+//      await mir.displayData(); 
+//      const displayContent = mir.outputContent;
+//      return await mir
+    return await mir.data
+}
+
+//RefData;
+
+// Display the list
+html`<ul>${RefData.map(item => html`<li><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></li>`)}</ul>`
+
+```
+
+::: {#outputDiv}
+any output comes here
+:::
+
+1.  ok RefInput
+2.  ValidRef =\>fetch display RT in previewDiv
+3.  RefAccu =\> refArray+ validRef
+4.  AccuArray display json
+5.  =\> Réf collection fetch
+6.  ContentArray 
+7.  Output.div append ...li 

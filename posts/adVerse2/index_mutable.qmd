@@ -1,0 +1,84 @@
+---
+title: "mutable"
+date: "2025-08-19"
+image: "f1car.jpeg"
+execute:
+  echo: false
+---
+
+> *observableJS* mixing import class from BibleBooksCodes_Tables.js, target minhall fetch&display. DO: fix BBCstatic
+
+::: {#inputDiv}
+any input comes here
+:::
+
+```{ojs}
+//================== INPUT
+import { html } from "@observablehq/stdlib";
+
+// Inputs
+viewof userRef_new = html`<input type="text" 
+  class="form-control" 
+  style="width: 150px;"
+  value="ps40"/>`;
+  
+// VIEWOF
+html`<div class="row container">
+  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef_new}
+  </div>`  
+
+// userRef_new;  
+
+```
+
+::: {#outputDiv}
+any output comes here
+:::
+
+```{ojs}
+import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
+
+// DATA is imported from BibleBooksCodes_Tables.js
+
+//================== VALIDATION
+valid_param = {
+  const mb = new Bcve(userRef_new);
+  const valid = mb.param
+  return valid
+}
+
+valid_param;
+
+/*
+miref = {
+  // DATA is imported from BibleBooksCodes_Tables.js
+      const mir = new Ref(valid_param);
+      await mir.fetch_parallel();   // Wait for data to be fetched
+      mir.displayData(); 
+      const displayContent = mir.outputContent;
+      return displayContent
+}
+*/
+```
+
+```{ojs}
+// 1. Input field for user message
+viewof textInput = Inputs.text({
+  label: "Enter your message",
+  value: "Bonjour Pier"
+})
+
+// 3. Mutable variable initialized with input value
+mutable message = textInput;
+
+// 4. Display the current message
+html`<p><strong>RT Message:</strong> ${mutable message}</p>`
+
+// 5. Button to manually override the message
+viewof updateButton = Inputs.button("Say Salut instead")
+
+// 6. Manual update triggered by button click
+updateButton; 
+mutable message = "Salut Pier"
+```

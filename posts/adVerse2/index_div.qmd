@@ -1,0 +1,82 @@
+---
+title: "outputDiv"
+date: "2025-08-19"
+image: "f1car.jpeg"
+execute:
+  echo: false
+---
+
+> *observableJS* mixing import class from BibleBooksCodes_Tables.js, target minhall fetch&display. DO: fix BBCstatic
+
+::: {#inputDiv}
+any input comes here
+:::
+
+```{ojs}
+//================== INPUT
+import { html } from "@observablehq/stdlib";
+
+// Inputs
+viewof userRef_new = html`<input type="text" 
+  class="form-control" 
+  style="width: 150px;"
+  value="ps40"/>`;
+  
+// VIEWOF
+html`<div class="row container">
+  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef_new}
+  </div>`  
+
+// userRef_new;  
+
+```
+
+::: {#outputDiv}
+any output comes here
+:::
+
+```{ojs}
+import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
+
+// DATA is imported from BibleBooksCodes_Tables.js
+
+//================== VALIDATION
+valid_param = {
+  const mb = new Bcve(userRef_new);
+  const valid = mb.param
+  return valid
+}
+
+valid_param;
+
+miref = {
+  // DATA is imported from BibleBooksCodes_Tables.js
+      const mir = new Ref(valid_param);
+      await mir.fetch_parallel();   // Wait for data to be fetched
+      mir.displayData(); 
+      const displayContent = mir.outputContent;
+      return displayContent
+}
+```
+
+```{ojs}
+// Inputs
+viewof userRef = html`<input type="text" 
+  class="form-control" 
+  style="width: 150px;"
+  value="ps42:1!KJV"/>`;
+
+display = document.getElementById("outputDiv");
+
+viewof append = Inputs.button("Append", {  
+    value: null, 
+    reduce: () => { 
+      const snapRef = viewof userRef.value;
+ //     display.textContent = `See ${snapRef}`;
+      const span = html`<p>${viewof userRef.value} </p>`;
+      display.appendChild(span);
+      return snapRef
+    }
+    });
+```

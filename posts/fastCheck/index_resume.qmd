@@ -1,0 +1,90 @@
+---
+title: "fastCheck resume"
+image: "bugsbunny.png"
+execute:
+  echo: false
+---
+
+> Resume 2534 AFTER Fourth attempt to fastCheck validity of BibleRef *THEN* fetch&display (with *observableJS).*
+
+::: {#inputDiv}
+inputDiv is considered Void
+:::
+
+```{ojs}
+//| observable: true
+import { html } from "@observablehq/stdlib";
+
+//| observable: true
+// Inputs
+viewof userRef = html`<input type="text" 
+  class="form-control" 
+  style="width: 150px;"
+  value="ps42:1!KJV"/>`;
+
+viewof append = Inputs.button("Append", {  
+    value: [],
+    reduce: (list) => { 
+      const snapRef = viewof userRef.value;
+      return [...list, snapRef]
+      }
+    });
+
+append;  
+
+// Load saved list from localStorage
+/*
+initialList = {
+  const saved = localStorage.getItem("myList")
+  return saved ? JSON.parse(saved) : []
+}
+*/
+
+//mutable miref = "ps43:1!KJV";
+
+// Text input
+/*viewof userRef = Inputs.text({
+  placeholder: "Type something...",
+  value: "ps4"
+})
+
+// Add button with reducer
+viewof addButton = Inputs.button("Add", {
+  value: [],
+  reduce: (list) => {
+    mutable miref = userRef;
+    const updated = [miref, ...list ]
+//    localStorage.setItem("myList", JSON.stringify(updated))
+    return updated
+  }
+})
+
+
+// VIEWOF
+html`<div class="row container">
+  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef}
+  ${viewof addButton}
+  </div>`
+
+userRef;
+addButton;
+*/
+
+// Display the list
+//html`<ul>${addButton.map(item => html`<li>${item}</li>`)}</ul>`
+```
+
+::: {#outputDiv}
+any output comes here
+:::
+
+1.  Input_Field
+
+<!-- -->
+
+2.  Ref_Validated
+
+<!-- -->
+
+3.  Fetch\_&\_Display (see console)
