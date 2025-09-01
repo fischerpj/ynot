@@ -1,49 +1,67 @@
 ---
-title: "runVerse"
-date: "2025-08-29"
-image: "hurdler.png"
+title: "Note Prophete"
+author: "granPiero"
+date: "2025-05-17"
+categories: [code]
 format: 
   html:
-    comments:
-      utterances: 
-        repo: "fischerpj/ynot"
+    include-in-header: "include-in-header.html"
+    include-after-body: "after_body_editor.html"
 execute:
-  echo: false
+  echo: false    
 ---
 
-> **instant Bible Verse Display**, thanks to reactive *observableJS* branch of accuVerse.
-
-::: {#inputDiv}
-<!-- inputDiv is considered Void-->
+::: {#introDiv}
+> This is a Global Note, using **EditorJS** and **localStorage** autosave mechanism.
 :::
+
+```{=html}
+<script src="ui_elements.js" id="ui_structure type="application/javascript></script>
+```
 
 ```{ojs}
 import { Inputs } from "@observablehq/inputs";
 import { html } from "@observablehq/stdlib";
 import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
 
+_STORAGE_KEY = "prophete";
 
 //================== 1. INPUTS
 // Editable input field
 viewof RefInput = Inputs.text({
-  value: "ps42:1!KJV"
+  label: "Search", 
+  value: "ps42:1!KJV",
+  style: "width: 150px;"
   })
 
+// Inputs
+/*viewof RefInput = html`<input type="text" 
+//  class="form-control" 
+  label= "Search" 
+  style="width: 150px;"
+  value="ps40"/>`;  
+*/
+
 //================== 2. ACCUMULATION
-viewof RefAccu = Inputs.button("Keep", {  
-    value: [],
+viewof RefAccu = Inputs.button("Keep", {
+    value: JSON.parse(localStorage.getItem(_STORAGE_KEY)) || [],
     reduce: (list) => {
       const input = viewof RefInput.value;
       const validated = new Bcve(input);
       const result = validated.is_valid ? [validated.param, ...list ] : [...list]
+      localStorage.setItem(_STORAGE_KEY, JSON.stringify(result));
       return result
   //    return [validated.param, ...list ]
       }
     });
-  
+
+dummy = { 
+  viewof RefInput.classList.add("form-control");
+  viewof RefAccu.classList.add("btn", "btn-warning");
+}
+
 // VIEWOF
-html`<div class="row container">
-  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+html`<div class="button-row">
   ${viewof RefInput}
   ${viewof RefAccu}
   </div>`
@@ -94,6 +112,10 @@ html`<ul>${RefData.map(item => html`<li><strong>${item.ref}</strong> ${item.cont
 
 ```
 
+```{=html}
+<div id="inputDiv">this is inputDiv</div>
+```
+
 :::: {#outputDiv}
 <div>
 
@@ -101,3 +123,11 @@ html`<ul>${RefData.map(item => html`<li><strong>${item.ref}</strong> ${item.cont
 
 </div>
 ::::
+
+```{=html}
+<div id="editorjs">this is editorDiv</div>
+```
+
+Jésus est plus grand que les prophètes.
+
+Un prophète transmet les messages de Dieu, sur les sujets d'actualité ou d'avenir. Il est appelé voyant parce qu'il perçoit les réalités invisibles.

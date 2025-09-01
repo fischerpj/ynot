@@ -1,0 +1,87 @@
+<style>
+#editorjs {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 200px;
+}
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+
+<script id="after_body_editor" type="application/javascript">
+  console.log("after_body_editor: started");
+
+document.addEventListener("DOMContentLoaded", () => {
+   console.log("DOMContentLoaded: true");
+  
+   const editor = new EditorJS({
+      holder: 'editorjs',
+      tools: {
+        header: {
+          class: Header,
+          inlineToolbar: true
+        },
+        list: {
+          class: EditorjsList,
+          inlineToolbar: true,
+          config: {
+            placeholder: 'Type your text here...',
+          }
+        },
+      },
+		  onChange: async () => {
+		    const data = await editor.save();
+			  localStorage.setItem('editorDataProphete', JSON.stringify(data));
+			  console.log("Content saved successfully!");
+			},
+    }); // end of editor instance
+    
+    // Simulating "onload" using the `ready` promise
+  editor.isReady
+  .then(() => {
+    console.log('Editor.js is fully loaded and ready!');
+      const savedData = localStorage.getItem('editorDataProphete');
+    if (savedData) {
+      editor.render(JSON.parse(savedData));
+//      alert("Content loaded successfully!");
+    } else {
+      alert("No saved content found in localStorage.");
+    }
+    // Add your custom logic here
+  })
+  .catch((error) => {
+    console.error('Editor.js initialization failed:', error);
+  });
+
+/*
+     // Save content to Local Storage
+  document.getElementById('saveButton').addEventListener('click', () => {
+    editor.save().then((outputData) => {
+      localStorage.setItem('editorData', JSON.stringify(outputData));
+      alert("Content saved successfully!");
+    }).catch((error) => {
+      console.error("Saving failed:", error);
+    });
+  });
+*/
+
+// Load content from Local Storage
+
+  document.getElementById('loadButton').addEventListener('click', () => {
+    const savedData = localStorage.getItem('editorDataProphete');
+    if (savedData) {
+      editor.render(JSON.parse(savedData));
+//      alert("Content loaded successfully!");
+    } else {
+      alert("No saved content found in localStorage.");
+    }
+  });
+    
+  }); // end of event
+</script>
