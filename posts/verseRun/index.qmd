@@ -27,7 +27,6 @@ _STORAGE_KEY = "prophete";
 //================== 1. INPUTS
 // Editable input field
 viewof RefInput = Inputs.text({
-  label: "Search", 
   value: "ps42:1!KJV",
   style: "width: 140px;"
   })
@@ -41,6 +40,8 @@ viewof RefInput = Inputs.text({
 */
 
 //================== 2. ACCUMULATION
+viewof HelpButton =  Inputs.button("Help");
+
 viewof RefAccu = Inputs.button("Keep", {
     value: JSON.parse(localStorage.getItem(_STORAGE_KEY)) || [],
     reduce: (list) => {
@@ -53,12 +54,18 @@ viewof RefAccu = Inputs.button("Keep", {
       }
     });
 
-dummy0 = {
+restyling = {
   // Very Great
   const mib = viewof RefAccu.querySelector('button.btn-quarto');
   if (mib) {
     mib.classList.remove('btn-quarto');
     mib.classList.add('btn-warning');
+  }  
+  
+  const hbut = viewof HelpButton.querySelector('button.btn-quarto');
+  if (hbut) {
+    hbut.classList.remove('btn-quarto');
+    hbut.classList.add('btn-info');
   }  
   
 //  viewof RefInput.classList.remove("form-control");
@@ -78,13 +85,16 @@ dummy0 = {
 dummy = { 
 //  viewof RefInput.classList.add("form-control");
   viewof RefAccu.classList.add("btn", "btn-warning");
+  viewof HelpButton.classList.add("btn", "btn-info");
 }
 
 // VIEWOF
 //html`<div class="button-row">
 html`<div class="row container">
+  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ${viewof RefInput}
   ${viewof RefAccu}
+  ${viewof HelpButton}
   </div>`
 
 //RefAccu;
