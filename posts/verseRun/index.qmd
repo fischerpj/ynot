@@ -11,7 +11,7 @@ execute:
   echo: false
 ---
 
-> **Instant-Display & Local-Memory of Bible Verses** , thanks to reactive *observableJS* branch of accuVerse. Test: Abbreviations
+> **Instant-Display & Local-Memory of Bible Verses** , thanks to reactive *observableJS* branch of accuVerse. Test: Abbreviations PSA
 
 ::: {#inputDiv}
 <!-- inputDiv is considered Void-->
@@ -66,6 +66,9 @@ viewof RefInput = Inputs.text({
 
 //================== 2. ACCUMULATION
 viewof HelpButton =  Inputs.button("Help");
+
+bcve = new Bcve(RefInput);
+bcve;
 
 viewof RefAccu = Inputs.button("Keep", {
     value: _STORAGE_VALUE,

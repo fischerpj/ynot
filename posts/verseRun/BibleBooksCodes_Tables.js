@@ -18317,7 +18317,10 @@ export class Bcve {
       this.verse = this.bc_verse[1];
       const BBC = new BibleBooksCodes(); 
       this.osis = new OsisBibleBooks(this.book).osisAbbr;
-      this.bbc = this.osis ? tidyBBB(BBC.getBBBFromOSISAbbreviation(this.osis)) : "undefined";
+//      this.osisbook = new OsisBibleBooks(this.book);
+//      this.osis =  this.osisbook.getOsisFromAlternate();
+//      this.bbc = this.osis ? tidyBBB(BBC.getBBBFromOSISAbbreviation(this.osis)) : "undefined";
+      this.bbc = this.osis ? tidyBBB(this.osis) : "undefined";
 //      this.tidy = tidyBBB(this.bbc);
       this.param = this.param_(); // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
       this.is_valid = !this.param.includes("undefined");
@@ -19209,7 +19212,7 @@ export class OsisBibleBooks {
   Neh:   { name: "Néhémie",                  alternate: ["Ne"],    chapters: { SG21:13, KJV:13, ESV:13, NGU_DE:13 } },
   Esth:  { name: "Esther",                   alternate: ["Est"],   chapters: { SG21:10, KJV:10, ESV:10, NGU_DE:10 } },
   Job:   { name: "Job",                      alternate: ["Jb","Job"],    chapters: { SG21:42, KJV:42, ESV:42, NGU_DE:42 } },
-  Ps:    { name: "Psaumes",                  alternate: ["Ps"],    chapters: { SG21:150,KJV:150,ESV:150,NGU_DE:150} },
+  Ps:    { name: "Psaumes",                  alternate: ["Ps","Psa"],    chapters: { SG21:150,KJV:150,ESV:150,NGU_DE:150} },
   Prov:  { name: "Proverbes",                alternate: ["Pr"],    chapters: { SG21:31, KJV:31, ESV:31, NGU_DE:31 } },
   Eccl:  { name: "Ecclésiaste",              alternate: ["Qo",'Ec','Ecc'],    chapters: { SG21:12, KJV:12, ESV:12, NGU_DE:12 } },
   Song:  { name: "Cantique des Cantiques",   alternate: ["Cant",'Ct','Cc'],  chapters: { SG21:8,  KJV:8,  ESV:8,  NGU_DE:8  } },
@@ -19329,6 +19332,7 @@ export class OsisBibleBooks {
     }
     this.osisAbbr = this.getOsisFromAlternate(input)
   }
+  
   // lookup helper: returns OSIS code if given any known abbreviation
   getOsisFromAlternate(abbrev) {
     for (const [osis, info] of Object.entries(this.osisBooks)) {
