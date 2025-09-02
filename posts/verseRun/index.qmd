@@ -1,6 +1,6 @@
 ---
-title: "runVerse"
-date: "2025-08-29"
+title: "runVerses"
+date: "2025-09-02"
 image: "hurdler.jpg"
 format: 
   html:
@@ -11,7 +11,7 @@ execute:
   echo: false
 ---
 
-> **instant Bible Verse Display**, thanks to reactive *observableJS* branch of accuVerse.
+> **Instant-Display & Local-Memory of Bible Verses** , thanks to reactive *observableJS* branch of accuVerse. Test: Abbreviations
 
 ::: {#inputDiv}
 <!-- inputDiv is considered Void-->
@@ -23,11 +23,36 @@ import { html } from "@observablehq/stdlib";
 import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
 
 _STORAGE_KEY = "prophete";
+_STORAGE_VALUE = JSON.parse(localStorage.getItem(_STORAGE_KEY)) || ['gal2:20!KJV'];
+
+// LEGACY was better
+/*
+// INPUT
+viewof userRef = html`
+  <input 
+    type="text" 
+//    oninput="this.dispatchEvent(new CustomEvent('input'))" 
+    value= "num1:1!KJV"
+    class="form-control" 
+    style="width: 150px;"
+    >`
+
+// TRIGGER    
+viewof appendButton = html`
+  <button class="btn btn-primary">Append</button>`
+
+// VIEWOF
+html`<div class="row container">
+  Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ${viewof userRef}
+  ${viewof appendButton}
+  </div>`
+*/
 
 //================== 1. INPUTS
 // Editable input field
 viewof RefInput = Inputs.text({
-  value: "ps42:1!KJV",
+  value: _STORAGE_VALUE[Math.floor(Math.random() * _STORAGE_VALUE.length)],
   style: "width: 140px;"
   })
 
@@ -43,7 +68,7 @@ viewof RefInput = Inputs.text({
 viewof HelpButton =  Inputs.button("Help");
 
 viewof RefAccu = Inputs.button("Keep", {
-    value: JSON.parse(localStorage.getItem(_STORAGE_KEY)) || [],
+    value: _STORAGE_VALUE,
     reduce: (list) => {
       const input = viewof RefInput.value;
       const validated = new Bcve(input);
