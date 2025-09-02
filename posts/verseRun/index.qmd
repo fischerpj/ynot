@@ -67,8 +67,8 @@ viewof RefInput = Inputs.text({
 //================== 2. ACCUMULATION
 viewof HelpButton =  Inputs.button("Help");
 
-bcve = new Bcve(RefInput);
-bcve;
+//bcve = new Bcve(RefInput);
+//bcve;
 
 viewof RefAccu = Inputs.button("Keep", {
     value: _STORAGE_VALUE,
