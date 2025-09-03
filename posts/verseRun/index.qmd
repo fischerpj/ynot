@@ -173,7 +173,7 @@ RefData = {
 // Display the list
 //html`<ul>${RefData.map(item => html`<li><details><summary><strong>${item.ref} </strong> ${item.content.slice(0,40)} ...</summary><p>${item.content} <em>${item.version}</em></p></details></li>`)}</ul>`
 
-html`${RefData.map(item => html`<details><summary><strong>${item.ref} </strong><span style='font-size: 0.9em;'><em> ${item.content.slice(0,45)} ...</em></span></summary><p>${item.content} <em>${item.version}</em></p></details>`)}`
+html`${RefData.map(item => html`<details><summary><strong>${item.ref} </strong><span style='font-size: 0.9em;'><em> ${item.content.slice(0,60)} ...</em></span></summary><p>${item.content} <em>${item.version}</em></p></details>`)}`
 
 ```
 
