@@ -18319,8 +18319,8 @@ export class Bcve {
       this.osis = new OsisBibleBooks(this.book).osisAbbr;
 //      this.osisbook = new OsisBibleBooks(this.book);
 //      this.osis =  this.osisbook.getOsisFromAlternate();
-//      this.bbc = this.osis ? tidyBBB(BBC.getBBBFromOSISAbbreviation(this.osis)) : "undefined";
-      this.bbc = this.osis ? tidyBBB(this.osis) : "undefined";
+      this.bbc = this.osis ? tidyBBB(BBC.getBBBFromOSISAbbreviation(this.osis)) : "undefined";
+//      this.bbc = this.osis ? tidyBBB(this.osis) : "undefined";
 //      this.tidy = tidyBBB(this.bbc);
       this.param = this.param_(); // this.verse === null ? "!".concat(this.edition) : ":".concat(this.verse).concat("!".concat(this.edition));
       this.is_valid = !this.param.includes("undefined");

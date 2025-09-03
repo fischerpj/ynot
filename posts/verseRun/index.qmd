@@ -1,5 +1,5 @@
 ---
-title: "runVerses"
+title: "verses"
 date: "2025-09-02"
 image: "hurdler.jpg"
 format: 
@@ -71,8 +71,8 @@ viewof RefInput = Inputs.text({
 //================== 2. ACCUMULATION
 viewof HelpButton =  Inputs.button("Help");
 
-//bcve = new Bcve(RefInput);
-//bcve;
+bcve = new Bcve(RefInput);
+bcve;
 
 viewof RefAccu = Inputs.button("Keep", {
     value: _STORAGE_VALUE,
@@ -80,8 +80,9 @@ viewof RefAccu = Inputs.button("Keep", {
       const input = viewof RefInput.value;
       const validated = new Bcve(input);
       const result = validated.is_valid ? [validated.param, ...list ] : [...list]
-      localStorage.setItem(_STORAGE_KEY, JSON.stringify(result));
-      return result
+      const uniqueResult = [...new Set(result)];
+      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));
+      return uniqueResult
   //    return [validated.param, ...list ]
       }
     });

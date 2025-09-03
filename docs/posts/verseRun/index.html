@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-09-02">
 
-<title>runVerses – ynot</title>
+<title>verses – ynot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">runVerses</h1>
+      <h1 class="title">verses</h1>
                       </div>
   </div>
     
@@ -243,63 +243,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">//================== 2. ACCUMULATION</span></span>
 <span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>viewof HelpButton <span class="op">=</span>  Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Help"</span>)<span class="op">;</span></span>
 <span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">//bcve = new Bcve(RefInput);</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">//bcve;</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>viewof RefAccu <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Keep"</span><span class="op">,</span> {</span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> _STORAGE_VALUE<span class="op">,</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> (list) <span class="kw">=&gt;</span> {</span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> input <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> validated <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(input)<span class="op">;</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> result <span class="op">=</span> validated<span class="op">.</span><span class="at">is_valid</span> <span class="op">?</span> [validated<span class="op">.</span><span class="at">param</span><span class="op">,</span> <span class="op">...</span>list ] <span class="op">:</span> [<span class="op">...</span>list]</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>      localStorage<span class="op">.</span><span class="fu">setItem</span>(_STORAGE_KEY<span class="op">,</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(result))<span class="op">;</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> result</span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="co">//    return [validated.param, ...list ]</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>restyling <span class="op">=</span> {</span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Very Great</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mib <span class="op">=</span> viewof RefAccu<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mib) {</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-warning'</span>)<span class="op">;</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  }  </span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hbut <span class="op">=</span> viewof HelpButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (hbut) {</span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    hbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>    hbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-info'</span>)<span class="op">;</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>  }  </span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="co">//  viewof RefInput.classList.remove("form-control");</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mii <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mii) {</span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    mii<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"form-control"</span>)<span class="op">;</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> inp <span class="op">=</span> mii<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'input'</span>)<span class="op">;</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (inp) {</span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>    inp<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">border</span> <span class="op">=</span> <span class="st">"none"</span><span class="op">;</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    inp<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">outline</span> <span class="op">=</span> <span class="st">"none"</span><span class="op">;</span></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>dummy <span class="op">=</span> { </span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="co">//  viewof RefInput.classList.add("form-control");</span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>  viewof RefAccu<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-warning"</span>)<span class="op">;</span></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>  viewof HelpButton<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-info"</span>)<span class="op">;</span></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="co">// VIEWOF</span></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="co">//html`&lt;div class="button-row"&gt;</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="row container"&gt;</span></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="vs">  Lookup&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof RefInput<span class="sc">}</span></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof RefAccu<span class="sc">}</span></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof HelpButton<span class="sc">}</span></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>bcve <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(RefInput)<span class="op">;</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>bcve<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -351,11 +296,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-2-8" data-nodetype="declaration">
+<div id="ojs-cell-2-8" data-nodetype="expression">
 
 </div>
 </div>
 </div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="77" data-source-offset="-1139"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 76;"><span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>viewof RefAccu <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Keep"</span><span class="op">,</span> {</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> _STORAGE_VALUE<span class="op">,</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> (list) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> input <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> validated <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(input)<span class="op">;</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> result <span class="op">=</span> validated<span class="op">.</span><span class="at">is_valid</span> <span class="op">?</span> [validated<span class="op">.</span><span class="at">param</span><span class="op">,</span> <span class="op">...</span>list ] <span class="op">:</span> [<span class="op">...</span>list]</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> uniqueResult <span class="op">=</span> [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(result)]<span class="op">;</span></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>      localStorage<span class="op">.</span><span class="fu">setItem</span>(_STORAGE_KEY<span class="op">,</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(uniqueResult))<span class="op">;</span></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> uniqueResult</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>  <span class="co">//    return [validated.param, ...list ]</span></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>restyling <span class="op">=</span> {</span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Very Great</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mib <span class="op">=</span> viewof RefAccu<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mib) {</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-warning'</span>)<span class="op">;</span></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hbut <span class="op">=</span> viewof HelpButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (hbut) {</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    hbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>    hbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-info'</span>)<span class="op">;</span></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="co">//  viewof RefInput.classList.remove("form-control");</span></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mii <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mii) {</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>    mii<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"form-control"</span>)<span class="op">;</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> inp <span class="op">=</span> mii<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'input'</span>)<span class="op">;</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (inp) {</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>    inp<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">border</span> <span class="op">=</span> <span class="st">"none"</span><span class="op">;</span></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>    inp<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">outline</span> <span class="op">=</span> <span class="st">"none"</span><span class="op">;</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>dummy <span class="op">=</span> { </span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="co">//  viewof RefInput.classList.add("form-control");</span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>  viewof RefAccu<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-warning"</span>)<span class="op">;</span></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>  viewof HelpButton<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-info"</span>)<span class="op">;</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="co">// VIEWOF</span></span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a><span class="co">//html`&lt;div class="button-row"&gt;</span></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="row container"&gt;</span></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a><span class="vs">  Lookup&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof RefInput<span class="sc">}</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof RefAccu<span class="sc">}</span></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>viewof HelpButton<span class="sc">}</span></span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-9" data-nodetype="declaration">
@@ -365,28 +365,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-2-10" data-nodetype="expression">
+<div id="ojs-cell-2-10" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-11" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-12" data-nodetype="expression">
 
 </div>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="137" data-source-offset="-35"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 136;"><span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>RefPreview <span class="op">=</span> {</span>
-<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mb <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(RefInput)<span class="op">;</span></span>
-<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mb<span class="op">.</span><span class="at">is_valid</span>) {</span>
-<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mir <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(mb<span class="op">.</span><span class="at">param</span>)<span class="op">;</span></span>
-<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
-<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="at">data</span><span class="op">;</span></span>
-<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="fu">displayData</span>()<span class="op">;</span> </span>
-<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mir<span class="op">.</span><span class="at">outputContent</span><span class="op">;</span></span>
-<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="vs">`&lt;div&gt;&lt;ul&gt;&lt;li&gt;</span><span class="sc">${</span>mb<span class="op">.</span><span class="at">param</span><span class="sc">}</span><span class="vs">&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`</span>  </span>
-<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>RefPreview<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="138" data-source-offset="-35"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 137;"><span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>RefPreview <span class="op">=</span> {</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mb <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(RefInput)<span class="op">;</span></span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mb<span class="op">.</span><span class="at">is_valid</span>) {</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mir <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(mb<span class="op">.</span><span class="at">param</span>)<span class="op">;</span></span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="at">data</span><span class="op">;</span></span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="fu">displayData</span>()<span class="op">;</span> </span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mir<span class="op">.</span><span class="at">outputContent</span><span class="op">;</span></span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="vs">`&lt;div&gt;&lt;ul&gt;&lt;li&gt;</span><span class="sc">${</span>mb<span class="op">.</span><span class="at">param</span><span class="sc">}</span><span class="vs">&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`</span>  </span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>RefPreview<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
@@ -403,23 +417,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="160" data-source-offset="-31"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 159;"><span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>RefData <span class="op">=</span> {</span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>  <span class="co">// DATA is imported from BibleBooksCodes_Tables.js</span></span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a><span class="co">//      const refArray =  RefAccu;</span></span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> mir <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(RefAccu)<span class="op">;</span></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>      <span class="cf">await</span> mir<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
-<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a><span class="co">//      await mir.displayData(); </span></span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="co">//      const displayContent = mir.outputContent;</span></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="co">//      return await mir</span></span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cf">await</span> mir<span class="op">.</span><span class="at">data</span></span>
-<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a><span class="co">//RefData;</span></span>
-<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the list</span></span>
-<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a><span class="co">//html`&lt;ul&gt;${RefData.map(item =&gt; html`&lt;li&gt;&lt;details&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt; ${item.content.slice(0,40)} ...&lt;/summary&gt;&lt;p&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/p&gt;&lt;/details&gt;&lt;/li&gt;`)}&lt;/ul&gt;`</span></span>
-<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>RefData<span class="op">.</span><span class="fu">map</span>(item <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;details&gt;&lt;summary&gt;&lt;strong&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">ref</span><span class="sc">}</span><span class="vs"> &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; </span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">45</span>)<span class="sc">}</span><span class="vs"> ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;&lt;p&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="sc">}</span><span class="vs"> &lt;em&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">version</span><span class="sc">}</span><span class="vs">&lt;/em&gt;&lt;/p&gt;&lt;/details&gt;`</span>)<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="161" data-source-offset="-31"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 160;"><span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>RefData <span class="op">=</span> {</span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>  <span class="co">// DATA is imported from BibleBooksCodes_Tables.js</span></span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a><span class="co">//      const refArray =  RefAccu;</span></span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> mir <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(RefAccu)<span class="op">;</span></span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>      <span class="cf">await</span> mir<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a><span class="co">//      await mir.displayData(); </span></span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a><span class="co">//      const displayContent = mir.outputContent;</span></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a><span class="co">//      return await mir</span></span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cf">await</span> mir<span class="op">.</span><span class="at">data</span></span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a><span class="co">//RefData;</span></span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the list</span></span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a><span class="co">//html`&lt;ul&gt;${RefData.map(item =&gt; html`&lt;li&gt;&lt;details&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt; ${item.content.slice(0,40)} ...&lt;/summary&gt;&lt;p&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/p&gt;&lt;/details&gt;&lt;/li&gt;`)}&lt;/ul&gt;`</span></span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>RefData<span class="op">.</span><span class="fu">map</span>(item <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;details&gt;&lt;summary&gt;&lt;strong&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">ref</span><span class="sc">}</span><span class="vs"> &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; </span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">60</span>)<span class="sc">}</span><span class="vs"> ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;&lt;p&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="sc">}</span><span class="vs"> &lt;em&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">version</span><span class="sc">}</span><span class="vs">&lt;/em&gt;&lt;/p&gt;&lt;/details&gt;`</span>)<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-4-1" data-nodetype="declaration">
@@ -447,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IElucHV0cyB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL2lucHV0c1wiO1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQgeyBodG1sIH0gZnJvbSBcIkBvYnNlcnZhYmxlaHEvc3RkbGliXCI7XG5pbXBvcnQgeyBCY3ZlLCBSZWYgfSBmcm9tIFwiLi9CaWJsZUJvb2tzQ29kZXNfVGFibGVzLmpzXCI7XG5cbl9TVE9SQUdFX0tFWSA9IFwicHJvcGhldGVcIjtcbl9TVE9SQUdFX1ZBTFVFID0gSlNPTi5wYXJzZShsb2NhbFN0b3JhZ2UuZ2V0SXRlbShfU1RPUkFHRV9LRVkpKSB8fCBbJ2dhbDI6MjAhS0pWJ107XG5cbi8vIExFR0FDWSB3YXMgYmV0dGVyXG4vKlxuLy8gSU5QVVRcbnZpZXdvZiB1c2VyUmVmID0gaHRtbGBcbiAgPGlucHV0IFxuICAgIHR5cGU9XCJ0ZXh0XCIgXG4vLyAgICBvbmlucHV0PVwidGhpcy5kaXNwYXRjaEV2ZW50KG5ldyBDdXN0b21FdmVudCgnaW5wdXQnKSlcIiBcbiAgICB2YWx1ZT0gXCJudW0xOjEhS0pWXCJcbiAgICBjbGFzcz1cImZvcm0tY29udHJvbFwiIFxuICAgIHN0eWxlPVwid2lkdGg6IDE1MHB4O1wiXG4gICAgPmBcblxuLy8gVFJJR0dFUiAgICBcbnZpZXdvZiBhcHBlbmRCdXR0b24gPSBodG1sYFxuICA8YnV0dG9uIGNsYXNzPVwiYnRuIGJ0bi1wcmltYXJ5XCI+QXBwZW5kPC9idXR0b24+YFxuXG4vLyBWSUVXT0Zcbmh0bWxgPGRpdiBjbGFzcz1cInJvdyBjb250YWluZXJcIj5cbiAgU2VhcmNoJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7XG4gICR7dmlld29mIHVzZXJSZWZ9XG4gICR7dmlld29mIGFwcGVuZEJ1dHRvbn1cbiAgPC9kaXY+YFxuKi9cblxuLy89PT09PT09PT09PT09PT09PT0gMS4gSU5QVVRTXG4vLyBFZGl0YWJsZSBpbnB1dCBmaWVsZFxudmlld29mIFJlZklucHV0ID0gSW5wdXRzLnRleHQoe1xuICB2YWx1ZTogX1NUT1JBR0VfVkFMVUVbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogX1NUT1JBR0VfVkFMVUUubGVuZ3RoKV0sXG4gIHN0eWxlOiBcIndpZHRoOiAxNDBweDtcIlxuICB9KVxuXG4vLyBJbnB1dHNcbi8qdmlld29mIFJlZklucHV0ID0gaHRtbGA8aW5wdXQgdHlwZT1cInRleHRcIiBcbi8vICBjbGFzcz1cImZvcm0tY29udHJvbFwiIFxuICBsYWJlbD0gXCJTZWFyY2hcIiBcbiAgc3R5bGU9XCJ3aWR0aDogMTUwcHg7XCJcbiAgdmFsdWU9XCJwczQwXCIvPmA7ICBcbiovXG5cbi8vPT09PT09PT09PT09PT09PT09IDIuIEFDQ1VNVUxBVElPTlxudmlld29mIEhlbHBCdXR0b24gPSAgSW5wdXRzLmJ1dHRvbihcIkhlbHBcIik7XG5cbi8vYmN2ZSA9IG5ldyBCY3ZlKFJlZklucHV0KTtcbi8vYmN2ZTtcblxudmlld29mIFJlZkFjY3UgPSBJbnB1dHMuYnV0dG9uKFwiS2VlcFwiLCB7XG4gICAgdmFsdWU6IF9TVE9SQUdFX1ZBTFVFLFxuICAgIHJlZHVjZTogKGxpc3QpID0+IHtcbiAgICAgIGNvbnN0IGlucHV0ID0gdmlld29mIFJlZklucHV0LnZhbHVlO1xuICAgICAgY29uc3QgdmFsaWRhdGVkID0gbmV3IEJjdmUoaW5wdXQpO1xuICAgICAgY29uc3QgcmVzdWx0ID0gdmFsaWRhdGVkLmlzX3ZhbGlkID8gW3ZhbGlkYXRlZC5wYXJhbSwgLi4ubGlzdCBdIDogWy4uLmxpc3RdXG4gICAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbShfU1RPUkFHRV9LRVksIEpTT04uc3RyaW5naWZ5KHJlc3VsdCkpO1xuICAgICAgcmV0dXJuIHJlc3VsdFxuICAvLyAgICByZXR1cm4gW3ZhbGlkYXRlZC5wYXJhbSwgLi4ubGlzdCBdXG4gICAgICB9XG4gICAgfSk7XG5cbnJlc3R5bGluZyA9IHtcbiAgLy8gVmVyeSBHcmVhdFxuICBjb25zdCBtaWIgPSB2aWV3b2YgUmVmQWNjdS5xdWVyeVNlbGVjdG9yKCdidXR0b24uYnRuLXF1YXJ0bycpO1xuICBpZiAobWliKSB7XG4gICAgbWliLmNsYXNzTGlzdC5yZW1vdmUoJ2J0bi1xdWFydG8nKTtcbiAgICBtaWIuY2xhc3NMaXN0LmFkZCgnYnRuLXdhcm5pbmcnKTtcbiAgfSAgXG4gIFxuICBjb25zdCBoYnV0ID0gdmlld29mIEhlbHBCdXR0b24ucXVlcnlTZWxlY3RvcignYnV0dG9uLmJ0bi1xdWFydG8nKTtcbiAgaWYgKGhidXQpIHtcbiAgICBoYnV0LmNsYXNzTGlzdC5yZW1vdmUoJ2J0bi1xdWFydG8nKTtcbiAgICBoYnV0LmNsYXNzTGlzdC5hZGQoJ2J0bi1pbmZvJyk7XG4gIH0gIFxuICBcbi8vICB2aWV3b2YgUmVmSW5wdXQuY2xhc3NMaXN0LnJlbW92ZShcImZvcm0tY29udHJvbFwiKTtcblxuICBjb25zdCBtaWkgPSB2aWV3b2YgUmVmSW5wdXQucXVlcnlTZWxlY3RvcignZGl2Jyk7XG4gIGlmIChtaWkpIHtcbiAgICBtaWkuY2xhc3NMaXN0LmFkZChcImZvcm0tY29udHJvbFwiKTtcbiAgfVxuICBcbiAgY29uc3QgaW5wID0gbWlpLnF1ZXJ5U2VsZWN0b3IoJ2lucHV0Jyk7XG4gIGlmIChpbnApIHtcbiAgICBpbnAuc3R5bGUuYm9yZGVyID0gXCJub25lXCI7XG4gICAgaW5wLnN0eWxlLm91dGxpbmUgPSBcIm5vbmVcIjtcbiAgfVxufVxuXG5kdW1teSA9IHsgXG4vLyAgdmlld29mIFJlZklucHV0LmNsYXNzTGlzdC5hZGQoXCJmb3JtLWNvbnRyb2xcIik7XG4gIHZpZXdvZiBSZWZBY2N1LmNsYXNzTGlzdC5hZGQoXCJidG5cIiwgXCJidG4td2FybmluZ1wiKTtcbiAgdmlld29mIEhlbHBCdXR0b24uY2xhc3NMaXN0LmFkZChcImJ0blwiLCBcImJ0bi1pbmZvXCIpO1xufVxuXG4vLyBWSUVXT0Zcbi8vaHRtbGA8ZGl2IGNsYXNzPVwiYnV0dG9uLXJvd1wiPlxuaHRtbGA8ZGl2IGNsYXNzPVwicm93IGNvbnRhaW5lclwiPlxuICBMb29rdXAmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDtcbiAgJHt2aWV3b2YgUmVmSW5wdXR9XG4gICR7dmlld29mIFJlZkFjY3V9XG4gICR7dmlld29mIEhlbHBCdXR0b259XG4gIDwvZGl2PmBcblxuLy9SZWZBY2N1O1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy89PT09PT09PT09PT09PT09PT0gSU5QVVQgUFJFVklFV1xuUmVmUHJldmlldyA9IHtcbiAgY29uc3QgbWIgPSBuZXcgQmN2ZShSZWZJbnB1dCk7XG4gIFxuICBpZiAobWIuaXNfdmFsaWQpIHtcbiAgICBjb25zdCBtaXIgPSBuZXcgUmVmKG1iLnBhcmFtKTtcbiAgICBhd2FpdCBtaXIuZmV0Y2hfcGFyYWxsZWwoKTsgICAvLyBXYWl0IGZvciBkYXRhIHRvIGJlIGZldGNoZWRcbiAgICBhd2FpdCBtaXIuZGF0YTtcbiAgICBhd2FpdCBtaXIuZGlzcGxheURhdGEoKTsgXG4gICAgcmV0dXJuIG1pci5vdXRwdXRDb250ZW50O1xuICB9IGVsc2Uge1xuICAgIHJldHVybiBgPGRpdj48dWw+PGxpPiR7bWIucGFyYW19PC9saT48L3VsPjwvZGl2PmAgIFxuICB9XG59XG5cbmh0bWxgJHtSZWZQcmV2aWV3fWBcblxuLy8gRGlzcGxheSB0aGUgbGlzdFxuLy9odG1sYDx1bD4ke1JlZkRhdGEubWFwKGl0ZW0gPT4gaHRtbGA8bGk+PHN0cm9uZz4ke2l0ZW0ucmVmfTwvc3Ryb25nPiAke2l0ZW0uY29udGVudH0gPGVtPiR7aXRlbS52ZXJzaW9ufTwvZW0+PC9saT5gKX08L3VsPmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vPT09PT09PT09PT09PT09PT09IDMuIEZFVENIXG5cblJlZkRhdGEgPSB7XG4gIC8vIERBVEEgaXMgaW1wb3J0ZWQgZnJvbSBCaWJsZUJvb2tzQ29kZXNfVGFibGVzLmpzXG4vLyAgICAgIGNvbnN0IHJlZkFycmF5ID0gIFJlZkFjY3U7XG4gICAgICBjb25zdCBtaXIgPSBuZXcgUmVmKFJlZkFjY3UpO1xuICAgICAgYXdhaXQgbWlyLmZldGNoX3BhcmFsbGVsKCk7ICAgLy8gV2FpdCBmb3IgZGF0YSB0byBiZSBmZXRjaGVkXG4vLyAgICAgIGF3YWl0IG1pci5kaXNwbGF5RGF0YSgpOyBcbi8vICAgICAgY29uc3QgZGlzcGxheUNvbnRlbnQgPSBtaXIub3V0cHV0Q29udGVudDtcbi8vICAgICAgcmV0dXJuIGF3YWl0IG1pclxuICAgIHJldHVybiBhd2FpdCBtaXIuZGF0YVxufVxuXG4vL1JlZkRhdGE7XG5cbi8vIERpc3BsYXkgdGhlIGxpc3Rcbi8vaHRtbGA8dWw+JHtSZWZEYXRhLm1hcChpdGVtID0+IGh0bWxgPGxpPjxkZXRhaWxzPjxzdW1tYXJ5PjxzdHJvbmc+JHtpdGVtLnJlZn0gPC9zdHJvbmc+ICR7aXRlbS5jb250ZW50LnNsaWNlKDAsNDApfSAuLi48L3N1bW1hcnk+PHA+JHtpdGVtLmNvbnRlbnR9IDxlbT4ke2l0ZW0udmVyc2lvbn08L2VtPjwvcD48L2RldGFpbHM+PC9saT5gKX08L3VsPmBcblxuaHRtbGAke1JlZkRhdGEubWFwKGl0ZW0gPT4gaHRtbGA8ZGV0YWlscz48c3VtbWFyeT48c3Ryb25nPiR7aXRlbS5yZWZ9IDwvc3Ryb25nPjxzcGFuIHN0eWxlPSdmb250LXNpemU6IDAuOWVtOyc+PGVtPiAke2l0ZW0uY29udGVudC5zbGljZSgwLDQ1KX0gLi4uPC9lbT48L3NwYW4+PC9zdW1tYXJ5PjxwPiR7aXRlbS5jb250ZW50fSA8ZW0+JHtpdGVtLnZlcnNpb259PC9lbT48L3A+PC9kZXRhaWxzPmApfWBcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdSZWZJbnB1dCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdIZWxwQnV0dG9uJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ1JlZkFjY3UnKSJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IElucHV0cyB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL2lucHV0c1wiO1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQgeyBodG1sIH0gZnJvbSBcIkBvYnNlcnZhYmxlaHEvc3RkbGliXCI7XG5pbXBvcnQgeyBCY3ZlLCBSZWYgfSBmcm9tIFwiLi9CaWJsZUJvb2tzQ29kZXNfVGFibGVzLmpzXCI7XG5cbl9TVE9SQUdFX0tFWSA9IFwicHJvcGhldGVcIjtcbl9TVE9SQUdFX1ZBTFVFID0gSlNPTi5wYXJzZShsb2NhbFN0b3JhZ2UuZ2V0SXRlbShfU1RPUkFHRV9LRVkpKSB8fCBbJ2dhbDI6MjAhS0pWJ107XG5cbi8vIExFR0FDWSB3YXMgYmV0dGVyXG4vKlxuLy8gSU5QVVRcbnZpZXdvZiB1c2VyUmVmID0gaHRtbGBcbiAgPGlucHV0IFxuICAgIHR5cGU9XCJ0ZXh0XCIgXG4vLyAgICBvbmlucHV0PVwidGhpcy5kaXNwYXRjaEV2ZW50KG5ldyBDdXN0b21FdmVudCgnaW5wdXQnKSlcIiBcbiAgICB2YWx1ZT0gXCJudW0xOjEhS0pWXCJcbiAgICBjbGFzcz1cImZvcm0tY29udHJvbFwiIFxuICAgIHN0eWxlPVwid2lkdGg6IDE1MHB4O1wiXG4gICAgPmBcblxuLy8gVFJJR0dFUiAgICBcbnZpZXdvZiBhcHBlbmRCdXR0b24gPSBodG1sYFxuICA8YnV0dG9uIGNsYXNzPVwiYnRuIGJ0bi1wcmltYXJ5XCI+QXBwZW5kPC9idXR0b24+YFxuXG4vLyBWSUVXT0Zcbmh0bWxgPGRpdiBjbGFzcz1cInJvdyBjb250YWluZXJcIj5cbiAgU2VhcmNoJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7XG4gICR7dmlld29mIHVzZXJSZWZ9XG4gICR7dmlld29mIGFwcGVuZEJ1dHRvbn1cbiAgPC9kaXY+YFxuKi9cblxuLy89PT09PT09PT09PT09PT09PT0gMS4gSU5QVVRTXG4vLyBFZGl0YWJsZSBpbnB1dCBmaWVsZFxudmlld29mIFJlZklucHV0ID0gSW5wdXRzLnRleHQoe1xuICB2YWx1ZTogX1NUT1JBR0VfVkFMVUVbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogX1NUT1JBR0VfVkFMVUUubGVuZ3RoKV0sXG4gIHN0eWxlOiBcIndpZHRoOiAxNDBweDtcIlxuICB9KVxuXG4vLyBJbnB1dHNcbi8qdmlld29mIFJlZklucHV0ID0gaHRtbGA8aW5wdXQgdHlwZT1cInRleHRcIiBcbi8vICBjbGFzcz1cImZvcm0tY29udHJvbFwiIFxuICBsYWJlbD0gXCJTZWFyY2hcIiBcbiAgc3R5bGU9XCJ3aWR0aDogMTUwcHg7XCJcbiAgdmFsdWU9XCJwczQwXCIvPmA7ICBcbiovXG5cbi8vPT09PT09PT09PT09PT09PT09IDIuIEFDQ1VNVUxBVElPTlxudmlld29mIEhlbHBCdXR0b24gPSAgSW5wdXRzLmJ1dHRvbihcIkhlbHBcIik7XG5cbmJjdmUgPSBuZXcgQmN2ZShSZWZJbnB1dCk7XG5iY3ZlO1xuXG52aWV3b2YgUmVmQWNjdSA9IElucHV0cy5idXR0b24oXCJLZWVwXCIsIHtcbiAgICB2YWx1ZTogX1NUT1JBR0VfVkFMVUUsXG4gICAgcmVkdWNlOiAobGlzdCkgPT4ge1xuICAgICAgY29uc3QgaW5wdXQgPSB2aWV3b2YgUmVmSW5wdXQudmFsdWU7XG4gICAgICBjb25zdCB2YWxpZGF0ZWQgPSBuZXcgQmN2ZShpbnB1dCk7XG4gICAgICBjb25zdCByZXN1bHQgPSB2YWxpZGF0ZWQuaXNfdmFsaWQgPyBbdmFsaWRhdGVkLnBhcmFtLCAuLi5saXN0IF0gOiBbLi4ubGlzdF1cbiAgICAgIGNvbnN0IHVuaXF1ZVJlc3VsdCA9IFsuLi5uZXcgU2V0KHJlc3VsdCldO1xuICAgICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oX1NUT1JBR0VfS0VZLCBKU09OLnN0cmluZ2lmeSh1bmlxdWVSZXN1bHQpKTtcbiAgICAgIHJldHVybiB1bmlxdWVSZXN1bHRcbiAgLy8gICAgcmV0dXJuIFt2YWxpZGF0ZWQucGFyYW0sIC4uLmxpc3QgXVxuICAgICAgfVxuICAgIH0pO1xuXG5yZXN0eWxpbmcgPSB7XG4gIC8vIFZlcnkgR3JlYXRcbiAgY29uc3QgbWliID0gdmlld29mIFJlZkFjY3UucXVlcnlTZWxlY3RvcignYnV0dG9uLmJ0bi1xdWFydG8nKTtcbiAgaWYgKG1pYikge1xuICAgIG1pYi5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gICAgbWliLmNsYXNzTGlzdC5hZGQoJ2J0bi13YXJuaW5nJyk7XG4gIH0gIFxuICBcbiAgY29uc3QgaGJ1dCA9IHZpZXdvZiBIZWxwQnV0dG9uLnF1ZXJ5U2VsZWN0b3IoJ2J1dHRvbi5idG4tcXVhcnRvJyk7XG4gIGlmIChoYnV0KSB7XG4gICAgaGJ1dC5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gICAgaGJ1dC5jbGFzc0xpc3QuYWRkKCdidG4taW5mbycpO1xuICB9ICBcbiAgXG4vLyAgdmlld29mIFJlZklucHV0LmNsYXNzTGlzdC5yZW1vdmUoXCJmb3JtLWNvbnRyb2xcIik7XG5cbiAgY29uc3QgbWlpID0gdmlld29mIFJlZklucHV0LnF1ZXJ5U2VsZWN0b3IoJ2RpdicpO1xuICBpZiAobWlpKSB7XG4gICAgbWlpLmNsYXNzTGlzdC5hZGQoXCJmb3JtLWNvbnRyb2xcIik7XG4gIH1cbiAgXG4gIGNvbnN0IGlucCA9IG1paS5xdWVyeVNlbGVjdG9yKCdpbnB1dCcpO1xuICBpZiAoaW5wKSB7XG4gICAgaW5wLnN0eWxlLmJvcmRlciA9IFwibm9uZVwiO1xuICAgIGlucC5zdHlsZS5vdXRsaW5lID0gXCJub25lXCI7XG4gIH1cbn1cblxuZHVtbXkgPSB7IFxuLy8gIHZpZXdvZiBSZWZJbnB1dC5jbGFzc0xpc3QuYWRkKFwiZm9ybS1jb250cm9sXCIpO1xuICB2aWV3b2YgUmVmQWNjdS5jbGFzc0xpc3QuYWRkKFwiYnRuXCIsIFwiYnRuLXdhcm5pbmdcIik7XG4gIHZpZXdvZiBIZWxwQnV0dG9uLmNsYXNzTGlzdC5hZGQoXCJidG5cIiwgXCJidG4taW5mb1wiKTtcbn1cblxuLy8gVklFV09GXG4vL2h0bWxgPGRpdiBjbGFzcz1cImJ1dHRvbi1yb3dcIj5cbmh0bWxgPGRpdiBjbGFzcz1cInJvdyBjb250YWluZXJcIj5cbiAgTG9va3VwJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7XG4gICR7dmlld29mIFJlZklucHV0fVxuICAke3ZpZXdvZiBSZWZBY2N1fVxuICAke3ZpZXdvZiBIZWxwQnV0dG9ufVxuICA8L2Rpdj5gXG5cbi8vUmVmQWNjdTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vPT09PT09PT09PT09PT09PT09IElOUFVUIFBSRVZJRVdcblJlZlByZXZpZXcgPSB7XG4gIGNvbnN0IG1iID0gbmV3IEJjdmUoUmVmSW5wdXQpO1xuICBcbiAgaWYgKG1iLmlzX3ZhbGlkKSB7XG4gICAgY29uc3QgbWlyID0gbmV3IFJlZihtYi5wYXJhbSk7XG4gICAgYXdhaXQgbWlyLmZldGNoX3BhcmFsbGVsKCk7ICAgLy8gV2FpdCBmb3IgZGF0YSB0byBiZSBmZXRjaGVkXG4gICAgYXdhaXQgbWlyLmRhdGE7XG4gICAgYXdhaXQgbWlyLmRpc3BsYXlEYXRhKCk7IFxuICAgIHJldHVybiBtaXIub3V0cHV0Q29udGVudDtcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4gYDxkaXY+PHVsPjxsaT4ke21iLnBhcmFtfTwvbGk+PC91bD48L2Rpdj5gICBcbiAgfVxufVxuXG5odG1sYCR7UmVmUHJldmlld31gXG5cbi8vIERpc3BsYXkgdGhlIGxpc3Rcbi8vaHRtbGA8dWw+JHtSZWZEYXRhLm1hcChpdGVtID0+IGh0bWxgPGxpPjxzdHJvbmc+JHtpdGVtLnJlZn08L3N0cm9uZz4gJHtpdGVtLmNvbnRlbnR9IDxlbT4ke2l0ZW0udmVyc2lvbn08L2VtPjwvbGk+YCl9PC91bD5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLz09PT09PT09PT09PT09PT09PSAzLiBGRVRDSFxuXG5SZWZEYXRhID0ge1xuICAvLyBEQVRBIGlzIGltcG9ydGVkIGZyb20gQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1xuLy8gICAgICBjb25zdCByZWZBcnJheSA9ICBSZWZBY2N1O1xuICAgICAgY29uc3QgbWlyID0gbmV3IFJlZihSZWZBY2N1KTtcbiAgICAgIGF3YWl0IG1pci5mZXRjaF9wYXJhbGxlbCgpOyAgIC8vIFdhaXQgZm9yIGRhdGEgdG8gYmUgZmV0Y2hlZFxuLy8gICAgICBhd2FpdCBtaXIuZGlzcGxheURhdGEoKTsgXG4vLyAgICAgIGNvbnN0IGRpc3BsYXlDb250ZW50ID0gbWlyLm91dHB1dENvbnRlbnQ7XG4vLyAgICAgIHJldHVybiBhd2FpdCBtaXJcbiAgICByZXR1cm4gYXdhaXQgbWlyLmRhdGFcbn1cblxuLy9SZWZEYXRhO1xuXG4vLyBEaXNwbGF5IHRoZSBsaXN0XG4vL2h0bWxgPHVsPiR7UmVmRGF0YS5tYXAoaXRlbSA9PiBodG1sYDxsaT48ZGV0YWlscz48c3VtbWFyeT48c3Ryb25nPiR7aXRlbS5yZWZ9IDwvc3Ryb25nPiAke2l0ZW0uY29udGVudC5zbGljZSgwLDQwKX0gLi4uPC9zdW1tYXJ5PjxwPiR7aXRlbS5jb250ZW50fSA8ZW0+JHtpdGVtLnZlcnNpb259PC9lbT48L3A+PC9kZXRhaWxzPjwvbGk+YCl9PC91bD5gXG5cbmh0bWxgJHtSZWZEYXRhLm1hcChpdGVtID0+IGh0bWxgPGRldGFpbHM+PHN1bW1hcnk+PHN0cm9uZz4ke2l0ZW0ucmVmfSA8L3N0cm9uZz48c3BhbiBzdHlsZT0nZm9udC1zaXplOiAwLjllbTsnPjxlbT4gJHtpdGVtLmNvbnRlbnQuc2xpY2UoMCw2MCl9IC4uLjwvZW0+PC9zcGFuPjwvc3VtbWFyeT48cD4ke2l0ZW0uY29udGVudH0gPGVtPiR7aXRlbS52ZXJzaW9ufTwvZW0+PC9wPjwvZGV0YWlscz5gKX1gXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnUmVmSW5wdXQnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnSGVscEJ1dHRvbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdSZWZBY2N1JykifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
