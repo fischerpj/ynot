@@ -11,7 +11,7 @@ execute:
   echo: false
 ---
 
-> **Instant-Display & Local-Memory of Bible Verses** , thanks to reactive *observableJS* branch of accuVerse. Test: Abbreviations PSA
+> **Instant & Persistent Bible Verses** , thanks to reactive *observableJS* branch of accuVerse. Test Abbreviations
 
 ::: {#inputDiv}
 <!-- inputDiv is considered Void-->
@@ -19,6 +19,10 @@ execute:
 
 ```{ojs}
 import { Inputs } from "@observablehq/inputs";
+
+```
+
+```{ojs}
 import { html } from "@observablehq/stdlib";
 import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
 
@@ -167,7 +171,9 @@ RefData = {
 //RefData;
 
 // Display the list
-html`<ul>${RefData.map(item => html`<li><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></li>`)}</ul>`
+//html`<ul>${RefData.map(item => html`<li><details><summary><strong>${item.ref} </strong> ${item.content.slice(0,40)} ...</summary><p>${item.content} <em>${item.version}</em></p></details></li>`)}</ul>`
+
+html`${RefData.map(item => html`<details><summary><strong>${item.ref} </strong><span style='font-size: 0.9em;'><em> ${item.content.slice(0,45)} ...</em></span></summary><p>${item.content} <em>${item.version}</em></p></details>`)}`
 
 ```
 
