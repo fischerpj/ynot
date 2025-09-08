@@ -195,5 +195,23 @@ viewof AccuStorage.value;
 
 <!--  any output comes here to outputDiv is considered Void-->
 
+<h2>LocalStorage Keys:</h2>
+
+<ul id="keyList">
+
+</ul>
+
 </div>
 ::::
+
+```{=html}
+<script>
+const keyList = document.getElementById('keyList');
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const listItem = document.createElement('li');
+      listItem.textContent = key;
+      keyList.appendChild(listItem);
+  }
+</script>
+```

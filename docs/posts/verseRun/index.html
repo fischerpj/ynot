@@ -442,8 +442,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="outputDiv">
 <div>
 <!--  any output comes here to outputDiv is considered Void-->
+<h2 class="anchored">
+LocalStorage Keys:
+</h2>
+<ul id="keyList">
+</ul>
 </div>
 </div>
+<script>
+const keyList = document.getElementById('keyList');
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const listItem = document.createElement('li');
+      listItem.textContent = key;
+      keyList.appendChild(listItem);
+  }
+</script>
 
 
 
