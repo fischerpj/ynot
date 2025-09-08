@@ -1,7 +1,7 @@
 ---
-title: "newVerses"
-date: "2025-09-04"
-image: "accumulator.jpg"
+title: "alias verseRun"
+date: "2025-09-08"
+image: "hurdler.jpg"
 format: 
   html:
     comments:
@@ -160,9 +160,9 @@ restyling = {
 html`<div class="button-row">
     ${viewof RefInput}
     ${viewof AccuStorage}
-    ${viewof RazButton}
     ${viewof CopyButton}
     ${viewof HelpButton}
+    ${viewof RazButton}
   </div>`
 
 // Display the list

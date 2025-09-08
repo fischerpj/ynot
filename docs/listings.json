@@ -3,9 +3,7 @@
     "listing": "/about.html",
     "items": [
       "/posts/bible-fetch-api/index.html",
-      "/posts/verses/index_good.html",
-      "/posts/verses/index_trash.html",
-      "/posts/verses/index.html",
+      "/posts/verseRun/index.html",
       "/posts/storage/index.html",
       "/posts/global-note/index.html",
       "/posts/bibGrid/index.html",
