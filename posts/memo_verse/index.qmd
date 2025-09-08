@@ -10,7 +10,7 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-> This is *on-your-device-only-persistent-memory* of **bible references,** that you accumulate on the fly. *However one distinct memory zone per browser*
+> VALUABLE LEGACY via hsub \> jsfapi (maybe slow storage setup): This is *on-your-device-only-persistent-memory* of **bible references,** that you accumulate on the fly. *However one distinct memory zone per browser*
 
 ::: {#mainAnchor}
 :::

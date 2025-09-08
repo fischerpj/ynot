@@ -1,0 +1,79 @@
+---
+title: "accuStorage"
+date: "2025-09-05"
+image: "accumulator.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+execute:
+  echo: false
+---
+
+> The **AccuStorage Button**
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+:::
+
+```{ojs}
+import { Inputs } from "@observablehq/inputs";
+import { html } from "@observablehq/stdlib";
+```
+
+```{ojs}
+viewof theme = {
+  const key = "theme"
+  const stored = localStorage.getItem(key)
+  const initial = stored ?? "light"
+
+  const input = Inputs.select(["light", "dark"], {
+    label: "Theme",
+    value: initial
+  })
+
+  // Sync to localStorage on change
+  input.addEventListener("input", () => {
+    localStorage.setItem(key, input.value)
+  })
+
+  return input
+}
+```
+
+```{ojs}
+viewof AccuStorage = {
+  //  INITIALISATION READ from LocalStorage
+  const _STORAGE_KEY = "RefAccu"
+  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))
+  const _INITIAL = stored ?? ["Gen1:1"]
+  
+  const accuButton = Inputs.button("Keep", {
+    value: _INITIAL,
+    reduce: (list) => {
+      const input = "Gal2:20"
+//      const input = viewof RefInput.value;
+//      const validated = new Bcve(input);
+//      const result = validated.is_valid ? [validated.param, ...list ] : [...list]
+      const uniqueResult = [...list, input ]
+//      const uniqueResult = [...new Set(result)];
+  // STORE persistent
+      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));
+      return uniqueResult // new accumulated value
+      } // end of reduce
+    });
+    
+    return accuButton
+}
+
+AccuStorage;
+```
+
+:::: {#outputDiv}
+<div>
+
+<!--  any output comes here to outputDiv is considered Void-->
+
+</div>
+::::

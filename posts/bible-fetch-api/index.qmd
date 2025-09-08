@@ -1,0 +1,37 @@
+---
+title: "bible_fetch API"
+author: "granPiero"
+date: "2025-05-22"
+categories: [bible]
+image: "old_bible.jpg"
+params:
+  uuid_gen: !expr uuid::UUIDgenerate()
+  uuid: "06b433ff-aa5f-421b-9de3-fc06735f93d1"
+---
+
+> Bible **API** technologies, in fetch action; to be reviewed.
+
+```{r, uuid, eval=FALSE, echo= FALSE}
+params$uuid
+```
+
+::: {#mainAnchor}
+:::
+
+```{=html}
+<script src="bible_api.js"></script>
+```
+
+```{js}
+console.log("toto")
+const app = new App();
+
+// app.m_fetchPassage("ps42!KJV");
+
+```
+
+```{js}
+console.log("toto2")
+fetchData("ps42!KJV");
+
+```

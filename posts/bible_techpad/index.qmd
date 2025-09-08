@@ -1,0 +1,23 @@
+---
+title: "bible techpad"
+author: "granPiero"
+date: "2024-10-12"
+categories: [bible]
+image: "old_bible.jpg"
+params:
+  uuid: 1e6448ba-7307-47a0-9950-53c1c1da45c6
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+> Bible **Search and Lookup** technologies. Ideapad
+
+```{r, uuid, eval=TRUE, echo= FALSE}
+params$uuid
+```
+
+::: {#mainAnchor}
+:::

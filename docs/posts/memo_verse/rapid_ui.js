@@ -153,7 +153,9 @@ class MUI {
     this.addInputAndButtons();
     this.addEventListeners();
     
-    this.urlbase = 'https://jsfapi.netlify.app/.netlify/functions/bgw';
+    // https://jsfapi.netlify.app/.netlify/functions/bgw/?param=gen1:1
+    this.urlbase = 'https://hsub.pjafischer.workers.dev/bgw/api/';
+// DEPRECATED    this.urlbase = 'https://jsfapi.netlify.app/.netlify/functions/bgw';
     this.storageArray = stor;
   }
 
@@ -187,7 +189,7 @@ class MUI {
 
   // 2. Create the image
     const image = document.createElement('img');
-    image.src = 'brain.jpg';
+    image.src = 'image/brain.jpg';
     image.alt = 'Brain Image';
     image.width = 100;
     image.className = 'image';        

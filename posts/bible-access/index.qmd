@@ -15,7 +15,7 @@ execute:
   echo: false        
 ---
 
-> Give access to Bible **Texts,** **version, display, search, pdf** as well as to **Strong_Numbers** and Bible sites. The **refs'** full syntax respects *"canon":"ps1:1-3!SG21\@bgw"*. Workflow is 1.input 2.button.listener 3.iframe.src gets updated. Conclusion: Keep the Input+Button; Use the \<iframe for exploration
+> Give access to Bible **Texts,** **version, display, search, pdf** as well as to **Strong_Numbers** and Bible sites. The **refs'** full syntax respects *"canon":"ps1:1-3!SG21\@bgw"*. Workflow is 1.input 2.button.listener 3.iframe.src gets updated. Conclusion: Keep the Input+Button; Use the \<iframe for exploration. techno is jsfapi, jscript,
 
 ```{=html}
 <input type="text" id="inputField" placeholder="{{< meta params.init_ref >}}">  <button id="submitButton">Get API</button>
