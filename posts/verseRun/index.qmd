@@ -44,7 +44,7 @@ viewof RefInput = {
 
 viewof AccuStorage = {
   //  INITIALISATION READ from LocalStorage
-  const _STORAGE_KEY = "RefAccu"
+  const _STORAGE_KEY = "prophete"
   const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))
   const _INITIAL = stored ?? ["Gen1:1"]
   
@@ -81,7 +81,7 @@ viewof CopyButton =  Inputs.button("Copy",{
 
 // augmet action logic with cell to storage binding 
 viewof RazButton = {
-  const _STORAGE_KEY = "RefAccu"
+  const _STORAGE_KEY = "Xprophete"
   const razbut = Inputs.button("Store",{
     value: null,
     reduce: () => { 
