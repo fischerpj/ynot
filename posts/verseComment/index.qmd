@@ -1,0 +1,88 @@
+---
+title: "verseComment"
+date: "2025-09-09"
+image: "hurdler.jpg"
+format:
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+execute:
+  echo: false
+---
+
+> Reference Display with ojs code.
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+
+\["GEN1:1!SG21", "GEN12:8!SG21", "REV4:2!SG21", "GAL2:19!SG21", "GEN1!SG21", "GEN1:2!SG21", "GAL2:20!SG21", "HEB1:1-2!SG21", "JOH1:29!SG21", "Gen1:3!SG21", "John1:29!SG21", "Ps14!SG21", "ACT7:52-53!SG21", "ACT2:32-35!SG21", "MAT22:43-45!SG21", "Gal2:20"\]
+:::
+
+:::: {#outputDiv}
+<div>
+
+<!--  any output comes here to outputDiv is considered Void-->
+
+</div>
+::::
+
+```{ojs}
+import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
+
+RefList_ = (ref) => {
+  if (Array.isArray(ref)) {
+    return ref
+  } else
+  return [ref]
+}
+ 
+ContentList_  = async (lst) => {
+    const mir = new Ref(lst);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+    return mir
+  }
+
+ContentData_  = async (lst) => {
+    const mir = new Ref(lst);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+    return await mir.data;
+  }
+
+ContentHTML_  = async (lst) => {
+    const uniqueResult = [...new Set(lst)];
+    const mir = new Ref(uniqueResult);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+    const midata = await mir.data;
+    // Display the list
+    const mihtml = html`<ul>${midata.map(item => html`<li style="line-height: 1.4; margin-bottom: 10px; color: amber"><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></li></div>`)}`
+    return mihtml
+  }
+
+RefShow_ = async (ref) => {
+  const mb = new Bcve(ref);
+  
+  if (mb.is_valid) {
+    const mir = new Ref(mb.param);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+//    await mir.displayData(); 
+//    return mir.outputContent;
+    return await mir.data;
+  } else {
+    return `<div><ul><li>${mb.param}</li></ul></div>`  
+  }
+}
+```
+
+```{ojs}
+miref = ["GEN1:1!SG21","GEN12:8!SG21","REV4:2!SG21","GAL2:19!SG21","GEN1:2!SG21","GAL2:20!SG21","HEB1:1-2!SG21","JOH1:29!SG21","Gen1:3!SG21","John1:29!SG21","Ps14!SG21","ACT7:52-53!SG21","ACT2:32-35!SG21","MAT22:43-45!SG21","Gal2:20"]
+
+//ContentList_(miref)
+
+//ContentData_(miref)
+
+ContentHTML_(miref)
+
+miref
+
+```

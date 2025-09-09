@@ -17,6 +17,8 @@ execute:
 <!-- inputDiv is considered Void-->
 
 \["GEN1:1!SG21", "GEN12:8!SG21", "REV4:2!SG21", "GAL2:19!SG21", "GEN1!SG21", "GEN1:2!SG21", "GAL2:20!SG21", "HEB1:1-2!SG21", "JOH1:29!SG21", "Gen1:3!SG21", "John1:29!SG21", "Ps14!SG21", "ACT7:52-53!SG21", "ACT2:32-35!SG21", "MAT22:43-45!SG21", "Gal2:20"\]
+
+\["GAL2:20!SG21","HEB1:1-2!SG21","JOH1:29!SG21","Gen1:3!SG21","John1:29!SG21","Ps14!SG21","ACT7:52-53!SG21","ACT2:32-35!SG21","MAT22:43-45!SG21"\]
 :::
 
 ```{ojs}
@@ -187,7 +189,7 @@ html`${RefData.map(item => html`<details style="line-height: 1.6; margin-bottom:
 
 ```{ojs}
 // at last, view accumulator of Refs
-viewof AccuStorage.value;
+JSON.stringify(viewof AccuStorage.value);
 ```
 
 :::: {#outputDiv}
