@@ -77,6 +77,17 @@ viewof CopyButton =  Inputs.button("Clip",{
     }
 });
 
+// augmet action logic with cell to storage binding 
+viewof RazButton = {
+  const _STORAGE_KEY = "prophete"
+  const razbut = Inputs.button("NOPE",{
+    value: null,
+    reduce: () => { 
+ //       localStorage.setItem(_STORAGE_KEY, JSON.stringify(AccuStorage));
+    }
+  });
+  return razbut
+}
 
 ```
 
@@ -104,6 +115,7 @@ restyling = {
   viewof AccuStorage.classList.add("btn", "btn-warning");
   viewof HelpButton.classList.add("btn", "btn-info");
   viewof CopyButton.classList.add("btn", "btn-success");
+  viewof RazButton.classList.add("btn", "btn-danger");
 
   // Very Great
   const mib = viewof AccuStorage.querySelector('button.btn-quarto');
@@ -122,6 +134,12 @@ restyling = {
   if (copbut) {
     copbut.classList.remove('btn-quarto');
     copbut.classList.add('btn-success');
+  }  
+
+ const razbut = viewof RazButton.querySelector('button.btn-quarto');
+  if (razbut) {
+    razbut.classList.remove('btn-quarto');
+    razbut.classList.add('btn-danger');
   }  
 
 // RESTYLING of INPUT
@@ -143,6 +161,7 @@ html`<div class="button-row">
     ${viewof AccuStorage}
     ${viewof CopyButton}
     ${viewof HelpButton}
+    ${viewof RazButton}
  </div>`
  
 // Display the list
