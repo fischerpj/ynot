@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-09-08">
 
-<title>alias verseRun – ynot</title>
+<title>verseRun – ynot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">alias verseRun</h1>
+      <h1 class="title">verseRun</h1>
                       </div>
   </div>
     
@@ -181,17 +181,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <blockquote class="blockquote">
-<p><strong>Instant &amp; Persistent Bible Verses</strong>.</p>
+<p><strong>Instant View &amp; Persistent Bible Verses</strong>.</p>
 </blockquote>
 <div id="inputDiv">
 <!-- inputDiv is considered Void-->
-<p>[“GEN1:1!SG21”,&nbsp;“GEN12:8!SG21”,&nbsp;“REV4:2!SG21”,&nbsp;“GAL2:19!SG21”,&nbsp;“GEN1!SG21”,&nbsp;“GEN1:2!SG21”,&nbsp;“GAL2:20!SG21”,&nbsp;“HEB1:1-2!SG21”,&nbsp;“JOH1:29!SG21”,&nbsp;“Gen1:3!SG21”,&nbsp;“John1:29!SG21”,&nbsp;“Ps14!SG21”,&nbsp;“ACT7:52-53!SG21”,&nbsp;“ACT2:32-35!SG21”,&nbsp;“MAT22:43-45!SG21”,&nbsp;“Gal2:20”]</p>
-<p>[“GAL2:20!SG21”,“HEB1:1-2!SG21”,“JOH1:29!SG21”,“Gen1:3!SG21”,“John1:29!SG21”,“Ps14!SG21”,“ACT7:52-53!SG21”,“ACT2:32-35!SG21”,“MAT22:43-45!SG21”]</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="25" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 24;"><span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Inputs } <span class="im">from</span> <span class="st">"@observablehq/inputs"</span><span class="op">;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { html } <span class="im">from</span> <span class="st">"@observablehq/stdlib"</span><span class="op">;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Bcve<span class="op">,</span> Ref } <span class="im">from</span> <span class="st">"./BibleBooksCodes_Tables.js"</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="21" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Inputs } <span class="im">from</span> <span class="st">"@observablehq/inputs"</span><span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { html } <span class="im">from</span> <span class="st">"@observablehq/stdlib"</span><span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Bcve<span class="op">,</span> Ref } <span class="im">from</span> <span class="st">"./BibleBooksCodes_Tables.js"</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -215,15 +213,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="31" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 30;"><span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">//================== 1. INPUTS</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">// Editable input field</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>viewof RefInput <span class="op">=</span> {</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> inputText <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"Gen1:1"</span><span class="op">,</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> <span class="st">"width: 80px;"</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> inputText</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="27" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 26;"><span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">//================== 1. INPUTS</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">// Editable input field</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>viewof RefInput <span class="op">=</span> {</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> inputText <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"Gen1:1"</span><span class="op">,</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> <span class="st">"width: 80px;"</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> inputText</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="declaration">
 
@@ -231,54 +229,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="47" data-source-offset="-33"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 46;"><span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>viewof AccuStorage <span class="op">=</span> {</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  <span class="co">//  INITIALISATION READ from LocalStorage</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _STORAGE_KEY <span class="op">=</span> <span class="st">"prophete"</span></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> stored <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(localStorage<span class="op">.</span><span class="fu">getItem</span>(_STORAGE_KEY))</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _INITIAL <span class="op">=</span> stored <span class="op">??</span> [<span class="st">"Gen1:1"</span>]</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> accuButton <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Add"</span><span class="op">,</span> {</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> _INITIAL<span class="op">,</span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> (list) <span class="kw">=&gt;</span> {</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> input <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> validated <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(input)<span class="op">;</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> result <span class="op">=</span> validated<span class="op">.</span><span class="at">is_valid</span> <span class="op">?</span> [validated<span class="op">.</span><span class="at">param</span><span class="op">,</span> <span class="op">...</span>list ] <span class="op">:</span> [<span class="op">...</span>list]</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> uniqueResult <span class="op">=</span> [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(result)]<span class="op">;</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>  <span class="co">// STORE persistent</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="co">//      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> uniqueResult <span class="co">// new accumulated value</span></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>      } <span class="co">// end of reduce</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> accuButton</span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>viewof HelpButton <span class="op">=</span> {</span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hbut <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Help"</span>)<span class="op">;</span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> hbut</span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>viewof CopyButton <span class="op">=</span>  Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Copy"</span><span class="op">,</span>{</span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> () <span class="kw">=&gt;</span> { </span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Copy to clipboard</span></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>      <span class="bu">navigator</span><span class="op">.</span><span class="at">clipboard</span><span class="op">.</span><span class="fu">writeText</span>(<span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(AccuStorage))</span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">then</span>(() <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Copied to clipboard!'</span>))</span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>       <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">'Failed to copy:'</span><span class="op">,</span> err))<span class="op">;</span></span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="co">// augmet action logic with cell to storage binding </span></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>viewof RazButton <span class="op">=</span> {</span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _STORAGE_KEY <span class="op">=</span> <span class="st">"Xprophete"</span></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> razbut <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Store"</span><span class="op">,</span>{</span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> () <span class="kw">=&gt;</span> { </span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>        localStorage<span class="op">.</span><span class="fu">setItem</span>(_STORAGE_KEY<span class="op">,</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(AccuStorage))<span class="op">;</span></span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> razbut</span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="43" data-source-offset="-33"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 42;"><span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>viewof AccuStorage <span class="op">=</span> {</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="co">//  INITIALISATION READ from LocalStorage</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _STORAGE_KEY <span class="op">=</span> <span class="st">"prophete"</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> stored <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(localStorage<span class="op">.</span><span class="fu">getItem</span>(_STORAGE_KEY))</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _INITIAL <span class="op">=</span> stored <span class="op">??</span> [<span class="st">"Gen1:1"</span>]</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> accuButton <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Store"</span><span class="op">,</span> {</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> _INITIAL<span class="op">,</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> (list) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> input <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> validated <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(input)<span class="op">;</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> result <span class="op">=</span> validated<span class="op">.</span><span class="at">is_valid</span> <span class="op">?</span> [validated<span class="op">.</span><span class="at">param</span><span class="op">,</span> <span class="op">...</span>list ] <span class="op">:</span> [<span class="op">...</span>list]</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> uniqueResult <span class="op">=</span> [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(result)]<span class="op">;</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  <span class="co">// STORE persistent</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>      localStorage<span class="op">.</span><span class="fu">setItem</span>(_STORAGE_KEY<span class="op">,</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(uniqueResult))<span class="op">;</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> uniqueResult <span class="co">// new accumulated value</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>      } <span class="co">// end of reduce</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> accuButton</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>viewof HelpButton <span class="op">=</span> {</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hbut <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Help"</span>)<span class="op">;</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> hbut</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>viewof CopyButton <span class="op">=</span>  Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Clip"</span><span class="op">,</span>{</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> () <span class="kw">=&gt;</span> { </span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Copy to clipboard</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>      <span class="bu">navigator</span><span class="op">.</span><span class="at">clipboard</span><span class="op">.</span><span class="fu">writeText</span>(<span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(AccuStorage))</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">then</span>(() <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">'Copied to clipboard!'</span>))</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>       <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">'Failed to copy:'</span><span class="op">,</span> err))<span class="op">;</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="co">// augmet action logic with cell to storage binding </span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>viewof RazButton <span class="op">=</span> {</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _STORAGE_KEY <span class="op">=</span> <span class="st">"prophete"</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> razbut <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"NOPE"</span><span class="op">,</span>{</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> () <span class="kw">=&gt;</span> { </span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a> <span class="co">//       localStorage.setItem(_STORAGE_KEY, JSON.stringify(AccuStorage));</span></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> razbut</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
@@ -309,20 +307,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="97" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 96;"><span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="co">//================== REACTIVE PREVIEW OF INPUT </span></span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>RefPreview <span class="op">=</span> {</span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mb <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(RefInput)<span class="op">;</span></span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mb<span class="op">.</span><span class="at">is_valid</span>) {</span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mir <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(mb<span class="op">.</span><span class="at">param</span>)<span class="op">;</span></span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="co">//    await mir.displayData(); </span></span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="co">//    return mir.outputContent;</span></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cf">await</span> mir<span class="op">.</span><span class="at">data</span><span class="op">;</span></span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="vs">`&lt;div&gt;&lt;ul&gt;&lt;li&gt;</span><span class="sc">${</span>mb<span class="op">.</span><span class="at">param</span><span class="sc">}</span><span class="vs">&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`</span>  </span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="94" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 93;"><span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="co">//================== REACTIVE PREVIEW OF INPUT </span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>RefPreview <span class="op">=</span> {</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mb <span class="op">=</span> <span class="kw">new</span> <span class="fu">Bcve</span>(RefInput)<span class="op">;</span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mb<span class="op">.</span><span class="at">is_valid</span>) {</span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mir <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(mb<span class="op">.</span><span class="at">param</span>)<span class="op">;</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a><span class="co">//    await mir.displayData(); </span></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="co">//    return mir.outputContent;</span></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cf">await</span> mir<span class="op">.</span><span class="at">data</span><span class="op">;</span></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="vs">`&lt;div&gt;&lt;ul&gt;&lt;li&gt;</span><span class="sc">${</span>mb<span class="op">.</span><span class="at">param</span><span class="sc">}</span><span class="vs">&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`</span>  </span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="declaration">
 
@@ -330,58 +328,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="117" data-source-offset="-24"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 116;"><span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>restyling <span class="op">=</span> {</span>
-<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>  viewof AccuStorage<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-warning"</span>)<span class="op">;</span></span>
-<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>  viewof HelpButton<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-info"</span>)<span class="op">;</span></span>
-<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>  viewof CopyButton<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-success"</span>)<span class="op">;</span></span>
-<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>  viewof RazButton<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-danger"</span>)<span class="op">;</span></span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Very Great</span></span>
-<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mib <span class="op">=</span> viewof AccuStorage<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mib) {</span>
-<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn'</span><span class="op">,</span><span class="st">'btn-warning'</span>)<span class="op">;</span></span>
-<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hbut <span class="op">=</span> viewof HelpButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (hbut) {</span>
-<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>    hbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>    hbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn'</span><span class="op">,</span> <span class="st">'btn-info'</span>)<span class="op">;</span></span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>  } </span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> copbut <span class="op">=</span> viewof CopyButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (copbut) {</span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>    copbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>    copbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-success'</span>)<span class="op">;</span></span>
-<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>  }  </span>
-<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> razbut <span class="op">=</span> viewof RazButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (razbut) {</span>
-<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>    razbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>    razbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-danger'</span>)<span class="op">;</span></span>
-<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>  }  </span>
-<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a><span class="co">// RESTYLING of INPUT</span></span>
-<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mii <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
-<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mii) {</span>
-<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>    mii<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"form-control"</span>)<span class="op">;</span></span>
-<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> inp <span class="op">=</span> mii<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'input'</span>)<span class="op">;</span></span>
-<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (inp) {</span>
-<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>    inp<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">border</span> <span class="op">=</span> <span class="st">"none"</span><span class="op">;</span></span>
-<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>    inp<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">outline</span> <span class="op">=</span> <span class="st">"none"</span><span class="op">;</span></span>
-<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a><span class="co">// VIEWOF</span></span>
-<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="button-row"&gt;</span></span>
-<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof RefInput<span class="sc">}</span></span>
-<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof AccuStorage<span class="sc">}</span></span>
-<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof CopyButton<span class="sc">}</span></span>
-<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof HelpButton<span class="sc">}</span></span>
-<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof RazButton<span class="sc">}</span></span>
-<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="114" data-source-offset="-24"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 113;"><span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>restyling <span class="op">=</span> {</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>  viewof AccuStorage<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-warning"</span>)<span class="op">;</span></span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>  viewof HelpButton<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-info"</span>)<span class="op">;</span></span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>  viewof CopyButton<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-success"</span>)<span class="op">;</span></span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>  viewof RazButton<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"btn"</span><span class="op">,</span> <span class="st">"btn-danger"</span>)<span class="op">;</span></span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Very Great</span></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mib <span class="op">=</span> viewof AccuStorage<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mib) {</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn'</span><span class="op">,</span><span class="st">'btn-warning'</span>)<span class="op">;</span></span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hbut <span class="op">=</span> viewof HelpButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (hbut) {</span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>    hbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>    hbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn'</span><span class="op">,</span> <span class="st">'btn-info'</span>)<span class="op">;</span></span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> copbut <span class="op">=</span> viewof CopyButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (copbut) {</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>    copbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>    copbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-success'</span>)<span class="op">;</span></span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> razbut <span class="op">=</span> viewof RazButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (razbut) {</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>    razbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>    razbut<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-danger'</span>)<span class="op">;</span></span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a><span class="co">// RESTYLING of INPUT</span></span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mii <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mii) {</span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>    mii<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"form-control"</span>)<span class="op">;</span></span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> inp <span class="op">=</span> mii<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'input'</span>)<span class="op">;</span></span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (inp) {</span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>    inp<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">border</span> <span class="op">=</span> <span class="st">"none"</span><span class="op">;</span></span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>    inp<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">outline</span> <span class="op">=</span> <span class="st">"none"</span><span class="op">;</span></span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a><span class="co">// VIEWOF</span></span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="button-row"&gt;</span></span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof RefInput<span class="sc">}</span></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof AccuStorage<span class="sc">}</span></span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof CopyButton<span class="sc">}</span></span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof HelpButton<span class="sc">}</span></span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a><span class="vs">    </span><span class="sc">${</span>viewof RazButton<span class="sc">}</span></span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a><span class="vs"> &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-5-1" data-nodetype="declaration">
@@ -396,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="171" data-source-offset="-1432"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 170;"><span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>RefPreview<span class="op">.</span><span class="fu">map</span>(item <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;div style="line-height: 1.4; margin-bottom: 10px; color: amber"&gt;&lt;strong&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">ref</span><span class="sc">}</span><span class="vs">&lt;/strong&gt; </span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="sc">}</span><span class="vs"> &lt;em&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">version</span><span class="sc">}</span><span class="vs">&lt;/em&gt;&lt;/div&gt;`</span>)<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="168" data-source-offset="-1432"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 167;"><span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>RefPreview<span class="op">.</span><span class="fu">map</span>(item <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;div style="line-height: 1.4; margin-bottom: 10px; color: amber"&gt;&lt;strong&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">ref</span><span class="sc">}</span><span class="vs">&lt;/strong&gt; </span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="sc">}</span><span class="vs"> &lt;em&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">version</span><span class="sc">}</span><span class="vs">&lt;/em&gt;&lt;/div&gt;`</span>)<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-5-3" data-nodetype="expression">
@@ -406,16 +404,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="177" data-source-offset="-31"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 176;"><span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>RefData <span class="op">=</span> {</span>
-<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>  <span class="co">// DATA is imported from BibleBooksCodes_Tables.js</span></span>
-<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mir <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(AccuStorage)<span class="op">;</span></span>
-<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> miresult <span class="op">=</span> <span class="cf">await</span> mir<span class="op">.</span><span class="at">data</span></span>
-<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> miresult</span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="co">// DISPLAY the list with Details and Summary</span></span>
-<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>RefData<span class="op">.</span><span class="fu">map</span>(item <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;details style="line-height: 1.6; margin-bottom: 10px;"&gt;&lt;summary&gt;&lt;strong&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">ref</span><span class="sc">}</span><span class="vs"> &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; </span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">45</span>)<span class="sc">}</span><span class="vs"> ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="sc">}</span><span class="vs"> &lt;em&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">version</span><span class="sc">}</span><span class="vs">&lt;/em&gt;  </span><span class="sc">${</span>item<span class="op">.</span><span class="at">cacheStatus</span><span class="sc">}</span><span class="vs">:</span><span class="sc">${</span>item<span class="op">.</span><span class="at">duration_fetch</span><span class="sc">}</span><span class="vs">ms&lt;/details&gt;`</span>)<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="174" data-source-offset="-31"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 173;"><span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>RefData <span class="op">=</span> {</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>  <span class="co">// DATA is imported from BibleBooksCodes_Tables.js</span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> mir <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ref</span>(AccuStorage)<span class="op">;</span></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> mir<span class="op">.</span><span class="fu">fetch_parallel</span>()<span class="op">;</span>   <span class="co">// Wait for data to be fetched</span></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> miresult <span class="op">=</span> <span class="cf">await</span> mir<span class="op">.</span><span class="at">data</span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> miresult</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="co">// DISPLAY the list with Details and Summary</span></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span><span class="sc">${</span>RefData<span class="op">.</span><span class="fu">map</span>(item <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;details style="line-height: 1.6; margin-bottom: 10px;"&gt;&lt;summary&gt;&lt;strong&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">ref</span><span class="sc">}</span><span class="vs"> &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; </span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">45</span>)<span class="sc">}</span><span class="vs"> ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">content</span><span class="sc">}</span><span class="vs"> &lt;em&gt;</span><span class="sc">${</span>item<span class="op">.</span><span class="at">version</span><span class="sc">}</span><span class="vs">&lt;/em&gt;  </span><span class="sc">${</span>item<span class="op">.</span><span class="at">cacheStatus</span><span class="sc">}</span><span class="vs">:</span><span class="sc">${</span>item<span class="op">.</span><span class="at">duration_fetch</span><span class="sc">}</span><span class="vs">ms&lt;/details&gt;`</span>)<span class="sc">}</span><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-6-1" data-nodetype="declaration">
@@ -431,40 +429,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="190" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 189;"><span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a><span class="co">// at last, view accumulator of Refs</span></span>
-<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a><span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(viewof AccuStorage<span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-7" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 <div id="outputDiv">
-<div>
 <!--  any output comes here to outputDiv is considered Void-->
-<h2 class="anchored">
-LocalStorage Keys:
-</h2>
-<ul id="keyList">
-</ul>
 </div>
-</div>
-<script>
-const keyList = document.getElementById('keyList');
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const listItem = document.createElement('li');
-      listItem.textContent = key;
-      keyList.appendChild(listItem);
-  }
-</script>
 
 
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IElucHV0cyB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL2lucHV0c1wiO1xuaW1wb3J0IHsgaHRtbCB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL3N0ZGxpYlwiO1xuaW1wb3J0IHsgQmN2ZSwgUmVmIH0gZnJvbSBcIi4vQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1wiO1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLz09PT09PT09PT09PT09PT09PSAxLiBJTlBVVFNcbi8vIEVkaXRhYmxlIGlucHV0IGZpZWxkXG52aWV3b2YgUmVmSW5wdXQgPSB7XG4gIGNvbnN0IGlucHV0VGV4dCA9IElucHV0cy50ZXh0KHtcbiAgdmFsdWU6IFwiR2VuMToxXCIsXG4gIHN0eWxlOiBcIndpZHRoOiA4MHB4O1wiXG4gIH0pXG4gIHJldHVybiBpbnB1dFRleHRcbn1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy89PT09PT09PT09PT09PT09PT0gMi4gQlVUVE9OU1xuXG52aWV3b2YgQWNjdVN0b3JhZ2UgPSB7XG4gIC8vICBJTklUSUFMSVNBVElPTiBSRUFEIGZyb20gTG9jYWxTdG9yYWdlXG4gIGNvbnN0IF9TVE9SQUdFX0tFWSA9IFwicHJvcGhldGVcIlxuICBjb25zdCBzdG9yZWQgPSBKU09OLnBhcnNlKGxvY2FsU3RvcmFnZS5nZXRJdGVtKF9TVE9SQUdFX0tFWSkpXG4gIGNvbnN0IF9JTklUSUFMID0gc3RvcmVkID8/IFtcIkdlbjE6MVwiXVxuICBcbiAgY29uc3QgYWNjdUJ1dHRvbiA9IElucHV0cy5idXR0b24oXCJBZGRcIiwge1xuICAgIHZhbHVlOiBfSU5JVElBTCxcbiAgICByZWR1Y2U6IChsaXN0KSA9PiB7XG4gICAgICBjb25zdCBpbnB1dCA9IHZpZXdvZiBSZWZJbnB1dC52YWx1ZTtcbiAgICAgIGNvbnN0IHZhbGlkYXRlZCA9IG5ldyBCY3ZlKGlucHV0KTtcbiAgICAgIGNvbnN0IHJlc3VsdCA9IHZhbGlkYXRlZC5pc192YWxpZCA/IFt2YWxpZGF0ZWQucGFyYW0sIC4uLmxpc3QgXSA6IFsuLi5saXN0XVxuICAgICAgY29uc3QgdW5pcXVlUmVzdWx0ID0gWy4uLm5ldyBTZXQocmVzdWx0KV07XG4gIC8vIFNUT1JFIHBlcnNpc3RlbnRcbi8vICAgICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oX1NUT1JBR0VfS0VZLCBKU09OLnN0cmluZ2lmeSh1bmlxdWVSZXN1bHQpKTtcbiAgICAgIHJldHVybiB1bmlxdWVSZXN1bHQgLy8gbmV3IGFjY3VtdWxhdGVkIHZhbHVlXG4gICAgICB9IC8vIGVuZCBvZiByZWR1Y2VcbiAgICB9KTtcbiAgICBcbiAgICByZXR1cm4gYWNjdUJ1dHRvblxufVxuXG52aWV3b2YgSGVscEJ1dHRvbiA9IHtcbiAgY29uc3QgaGJ1dCA9IElucHV0cy5idXR0b24oXCJIZWxwXCIpO1xuICByZXR1cm4gaGJ1dFxufVxuXG52aWV3b2YgQ29weUJ1dHRvbiA9ICBJbnB1dHMuYnV0dG9uKFwiQ29weVwiLHtcbiAgICB2YWx1ZTogbnVsbCxcbiAgICByZWR1Y2U6ICgpID0+IHsgXG4gICAgICAvLyBDb3B5IHRvIGNsaXBib2FyZFxuICAgICAgbmF2aWdhdG9yLmNsaXBib2FyZC53cml0ZVRleHQoSlNPTi5zdHJpbmdpZnkoQWNjdVN0b3JhZ2UpKVxuICAgICAgICAudGhlbigoKSA9PiBjb25zb2xlLmxvZygnQ29waWVkIHRvIGNsaXBib2FyZCEnKSlcbiAgICAgICAuY2F0Y2goZXJyID0+IGNvbnNvbGUuZXJyb3IoJ0ZhaWxlZCB0byBjb3B5OicsIGVycikpO1xuICAgIH1cbn0pO1xuXG4vLyBhdWdtZXQgYWN0aW9uIGxvZ2ljIHdpdGggY2VsbCB0byBzdG9yYWdlIGJpbmRpbmcgXG52aWV3b2YgUmF6QnV0dG9uID0ge1xuICBjb25zdCBfU1RPUkFHRV9LRVkgPSBcIlhwcm9waGV0ZVwiXG4gIGNvbnN0IHJhemJ1dCA9IElucHV0cy5idXR0b24oXCJTdG9yZVwiLHtcbiAgICB2YWx1ZTogbnVsbCxcbiAgICByZWR1Y2U6ICgpID0+IHsgXG4gICAgICAgIGxvY2FsU3RvcmFnZS5zZXRJdGVtKF9TVE9SQUdFX0tFWSwgSlNPTi5zdHJpbmdpZnkoQWNjdVN0b3JhZ2UpKTtcbiAgICB9XG4gIH0pO1xuICByZXR1cm4gcmF6YnV0XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLz09PT09PT09PT09PT09PT09PSBSRUFDVElWRSBQUkVWSUVXIE9GIElOUFVUIFxuUmVmUHJldmlldyA9IHtcbiAgY29uc3QgbWIgPSBuZXcgQmN2ZShSZWZJbnB1dCk7XG4gIFxuICBpZiAobWIuaXNfdmFsaWQpIHtcbiAgICBjb25zdCBtaXIgPSBuZXcgUmVmKG1iLnBhcmFtKTtcbiAgICBhd2FpdCBtaXIuZmV0Y2hfcGFyYWxsZWwoKTsgICAvLyBXYWl0IGZvciBkYXRhIHRvIGJlIGZldGNoZWRcbi8vICAgIGF3YWl0IG1pci5kaXNwbGF5RGF0YSgpOyBcbi8vICAgIHJldHVybiBtaXIub3V0cHV0Q29udGVudDtcbiAgICByZXR1cm4gYXdhaXQgbWlyLmRhdGE7XG4gIH0gZWxzZSB7XG4gICAgcmV0dXJuIGA8ZGl2Pjx1bD48bGk+JHttYi5wYXJhbX08L2xpPjwvdWw+PC9kaXY+YCAgXG4gIH1cbn1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gUkVTVFlMSU5HIG9mIEJ1dHRvbnNcbnJlc3R5bGluZyA9IHtcbiAgdmlld29mIEFjY3VTdG9yYWdlLmNsYXNzTGlzdC5hZGQoXCJidG5cIiwgXCJidG4td2FybmluZ1wiKTtcbiAgdmlld29mIEhlbHBCdXR0b24uY2xhc3NMaXN0LmFkZChcImJ0blwiLCBcImJ0bi1pbmZvXCIpO1xuICB2aWV3b2YgQ29weUJ1dHRvbi5jbGFzc0xpc3QuYWRkKFwiYnRuXCIsIFwiYnRuLXN1Y2Nlc3NcIik7XG4gIHZpZXdvZiBSYXpCdXR0b24uY2xhc3NMaXN0LmFkZChcImJ0blwiLCBcImJ0bi1kYW5nZXJcIik7XG5cbiAgLy8gVmVyeSBHcmVhdFxuICBjb25zdCBtaWIgPSB2aWV3b2YgQWNjdVN0b3JhZ2UucXVlcnlTZWxlY3RvcignYnV0dG9uLmJ0bi1xdWFydG8nKTtcbiAgaWYgKG1pYikge1xuICAgIG1pYi5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gICAgbWliLmNsYXNzTGlzdC5hZGQoJ2J0bicsJ2J0bi13YXJuaW5nJyk7XG4gIH1cbiAgXG4gIGNvbnN0IGhidXQgPSB2aWV3b2YgSGVscEJ1dHRvbi5xdWVyeVNlbGVjdG9yKCdidXR0b24uYnRuLXF1YXJ0bycpO1xuICBpZiAoaGJ1dCkge1xuICAgIGhidXQuY2xhc3NMaXN0LnJlbW92ZSgnYnRuLXF1YXJ0bycpO1xuICAgIGhidXQuY2xhc3NMaXN0LmFkZCgnYnRuJywgJ2J0bi1pbmZvJyk7XG4gIH0gXG4gIFxuICBjb25zdCBjb3BidXQgPSB2aWV3b2YgQ29weUJ1dHRvbi5xdWVyeVNlbGVjdG9yKCdidXR0b24uYnRuLXF1YXJ0bycpO1xuICBpZiAoY29wYnV0KSB7XG4gICAgY29wYnV0LmNsYXNzTGlzdC5yZW1vdmUoJ2J0bi1xdWFydG8nKTtcbiAgICBjb3BidXQuY2xhc3NMaXN0LmFkZCgnYnRuLXN1Y2Nlc3MnKTtcbiAgfSAgXG5cbiBjb25zdCByYXpidXQgPSB2aWV3b2YgUmF6QnV0dG9uLnF1ZXJ5U2VsZWN0b3IoJ2J1dHRvbi5idG4tcXVhcnRvJyk7XG4gIGlmIChyYXpidXQpIHtcbiAgICByYXpidXQuY2xhc3NMaXN0LnJlbW92ZSgnYnRuLXF1YXJ0bycpO1xuICAgIHJhemJ1dC5jbGFzc0xpc3QuYWRkKCdidG4tZGFuZ2VyJyk7XG4gIH0gIFxuXG4vLyBSRVNUWUxJTkcgb2YgSU5QVVRcbiAgY29uc3QgbWlpID0gdmlld29mIFJlZklucHV0LnF1ZXJ5U2VsZWN0b3IoJ2RpdicpO1xuICBpZiAobWlpKSB7XG4gICAgbWlpLmNsYXNzTGlzdC5hZGQoXCJmb3JtLWNvbnRyb2xcIik7XG4gIH1cbiAgXG4gIGNvbnN0IGlucCA9IG1paS5xdWVyeVNlbGVjdG9yKCdpbnB1dCcpO1xuICBpZiAoaW5wKSB7XG4gICAgaW5wLnN0eWxlLmJvcmRlciA9IFwibm9uZVwiO1xuICAgIGlucC5zdHlsZS5vdXRsaW5lID0gXCJub25lXCI7XG4gIH1cbn1cblxuLy8gVklFV09GXG5odG1sYDxkaXYgY2xhc3M9XCJidXR0b24tcm93XCI+XG4gICAgJHt2aWV3b2YgUmVmSW5wdXR9XG4gICAgJHt2aWV3b2YgQWNjdVN0b3JhZ2V9XG4gICAgJHt2aWV3b2YgQ29weUJ1dHRvbn1cbiAgICAke3ZpZXdvZiBIZWxwQnV0dG9ufVxuICAgICR7dmlld29mIFJhekJ1dHRvbn1cbiAgPC9kaXY+YFxuXG4vLyBEaXNwbGF5IHRoZSBsaXN0XG5odG1sYCR7UmVmUHJldmlldy5tYXAoaXRlbSA9PiBodG1sYDxkaXYgc3R5bGU9XCJsaW5lLWhlaWdodDogMS40OyBtYXJnaW4tYm90dG9tOiAxMHB4OyBjb2xvcjogYW1iZXJcIj48c3Ryb25nPiR7aXRlbS5yZWZ9PC9zdHJvbmc+ICR7aXRlbS5jb250ZW50fSA8ZW0+JHtpdGVtLnZlcnNpb259PC9lbT48L2Rpdj5gKX1gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLz09PT09PT09PT09PT09PT09PSAzLiBGRVRDSFxuXG5SZWZEYXRhID0ge1xuICAvLyBEQVRBIGlzIGltcG9ydGVkIGZyb20gQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1xuICAgIGNvbnN0IG1pciA9IG5ldyBSZWYoQWNjdVN0b3JhZ2UpO1xuICAgIGF3YWl0IG1pci5mZXRjaF9wYXJhbGxlbCgpOyAgIC8vIFdhaXQgZm9yIGRhdGEgdG8gYmUgZmV0Y2hlZFxuICAgIGNvbnN0IG1pcmVzdWx0ID0gYXdhaXQgbWlyLmRhdGFcbiAgICByZXR1cm4gbWlyZXN1bHRcbn1cblxuLy8gRElTUExBWSB0aGUgbGlzdCB3aXRoIERldGFpbHMgYW5kIFN1bW1hcnlcbmh0bWxgJHtSZWZEYXRhLm1hcChpdGVtID0+IGh0bWxgPGRldGFpbHMgc3R5bGU9XCJsaW5lLWhlaWdodDogMS42OyBtYXJnaW4tYm90dG9tOiAxMHB4O1wiPjxzdW1tYXJ5PjxzdHJvbmc+JHtpdGVtLnJlZn0gPC9zdHJvbmc+PHNwYW4gc3R5bGU9J2ZvbnQtc2l6ZTogMC45ZW07Jz48ZW0+ICR7aXRlbS5jb250ZW50LnNsaWNlKDAsNDUpfSAuLi48L2VtPjwvc3Bhbj48L3N1bW1hcnk+JHtpdGVtLmNvbnRlbnR9IDxlbT4ke2l0ZW0udmVyc2lvbn08L2VtPiAgJHtpdGVtLmNhY2hlU3RhdHVzfToke2l0ZW0uZHVyYXRpb25fZmV0Y2h9bXM8L2RldGFpbHM+YCl9YFxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBhdCBsYXN0LCB2aWV3IGFjY3VtdWxhdG9yIG9mIFJlZnNcbkpTT04uc3RyaW5naWZ5KHZpZXdvZiBBY2N1U3RvcmFnZS52YWx1ZSk7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ1JlZklucHV0JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ0FjY3VTdG9yYWdlJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ0hlbHBCdXR0b24nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnQ29weUJ1dHRvbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdSYXpCdXR0b24nKSJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IElucHV0cyB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL2lucHV0c1wiO1xuaW1wb3J0IHsgaHRtbCB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL3N0ZGxpYlwiO1xuaW1wb3J0IHsgQmN2ZSwgUmVmIH0gZnJvbSBcIi4vQmlibGVCb29rc0NvZGVzX1RhYmxlcy5qc1wiO1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLz09PT09PT09PT09PT09PT09PSAxLiBJTlBVVFNcbi8vIEVkaXRhYmxlIGlucHV0IGZpZWxkXG52aWV3b2YgUmVmSW5wdXQgPSB7XG4gIGNvbnN0IGlucHV0VGV4dCA9IElucHV0cy50ZXh0KHtcbiAgdmFsdWU6IFwiR2VuMToxXCIsXG4gIHN0eWxlOiBcIndpZHRoOiA4MHB4O1wiXG4gIH0pXG4gIHJldHVybiBpbnB1dFRleHRcbn1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy89PT09PT09PT09PT09PT09PT0gMi4gQlVUVE9OU1xuXG52aWV3b2YgQWNjdVN0b3JhZ2UgPSB7XG4gIC8vICBJTklUSUFMSVNBVElPTiBSRUFEIGZyb20gTG9jYWxTdG9yYWdlXG4gIGNvbnN0IF9TVE9SQUdFX0tFWSA9IFwicHJvcGhldGVcIlxuICBjb25zdCBzdG9yZWQgPSBKU09OLnBhcnNlKGxvY2FsU3RvcmFnZS5nZXRJdGVtKF9TVE9SQUdFX0tFWSkpXG4gIGNvbnN0IF9JTklUSUFMID0gc3RvcmVkID8/IFtcIkdlbjE6MVwiXVxuICBcbiAgY29uc3QgYWNjdUJ1dHRvbiA9IElucHV0cy5idXR0b24oXCJTdG9yZVwiLCB7XG4gICAgdmFsdWU6IF9JTklUSUFMLFxuICAgIHJlZHVjZTogKGxpc3QpID0+IHtcbiAgICAgIGNvbnN0IGlucHV0ID0gdmlld29mIFJlZklucHV0LnZhbHVlO1xuICAgICAgY29uc3QgdmFsaWRhdGVkID0gbmV3IEJjdmUoaW5wdXQpO1xuICAgICAgY29uc3QgcmVzdWx0ID0gdmFsaWRhdGVkLmlzX3ZhbGlkID8gW3ZhbGlkYXRlZC5wYXJhbSwgLi4ubGlzdCBdIDogWy4uLmxpc3RdXG4gICAgICBjb25zdCB1bmlxdWVSZXN1bHQgPSBbLi4ubmV3IFNldChyZXN1bHQpXTtcbiAgLy8gU1RPUkUgcGVyc2lzdGVudFxuICAgICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oX1NUT1JBR0VfS0VZLCBKU09OLnN0cmluZ2lmeSh1bmlxdWVSZXN1bHQpKTtcbiAgICAgIHJldHVybiB1bmlxdWVSZXN1bHQgLy8gbmV3IGFjY3VtdWxhdGVkIHZhbHVlXG4gICAgICB9IC8vIGVuZCBvZiByZWR1Y2VcbiAgICB9KTtcbiAgICBcbiAgICByZXR1cm4gYWNjdUJ1dHRvblxufVxuXG52aWV3b2YgSGVscEJ1dHRvbiA9IHtcbiAgY29uc3QgaGJ1dCA9IElucHV0cy5idXR0b24oXCJIZWxwXCIpO1xuICByZXR1cm4gaGJ1dFxufVxuXG52aWV3b2YgQ29weUJ1dHRvbiA9ICBJbnB1dHMuYnV0dG9uKFwiQ2xpcFwiLHtcbiAgICB2YWx1ZTogbnVsbCxcbiAgICByZWR1Y2U6ICgpID0+IHsgXG4gICAgICAvLyBDb3B5IHRvIGNsaXBib2FyZFxuICAgICAgbmF2aWdhdG9yLmNsaXBib2FyZC53cml0ZVRleHQoSlNPTi5zdHJpbmdpZnkoQWNjdVN0b3JhZ2UpKVxuICAgICAgICAudGhlbigoKSA9PiBjb25zb2xlLmxvZygnQ29waWVkIHRvIGNsaXBib2FyZCEnKSlcbiAgICAgICAuY2F0Y2goZXJyID0+IGNvbnNvbGUuZXJyb3IoJ0ZhaWxlZCB0byBjb3B5OicsIGVycikpO1xuICAgIH1cbn0pO1xuXG4vLyBhdWdtZXQgYWN0aW9uIGxvZ2ljIHdpdGggY2VsbCB0byBzdG9yYWdlIGJpbmRpbmcgXG52aWV3b2YgUmF6QnV0dG9uID0ge1xuICBjb25zdCBfU1RPUkFHRV9LRVkgPSBcInByb3BoZXRlXCJcbiAgY29uc3QgcmF6YnV0ID0gSW5wdXRzLmJ1dHRvbihcIk5PUEVcIix7XG4gICAgdmFsdWU6IG51bGwsXG4gICAgcmVkdWNlOiAoKSA9PiB7IFxuIC8vICAgICAgIGxvY2FsU3RvcmFnZS5zZXRJdGVtKF9TVE9SQUdFX0tFWSwgSlNPTi5zdHJpbmdpZnkoQWNjdVN0b3JhZ2UpKTtcbiAgICB9XG4gIH0pO1xuICByZXR1cm4gcmF6YnV0XG59XG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vPT09PT09PT09PT09PT09PT09IFJFQUNUSVZFIFBSRVZJRVcgT0YgSU5QVVQgXG5SZWZQcmV2aWV3ID0ge1xuICBjb25zdCBtYiA9IG5ldyBCY3ZlKFJlZklucHV0KTtcbiAgXG4gIGlmIChtYi5pc192YWxpZCkge1xuICAgIGNvbnN0IG1pciA9IG5ldyBSZWYobWIucGFyYW0pO1xuICAgIGF3YWl0IG1pci5mZXRjaF9wYXJhbGxlbCgpOyAgIC8vIFdhaXQgZm9yIGRhdGEgdG8gYmUgZmV0Y2hlZFxuLy8gICAgYXdhaXQgbWlyLmRpc3BsYXlEYXRhKCk7IFxuLy8gICAgcmV0dXJuIG1pci5vdXRwdXRDb250ZW50O1xuICAgIHJldHVybiBhd2FpdCBtaXIuZGF0YTtcbiAgfSBlbHNlIHtcbiAgICByZXR1cm4gYDxkaXY+PHVsPjxsaT4ke21iLnBhcmFtfTwvbGk+PC91bD48L2Rpdj5gICBcbiAgfVxufVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBSRVNUWUxJTkcgb2YgQnV0dG9uc1xucmVzdHlsaW5nID0ge1xuICB2aWV3b2YgQWNjdVN0b3JhZ2UuY2xhc3NMaXN0LmFkZChcImJ0blwiLCBcImJ0bi13YXJuaW5nXCIpO1xuICB2aWV3b2YgSGVscEJ1dHRvbi5jbGFzc0xpc3QuYWRkKFwiYnRuXCIsIFwiYnRuLWluZm9cIik7XG4gIHZpZXdvZiBDb3B5QnV0dG9uLmNsYXNzTGlzdC5hZGQoXCJidG5cIiwgXCJidG4tc3VjY2Vzc1wiKTtcbiAgdmlld29mIFJhekJ1dHRvbi5jbGFzc0xpc3QuYWRkKFwiYnRuXCIsIFwiYnRuLWRhbmdlclwiKTtcblxuICAvLyBWZXJ5IEdyZWF0XG4gIGNvbnN0IG1pYiA9IHZpZXdvZiBBY2N1U3RvcmFnZS5xdWVyeVNlbGVjdG9yKCdidXR0b24uYnRuLXF1YXJ0bycpO1xuICBpZiAobWliKSB7XG4gICAgbWliLmNsYXNzTGlzdC5yZW1vdmUoJ2J0bi1xdWFydG8nKTtcbiAgICBtaWIuY2xhc3NMaXN0LmFkZCgnYnRuJywnYnRuLXdhcm5pbmcnKTtcbiAgfVxuICBcbiAgY29uc3QgaGJ1dCA9IHZpZXdvZiBIZWxwQnV0dG9uLnF1ZXJ5U2VsZWN0b3IoJ2J1dHRvbi5idG4tcXVhcnRvJyk7XG4gIGlmIChoYnV0KSB7XG4gICAgaGJ1dC5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gICAgaGJ1dC5jbGFzc0xpc3QuYWRkKCdidG4nLCAnYnRuLWluZm8nKTtcbiAgfSBcbiAgXG4gIGNvbnN0IGNvcGJ1dCA9IHZpZXdvZiBDb3B5QnV0dG9uLnF1ZXJ5U2VsZWN0b3IoJ2J1dHRvbi5idG4tcXVhcnRvJyk7XG4gIGlmIChjb3BidXQpIHtcbiAgICBjb3BidXQuY2xhc3NMaXN0LnJlbW92ZSgnYnRuLXF1YXJ0bycpO1xuICAgIGNvcGJ1dC5jbGFzc0xpc3QuYWRkKCdidG4tc3VjY2VzcycpO1xuICB9ICBcblxuIGNvbnN0IHJhemJ1dCA9IHZpZXdvZiBSYXpCdXR0b24ucXVlcnlTZWxlY3RvcignYnV0dG9uLmJ0bi1xdWFydG8nKTtcbiAgaWYgKHJhemJ1dCkge1xuICAgIHJhemJ1dC5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gICAgcmF6YnV0LmNsYXNzTGlzdC5hZGQoJ2J0bi1kYW5nZXInKTtcbiAgfSAgXG5cbi8vIFJFU1RZTElORyBvZiBJTlBVVFxuICBjb25zdCBtaWkgPSB2aWV3b2YgUmVmSW5wdXQucXVlcnlTZWxlY3RvcignZGl2Jyk7XG4gIGlmIChtaWkpIHtcbiAgICBtaWkuY2xhc3NMaXN0LmFkZChcImZvcm0tY29udHJvbFwiKTtcbiAgfVxuICBcbiAgY29uc3QgaW5wID0gbWlpLnF1ZXJ5U2VsZWN0b3IoJ2lucHV0Jyk7XG4gIGlmIChpbnApIHtcbiAgICBpbnAuc3R5bGUuYm9yZGVyID0gXCJub25lXCI7XG4gICAgaW5wLnN0eWxlLm91dGxpbmUgPSBcIm5vbmVcIjtcbiAgfVxufVxuXG4vLyBWSUVXT0Zcbmh0bWxgPGRpdiBjbGFzcz1cImJ1dHRvbi1yb3dcIj5cbiAgICAke3ZpZXdvZiBSZWZJbnB1dH1cbiAgICAke3ZpZXdvZiBBY2N1U3RvcmFnZX1cbiAgICAke3ZpZXdvZiBDb3B5QnV0dG9ufVxuICAgICR7dmlld29mIEhlbHBCdXR0b259XG4gICAgJHt2aWV3b2YgUmF6QnV0dG9ufVxuIDwvZGl2PmBcbiBcbi8vIERpc3BsYXkgdGhlIGxpc3Rcbmh0bWxgJHtSZWZQcmV2aWV3Lm1hcChpdGVtID0+IGh0bWxgPGRpdiBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxLjQ7IG1hcmdpbi1ib3R0b206IDEwcHg7IGNvbG9yOiBhbWJlclwiPjxzdHJvbmc+JHtpdGVtLnJlZn08L3N0cm9uZz4gJHtpdGVtLmNvbnRlbnR9IDxlbT4ke2l0ZW0udmVyc2lvbn08L2VtPjwvZGl2PmApfWBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vPT09PT09PT09PT09PT09PT09IDMuIEZFVENIXG5cblJlZkRhdGEgPSB7XG4gIC8vIERBVEEgaXMgaW1wb3J0ZWQgZnJvbSBCaWJsZUJvb2tzQ29kZXNfVGFibGVzLmpzXG4gICAgY29uc3QgbWlyID0gbmV3IFJlZihBY2N1U3RvcmFnZSk7XG4gICAgYXdhaXQgbWlyLmZldGNoX3BhcmFsbGVsKCk7ICAgLy8gV2FpdCBmb3IgZGF0YSB0byBiZSBmZXRjaGVkXG4gICAgY29uc3QgbWlyZXN1bHQgPSBhd2FpdCBtaXIuZGF0YVxuICAgIHJldHVybiBtaXJlc3VsdFxufVxuXG4vLyBESVNQTEFZIHRoZSBsaXN0IHdpdGggRGV0YWlscyBhbmQgU3VtbWFyeVxuaHRtbGAke1JlZkRhdGEubWFwKGl0ZW0gPT4gaHRtbGA8ZGV0YWlscyBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxLjY7IG1hcmdpbi1ib3R0b206IDEwcHg7XCI+PHN1bW1hcnk+PHN0cm9uZz4ke2l0ZW0ucmVmfSA8L3N0cm9uZz48c3BhbiBzdHlsZT0nZm9udC1zaXplOiAwLjllbTsnPjxlbT4gJHtpdGVtLmNvbnRlbnQuc2xpY2UoMCw0NSl9IC4uLjwvZW0+PC9zcGFuPjwvc3VtbWFyeT4ke2l0ZW0uY29udGVudH0gPGVtPiR7aXRlbS52ZXJzaW9ufTwvZW0+ICAke2l0ZW0uY2FjaGVTdGF0dXN9OiR7aXRlbS5kdXJhdGlvbl9mZXRjaH1tczwvZGV0YWlscz5gKX1gXG5cbi8vIFJlZkRhdGE7XG4vLyBhdCBsYXN0LCB2aWV3IGFjY3VtdWxhdG9yIG9mIFJlZnNcbi8vSlNPTi5zdHJpbmdpZnkodmlld29mIEFjY3VTdG9yYWdlLnZhbHVlKTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnUmVmSW5wdXQnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnQWNjdVN0b3JhZ2UnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnSGVscEJ1dHRvbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdDb3B5QnV0dG9uJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ1JhekJ1dHRvbicpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

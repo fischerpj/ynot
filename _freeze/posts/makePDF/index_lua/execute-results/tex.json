@@ -1,0 +1,17 @@
+{
+  "hash": "bb5a3f8c9629395c923b8cf6acfc5a33",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"lua_Shortcode\"\nsubtitle: \"Proof of Concept\"\ndate: \"2025-09-09\"\nimage: \"hurdler.jpg\"\nparams: \n  refs: [\"ROM2:13!SG21\",\"Gal2:20\"]\nformat:\n  pdf:\n    documentclass: scrartcl\n    classoption: [twocolumn, landscape]\n    papersize: letter\n    geometry:\n      - top=30mm\n      - left=40mm\n      - right=40mm\n      - heightrounded\n    mainfont: Lato\n    monofont: Arial\n    colorlinks: true\nexecute:\n  echo: false  \n---\n\n\n\n\n::: {#inputDiv}\n<!-- inputDiv is considered Void-->\n:::\n\n:::: {#outputDiv}\n<div>\n\n<!--  any output comes here to outputDiv is considered Void-->\n\n</div>\n::::\n\n\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"ROM2:13!SG21\" \"Gal2:20\"     \n```\n\n\n:::\n:::\n\n\n\n\n",
+    "supporting": [
+      "index_lua_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

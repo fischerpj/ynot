@@ -1,0 +1,21 @@
+---
+title: "Rchunk Example"
+engine: knitr
+filters:
+  - rchunk
+execute: 
+  eval: true
+  results: asis
+---
+
+## Heading
+
+This filter adds formatting to heading text.
+
+```{r}
+#| echo: true
+a <- 0
+cat(summary(mtcars))
+```
+
+inject-r-code

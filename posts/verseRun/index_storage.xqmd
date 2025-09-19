@@ -1,6 +1,6 @@
 ---
-title: "verseRun"
-date: "2025-09-08"
+title: "alias verseRun"
+date: "2025-09-19"
 image: "hurdler.jpg"
 format: 
   html:
@@ -11,7 +11,7 @@ execute:
   echo: false
 ---
 
-> **Instant View & Persistent Bible Verses**.
+> **Instant & Persistent Bible Verses**.
 
 ::: {#inputDiv}
 <!-- inputDiv is considered Void-->
@@ -162,8 +162,8 @@ html`<div class="button-row">
     ${viewof CopyButton}
     ${viewof HelpButton}
     ${viewof RazButton}
- </div>`
- 
+  </div>`
+
 // Display the list
 html`${RefPreview.map(item => html`<div style="line-height: 1.4; margin-bottom: 10px; color: amber"><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></div>`)}`
 ```
@@ -182,11 +182,37 @@ RefData = {
 // DISPLAY the list with Details and Summary
 html`${RefData.map(item => html`<details style="line-height: 1.6; margin-bottom: 10px;"><summary><strong>${item.ref} </strong><span style='font-size: 0.9em;'><em> ${item.content.slice(0,45)} ...</em></span></summary>${item.content} <em>${item.version}</em>  ${item.cacheStatus}:${item.duration_fetch}ms</details>`)}`
 
-// RefData;
-// at last, view accumulator of Refs
-//JSON.stringify(viewof AccuStorage.value);
+RefData;
+
 ```
 
-::: {#outputDiv}
+```{ojs}
+// at last, view accumulator of Refs
+JSON.stringify(viewof AccuStorage.value);
+```
+
+:::: {#outputDiv}
 <!--  any output comes here to outputDiv is considered Void-->
-:::
+
+<div>
+
+<h2>LocalStorage Keys:</h2>
+
+<ul id="keyList">
+
+</ul>
+
+</div>
+::::
+
+```{=html}
+<script>
+const keyList = document.getElementById('keyList');
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const listItem = document.createElement('li');
+      listItem.textContent = key;
+      keyList.appendChild(listItem);
+  }
+</script>
+```
