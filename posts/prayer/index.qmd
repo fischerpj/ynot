@@ -2,9 +2,7 @@
 title: la prière
 author: 'granPiero'
 date: '2025-09-30'
-slug: la-priere
-categories: []
-tags: []
+image: "hurdler.jpg"
 params:
   refs: Gen1:1
   refs_after: Rom1:1
