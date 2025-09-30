@@ -17,7 +17,9 @@ format:
 
 ![Pézenas](pezenas.png)
 
-1.  ![Restaurant](prestjean.png)
+1.  
+
+    ![Restaurant](prestjean.png)
 
 2.  Hébergement
 
