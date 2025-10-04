@@ -19341,8 +19341,9 @@ export class OsisBibleBooks {
       const infoLower = info.alternate.map(xx => xx.toLowerCase())
       if ( osisLower === abbrevLower || infoLower.includes(abbrevLower)) {
         return osis;
-      }
+      } 
     }
+    // return not null
     return null;
   }
   

@@ -12,6 +12,6 @@ about:
       href: https://github.com
 ---
 
-**Ynot** (Why not!) is my personal gitHub repo to **store infos** as *issues*, that are anchored to any pages of my other websites.
+**Ynot** (Why not!) is a **Quarto website** of its own with a feature **storing infos** as *issues*, that are anchored to any pages of my other websites.
 
-Ynot is sourced from docker rv5/ynot..
+Ynot is build with *quarto render* and sourced from docker v2519/ynot (deprecated rv5/ynot)

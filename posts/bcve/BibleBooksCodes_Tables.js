@@ -19333,7 +19333,7 @@ export class OsisBibleBooks {
     this.osisAbbr = this.getOsisFromAlternate(input)
   }
   
-  // lookup helper: returns OSIS code if given any known abbreviation
+  // lookup helper: returns OSIS code if given any known abbreviation and null if unknown
   getOsisFromAlternate(abbrev) {
     for (const [osis, info] of Object.entries(this.osisBooks)) {
       const osisLower = osis.toLowerCase()
@@ -19341,9 +19341,8 @@ export class OsisBibleBooks {
       const infoLower = info.alternate.map(xx => xx.toLowerCase())
       if ( osisLower === abbrevLower || infoLower.includes(abbrevLower)) {
         return osis;
-      } 
+      }
     }
-    // return not null
     return null;
   }
   
