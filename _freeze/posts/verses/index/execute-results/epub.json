@@ -1,0 +1,15 @@
+{
+  "hash": "64241a1958f4e72f54f7e240f01eaf3f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"verses, mere edition\"\nsubtitle: \"injected via render_refs_()\"\ndate: \"2025-10-18\"\nimage: \"hurdler.jpg\"\nformat:\n  epub\nexecute:\n  echo: false  \n---\n\n\n\n::: {#inputDiv}\n\\<!-- inputDiv is considered Void\n\npdf: documentclass: scrartcl classoption: \\[twocolumn, portrait\\] papersize: A4 geometry: - top=20mm - left=30mm - right=30mm - heightrounded mainfont: Lato monofont: Arial colorlinks: true\n\n--\\>\n:::\n\n:::: {#outputDiv}\n<div>\n\n<!--  any output comes here to outputDiv is considered Void-->\n\n</div>\n::::\n\n\n\n- **Romains 2:13**: 13 En effet, ce ne sont pas ceux qui écoutent la loi qui sont justes devant Dieu, mais ce sont ceux qui la mettent en pratique qui seront déclarés justes.\n\n- **Matthieu 7:21**: 21 »Ceux qui me disent: ‘Seigneur, Seigneur!’ n'entreront pas tous dans le royaume des cieux, mais seulement celui qui fait la volonté de mon Père céleste.\n\n- **Jacques 1:22**: 22 Mettez en pratique la parole et ne vous contentez pas de l'écouter en vous trompant vous-mêmes par de faux raisonnements.\n\n- **Luc 6:46**: 46 »Pourquoi m'appelez-vous ‘Seigneur, Seigneur!’ et ne faites-vous pas ce que je dis?\n\n- **Hébreux 4:2**: 2 En effet, cette bonne nouvelle nous a été annoncée aussi bien qu’à eux, mais la parole qu’ils ont entendue ne leur a servi à rien parce qu’ils n’étaient pas unis dans la foi à ceux qui ont écouté.\n\n- **1 Samuel 3:10**: 10 L'Eternel vint se tenir près de lui et appela comme les autres fois: «Samuel, Samuel!» Samuel répondit: «Parle, car ton serviteur écoute.»\n\n- **1 Samuel 3:1**: 3 Le jeune Samuel était au service de l'Eternel devant Eli. La parole de l'Eternel était rare à cette époque, les visions n'étaient pas fréquentes.\n\n- **Psaumes 33:9**: 9 car il parle, et la chose arrive,il ordonne, et elle existe.\n\n- **Romains 1:19-20**: 19 car ce qu'on peut connaître de Dieu est évident pour eux, puisque Dieu le leur a fait connaître.  20 En effet, les perfections invisibles de Dieu, sa puissance éternelle et sa divinité, se voient depuis la création du monde, elles se comprennent par ce qu’il a fait. Ils sont donc inexcusables,\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

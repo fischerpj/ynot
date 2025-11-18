@@ -1,7 +1,7 @@
 ---
-title: "Storage with Javascript"
+title: "Read LocalStorage"
 author: "granPiero"
-date: "2024-10-14"
+date: "2025-11-18"
 categories: [it]
 image: "hdisk.jpg"
 format: 
@@ -11,15 +11,15 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-> Demonstrate the feasibility of user interaction (input, action) with LocalStorage (set, get).
+> Read LocalStorage key "prophete"
 
-1.  Modify the DOM: take an **input**, trigger a **button** to echo the **value** and save to **LocalStorage**
+1.  take an **input**, trigger a **button** to echo the **value**
 
 <input type="text" id="inputField" placeholder="Type something here">
 
 <button id="submitButton">
 
-Submit to LocalStorage
+Echo Input
 
 </button>
 
@@ -27,19 +27,17 @@ Submit to LocalStorage
 
 </p>
 
-2.  Read Back from LocalStorage: Trigger the **retrieval** and echo the value
+2.  Read from LocalStorage: Trigger the **retrieval** and echo the value
 
 <button id="getButton">
 
-Retrieve from LocalStorage
+Read from LocalStorage
 
 </button>
 
 <p id="retrievedText">
 
 3.  **One script** inserted here handles that all.
-
--   make it a content script extension.
 
 ```{=html}
 <script src="script.js"></script>
