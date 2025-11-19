@@ -1,0 +1,49 @@
+---
+title: "vFetch"
+date: "2025-09-08"
+image: "hurdler.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+execute:
+  echo: false
+---
+
+> Check verseFetch
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+:::
+
+```{ojs}
+import { Inputs } from "@observablehq/inputs";
+import { html } from "@observablehq/stdlib";
+import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
+
+```
+
+```{ojs}
+//================== REACTIVE PREVIEW OF INPUT 
+RefPreview = {
+  const mb = new Bcve("Ps42!KJV");
+  
+//  if (mb.is_valid ) {
+    const mir = new Ref(mb.param);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+//    await mir.displayData(); 
+//    return mir.outputContent;
+    return await mir.data;
+//  } else {
+//    return `<div><ul><li>${mb.param}</li></ul></div>`  
+//  }
+}
+
+// Display the list IF VALID
+html`${RefPreview.map(item => html`<div style="line-height: 1.4; margin-bottom: 10px; color: amber"><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></div>`)}`;
+```
+
+::: {#outputDiv}
+<!--  any output comes here to outputDiv is considered Void-->
+:::
