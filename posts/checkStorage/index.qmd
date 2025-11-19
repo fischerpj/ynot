@@ -1,0 +1,21 @@
+---
+title: "check_storage"
+author: "granPiero" 
+date: "2025-04-03"
+categories: [bible]
+image: "hdisk.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+> This checks your localStorage
+
+::: {#mainAnchor}
+:::
+
+```{=html}
+<script src="storage_display.js"></script>
+```
