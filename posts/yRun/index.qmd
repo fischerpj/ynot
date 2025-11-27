@@ -1,0 +1,84 @@
+---
+title: "yieldRun"
+date: "2025-11-27"
+image: "hurdler.jpg"
+format: html
+execute:
+  echo: false
+---
+
+> **Use yield to wait for DOM ready**.
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+:::
+
+```{ojs}
+import { Inputs } from "@observablehq/inputs";
+import { html } from "@observablehq/stdlib";
+import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
+
+```
+
+```{ojs}
+//================== 1. INPUTS
+// Editable input field
+viewof RefInput = {
+  const inputText = Inputs.text({
+  value: "Gen1:1",
+  style: "width: 80px;"
+  })
+  return inputText
+}
+
+```
+
+
+```{ojs}
+//================== REACTIVE PREVIEW OF INPUT 
+RefPreview = {
+  const mb = new Bcve(RefInput);
+  
+//  if (mb.is_valid ) {
+    const mir = new Ref(mb.param);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+//    await mir.displayData(); 
+//    return mir.outputContent;
+    return await mir.data;
+//  } else {
+//    return `<div><ul><li>${mb.param}</li></ul></div>`  
+//  }
+}
+```
+
+::: {#outputDiv}
+<!--  any output comes here to outputDiv is considered Void-->
+:::
+
+## ObservableJS demo
+
+```{ojs}
+// A promise that resolves when DOM is ready
+domReady = new Promise(resolve => {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", resolve);
+  } else {
+    resolve();
+  }
+})
+
+// A reactive view that updates once DOM is ready
+viewof demoValue = {
+//  const div = html`<div>⏳ Waiting for DOM…</div>`;
+//  yield div;   // show placeholder immediately
+
+  await domReady;  // wait until DOM is ready
+//  div.textContent = `DOM is ready, value displayed! ${RefPreview} `;
+
+  // from vRun: Display the list IF VALID
+  const divTwo = html`${RefPreview.map(item => html`<div style="line-height: 1.4; margin-bottom: 10px; color: amber"><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></div>`)}`;
+  
+  yield divTwo;   // update once DOM is ready
+}
+```
+

@@ -1,0 +1,174 @@
+---
+title: "verseRun"
+date: "2025-09-08"
+image: "hurdler.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+execute:
+  echo: false
+---
+
+> **Instant View & Persistent Bible Verses**.
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+:::
+
+```{ojs}
+import { Inputs } from "@observablehq/inputs";
+import { html } from "@observablehq/stdlib";
+import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
+
+```
+
+```{ojs}
+//================== 1. INPUTS
+// Editable input field
+viewof RefInput = {
+  const inputText = Inputs.text({
+  value: "Gen1:1",
+  style: "width: 80px;"
+  })
+  return inputText
+}
+
+```
+
+```{ojs}
+//================== 2. BUTTONS
+
+viewof AccuStorage = {
+  //  INITIALISATION READ from LocalStorage
+  const _STORAGE_KEY = "prophete"
+  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))
+  const _INITIAL = stored ?? ["Gen1:1"]
+  
+  const accuButton = Inputs.button("Store", {
+    value: _INITIAL,
+    reduce: (list) => {
+      const input = viewof RefInput.value;
+      const validated = new Bcve(input);
+      const result = validated.is_valid ? [validated.param, ...list ] : [...list]
+      const uniqueResult = [...new Set(result)];
+  // STORE persistent
+      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));
+      return uniqueResult // new accumulated value
+      } // end of reduce
+    });
+    
+    return accuButton
+}
+
+viewof HelpButton = {
+  const hbut = Inputs.button("Help");
+  return hbut
+}
+
+viewof CopyButton =  Inputs.button("Clip",{
+    value: null,
+    reduce: () => { 
+      // Copy to clipboard
+      navigator.clipboard.writeText(JSON.stringify(AccuStorage))
+        .then(() => console.log('Copied to clipboard!'))
+       .catch(err => console.error('Failed to copy:', err));
+    }
+});
+
+
+```
+
+```{ojs}
+//================== REACTIVE PREVIEW OF INPUT 
+RefPreview = {
+  const mb = new Bcve(RefInput);
+  
+//  if (mb.is_valid ) {
+    const mir = new Ref(mb.param);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+//    await mir.displayData(); 
+//    return mir.outputContent;
+    return await mir.data;
+//  } else {
+//    return `<div><ul><li>${mb.param}</li></ul></div>`  
+//  }
+}
+```
+
+```{ojs}
+// RESTYLING of Buttons
+restyling = {
+  viewof AccuStorage.classList.add("btn", "btn-warning");
+  viewof HelpButton.classList.add("btn", "btn-info");
+  viewof CopyButton.classList.add("btn", "btn-success");
+
+  // Very Great
+  const mib = viewof AccuStorage.querySelector('button.btn-quarto');
+  if (mib) {
+    mib.classList.remove('btn-quarto');
+    mib.classList.add('btn','btn-warning');
+  }
+  
+  const hbut = viewof HelpButton.querySelector('button.btn-quarto');
+  if (hbut) {
+    hbut.classList.remove('btn-quarto');
+    hbut.classList.add('btn', 'btn-info');
+  } 
+  
+  const copbut = viewof CopyButton.querySelector('button.btn-quarto');
+  if (copbut) {
+    copbut.classList.remove('btn-quarto');
+    copbut.classList.add('btn-success');
+  }  
+
+// RESTYLING of INPUT
+  const mii = viewof RefInput.querySelector('div');
+  if (mii) {
+    mii.classList.add("form-control");
+  }
+  
+  const inp = mii.querySelector('input');
+  if (inp) {
+    inp.style.border = "none";
+    inp.style.outline = "none";
+  }
+  
+};
+
+// VIEWOF
+html`<div class="button-row">
+    ${viewof RefInput}
+    ${viewof AccuStorage}
+    ${viewof CopyButton}
+    ${viewof HelpButton}
+ </div>`
+
+// Display the list IF VALID
+html`${RefPreview.map(item => html`<div style="line-height: 1.4; margin-bottom: 10px; color: amber"><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></div>`)}`;
+
+```
+
+```{ojs}
+//================== 3. FETCH
+
+RefData = {
+  // DATA is imported from BibleBooksCodes_Tables.js
+    const mir = new Ref(AccuStorage);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+    const miresult = await mir.data
+    return miresult
+}
+
+// DISPLAY the list with Details and Summary
+html`${RefData.map(item => html`<details style="line-height: 1.6; margin-bottom: 10px;"><summary><strong>${item.ref} </strong><span style='font-size: 0.9em;'><em> ${item.content.slice(0,45)} ...</em></span></summary>${item.content} <em>${item.version}</em>  ${item.cacheStatus}:${item.duration_fetch}ms</details>`)}`
+
+// RefData;
+// at last, view accumulator of Refs
+//JSON.stringify(viewof AccuStorage.value);
+```
+
+::: {#outputDiv}
+<!--  any output comes here to outputDiv is considered Void-->
+:::
