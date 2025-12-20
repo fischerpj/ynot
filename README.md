@@ -17,3 +17,5 @@ README for ynot and test purposes
 -   SSH key, git config, set-url
 
 -   packages ynot, urltools
+
+-   2552 PUSHUP to github
