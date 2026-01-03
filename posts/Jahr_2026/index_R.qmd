@@ -46,7 +46,7 @@ library(htmltools)
 ## 
 xURLBASE <- "https://hsub.pjafischer.workers.dev/bgw/api/?param="
 
-miparam <- c("Jos22:1-6!SCH2000","Jos22:8!SCH2000","Gal6:10!NGU-DE","Ps46:1-5!SCH2000")
+miparam <- c("Jos22:5-6!SCH2000","Jos22:8!SCH2000","Gal6:10!NGU-DE","Ps46:1-5!SCH2000")
 
 xLENGTH <- length(miparam)
 miurls <- purrr::map(miparam[1:xLENGTH], ~paste(xURLBASE,.x, sep=""))
@@ -92,4 +92,5 @@ cat(md_body, sep = "\n")
 
 ```
 
-Wir wollen achten (aufpassen), tun, lieben, dienen
+1.  Wir wollen achten (aufpassen) und tun die Worte Gottes, lieben und dienen den Herrn und den Bruder.
+2.  Gott ist unser Schutz inmitten einer gefährlichen Welt.

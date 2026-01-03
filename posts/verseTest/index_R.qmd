@@ -111,3 +111,10 @@ div.passage-col >  div.passage-text > div.passage-content > **h2 | h3**
 
 docker exec -it w2529 bash
 npm run deploy in hsub
+
+- hsub rendering in quarto / html
+- hsub query and response
+- hsub dev and deploy on w2519 and cloudflare
+
+
+
