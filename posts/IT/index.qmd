@@ -4,6 +4,7 @@ author: "granPiero"
 date: "2024-10-14"
 categories: [tech]
 image: "old_pc.jpg"
+category: itech
 format: 
   html:
     comments:

@@ -5,6 +5,7 @@ listing:
   sort: "date-desc"
   type: default
 image: profile.jpg
+categories: true
 about:
   template: jolla
   links:

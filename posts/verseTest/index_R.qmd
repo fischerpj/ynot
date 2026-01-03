@@ -115,6 +115,7 @@ npm run deploy in hsub
 - hsub rendering in quarto / html
 - hsub query and response
 - hsub dev and deploy on w2519 and cloudflare
+- ynot website hosted on github
 
 
 

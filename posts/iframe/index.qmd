@@ -2,7 +2,7 @@
 title: "Iframe"
 author: "granPiero"
 date: "2024-10-09"
-categories: [code]
+categories: [itech]
 format: 
   html:
     comments:

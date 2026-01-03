@@ -128,8 +128,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
@@ -153,7 +154,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">accuStorage</h1>
-                      </div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">itech</div>
+              </div>
+                  </div>
   </div>
     
   
@@ -189,8 +193,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- inputDiv is considered Void-->
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="21" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Inputs } <span class="im">from</span> <span class="st">"@observablehq/inputs"</span><span class="op">;</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { html } <span class="im">from</span> <span class="st">"@observablehq/stdlib"</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="22" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 21;"><span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Inputs } <span class="im">from</span> <span class="st">"@observablehq/inputs"</span><span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { html } <span class="im">from</span> <span class="st">"@observablehq/stdlib"</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -207,23 +211,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="25" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 24;"><span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>viewof theme <span class="op">=</span> {</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> key <span class="op">=</span> <span class="st">"theme"</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> stored <span class="op">=</span> localStorage<span class="op">.</span><span class="fu">getItem</span>(key)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> initial <span class="op">=</span> stored <span class="op">??</span> <span class="st">"light"</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> input <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>([<span class="st">"light"</span><span class="op">,</span> <span class="st">"dark"</span>]<span class="op">,</span> {</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Theme"</span><span class="op">,</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> initial</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Sync to localStorage on change</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  input<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    localStorage<span class="op">.</span><span class="fu">setItem</span>(key<span class="op">,</span> input<span class="op">.</span><span class="at">value</span>)</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> input</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="26" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 25;"><span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>viewof theme <span class="op">=</span> {</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> key <span class="op">=</span> <span class="st">"theme"</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> stored <span class="op">=</span> localStorage<span class="op">.</span><span class="fu">getItem</span>(key)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> initial <span class="op">=</span> stored <span class="op">??</span> <span class="st">"light"</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> input <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>([<span class="st">"light"</span><span class="op">,</span> <span class="st">"dark"</span>]<span class="op">,</span> {</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Theme"</span><span class="op">,</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> initial</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Sync to localStorage on change</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  input<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"input"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    localStorage<span class="op">.</span><span class="fu">setItem</span>(key<span class="op">,</span> input<span class="op">.</span><span class="at">value</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> input</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="declaration">
 
@@ -231,31 +235,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="46" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 45;"><span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>viewof AccuStorage <span class="op">=</span> {</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="co">//  INITIALISATION READ from LocalStorage</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _STORAGE_KEY <span class="op">=</span> <span class="st">"RefAccu"</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> stored <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(localStorage<span class="op">.</span><span class="fu">getItem</span>(_STORAGE_KEY))</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _INITIAL <span class="op">=</span> stored <span class="op">??</span> [<span class="st">"Gen1:1"</span>]</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> accuButton <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Keep"</span><span class="op">,</span> {</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> _INITIAL<span class="op">,</span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> (list) <span class="kw">=&gt;</span> {</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> input <span class="op">=</span> <span class="st">"Gal2:20"</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="co">//      const input = viewof RefInput.value;</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co">//      const validated = new Bcve(input);</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="co">//      const result = validated.is_valid ? [validated.param, ...list ] : [...list]</span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> uniqueResult <span class="op">=</span> [<span class="op">...</span>list<span class="op">,</span> input ]</span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="co">//      const uniqueResult = [...new Set(result)];</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>  <span class="co">// STORE persistent</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>      localStorage<span class="op">.</span><span class="fu">setItem</span>(_STORAGE_KEY<span class="op">,</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(uniqueResult))<span class="op">;</span></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> uniqueResult <span class="co">// new accumulated value</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>      } <span class="co">// end of reduce</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> accuButton</span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>AccuStorage<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="47" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 46;"><span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>viewof AccuStorage <span class="op">=</span> {</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  <span class="co">//  INITIALISATION READ from LocalStorage</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _STORAGE_KEY <span class="op">=</span> <span class="st">"RefAccu"</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> stored <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(localStorage<span class="op">.</span><span class="fu">getItem</span>(_STORAGE_KEY))</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _INITIAL <span class="op">=</span> stored <span class="op">??</span> [<span class="st">"Gen1:1"</span>]</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> accuButton <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Keep"</span><span class="op">,</span> {</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> _INITIAL<span class="op">,</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="dt">reduce</span><span class="op">:</span> (list) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> input <span class="op">=</span> <span class="st">"Gal2:20"</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co">//      const input = viewof RefInput.value;</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="co">//      const validated = new Bcve(input);</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co">//      const result = validated.is_valid ? [validated.param, ...list ] : [...list]</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> uniqueResult <span class="op">=</span> [<span class="op">...</span>list<span class="op">,</span> input ]</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="co">//      const uniqueResult = [...new Set(result)];</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  <span class="co">// STORE persistent</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>      localStorage<span class="op">.</span><span class="fu">setItem</span>(_STORAGE_KEY<span class="op">,</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(uniqueResult))<span class="op">;</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> uniqueResult <span class="co">// new accumulated value</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>      } <span class="co">// end of reduce</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> accuButton</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>AccuStorage<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
