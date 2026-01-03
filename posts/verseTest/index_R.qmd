@@ -1,0 +1,113 @@
+---
+title: "verseTest"
+subtitle: "Proof of Concept"
+date: "2025-09-09"
+image: "hurdler.jpg"
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+  pdf:
+    documentclass: scrartcl
+    classoption: [twocolumn, landscape]
+    papersize: letter
+    geometry:
+      - top=30mm
+      - left=40mm
+      - right=40mm
+      - heightrounded
+    mainfont: Lato
+    monofont: Arial
+    colorlinks: true
+execute:
+  echo: false  
+---
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+:::
+
+:::: {#outputDiv}
+<div>
+
+<!--  any output comes here to outputDiv is considered Void-->
+
+</div>
+::::
+
+```{r FETCH, eval=TRUE}
+#| results: asis
+
+library(httr)
+library(jsonlite)
+library(htmltools)
+
+## 
+xURLBASE <- "https://hsub.pjafischer.workers.dev/bgw/api/?param="
+
+miparam <- c("ps12","ps42")
+
+xLENGTH <- length(miparam)
+miurls <- purrr::map(miparam[1:xLENGTH], ~paste(xURLBASE,.x, sep=""))
+
+##----- PARAMETER
+# Define the FETCH function
+fetch_json <- function(
+    url= "https://hsub.pjafischer.workers.dev/bgw/api/?param=GAL2%3A20") {
+  tryCatch({
+    response <- GET(url, accept_json())
+    
+    if (status_code(response) == 200) {
+      json_data <- content(response, "text", encoding = "UTF-8")
+      parsed <- fromJSON(json_data)
+      parsed$error <- NULL
+      return(tibble::as_tibble(parsed))
+    } else {
+      warning(paste("Request failed with status code:", status_code(response)))
+      return(NULL)
+    }
+  }, error = function(e) {
+    message("Error fetching JSON: ", e$message)
+    return(NULL)
+  })
+}
+
+##----- DATAFRAME RESULT
+payload_df <- purrr::map_df(miurls, ~fetch_json(.x)) |>
+  dplyr::relocate(ref,version,content)
+
+```
+
+```{r TEMPLATE}
+#| output: asis
+
+# Create a Markdown template for each row
+template <- "{{ paste0('- **', df$ref, '**: ', df$content, collapse = '\\n\\n') }}"
+
+##-------- CRAFT MARKDOWN output
+# Expand the template using knit_expand
+md_body <- knitr::knit_expand(text = template, df = payload_df)
+cat(md_body, sep = "\n")
+
+```
+
+Test Verse from hsub filtering
+
+biblegateway:
+
+<https://www.biblegateway.com/passage/?search=ps42&version=NIV>
+
+hsub:
+
+<https://hsub.pjafischer.workers.dev/bgw/api/?param=ps42>
+
+div.passage-col > h1.passage-display > **div.bcv | div.translation**
+
+...
+
+div.passage-col >  div.passage-text > div.passage-content > **h2 | h3**
+
+
+docker exec -it w2529 bash
+npm run deploy in hsub
