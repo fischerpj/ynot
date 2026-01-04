@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       page: 30,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author"],
@@ -227,9 +227,6 @@ window.Quarto = {
 <th>
 <a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
 </th>
-<th>
-Reading Time
-</th>
 </tr>
 </thead>
 <tbody class="list">
@@ -246,9 +243,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="1" data-categories="Y29kZQ==" data-listing-date-sort="1757030400000" data-listing-file-modified-sort="1767537372807" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="249" data-listing-title-sort="accuStorage" data-listing-filename-sort="index.qmd">
 <td>
@@ -262,9 +256,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">&nbsp;</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
 </td>
 </tr>
 <tr data-index="2" data-categories="YmlibGU=" data-listing-date-sort="1735344000000" data-listing-file-modified-sort="1767384631442" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="memo_verse" data-listing-filename-sort="index.qmd">
@@ -280,9 +271,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="3" data-categories="Y29kZQ==" data-listing-date-sort="1727568000000" data-listing-file-modified-sort="1767384631347" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="24" data-listing-title-sort="Welcome To CKeditor" data-listing-filename-sort="index_cke.qmd">
 <td>
@@ -296,9 +284,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="4" data-categories="Y29kZQ==" data-listing-date-sort="1747353600000" data-listing-file-modified-sort="1767384631347" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45" data-listing-title-sort="Welcome To EditorJS" data-listing-filename-sort="index.qmd">
@@ -314,9 +299,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="5" data-listing-date-sort="1764201600000" data-listing-file-modified-sort="1767384631516" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="257" data-listing-title-sort="yieldRun" data-listing-filename-sort="index.qmd">
 <td>
@@ -330,9 +312,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">&nbsp;</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
 </td>
 </tr>
 <tr data-index="6" data-categories="Y29kZQ==" data-listing-date-sort="1757289600000" data-listing-file-modified-sort="1767539193411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="122" data-listing-title-sort="vFetch" data-listing-filename-sort="index.qmd">
@@ -348,9 +327,6 @@ Reading Time
 <td>
 <span class="listing-author">&nbsp;</span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="7" data-categories="Y29kZQ==" data-listing-date-sort="1743638400000" data-listing-file-modified-sort="1767537887370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7" data-listing-title-sort="check_storage" data-listing-filename-sort="index.qmd">
 <td>
@@ -364,9 +340,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="8" data-categories="YmlibGU=" data-listing-date-sort="1759190400000" data-listing-file-modified-sort="1767537852841" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="607" data-listing-title-sort="la prière" data-listing-filename-sort="index.qmd">
@@ -382,9 +355,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">4 min</span>
-</td>
 </tr>
 <tr data-index="9" data-categories="cHJvYyVDMyVBOWR1cmU=" data-listing-date-sort="1730937600000" data-listing-file-modified-sort="1767384631488" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Succession" data-listing-filename-sort="index.qmd">
 <td>
@@ -398,9 +368,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="10" data-categories="b3Jn" data-listing-date-sort="1728691200000" data-listing-file-modified-sort="1767384631471" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="priorités" data-listing-filename-sort="index.qmd">
@@ -416,9 +383,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="11" data-listing-file-modified-sort="1767469897474" data-listing-reading-time-sort="1" data-listing-word-count-sort="24" data-listing-title-sort="Romans Note" data-listing-filename-sort="index.qmd">
 <td>
@@ -432,9 +396,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">&nbsp;</span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="12" data-categories="YmlibGU=" data-listing-date-sort="1728691200000" data-listing-file-modified-sort="1767384631345" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="bible techpad" data-listing-filename-sort="index.qmd">
@@ -450,9 +411,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="13" data-categories="bG9pc2lycw==" data-listing-date-sort="1729468800000" data-listing-file-modified-sort="1767384631361" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="excursions" data-listing-filename-sort="index.qmd">
 <td>
@@ -466,9 +424,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="14" data-categories="aW1tb2JpbGllcg==" data-listing-date-sort="1727740800000" data-listing-file-modified-sort="1767384631357" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="résidence Etoile" data-listing-filename-sort="index.qmd">
@@ -484,9 +439,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="15" data-listing-date-sort="1760745600000" data-listing-file-modified-sort="1767384631499" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="216" data-listing-title-sort="verses, mere edition" data-listing-filename-sort="index.qmd">
 <td>
@@ -500,9 +452,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">&nbsp;</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
 </td>
 </tr>
 <tr data-index="16" data-categories="Y29kZQ==" data-listing-date-sort="1752019200000" data-listing-file-modified-sort="1767537770946" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="92" data-listing-title-sort="bibGrid" data-listing-filename-sort="index.qmd">
@@ -518,9 +467,6 @@ Reading Time
 <td>
 <span class="listing-author">&nbsp;</span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="17" data-listing-date-sort="1757376000000" data-listing-file-modified-sort="1767468976159" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="248" data-listing-title-sort="verseTest" data-listing-filename-sort="index_R.qmd">
 <td>
@@ -534,9 +480,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">&nbsp;</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
 </td>
 </tr>
 <tr data-index="18" data-categories="YmlibGU=" data-listing-date-sort="1747872000000" data-listing-file-modified-sort="1767384631343" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="bible_fetch API" data-listing-filename-sort="index.qmd">
@@ -552,9 +495,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="19" data-categories="Y29kZQ==" data-listing-date-sort="1747440000000" data-listing-file-modified-sort="1767384631421" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="22" data-listing-title-sort="Global Note" data-listing-filename-sort="index.qmd">
 <td>
@@ -568,9 +508,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="20" data-categories="Y29kZQ==" data-listing-date-sort="1759190400000" data-listing-file-modified-sort="1767537426588" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168" data-listing-title-sort="BCVE" data-listing-filename-sort="index.qmd">
@@ -586,9 +523,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="21" data-categories="YmlibGU=" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1767469842518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="gospel banner" data-listing-filename-sort="index.qmd">
 <td>
@@ -602,9 +536,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="22" data-categories="YmlibGU=" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1767384631323" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="raw content" data-listing-filename-sort="index_raw.qmd">
@@ -620,9 +551,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="23" data-categories="aXQ=" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1767384631317" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="57" data-listing-title-sort="DOM via Javascript" data-listing-filename-sort="index.qmd">
 <td>
@@ -636,9 +564,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="24" data-categories="Y3Vpc2luZQ==" data-listing-date-sort="1728691200000" data-listing-file-modified-sort="1767384631352" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="cuisine" data-listing-filename-sort="index.qmd">
@@ -654,9 +579,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="25" data-categories="YmlibGU=" data-listing-date-sort="1747785600000" data-listing-file-modified-sort="1767384631335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="250" data-listing-title-sort="Bible access" data-listing-filename-sort="index.qmd">
 <td>
@@ -670,9 +592,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
 </td>
 </tr>
 <tr data-index="26" data-listing-date-sort="1757376000000" data-listing-file-modified-sort="1767384631495" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="190" data-listing-title-sort="verses.PDF" data-listing-filename-sort="index_R.qmd">
@@ -688,9 +607,6 @@ Reading Time
 <td>
 <span class="listing-author">&nbsp;</span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="27" data-categories="Y29kZQ==" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1767556645681" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="IT" data-listing-filename-sort="index.qmd">
 <td>
@@ -704,9 +620,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="28" data-categories="aXQ=" data-listing-date-sort="1728691200000" data-listing-file-modified-sort="1767384631457" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="169" data-listing-title-sort="Observables" data-listing-filename-sort="index.qmd">
@@ -722,9 +635,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="29" data-listing-date-sort="1757289600000" data-listing-file-modified-sort="1767469008992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="594" data-listing-title-sort="verseRun" data-listing-filename-sort="index.qmd">
 <td>
@@ -738,9 +648,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">&nbsp;</span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
 </td>
 </tr>
 <tr data-index="30" data-categories="b3Jn" data-listing-date-sort="1759017600000" data-listing-file-modified-sort="1767384631499" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="237" data-listing-title-sort="Vias_QuaranteAns" data-listing-filename-sort="index.qmd">
@@ -756,9 +663,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
 </tr>
 <tr data-index="31" data-categories="aXQ=" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1767384631452" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="notes" data-listing-filename-sort="index.qmd">
 <td>
@@ -772,9 +676,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 <tr data-index="32" data-categories="aXQ=" data-listing-date-sort="1728604800000" data-listing-file-modified-sort="1767384631435" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="jsfapi" data-listing-filename-sort="index.qmd">
@@ -790,9 +691,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="33" data-categories="Y29kZQ==" data-listing-date-sort="1747440000000" data-listing-file-modified-sort="1767384631452" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="387" data-listing-title-sort="Note Prophete" data-listing-filename-sort="index.qmd">
 <td>
@@ -806,9 +704,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
 </td>
 </tr>
 <tr data-index="34" data-listing-date-sort="1757376000000" data-listing-file-modified-sort="1767538793449" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="210" data-listing-title-sort="Ref_to_PDF" data-listing-filename-sort="index.qmd">
@@ -824,9 +719,6 @@ Reading Time
 <td>
 <span class="listing-author">&nbsp;</span>
 </td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
 </tr>
 <tr data-index="35" data-categories="YmlibGU=" data-listing-date-sort="1767571200000" data-listing-file-modified-sort="1767539472418" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="229" data-listing-title-sort="im Jahr 2026" data-listing-filename-sort="index_R.qmd">
 <td>
@@ -840,9 +732,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">&nbsp;</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
 </td>
 </tr>
 <tr data-index="36" data-categories="aW1tb2JpbGllcg==" data-listing-date-sort="1727740800000" data-listing-file-modified-sort="1767384631430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="immobilier" data-listing-filename-sort="index.qmd">
@@ -858,9 +747,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="37" data-categories="aXQ=" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1767384631483" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="73" data-listing-title-sort="Storage with Javascript" data-listing-filename-sort="index.qmd">
 <td>
@@ -875,9 +761,6 @@ Reading Time
 <td>
 <span class="listing-author">granPiero </span>
 </td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
 </tr>
 <tr data-index="38" data-categories="aXRlY2g=" data-listing-date-sort="1728432000000" data-listing-file-modified-sort="1767470264414" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Iframe" data-listing-filename-sort="index.qmd">
 <td>
@@ -891,9 +774,6 @@ Reading Time
 </td>
 <td>
 <span class="listing-author">granPiero </span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
 </td>
 </tr>
 </tbody>
