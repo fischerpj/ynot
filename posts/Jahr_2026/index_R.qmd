@@ -39,8 +39,8 @@ execute:
 ::::
 
 
-1.  Was der Herr erwartet, wollen wir umsetzen mit der Kraft Christi: **achten** (aufpassen) und **tun** die Worte Gottes, **lieben** den Herrn und Ihm **dienen**, gleichwie dem Bruder.
-2.  Gott ist **unser Schutz** inmitten einer gefährlichen Welt.
+> 1.  Was der Herr erwartet, wollen wir umsetzen mit der Kraft Christi: **achten** (aufpassen) und **tun** die Worte Gottes, **lieben** den Herrn und Ihm **dienen**, gleichwie dem Bruder.
+> 2.  Gott ist **unser Schutz** inmitten einer gefährlichen Welt.
 
 
 ```{r FETCH, eval=TRUE}
