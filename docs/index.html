@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – ynot</title>
+<title>homepage – ynot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,10 +78,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       page: 25,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -132,7 +132,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,9 +150,8 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <span class="nav-link">
-<span class="menu-text">about.qmd</span>
-    </span>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">about</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
@@ -175,18 +174,17 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(39)</span></div><div class="category" data-category="YmlibGU=">bible <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Y3Vpc2luZQ==">cuisine <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW1tb2JpbGllcg==">immobilier <span class="quarto-category-count">(2)</span></div><div class="category" data-category="aXQ=">it <span class="quarto-category-count">(6)</span></div><div class="category" data-category="aXRlY2g=">itech <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bG9pc2lycw==">loisirs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3Jn">org <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHJvYyVDMyVBOWR1cmU=">procédure <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGVjaA==">tech <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <div class="quarto-about-jolla">
   <img src="profile.jpg" class="about-image
   round " style="height: 15em; width: 15em;">
  <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">true</div>
-  </div>
-  </div>
+<h1 class="title">homepage</h1>
+</div>
 <div class="quarto-title-meta">
   </div>
 </header><main class="content" id="quarto-document-content">
@@ -207,6 +205,9 @@ window.Quarto = {
 <div class="listing-subtitle">
 <a href="./posts/read_storage/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aXQ='); return false;">it</div>
+</div>
 <div class="delink listing-description"><a href="./posts/read_storage/index.html" class="no-external">
 Read LocalStorage key “prophete”
 </a></div>
@@ -222,7 +223,7 @@ granPiero
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="aXRlY2g=" data-listing-date-sort="1757030400000" data-listing-file-modified-sort="1767470323670" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
+<div class="quarto-post image-right" data-index="1" data-categories="Y29kZQ==" data-listing-date-sort="1757030400000" data-listing-file-modified-sort="1767537372807" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
 <div class="thumbnail"><a href="./posts/accuStorage/index.html" class="no-external">
 <img loading="lazy" src="./posts/accuStorage/accumulator.jpg" class="thumbnail-image">
 </a></div>
@@ -232,6 +233,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/accuStorage/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
 </div>
 <div class="delink listing-description"><a href="./posts/accuStorage/index.html" class="no-external">
 The <strong>AccuStorage Button yes</strong>
@@ -255,6 +259,9 @@ Sep 5, 2025
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/memo_verse/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
 </div>
 <div class="delink listing-description"><a href="./posts/memo_verse/index.html" class="no-external">
 VALUABLE LEGACY via hsub &gt; jsfapi (maybe slow storage setup): This is <em>on-your-device-only-persistent-memory</em> of <strong>bible references,</strong> that you accumulate on the fly. <em>However one…</em>
@@ -282,6 +289,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/cke/index_cke.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
+</div>
 <div class="delink listing-description"><a href="./posts/cke/index_cke.html" class="no-external">
 Concept of CKEditor
 </a></div>
@@ -307,6 +317,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/cke/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
 </div>
 <div class="delink listing-description"><a href="./posts/cke/index.html" class="no-external">
 Proof of Concept of EditorJS
@@ -380,6 +393,9 @@ Sep 8, 2025
 <div class="listing-subtitle">
 <a href="./posts/checkStorage/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
+</div>
 <div class="delink listing-description"><a href="./posts/checkStorage/index.html" class="no-external">
 This checks your localStorage
 </a></div>
@@ -395,7 +411,7 @@ granPiero
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1759190400000" data-listing-file-modified-sort="1767384631471" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="607">
+<div class="quarto-post image-right" data-index="8" data-categories="YmlibGU=" data-listing-date-sort="1759190400000" data-listing-file-modified-sort="1767537852841" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="607">
 <div class="thumbnail"><a href="./posts/prayer/index.html" class="no-external">
 <img loading="lazy" src="./posts/prayer/hurdler.jpg" class="thumbnail-image">
 </a></div>
@@ -405,6 +421,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/prayer/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
 </div>
 <div class="delink listing-description"><a href="./posts/prayer/index.html" class="no-external">
 ceci est la page sur la <strong>prière chrétienne</strong>, pour l’accumulation des versets sur ce sujet , la conservation de commentaires et l’édition d’un exposé structuré.
@@ -432,6 +451,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/succession/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('cHJvYyVDMyVBOWR1cmU='); return false;">procédure</div>
+</div>
 <div class="delink listing-description"><a href="./posts/succession/index.html" class="no-external">
 Everything related to <strong>succession</strong> Fischer-Durrenberger.
 </a></div>
@@ -457,6 +479,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/priorités/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('b3Jn'); return false;">org</div>
 </div>
 <div class="delink listing-description"><a href="./posts/priorités/index.html" class="no-external">
 Organise the <strong>tree of priorities</strong>
@@ -504,6 +529,9 @@ This is a Global Note on Romans (<em>using <strong>EditorJS</strong> and <strong
 <div class="listing-subtitle">
 <a href="./posts/bible_techpad/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
+</div>
 <div class="delink listing-description"><a href="./posts/bible_techpad/index.html" class="no-external">
 Bible <strong>Search and Lookup</strong> technologies. Ideapad
 </a></div>
@@ -530,6 +558,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/excursions/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bG9pc2lycw=='); return false;">loisirs</div>
+</div>
 <div class="delink listing-description"><a href="./posts/excursions/index.html" class="no-external">
 The root of <strong>discoveries</strong>.
 </a></div>
@@ -555,6 +586,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/etoile/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aW1tb2JpbGllcg=='); return false;">immobilier</div>
 </div>
 <div class="delink listing-description"><a href="./posts/etoile/index.html" class="no-external">
 Point de départ de l’habitation au <strong>Clos de l’Etoile</strong>
@@ -594,7 +628,7 @@ Oct 18, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="YmlibGU=" data-listing-date-sort="1752019200000" data-listing-file-modified-sort="1767384631335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="92">
+<div class="quarto-post image-right" data-index="16" data-categories="Y29kZQ==" data-listing-date-sort="1752019200000" data-listing-file-modified-sort="1767537770946" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="92">
 <div class="thumbnail"><a href="./posts/bibGrid/index.html" class="no-external">
 <img loading="lazy" src="./posts/bibGrid/f1car.jpeg" class="thumbnail-image">
 </a></div>
@@ -604,6 +638,9 @@ Oct 18, 2025
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/bibGrid/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
 </div>
 <div class="delink listing-description"><a href="./posts/bibGrid/index.html" class="no-external">
 Grid of Bible Books, Abbreviations, Chapter_Max.
@@ -651,6 +688,9 @@ Sep 9, 2025
 <div class="listing-subtitle">
 <a href="./posts/bible-fetch-api/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
+</div>
 <div class="delink listing-description"><a href="./posts/bible-fetch-api/index.html" class="no-external">
 Bible <strong>API</strong> technologies, in fetch action; to be reviewed.
 </a></div>
@@ -677,6 +717,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/global-note/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
+</div>
 <div class="delink listing-description"><a href="./posts/global-note/index.html" class="no-external">
 This is a Global Note, using <strong>EditorJS</strong> and <strong>localStorage</strong> autosave mechanism.
 </a></div>
@@ -692,7 +735,7 @@ granPiero
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-listing-date-sort="1759190400000" data-listing-file-modified-sort="1767470459068" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
+<div class="quarto-post image-right" data-index="20" data-categories="Y29kZQ==" data-listing-date-sort="1759190400000" data-listing-file-modified-sort="1767537426588" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
 <div class="thumbnail"><a href="./posts/bcve/index.html" class="no-external">
 <img loading="lazy" src="./posts/bcve/hurdler.jpg" class="thumbnail-image">
 </a></div>
@@ -702,6 +745,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/bcve/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
 </div>
 <div class="delink listing-description"><a href="./posts/bcve/index.html" class="no-external">
 test of BCVE only for reaction to not recognized input.
@@ -729,6 +775,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/gospel-banner/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
+</div>
 <div class="delink listing-description"><a href="./posts/gospel-banner/index.html" class="no-external">
 The animated web <strong>presentation</strong> of biblical claims is posted at https://xminpi.netlify.app/ppt/gospel-banner/
 </a></div>
@@ -754,6 +803,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/DOM via Javascript/index_raw.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
 </div>
 <div class="delink listing-description"><a href="./posts/DOM via Javascript/index_raw.html" class="no-external">
 
@@ -781,6 +833,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/DOM via Javascript/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aXQ='); return false;">it</div>
+</div>
 <div class="delink listing-description"><a href="./posts/DOM via Javascript/index.html" class="no-external">
 <input type="text" id="inputField" placeholder="Type something here">
 </a></div>
@@ -807,6 +862,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/cuisine/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y3Vpc2luZQ=='); return false;">cuisine</div>
+</div>
 <div class="delink listing-description"><a href="./posts/cuisine/index.html" class="no-external">
 <strong>Recettes</strong> de cuisine éprouvées.
 </a></div>
@@ -832,6 +890,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/bible-access/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
 </div>
 <div class="delink listing-description"><a href="./posts/bible-access/index.html" class="no-external">
 Give access to Bible <strong>Texts,</strong> <strong>version, display, search, pdf</strong> as well as to <strong>Strong_Numbers</strong> and Bible sites. The <strong>refs’</strong> full syntax respects <em>“canon”:“ps1:1-3!SG21@bgw”</em>. Workflow…
@@ -882,6 +943,9 @@ Sep 9, 2025
 <div class="listing-subtitle">
 <a href="./posts/IT/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('dGVjaA=='); return false;">tech</div>
+</div>
 <div class="delink listing-description"><a href="./posts/IT/index.html" class="no-external">
 Everything related to <strong><em>technology.</em></strong>
 </a></div>
@@ -907,6 +971,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/observables/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aXQ='); return false;">it</div>
 </div>
 <div class="delink listing-description"><a href="./posts/observables/index.html" class="no-external">
 We demonstrate interactions with <strong>ObservableJS</strong> Inputs.text, Input.button in a quarto document. And <strong>abandon</strong> due to CSS styling complexity.
@@ -957,6 +1024,9 @@ Sep 8, 2025
 <div class="listing-subtitle">
 <a href="./posts/vias2025/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('b3Jn'); return false;">org</div>
+</div>
 <div class="delink listing-description"><a href="./posts/vias2025/index.html" class="no-external">
 Restaurant
 </a></div>
@@ -982,6 +1052,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/notes/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aXQ='); return false;">it</div>
 </div>
 <div class="delink listing-description"><a href="./posts/notes/index.html" class="no-external">
 I merely capture at random my ideas here as <strong><em>comments</em></strong> below.
@@ -1009,6 +1082,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/jsfapi/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aXQ='); return false;">it</div>
+</div>
 <div class="delink listing-description"><a href="./posts/jsfapi/index.html" class="no-external">
 <em>jsfapi</em> is the raw json API to BibleGateway, hosted by netlify.
 </a></div>
@@ -1034,6 +1110,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/note_prophete/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
 </div>
 <div class="delink listing-description"><a href="./posts/note_prophete/index.html" class="no-external">
 This is a Global Note, using <strong>EditorJS</strong> and <strong>localStorage</strong> autosave mechanism.
@@ -1073,25 +1152,28 @@ Sep 9, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="35" data-listing-date-sort="1757376000000" data-listing-file-modified-sort="1767468325865" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="217">
+<div class="quarto-post image-right" data-index="35" data-categories="YmlibGU=" data-listing-date-sort="1767571200000" data-listing-file-modified-sort="1767537329809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="222">
 <div class="thumbnail"><a href="./posts/Jahr_2026/index_R.html" class="no-external">
 <img loading="lazy" data-src="./posts/Jahr_2026/hurdler.jpg" class="thumbnail-image">
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/Jahr_2026/index_R.html" class="no-external">fuer das Jahr 2026</a>
+<a href="./posts/Jahr_2026/index_R.html" class="no-external">im Jahr 2026</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/Jahr_2026/index_R.html" class="no-external">Proof of Concept</a>
+<a href="./posts/Jahr_2026/index_R.html" class="no-external">für A&amp;R</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YmlibGU='); return false;">bible</div>
 </div>
 <div class="delink listing-description"><a href="./posts/Jahr_2026/index_R.html" class="no-external">
-<strong>Josua 22:5-6</strong>: 5&nbsp;Nehmt euch nur sehr in Acht, dass ihr das Gebot und das Gesetz tut, das euch Mose, der Knecht des Herrn, geboten hat: dass ihr den Herrn, euren Gott, liebt…
+<p>achten, tun, lieben, dienen, teilen</p>
 </a></div>
 </div>
 <div class="metadata">
 <a href="./posts/Jahr_2026/index_R.html" class="no-external">
 <div class="listing-date">
-Sep 9, 2025
+Jan 5, 2026
 </div>
 </a>
 </div>
@@ -1106,6 +1188,9 @@ Sep 9, 2025
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/immobilier/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aW1tb2JpbGllcg=='); return false;">immobilier</div>
 </div>
 <div class="delink listing-description"><a href="./posts/immobilier/index.html" class="no-external">
 Point de départ du projet d’<strong>habitation</strong> à Montpellier.
@@ -1133,6 +1218,9 @@ granPiero
 <div class="listing-subtitle">
 <a href="./posts/storage/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aXQ='); return false;">it</div>
+</div>
 <div class="delink listing-description"><a href="./posts/storage/index.html" class="no-external">
 Demonstrate the feasibility of user interaction (input, action) with LocalStorage (set, get).
 </a></div>
@@ -1158,6 +1246,9 @@ granPiero
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/iframe/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('aXRlY2g='); return false;">itech</div>
 </div>
 <div class="delink listing-description"><a href="./posts/iframe/index.html" class="no-external">
 First use of an <strong>iframe</strong> element to display src = https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV

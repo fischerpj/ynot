@@ -1,8 +1,10 @@
 ---
-title: "fuer das Jahr 2026"
-subtitle: "Proof of Concept"
-date: "2025-09-09"
+title: "im Jahr 2026"
+subtitle: "für A&R"
+date: "2026-01-05"
 image: "hurdler.jpg"
+categories: bible
+description: "achten, tun, lieben, dienen, teilen"
 format: 
   html:
     comments:
@@ -46,7 +48,7 @@ library(htmltools)
 ## 
 xURLBASE <- "https://hsub.pjafischer.workers.dev/bgw/api/?param="
 
-miparam <- c("Jos22:5-6!SCH2000","Jos22:8!SCH2000","Gal6:10!NGU-DE","Ps46:1-5!SCH2000")
+miparam <- c("Gal6:10!NGU-DE","Jos22:5-6!SCH2000","Jos22:8!SCH2000","Ps46:1-5!SCH2000")
 
 xLENGTH <- length(miparam)
 miurls <- purrr::map(miparam[1:xLENGTH], ~paste(xURLBASE,.x, sep=""))
@@ -92,5 +94,5 @@ cat(md_body, sep = "\n")
 
 ```
 
-1.  Wir wollen achten (aufpassen) und tun die Worte Gottes, lieben und dienen den Herrn und den Bruder.
+1.  Was der Herr erwartet, wollen wir: achten (aufpassen) und tun die Worte Gottes, lieben den Herrn und Ihm dienen, gleichwie dem Bruder.
 2.  Gott ist unser Schutz inmitten einer gefährlichen Welt.

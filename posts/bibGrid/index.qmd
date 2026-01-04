@@ -1,8 +1,8 @@
 ---
 title: "bibGrid"
 date: "2025-07-09"
-categories: [bible]
 image: "f1car.jpeg"
+categories: code
 execute:
   echo: false
 ---

@@ -2,7 +2,7 @@
 title: "accuStorage"
 date: "2025-09-05"
 image: "accumulator.jpg"
-categories: [itech]
+categories: [code]
 format: 
   html:
     comments:

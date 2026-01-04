@@ -3,6 +3,7 @@ title: "verseTest"
 subtitle: "Proof of Concept"
 date: "2025-09-09"
 image: "hurdler.jpg"
+category: itech
 format: 
   html:
     comments:
@@ -102,20 +103,15 @@ hsub:
 
 <https://hsub.pjafischer.workers.dev/bgw/api/?param=ps42>
 
-div.passage-col > h1.passage-display > **div.bcv | div.translation**
+div.passage-col \> h1.passage-display \> **div.bcv \| div.translation**
 
 ...
 
-div.passage-col >  div.passage-text > div.passage-content > **h2 | h3**
+div.passage-col \> div.passage-text \> div.passage-content \> **h2 \| h3**
 
+docker exec -it w2529 bash npm run deploy in hsub
 
-docker exec -it w2529 bash
-npm run deploy in hsub
-
-- hsub rendering in quarto / html
-- hsub query and response
-- hsub dev and deploy on w2519 and cloudflare
-- ynot website hosted on github
-
-
-
+-   hsub rendering in quarto / html
+-   hsub query and response
+-   hsub dev and deploy on w2519 and cloudflare
+-   ynot website hosted on github
