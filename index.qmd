@@ -3,8 +3,9 @@ title: "homepage"
 listing:
   contents: posts
   sort: "date-desc"
-  type: default
   categories: true
+  type: table
+  fields: [image, date, title, author]
 image: profile.jpg
 about:
   template: jolla
