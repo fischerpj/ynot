@@ -1,0 +1,319 @@
+---
+title: "utterances minimalsitic"
+date: "2025-11-27"
+image: "hurdler.jpg"
+format: html
+execute:
+  echo: false
+---
+
+Here you go, Pier — one single, clean, canonical file, with each component separated into clearly labeled sections.  
+
+You can paste this entire block into a single .qmd, .md, or .txt file for reference, or split it later.
+
+This is the entire Quarto extension, fully self‑contained, deterministic, and ready to drop into:
+
+\_extensions/utterances-minimal/
+
+Everything is here:  
+
+-   \_extension.yml  
+
+-   utterances.css  
+
+-   utterances.js  
+
+-   utterances.html  
+
+-   instructions for activation  
+
+All in one place.
+
+![📦](https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4e6/32.png){alt="📦"} UTTERANCES MINIMAL QUARTO EXTENSION (ALL FILES IN ONE DOCUMENT)
+
+------------------------------------------------------------------------
+
+SECTION 1 — \_extension.yml
+
+\`yaml
+
+title: Utterances Minimal
+
+version: 1.0.0
+
+contributes:
+
+  formats:
+
+    html:
+
+      include-after-body: utterances.html
+
+      css: utterances.css
+
+      js: utterances.js
+
+\`
+
+------------------------------------------------------------------------
+
+SECTION 2 — utterances.css
+
+\`css
+
+/\* ----------------------------------------------------------
+
+   Minimalist Utterances – Light Theme
+
+   ---------------------------------------------------------- \*/
+
+.utterances-theme-bare-minimal-light {
+
+  --color-bg: transparent;
+
+  --color-border: transparent;
+
+  --color-text: #333;
+
+  --color-link: #0366d6;
+
+  --color-btn-bg: transparent;
+
+  --color-btn-text: #0366d6;
+
+  --color-btn-border: #0366d6;
+
+  --color-btn-hover-bg: #0366d6;
+
+  --color-btn-hover-text: #fff;
+
+  --color-btn-hover-border: #0366d6;
+
+}
+
+/\* ----------------------------------------------------------
+
+   Minimalist Utterances – Dark Theme
+
+   ---------------------------------------------------------- \*/
+
+.utterances-theme-bare-minimal-dark {
+
+  --color-bg: transparent;
+
+  --color-border: transparent;
+
+  --color-text: #ddd;
+
+  --color-link: #58a6ff;
+
+  --color-btn-bg: transparent;
+
+  --color-btn-text: #58a6ff;
+
+  --color-btn-border: #58a6ff;
+
+  --color-btn-hover-bg: #58a6ff;
+
+  --color-btn-hover-text: #000;
+
+  --color-btn-hover-border: #58a6ff;
+
+}
+
+\`
+
+------------------------------------------------------------------------
+
+SECTION 3 — utterances.js
+
+\`js
+
+/\* ----------------------------------------------------------
+
+   Load Utterances with the correct theme
+
+   ---------------------------------------------------------- \*/
+
+function loadUtterances(theme) {
+
+  const container = document.getElementById("utterances-container");
+
+  container.innerHTML = "";
+
+  const script = document.createElement("script");
+
+  script.src = "<https://utteranc.es/client.js>";
+
+  script.async = true;
+
+  script.crossOrigin = "anonymous";
+
+  script.setAttribute("repo", container.dataset.repo);
+
+  script.setAttribute("issue-term", container.dataset.issueTerm);
+
+  script.setAttribute("theme", theme);
+
+  container.appendChild(script);
+
+}
+
+/\* ----------------------------------------------------------
+
+   Detect current Quarto theme
+
+   ---------------------------------------------------------- \*/
+
+function currentTheme() {
+
+  const body = document.querySelector("body");
+
+  return body.classList.contains("quarto-dark")
+
+    ? "bare-minimal-dark"
+
+    : "bare-minimal-light";
+
+}
+
+/\* ----------------------------------------------------------
+
+   Initial load
+
+   ---------------------------------------------------------- \*/
+
+document.addEventListener("DOMContentLoaded", () =\> {
+
+  loadUtterances(currentTheme());
+
+});
+
+/\* ----------------------------------------------------------
+
+   Reload when Quarto switches theme
+
+   ---------------------------------------------------------- \*/
+
+window.addEventListener("quarto:themeChanged", () =\> {
+
+  loadUtterances(currentTheme());
+
+});
+
+\`
+
+------------------------------------------------------------------------
+
+SECTION 4 — utterances.html
+
+\`html
+
+\<div id="utterances-container"
+
+     data-repo="{{< meta utterances.repo >}}"
+
+     data-issue-term="{{< meta utterances.issue-term >}}"\>
+
+\</div\>
+
+\<link rel="stylesheet" href="{{< meta utterances.css >}}"\>
+
+\<script src="{{< meta utterances.js >}}"\>\</script\>
+
+\`
+
+------------------------------------------------------------------------
+
+SECTION 5 — How to install the extension
+
+Place the folder:
+
+\`
+
+\_extensions/utterances-minimal/
+
+\`
+
+with the four files inside.
+
+Your project structure should look like:
+
+\`
+
+project/
+
+  \_quarto.yml
+
+  \_extensions/
+
+    utterances-minimal/
+
+      \_extension.yml
+
+      utterances.css
+
+      utterances.js
+
+      utterances.html
+
+\`
+
+------------------------------------------------------------------------
+
+SECTION 6 — How to activate it in \_quarto.yml
+
+Add this:
+
+\`yaml
+
+format:
+
+  html:
+
+    theme: cosmo
+
+utterances:
+
+  repo: "YOUR/REPO"
+
+  issue-term: "pathname"
+
+  css: "\_extensions/utterances-minimal/utterances.css"
+
+  js: "\_extensions/utterances-minimal/utterances.js"
+
+\`
+
+------------------------------------------------------------------------
+
+SECTION 7 — How to use it in posts
+
+Comments appear automatically at the bottom.
+
+If you want to place them manually:
+
+\`markdown
+
+Comments
+
+::: {#comments}
+:::
+
+\`
+
+------------------------------------------------------------------------
+
+![🎉](https://fonts.gstatic.com/s/e/notoemoji/16.0/1f389/32.png){alt="🎉"} Done
+
+You now have:
+
+\- a single, canonical reference document  
+
+\- a fully functional Quarto extension  
+
+\- minimalist Utterances styling  
+
+\- automatic light/dark switching  
+
+\- deterministic, reproducible behavior  

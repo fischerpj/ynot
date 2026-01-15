@@ -1,0 +1,9 @@
+title: Utterances Minimal
+version: 1.0.0
+
+contributes:
+  formats:
+    html:
+      include-after-body: utterances.html
+      css: utterances.css
+      js: utterances.js

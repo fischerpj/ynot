@@ -1,5 +1,17 @@
 README for ynot and test purposes
 
+#### Logs Reverse
+
+-   2601 quarto render (generate) / git push (publish) / (view)
+
+-   UTTERANCES_minimal filter
+
+    ```         
+    css:   styles.css
+    ```
+
+#### Logs Legacy
+
 -   2502 github rv5 / ynot push
 
 -   2519 snap

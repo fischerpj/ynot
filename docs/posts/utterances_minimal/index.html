@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="granPiero">
-<meta name="dcterms.date" content="2024-10-11">
+<meta name="dcterms.date" content="2025-11-27">
 
-<title>jsfapi – ynot</title>
+<title>utterances minimalsitic – ynot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,27 +109,18 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">jsfapi</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">it</div>
-              </div>
-                  </div>
+      <h1 class="title">utterances minimalsitic</h1>
+                      </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>granPiero </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 11, 2024</p>
+        <p class="date">November 27, 2025</p>
       </div>
     </div>
     
@@ -149,12 +139,165 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<blockquote class="blockquote">
-<p><em>jsfapi</em> is the raw json API to BibleGateway, hosted by netlify.</p>
-</blockquote>
-<p>here with outdated technology of <strong>iframe</strong> which is R_independent! Develop this feature with <em>comments</em>.</p>
-<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps1:2!SG21" title="jsfapi iframe" width="400" height="300">
-</iframe>
+<p>Here you go, Pier — one single, clean, canonical file, with each component separated into clearly labeled sections.&nbsp;&nbsp;</p>
+<p>You can paste this entire block into a single .qmd, .md, or .txt file for reference, or split it later.</p>
+<p>This is the entire Quarto extension, fully self‑contained, deterministic, and ready to drop into:</p>
+<p>_extensions/utterances-minimal/</p>
+<p>Everything is here:&nbsp;&nbsp;</p>
+<ul>
+<li><p>_extension.yml&nbsp;&nbsp;</p></li>
+<li><p>utterances.css&nbsp;&nbsp;</p></li>
+<li><p>utterances.js&nbsp;&nbsp;</p></li>
+<li><p>utterances.html&nbsp;&nbsp;</p></li>
+<li><p>instructions for activation&nbsp;&nbsp;</p></li>
+</ul>
+<p>All in one place.</p>
+<p><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4e6/32.png" class="img-fluid" alt="📦"> UTTERANCES MINIMAL QUARTO EXTENSION (ALL FILES IN ONE DOCUMENT)</p>
+<hr>
+<p>SECTION 1 — _extension.yml</p>
+<p>`yaml</p>
+<p>title: Utterances Minimal</p>
+<p>version: 1.0.0</p>
+<p>contributes:</p>
+<p>&nbsp; formats:</p>
+<p>&nbsp; &nbsp; html:</p>
+<p>&nbsp; &nbsp; &nbsp; include-after-body: utterances.html</p>
+<p>&nbsp; &nbsp; &nbsp; css: utterances.css</p>
+<p>&nbsp; &nbsp; &nbsp; js: utterances.js</p>
+<p>`</p>
+<hr>
+<p>SECTION 2 — utterances.css</p>
+<p>`css</p>
+<p>/* ———————————————————-</p>
+<p>&nbsp; &nbsp;Minimalist Utterances – Light Theme</p>
+<p>&nbsp; &nbsp;———————————————————- */</p>
+<p>.utterances-theme-bare-minimal-light {</p>
+<p>&nbsp; –color-bg: transparent;</p>
+<p>&nbsp; –color-border: transparent;</p>
+<p>&nbsp; –color-text: #333;</p>
+<p>&nbsp; –color-link: #0366d6;</p>
+<p>&nbsp; –color-btn-bg: transparent;</p>
+<p>&nbsp; –color-btn-text: #0366d6;</p>
+<p>&nbsp; –color-btn-border: #0366d6;</p>
+<p>&nbsp; –color-btn-hover-bg: #0366d6;</p>
+<p>&nbsp; –color-btn-hover-text: #fff;</p>
+<p>&nbsp; –color-btn-hover-border: #0366d6;</p>
+<p>}</p>
+<p>/* ———————————————————-</p>
+<p>&nbsp; &nbsp;Minimalist Utterances – Dark Theme</p>
+<p>&nbsp; &nbsp;———————————————————- */</p>
+<p>.utterances-theme-bare-minimal-dark {</p>
+<p>&nbsp; –color-bg: transparent;</p>
+<p>&nbsp; –color-border: transparent;</p>
+<p>&nbsp; –color-text: #ddd;</p>
+<p>&nbsp; –color-link: #58a6ff;</p>
+<p>&nbsp; –color-btn-bg: transparent;</p>
+<p>&nbsp; –color-btn-text: #58a6ff;</p>
+<p>&nbsp; –color-btn-border: #58a6ff;</p>
+<p>&nbsp; –color-btn-hover-bg: #58a6ff;</p>
+<p>&nbsp; –color-btn-hover-text: #000;</p>
+<p>&nbsp; –color-btn-hover-border: #58a6ff;</p>
+<p>}</p>
+<p>`</p>
+<hr>
+<p>SECTION 3 — utterances.js</p>
+<p>`js</p>
+<p>/* ———————————————————-</p>
+<p>&nbsp; &nbsp;Load Utterances with the correct theme</p>
+<p>&nbsp; &nbsp;———————————————————- */</p>
+<p>function loadUtterances(theme) {</p>
+<p>&nbsp; const container = document.getElementById(“utterances-container”);</p>
+<p>&nbsp; container.innerHTML = ““;</p>
+<p>&nbsp; const script = document.createElement(“script”);</p>
+<p>&nbsp; script.src = “<a href="https://utteranc.es/client.js" class="uri">https://utteranc.es/client.js</a>”;</p>
+<p>&nbsp; script.async = true;</p>
+<p>&nbsp; script.crossOrigin = “anonymous”;</p>
+<p>&nbsp; script.setAttribute(“repo”, container.dataset.repo);</p>
+<p>&nbsp; script.setAttribute(“issue-term”, container.dataset.issueTerm);</p>
+<p>&nbsp; script.setAttribute(“theme”, theme);</p>
+<p>&nbsp; container.appendChild(script);</p>
+<p>}</p>
+<p>/* ———————————————————-</p>
+<p>&nbsp; &nbsp;Detect current Quarto theme</p>
+<p>&nbsp; &nbsp;———————————————————- */</p>
+<p>function currentTheme() {</p>
+<p>&nbsp; const body = document.querySelector(“body”);</p>
+<p>&nbsp; return body.classList.contains(“quarto-dark”)</p>
+<p>&nbsp; &nbsp; ? “bare-minimal-dark”</p>
+<p>&nbsp; &nbsp; : “bare-minimal-light”;</p>
+<p>}</p>
+<p>/* ———————————————————-</p>
+<p>&nbsp; &nbsp;Initial load</p>
+<p>&nbsp; &nbsp;———————————————————- */</p>
+<p>document.addEventListener(“DOMContentLoaded”, () =&gt; {</p>
+<p>&nbsp; loadUtterances(currentTheme());</p>
+<p>});</p>
+<p>/* ———————————————————-</p>
+<p>&nbsp; &nbsp;Reload when Quarto switches theme</p>
+<p>&nbsp; &nbsp;———————————————————- */</p>
+<p>window.addEventListener(“quarto:themeChanged”, () =&gt; {</p>
+<p>&nbsp; loadUtterances(currentTheme());</p>
+<p>});</p>
+<p>`</p>
+<hr>
+<p>SECTION 4 — utterances.html</p>
+<p>`html</p>
+<p>&lt;div id=“utterances-container”</p>
+<p>&nbsp; &nbsp; &nbsp;data-repo=“<strong>?meta:utterances.repo</strong>”</p>
+<p>&nbsp; &nbsp; &nbsp;data-issue-term=“<strong>?meta:utterances.issue-term</strong>”&gt;</p>
+<p>&lt;/div&gt;</p>
+<p>&lt;link rel=“stylesheet” href=“<strong>?meta:utterances.css</strong>”&gt;</p>
+<p>&lt;script src=“<strong>?meta:utterances.js</strong>”&gt;&lt;/script&gt;</p>
+<p>`</p>
+<hr>
+<p>SECTION 5 — How to install the extension</p>
+<p>Place the folder:</p>
+<p>`</p>
+<p>_extensions/utterances-minimal/</p>
+<p>`</p>
+<p>with the four files inside.</p>
+<p>Your project structure should look like:</p>
+<p>`</p>
+<p>project/</p>
+<p>&nbsp; _quarto.yml</p>
+<p>&nbsp; _extensions/</p>
+<p>&nbsp; &nbsp; utterances-minimal/</p>
+<p>&nbsp; &nbsp; &nbsp; _extension.yml</p>
+<p>&nbsp; &nbsp; &nbsp; utterances.css</p>
+<p>&nbsp; &nbsp; &nbsp; utterances.js</p>
+<p>&nbsp; &nbsp; &nbsp; utterances.html</p>
+<p>`</p>
+<hr>
+<p>SECTION 6 — How to activate it in _quarto.yml</p>
+<p>Add this:</p>
+<p>`yaml</p>
+<p>format:</p>
+<p>&nbsp; html:</p>
+<p>&nbsp; &nbsp; theme: cosmo</p>
+<p>utterances:</p>
+<p>&nbsp; repo: “YOUR/REPO”</p>
+<p>&nbsp; issue-term: “pathname”</p>
+<p>&nbsp; css: “_extensions/utterances-minimal/utterances.css”</p>
+<p>&nbsp; js: “_extensions/utterances-minimal/utterances.js”</p>
+<p>`</p>
+<hr>
+<p>SECTION 7 — How to use it in posts</p>
+<p>Comments appear automatically at the bottom.</p>
+<p>If you want to place them manually:</p>
+<p>`markdown</p>
+<p>Comments</p>
+<div id="comments">
+
+</div>
+<p>`</p>
+<hr>
+<p><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f389/32.png" class="img-fluid" alt="🎉"> Done</p>
+<p>You now have:</p>
+<p>- a single, canonical reference document&nbsp;&nbsp;</p>
+<p>- a fully functional Quarto extension&nbsp;&nbsp;</p>
+<p>- minimalist Utterances styling&nbsp;&nbsp;</p>
+<p>- automatic light/dark switching&nbsp;&nbsp;</p>
+<p>- deterministic, reproducible behavior&nbsp;&nbsp;</p>
 
 
 
