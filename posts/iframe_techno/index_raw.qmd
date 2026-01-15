@@ -1,0 +1,20 @@
+---
+title: "raw content"
+author: "granPiero"
+date: "2024-10-10"
+categories: [bible]
+image: "dom.jpg"
+format: 
+  html:
+    minimal: true
+    code-copy: true
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+HELPS
+
+![](quarto_raw_content.png){width="600"}
+
+![](html_raw_inline.png){width="450"}
