@@ -25,12 +25,16 @@ Submit
 
 </p>
 
+```{=html}
 <script src="script.js"></script>
+```
 
 2.  Update an **iframe's content** via its src attribute.
 
 <input type="text" id="inputRef" placeholder="enter your ref here"> <button id="submitButton2">Display</button> <br/><br/> <iframe id="frame2" src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=gen1:1!SG21" title="jsfapi iframe" width="400" height="300"></iframe>
 
+```{=html}
 <script src="script2.js"></script>
+```
 
 3.  Conclusion: **Abandon ObersvableJS** technology because of CSS-styling hurdle.
