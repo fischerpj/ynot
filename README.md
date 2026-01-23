@@ -20,4 +20,4 @@ README for ynot and test purposes
 
 -   2552 then 2601 PUSHUP to github
 
--   2604 PUSHUP GH from XPS + local remove
+-   2604 PUSHUP GH from XPS + local remove. pls fix first authentication
