@@ -1,15 +1,5 @@
 ---
-title: "About"
-listing:
-  contents: posts
-  sort: date-desc
-image: profile.jpg
-about:
-  template: jolla
-  links:
-    - icon: github
-      text: Github
-      href: https://github.com
+title: "about"
 ---
 
 **Ynot** (Why not!) is a **Quarto website** of its own with a feature **storing infos** as *issues*, that are anchored to any pages of my other websites.

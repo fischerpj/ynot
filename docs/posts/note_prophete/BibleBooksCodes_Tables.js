@@ -18279,7 +18279,7 @@ export class Ref {
 
     // Clear previous content
     this.outputContent.innerHTML = '';
-    this.outputContent.id = crypto.randomUUID();
+////   this.outputContent.id = crypto.randomUUID();
 
     // Create UL
 //    const div_wrapper = document.createElement('div');

@@ -4,6 +4,7 @@ author: "granPiero"
 date: "2024-10-14"
 categories: [bible]
 image: "banniere.jpg"
+category: biblique
 format: 
   html:
     comments:

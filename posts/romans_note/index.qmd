@@ -1,6 +1,7 @@
 ---
 title: "Romans Note"
 title-block-banner: false
+category: biblique
 format: 
   html:
     include-in-header: "include-in-header.html"

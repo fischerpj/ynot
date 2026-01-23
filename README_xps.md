@@ -1,5 +1,17 @@
 README for ynot and test purposes
 
+#### Logs Reverse
+
+-   2601 quarto render (generate) / git push (publish) / (view)
+
+-   UTTERANCES_minimal filter
+
+    ```         
+    css:   styles.css
+    ```
+
+#### Logs Legacy
+
 -   2502 github rv5 / ynot push
 
 -   2519 snap
@@ -20,4 +32,8 @@ README for ynot and test purposes
 
 -   2552 then 2601 PUSHUP to github
 
+<<<<<<< HEAD
 -   2604 PUSHUP GH from XPS + local remove. pls fix first authentication
+=======
+-   2603 re IFRAMES
+>>>>>>> 75629d72d650448f30410c52a2cc5e458959306e

@@ -1,9 +1,11 @@
 ---
-title: "About"
+title: "homepage"
 listing:
   contents: posts
   sort: "date-desc"
-  type: default
+  categories: true
+  type: table
+  fields: [image, date, title, author]
 image: profile.jpg
 about:
   template: jolla
@@ -13,6 +15,6 @@ about:
       href: https://github.com
 ---
 
-**Ynot** (Why not!) is a **Quarto website** of its own with a feature **storing infos** as *issues*, that are anchored to any pages of my other websites.
+**Ynot** (Why not!) is a **Quarto website** with a feature of **storing infos/comments** as *issues*.
 
-Ynot is build with *quarto render* and sourced from <https://github.com/fischerpj/ynot.git> and locally docker v2519/ynot (deprecated rv5/ynot)
+Ynot is build with *quarto render* and sourced from <https://github.com/fischerpj/ynot.git> and locally a docker rocker/verse image like v2519.

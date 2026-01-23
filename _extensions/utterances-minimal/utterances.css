@@ -1,0 +1,31 @@
+/* ----------------------------------------------------------
+   Minimalist Utterances – Light Theme
+   ---------------------------------------------------------- */
+.utterances-theme-bare-minimal-light {
+  --color-bg: transparent;
+  --color-border: transparent;
+  --color-text: #333;
+  --color-link: #0366d6;
+  --color-btn-bg: transparent;
+  --color-btn-text: #0366d6;
+  --color-btn-border: #0366d6;
+  --color-btn-hover-bg: #0366d6;
+  --color-btn-hover-text: #fff;
+  --color-btn-hover-border: #0366d6;
+}
+
+/* ----------------------------------------------------------
+   Minimalist Utterances – Dark Theme
+   ---------------------------------------------------------- */
+.utterances-theme-bare-minimal-dark {
+  --color-bg: transparent;
+  --color-border: transparent;
+  --color-text: #ddd;
+  --color-link: #58a6ff;
+  --color-btn-bg: transparent;
+  --color-btn-text: #58a6ff;
+  --color-btn-border: #58a6ff;
+  --color-btn-hover-bg: #58a6ff;
+  --color-btn-hover-text: #000;
+  --color-btn-hover-border: #58a6ff;
+}

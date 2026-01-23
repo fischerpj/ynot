@@ -10,11 +10,15 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+    collapse: true
 format:
   html:
     theme: lumen
-    css:   styles.css
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"    
 
+filters: 
+  - utterances-minimal
+  
 editor: visual

@@ -2,6 +2,7 @@
 title: "vFetch"
 date: "2025-09-08"
 image: "hurdler.jpg"
+categories: code
 format: 
   html:
     comments:

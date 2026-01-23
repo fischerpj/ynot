@@ -1,8 +1,8 @@
 ---
-title: "Iframe"
+title: "Iframes & Workers"
 author: "granPiero"
 date: "2024-10-09"
-categories: [code]
+categories: [itech]
 format: 
   html:
     comments:
@@ -10,10 +10,18 @@ format:
         repo: "fischerpj/ynot"
 ---
 
-> First use of an **iframe** element to display src = <https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV>
+> Insertion of an **iframe** element to display a static value of src = <https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV> or <https://hsub.pjafischer.workers.dev/bgw/api/?param=gen1:5>
 
-<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV" title="jsfapi iframe" width="400" height="300">
+<iframe src="https://jsfapi.netlify.app/.netlify/functions/bgw?param=ps42:5!KJV" title="JSFAPI iframe" width="400" height="300">
 
 </iframe>
 
-Conclusion: we **abandon iframe** technology.
+<iframe src="https://hsub.pjafischer.workers.dev/bgw/api/?param=gen1:5" title="HSUB iframe" width="400" height="300">
+
+</iframe>
+
+Conclusions
+
+1.  we **abandon iframe** technology
+
+2.  we revive **iframe** in collaboration of cloudflare **workers**

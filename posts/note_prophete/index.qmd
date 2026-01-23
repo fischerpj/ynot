@@ -7,12 +7,19 @@ format:
   html:
     include-in-header: "include-in-header.html"
     include-after-body: "after_body_editor.html"
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
 execute:
   echo: false    
 ---
 
 ::: {#introDiv}
 > This is a Global Note, using **EditorJS** and **localStorage** autosave mechanism.
+>
+> ui_elements.js creates the input bar.
+>
+> We have a div.editorjs area
 :::
 
 ```{=html}

@@ -1,0 +1,15 @@
+{
+  "hash": "ec45b60c9f20e9412ca08765e0bf1cda",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"bible_fetch API\"\nauthor: \"granPiero\"\ndate: \"2025-05-22\"\ncategories: [bible]\nimage: \"old_bible.jpg\"\nparams:\n  uuid_gen: !expr uuid::UUIDgenerate()\n  uuid: \"06b433ff-aa5f-421b-9de3-fc06735f93d1\"\n---\n\n> Bible **API** technologies, in fetch action; to be reviewed.\n\n\n::: {.cell}\n\n:::\n\n\n::: {#mainAnchor}\n:::\n\n```{=html}\n<script src=\"bible_api.js\"></script>\n```\n\n\n::: {.cell}\n\n```{.js .cell-code}\nconsole.log(\"toto\")\nconst app = new App();\n\n// app.m_fetchPassage(\"ps42!KJV\");\n\n```\n\n\n<script>\nconsole.log(\"toto\")\nconst app = new App();\n\n// app.m_fetchPassage(\"ps42!KJV\");\n\n</script>\n:::\n\n\n\n::: {.cell}\n\n```{.js .cell-code}\nconsole.log(\"toto2\")\nfetchData(\"ps42!KJV\");\n\n```\n\n\n<script>\nconsole.log(\"toto2\")\nfetchData(\"ps42!KJV\");\n\n</script>\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

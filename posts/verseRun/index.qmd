@@ -2,6 +2,7 @@
 title: "verseRun"
 date: "2025-09-08"
 image: "hurdler.jpg"
+category: biblique
 format: 
   html:
     comments:
