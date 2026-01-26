@@ -1,0 +1,88 @@
+---
+title: "qui a soif ?"
+subtitle: "valide question"
+date: "2026-01-26"
+image: "hurdler.jpg"
+format:
+  pdf:
+    documentclass: scrartcl
+    classoption: [twocolumn, landscape]
+    papersize: letter
+    geometry:
+      - top=30mm
+      - left=40mm
+      - right=40mm
+      - heightrounded
+    mainfont: Lato
+    monofont: Arial
+    colorlinks: true
+execute:
+  echo: false  
+---
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+:::
+
+:::: {#outputDiv}
+<div>
+
+<!--  any output comes here to outputDiv is considered Void-->
+
+</div>
+::::
+
+```{r FETCH, eval=TRUE}
+#| results: asis
+
+library(httr)
+library(jsonlite)
+library(htmltools)
+
+xURLBASE <- "https://hsub.pjafischer.workers.dev/bgw/api/?param="
+
+miparam <- c("REV22:17!SG21","REV21:6!SG21","1PE2:2-3!SG21","ROM8:22-23!SG21","2CO5:2-4!SG21","PHP3:8-10!SG21","JOH7:37-39!SG21","JOH4:13-14!SG21","MAT5:6!SG21","LAM3!SG21","JER29!SG21","ISA55!SG21","ISA26!SG21","PSA130!SG21","PSA73!SG21","PSA27!SG21","PSA143!SG21","PSA143:6!SG21","PSA84:2-4!SG21","PSA63:1-4!SG21","PSA42:1-2!SG21") |> rev()
+
+xLENGTH <- length(miparam)
+miurls <- purrr::map(miparam[1:xLENGTH], ~paste(xURLBASE,.x, sep=""))
+
+##----- PARAMETER
+# Define the FETCH function
+fetch_json <- function(
+    url= "https://hsub.pjafischer.workers.dev/bgw/api/?param=GAL2%3A20") {
+  tryCatch({
+    response <- GET(url, accept_json())
+    
+    if (status_code(response) == 200) {
+      json_data <- content(response, "text", encoding = "UTF-8")
+      parsed <- fromJSON(json_data)
+      parsed$error <- NULL
+      return(tibble::as_tibble(parsed))
+    } else {
+      warning(paste("Request failed with status code:", status_code(response)))
+      return(NULL)
+    }
+  }, error = function(e) {
+    message("Error fetching JSON: ", e$message)
+    return(NULL)
+  })
+}
+
+##----- DATAFRAME RESULT
+payload_df <- purrr::map_df(miurls, ~fetch_json(.x)) |>
+  dplyr::relocate(ref,version,content)
+
+```
+
+```{r TEMPLATE}
+#| output: asis
+
+# Create a Markdown template for each row
+template <- "{{ paste0('- **', df$ref, '**: ', df$content, collapse = '\\n\\n') }}"
+
+##-------- CRAFT MARKDOWN output
+# Expand the template using knit_expand
+md_body <- knitr::knit_expand(text = template, df = payload_df)
+cat(md_body, sep = "\n")
+
+```
