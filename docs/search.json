@@ -56,102 +56,67 @@
     "text": "Everything related to technology."
   },
   {
-    "objectID": "posts/cuisine/index.html",
-    "href": "posts/cuisine/index.html",
-    "title": "cuisine",
+    "objectID": "posts/bible-access/index.html",
+    "href": "posts/bible-access/index.html",
+    "title": "Bible access",
     "section": "",
-    "text": "Recettes de cuisine éprouvées."
+    "text": "Give access to Bible Texts, version, display, search, pdf as well as to Strong_Numbers and Bible sites. The refs’ full syntax respects “canon”:“ps1:1-3!SG21@bgw”. Workflow is 1.input 2.button.listener 3.iframe.src gets updated. Conclusion: Keep the Input+Button; Use the &lt;iframe for exploration. techno is jsfapi, jscript,\n\n  Get API"
   },
   {
-    "objectID": "posts/bcve/index.html",
-    "href": "posts/bcve/index.html",
-    "title": "BCVE",
+    "objectID": "posts/DOM via Javascript/index.html",
+    "href": "posts/DOM via Javascript/index.html",
+    "title": "DOM via Javascript",
     "section": "",
-    "text": "test of BCVE only for reaction to not recognized input.\nif book is not a recognized abbreviation then osis: null, bbc: undefined and is_valid: false\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nRefPreview = {\n  const mb = new Bcve(RefInput);\n  return mb;\n}\n\nMiRef = {\n  const mb = RefPreview;\n  \n////  if (mb.is_valid) {\n    const mir = new Ref(mb.param);\n//    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n//    return await mir.data;\n      return mir;\n///  } else {\n///    return \"undefined\"\n///  }\n}  \n\nRefPreview;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMiRef;"
+    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\nConclusion: Abandon ObersvableJS technology because of CSS-styling hurdle."
   },
   {
-    "objectID": "posts/bible-fetch-api/index.html",
-    "href": "posts/bible-fetch-api/index.html",
-    "title": "bible_fetch API",
+    "objectID": "posts/gospel-banner/index.html",
+    "href": "posts/gospel-banner/index.html",
+    "title": "gospel banner",
     "section": "",
-    "text": "Bible API technologies, in fetch action; to be reviewed.\n\n\n\n\n\n\nconsole.log(\"toto\")\nconst app = new App();\n\n// app.m_fetchPassage(\"ps42!KJV\");\n\n\n\nconsole.log(\"toto2\")\nfetchData(\"ps42!KJV\");"
+    "text": "The animated web presentation of biblical claims is posted at https://xminpi.netlify.app/ppt/gospel-banner/\n\nCapture additional content under comments."
   },
   {
-    "objectID": "posts/bibGrid/index.html",
-    "href": "posts/bibGrid/index.html",
-    "title": "bibGrid",
+    "objectID": "posts/global-note/index.html",
+    "href": "posts/global-note/index.html",
+    "title": "Global Note",
     "section": "",
-    "text": "Grid of Bible Books, Abbreviations, Chapter_Max.\n\n\ninputDiv is considered Void\n\n\nimport { html } from \"@observablehq/stdlib\";\n\n// Inputs\nviewof userRef_new = html`&lt;input type=\"text\" \n  class=\"form-control\" \n  style=\"width: 150px;\"\n  value=\"ps40:1!KJV\"/&gt;`;\n  \n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef_new}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { Ref, Bcve, Books, BibleBooksCodes } from \"./ref.js\";\n\n//valid_param = userRef_new;\n\nvalid_param = {\n  const mb = new Bcve(userRef_new);\n//  return mb;\n///  const BBC = new BibleBooksCodes();\n//  return BBC.getBBBFromText(mb.book);\n  return mb.param\n}\n\n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${valid_param}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nany output comes here"
+    "text": "This is a Global Note, using EditorJS and localStorage autosave mechanism.\n\n\nthis is inputDiv\nthis is editorDiv"
   },
   {
-    "objectID": "posts/etoile/index.html",
-    "href": "posts/etoile/index.html",
-    "title": "résidence Etoile",
+    "objectID": "posts/verseTest/index_R.html",
+    "href": "posts/verseTest/index_R.html",
+    "title": "verseTest",
     "section": "",
-    "text": "Point de départ de l’habitation au Clos de l’Etoile"
+    "text": "Psaumes 12: 12 Au chef de chœur, sur la harpe à huit cordes. Psaume de David. 2 Sauve-nous, Eternel, car il n’y a plus d’hommes loyaux!Les fidèles disparaissent du milieu des hommes. 3 On se dit des mensonges les uns aux autres,on a sur les lèvres des paroles flatteuses,on parle avec un cœur double. 4 Que l’Eternel extermine toutes les lèvres flatteuses,la langue qui parle avec arrogance, 5 ceux qui disent: «Nous sommes forts par notre langue,nous avons nos lèvres avec nous.Qui pourrait devenir notre maître?» 6 «Parce que les malheureux sont opprimés et que les pauvres gémissent,maintenant, dit l’Eternel, je me lève,j’apporte le salut à ceux qui soupirent après lui.» 7 Les paroles de l’Eternel sont des paroles pures,un argent affiné dans un creuset en argileet sept fois épuré. 8 Toi, Eternel, tu les garderas,tu les préserveras pour toujours de ces gens. 9 Les méchants rôdent partoutquand la bassesse règne parmi les hommes.\nPsaumes 42: 42 Au chef de chœur. Cantique des descendants de Koré. 2 Comme une biche soupire après des cours d’eau,ainsi mon âme soupire après toi, ô Dieu! 3 Mon âme a soif de Dieu, du Dieu vivant.Quand donc pourrai-je me présenter devant Dieu? 4 Mes larmes sont ma nourriture jour et nuit,car on me dit sans cesse: «Où est ton Dieu?» 5 Je me rappelle avec émotionl’époque où je marchais entouré de la foule,où j’avançais à sa tête vers la maison de Dieu,au milieu des cris de joie et de reconnaissanced’une multitude en fête. 6 Pourquoi être abattue, mon âme, et gémir en moi?Espère en Dieu, car je le louerai encore!Il est mon salut et mon Dieu. 7 Mon âme est abattue en moi;aussi, c’est à toi que je pense depuis le pays du Jourdain,depuis l’Hermon, depuis le mont Mitsear. 8 L’abîme appelle un autre abîme au fracas de tes cascades,toutes tes vagues et tous tes flots passent sur moi. 9 Le jour, l’Eternel m’accordait sa grâce;la nuit, je chantais ses louanges,j’adressais ma prière au Dieu de ma vie. 10 Je dis à Dieu, mon rocher: «Pourquoi m’as-tu oublié?Pourquoi dois-je marcher dans la tristesse,sous l’oppression de l’ennemi?» 11 Mes os se brisent quand mes persécuteurs m’insultentet me disent sans cesse: «Où est ton Dieu?» 12 Pourquoi être abattue, mon âme, et pourquoi gémir en moi?Espère en Dieu, car je le louerai encore!Il est mon salut et mon Dieu.\n\nTest Verse from hsub filtering\nbiblegateway:\nhttps://www.biblegateway.com/passage/?search=ps42&version=NIV\nhsub:\nhttps://hsub.pjafischer.workers.dev/bgw/api/?param=ps42\ndiv.passage-col &gt; h1.passage-display &gt; div.bcv | div.translation\n…\ndiv.passage-col &gt; div.passage-text &gt; div.passage-content &gt; h2 | h3\ndocker exec -it w2529 bash npm run deploy in hsub\n\nhsub rendering in quarto / html\nhsub query and response\nhsub dev and deploy on w2519 and cloudflare\nynot website hosted on github"
   },
   {
-    "objectID": "posts/bible_techpad/index.html",
-    "href": "posts/bible_techpad/index.html",
-    "title": "bible techpad",
+    "objectID": "posts/excursions/index.html",
+    "href": "posts/excursions/index.html",
+    "title": "excursions",
     "section": "",
-    "text": "Bible Search and Lookup technologies. Ideapad\n\n\n\n[1] \"1e6448ba-7307-47a0-9950-53c1c1da45c6\""
+    "text": "The root of discoveries.\n\n\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres."
   },
   {
-    "objectID": "posts/priorités/index.html",
-    "href": "posts/priorités/index.html",
-    "title": "priorités",
+    "objectID": "posts/romans_note/index.html",
+    "href": "posts/romans_note/index.html",
+    "title": "Romans Note",
     "section": "",
-    "text": "Organise the tree of priorities\n\nimportant first"
+    "text": "This is a Global Note on Romans (using EditorJS and localStorage autosave mechanisms)\n\n\nthis is inputDiv\nthis is editorDiv"
   },
   {
-    "objectID": "posts/prayer/index.html",
-    "href": "posts/prayer/index.html",
-    "title": "la prière",
+    "objectID": "posts/succession/index.html",
+    "href": "posts/succession/index.html",
+    "title": "Succession",
     "section": "",
-    "text": "ceci est la page sur la prière chrétienne, pour l’accumulation des versets sur ce sujet , la conservation de commentaires et l’édition d’un exposé structuré.\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"prayer\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Store\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = viewof RefInput.value;\n      const validated = new Bcve(input);\n      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nviewof HelpButton = {\n  const hbut = Inputs.button(\"Help\");\n  return hbut\n}\n\nviewof CopyButton =  Inputs.button(\"Clip\",{\n    value: null,\n    reduce: () =&gt; { \n      // Copy to clipboard\n      navigator.clipboard.writeText(JSON.stringify(AccuStorage))\n        .then(() =&gt; console.log('Copied to clipboard!'))\n       .catch(err =&gt; console.error('Failed to copy:', err));\n    }\n});\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n  if (mb.is_valid) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n  } else {\n    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n  }\n}\n\n\n\n\n\n\n\nrestyling = {\n  viewof AccuStorage.classList.add(\"btn\", \"btn-warning\");\n  viewof HelpButton.classList.add(\"btn\", \"btn-info\");\n  viewof CopyButton.classList.add(\"btn\", \"btn-success\");\n\n  // Very Great\n  const mib = viewof AccuStorage.querySelector('button.btn-quarto');\n  if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn','btn-warning');\n  }\n  \n  const hbut = viewof HelpButton.querySelector('button.btn-quarto');\n  if (hbut) {\n    hbut.classList.remove('btn-quarto');\n    hbut.classList.add('btn', 'btn-info');\n  } \n  \n  const copbut = viewof CopyButton.querySelector('button.btn-quarto');\n  if (copbut) {\n    copbut.classList.remove('btn-quarto');\n    copbut.classList.add('btn-success');\n  }  \n\n// RESTYLING of INPUT\n  const mii = viewof RefInput.querySelector('div');\n  if (mii) {\n    mii.classList.add(\"form-control\");\n  }\n  \n  const inp = mii.querySelector('input');\n  if (inp) {\n    inp.style.border = \"none\";\n    inp.style.outline = \"none\";\n  }\n}\n\n// VIEWOF\nhtml`&lt;div class=\"button-row\"&gt;\n    ${viewof RefInput}\n    ${viewof AccuStorage}\n    ${viewof CopyButton}\n    ${viewof HelpButton}\n &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`\n\n\n\n\n\n\n\n\n\nRefData = {\n  // DATA is imported from BibleBooksCodes_Tables.js\n    const mir = new Ref(AccuStorage);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n    const miresult = await mir.data\n    return miresult\n}\n\n// DISPLAY the list with Details and Summary\nhtml`${RefData.map(item =&gt; html`&lt;details style=\"line-height: 1.6; margin-bottom: 10px;\"&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; ${item.content.slice(0,45)} ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;  ${item.cacheStatus}:${item.duration_fetch}ms&lt;/details&gt;`)}`"
+    "text": "Everything related to succession Fischer-Durrenberger."
   },
   {
-    "objectID": "posts/vFetch/index.html",
-    "href": "posts/vFetch/index.html",
-    "title": "vFetch",
+    "objectID": "posts/checkStorage/index.html",
+    "href": "posts/checkStorage/index.html",
+    "title": "check_storage",
     "section": "",
-    "text": "Check verseFetch\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRefPreview = {\n  const mb = new Bcve(\"Ps42!KJV\");\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}\n\n// Display the list IF VALID\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;"
-  },
-  {
-    "objectID": "posts/cke/index.html",
-    "href": "posts/cke/index.html",
-    "title": "Welcome To EditorJS",
-    "section": "",
-    "text": "Proof of Concept of EditorJS\n\nThis is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.\nrelies on yaml =&gt; format: html: include: include-on-header:\n\nEditor.js in Node.js\n\n\n\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
-  },
-  {
-    "objectID": "posts/memo_verse/index.html",
-    "href": "posts/memo_verse/index.html",
-    "title": "memo_verse",
-    "section": "",
-    "text": "VALUABLE LEGACY via hsub &gt; jsfapi (maybe slow storage setup): This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
-  },
-  {
-    "objectID": "posts/read_storage/index.html",
-    "href": "posts/read_storage/index.html",
-    "title": "Read LocalStorage",
-    "section": "",
-    "text": "Read LocalStorage key “prophete”\n\n\ntake an input, trigger a button to echo the value\n\n\n\nEcho Input\n\n\n\n\nRead from LocalStorage: Trigger the retrieval and echo the value\n\n\nRead from LocalStorage\n\n\n\nOne script inserted here handles that all."
-  },
-  {
-    "objectID": "posts/accuStorage/index.html",
-    "href": "posts/accuStorage/index.html",
-    "title": "accuStorage",
-    "section": "",
-    "text": "The AccuStorage Button yes\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof theme = {\n  const key = \"theme\"\n  const stored = localStorage.getItem(key)\n  const initial = stored ?? \"light\"\n\n  const input = Inputs.select([\"light\", \"dark\"], {\n    label: \"Theme\",\n    value: initial\n  })\n\n  // Sync to localStorage on change\n  input.addEventListener(\"input\", () =&gt; {\n    localStorage.setItem(key, input.value)\n  })\n\n  return input\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"RefAccu\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Keep\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = \"Gal2:20\"\n//      const input = viewof RefInput.value;\n//      const validated = new Bcve(input);\n//      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...list, input ]\n//      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nAccuStorage;"
-  },
-  {
-    "objectID": "posts/cke/index_cke.html",
-    "href": "posts/cke/index_cke.html",
-    "title": "Welcome To CKeditor",
-    "section": "",
-    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
+    "text": "This checks your localStorage"
   },
   {
     "objectID": "posts/yRun/index.html",
@@ -168,74 +133,102 @@
     "text": "ObservableJS demo\n\ndomReady = new Promise(resolve =&gt; {\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", resolve);\n  } else {\n    resolve();\n  }\n})\n\n// A reactive view that updates once DOM is ready\nviewof demoValue = {\n//  const div = html`&lt;div&gt;⏳ Waiting for DOM…&lt;/div&gt;`;\n//  yield div;   // show placeholder immediately\n\n  await domReady;  // wait until DOM is ready\n//  div.textContent = `DOM is ready, value displayed! ${RefPreview} `;\n\n  // from vRun: Display the list IF VALID\n  const divTwo = html`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;\n  \n  yield divTwo;   // update once DOM is ready\n}"
   },
   {
-    "objectID": "posts/checkStorage/index.html",
-    "href": "posts/checkStorage/index.html",
-    "title": "check_storage",
+    "objectID": "posts/cke/index_cke.html",
+    "href": "posts/cke/index_cke.html",
+    "title": "Welcome To CKeditor",
     "section": "",
-    "text": "This checks your localStorage"
+    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
   },
   {
-    "objectID": "posts/succession/index.html",
-    "href": "posts/succession/index.html",
-    "title": "Succession",
+    "objectID": "posts/accuStorage/index.html",
+    "href": "posts/accuStorage/index.html",
+    "title": "accuStorage",
     "section": "",
-    "text": "Everything related to succession Fischer-Durrenberger."
+    "text": "The AccuStorage Button yes\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof theme = {\n  const key = \"theme\"\n  const stored = localStorage.getItem(key)\n  const initial = stored ?? \"light\"\n\n  const input = Inputs.select([\"light\", \"dark\"], {\n    label: \"Theme\",\n    value: initial\n  })\n\n  // Sync to localStorage on change\n  input.addEventListener(\"input\", () =&gt; {\n    localStorage.setItem(key, input.value)\n  })\n\n  return input\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"RefAccu\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Keep\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = \"Gal2:20\"\n//      const input = viewof RefInput.value;\n//      const validated = new Bcve(input);\n//      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...list, input ]\n//      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nAccuStorage;"
   },
   {
-    "objectID": "posts/romans_note/index.html",
-    "href": "posts/romans_note/index.html",
-    "title": "Romans Note",
+    "objectID": "posts/read_storage/index.html",
+    "href": "posts/read_storage/index.html",
+    "title": "Read LocalStorage",
     "section": "",
-    "text": "This is a Global Note on Romans (using EditorJS and localStorage autosave mechanisms)\n\n\nthis is inputDiv\nthis is editorDiv"
+    "text": "Read LocalStorage key “prophete”\n\n\ntake an input, trigger a button to echo the value\n\n\n\nEcho Input\n\n\n\n\nRead from LocalStorage: Trigger the retrieval and echo the value\n\n\nRead from LocalStorage\n\n\n\nOne script inserted here handles that all."
   },
   {
-    "objectID": "posts/excursions/index.html",
-    "href": "posts/excursions/index.html",
-    "title": "excursions",
+    "objectID": "posts/memo_verse/index.html",
+    "href": "posts/memo_verse/index.html",
+    "title": "memo_verse",
     "section": "",
-    "text": "The root of discoveries.\n\n\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres."
+    "text": "VALUABLE LEGACY via hsub &gt; jsfapi (maybe slow storage setup): This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
   },
   {
-    "objectID": "posts/verseTest/index_R.html",
-    "href": "posts/verseTest/index_R.html",
-    "title": "verseTest",
+    "objectID": "posts/cke/index.html",
+    "href": "posts/cke/index.html",
+    "title": "Welcome To EditorJS",
     "section": "",
-    "text": "Psaumes 12: 12 Au chef de chœur, sur la harpe à huit cordes. Psaume de David. 2 Sauve-nous, Eternel, car il n’y a plus d’hommes loyaux!Les fidèles disparaissent du milieu des hommes. 3 On se dit des mensonges les uns aux autres,on a sur les lèvres des paroles flatteuses,on parle avec un cœur double. 4 Que l’Eternel extermine toutes les lèvres flatteuses,la langue qui parle avec arrogance, 5 ceux qui disent: «Nous sommes forts par notre langue,nous avons nos lèvres avec nous.Qui pourrait devenir notre maître?» 6 «Parce que les malheureux sont opprimés et que les pauvres gémissent,maintenant, dit l’Eternel, je me lève,j’apporte le salut à ceux qui soupirent après lui.» 7 Les paroles de l’Eternel sont des paroles pures,un argent affiné dans un creuset en argileet sept fois épuré. 8 Toi, Eternel, tu les garderas,tu les préserveras pour toujours de ces gens. 9 Les méchants rôdent partoutquand la bassesse règne parmi les hommes.\nPsaumes 42: 42 Au chef de chœur. Cantique des descendants de Koré. 2 Comme une biche soupire après des cours d’eau,ainsi mon âme soupire après toi, ô Dieu! 3 Mon âme a soif de Dieu, du Dieu vivant.Quand donc pourrai-je me présenter devant Dieu? 4 Mes larmes sont ma nourriture jour et nuit,car on me dit sans cesse: «Où est ton Dieu?» 5 Je me rappelle avec émotionl’époque où je marchais entouré de la foule,où j’avançais à sa tête vers la maison de Dieu,au milieu des cris de joie et de reconnaissanced’une multitude en fête. 6 Pourquoi être abattue, mon âme, et gémir en moi?Espère en Dieu, car je le louerai encore!Il est mon salut et mon Dieu. 7 Mon âme est abattue en moi;aussi, c’est à toi que je pense depuis le pays du Jourdain,depuis l’Hermon, depuis le mont Mitsear. 8 L’abîme appelle un autre abîme au fracas de tes cascades,toutes tes vagues et tous tes flots passent sur moi. 9 Le jour, l’Eternel m’accordait sa grâce;la nuit, je chantais ses louanges,j’adressais ma prière au Dieu de ma vie. 10 Je dis à Dieu, mon rocher: «Pourquoi m’as-tu oublié?Pourquoi dois-je marcher dans la tristesse,sous l’oppression de l’ennemi?» 11 Mes os se brisent quand mes persécuteurs m’insultentet me disent sans cesse: «Où est ton Dieu?» 12 Pourquoi être abattue, mon âme, et pourquoi gémir en moi?Espère en Dieu, car je le louerai encore!Il est mon salut et mon Dieu.\n\nTest Verse from hsub filtering\nbiblegateway:\nhttps://www.biblegateway.com/passage/?search=ps42&version=NIV\nhsub:\nhttps://hsub.pjafischer.workers.dev/bgw/api/?param=ps42\ndiv.passage-col &gt; h1.passage-display &gt; div.bcv | div.translation\n…\ndiv.passage-col &gt; div.passage-text &gt; div.passage-content &gt; h2 | h3\ndocker exec -it w2529 bash npm run deploy in hsub\n\nhsub rendering in quarto / html\nhsub query and response\nhsub dev and deploy on w2519 and cloudflare\nynot website hosted on github"
+    "text": "Proof of Concept of EditorJS\n\nThis is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.\nrelies on yaml =&gt; format: html: include: include-on-header:\n\nEditor.js in Node.js\n\n\n\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
   },
   {
-    "objectID": "posts/global-note/index.html",
-    "href": "posts/global-note/index.html",
-    "title": "Global Note",
+    "objectID": "posts/vFetch/index.html",
+    "href": "posts/vFetch/index.html",
+    "title": "vFetch",
     "section": "",
-    "text": "This is a Global Note, using EditorJS and localStorage autosave mechanism.\n\n\nthis is inputDiv\nthis is editorDiv"
+    "text": "Check verseFetch\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRefPreview = {\n  const mb = new Bcve(\"Ps42!KJV\");\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}\n\n// Display the list IF VALID\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;"
   },
   {
-    "objectID": "posts/gospel-banner/index.html",
-    "href": "posts/gospel-banner/index.html",
-    "title": "gospel banner",
+    "objectID": "posts/prayer/index.html",
+    "href": "posts/prayer/index.html",
+    "title": "la prière",
     "section": "",
-    "text": "The animated web presentation of biblical claims is posted at https://xminpi.netlify.app/ppt/gospel-banner/\n\nCapture additional content under comments."
+    "text": "ceci est la page sur la prière chrétienne, pour l’accumulation des versets sur ce sujet , la conservation de commentaires et l’édition d’un exposé structuré.\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"prayer\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Store\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = viewof RefInput.value;\n      const validated = new Bcve(input);\n      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nviewof HelpButton = {\n  const hbut = Inputs.button(\"Help\");\n  return hbut\n}\n\nviewof CopyButton =  Inputs.button(\"Clip\",{\n    value: null,\n    reduce: () =&gt; { \n      // Copy to clipboard\n      navigator.clipboard.writeText(JSON.stringify(AccuStorage))\n        .then(() =&gt; console.log('Copied to clipboard!'))\n       .catch(err =&gt; console.error('Failed to copy:', err));\n    }\n});\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n  if (mb.is_valid) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n  } else {\n    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n  }\n}\n\n\n\n\n\n\n\nrestyling = {\n  viewof AccuStorage.classList.add(\"btn\", \"btn-warning\");\n  viewof HelpButton.classList.add(\"btn\", \"btn-info\");\n  viewof CopyButton.classList.add(\"btn\", \"btn-success\");\n\n  // Very Great\n  const mib = viewof AccuStorage.querySelector('button.btn-quarto');\n  if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn','btn-warning');\n  }\n  \n  const hbut = viewof HelpButton.querySelector('button.btn-quarto');\n  if (hbut) {\n    hbut.classList.remove('btn-quarto');\n    hbut.classList.add('btn', 'btn-info');\n  } \n  \n  const copbut = viewof CopyButton.querySelector('button.btn-quarto');\n  if (copbut) {\n    copbut.classList.remove('btn-quarto');\n    copbut.classList.add('btn-success');\n  }  \n\n// RESTYLING of INPUT\n  const mii = viewof RefInput.querySelector('div');\n  if (mii) {\n    mii.classList.add(\"form-control\");\n  }\n  \n  const inp = mii.querySelector('input');\n  if (inp) {\n    inp.style.border = \"none\";\n    inp.style.outline = \"none\";\n  }\n}\n\n// VIEWOF\nhtml`&lt;div class=\"button-row\"&gt;\n    ${viewof RefInput}\n    ${viewof AccuStorage}\n    ${viewof CopyButton}\n    ${viewof HelpButton}\n &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`\n\n\n\n\n\n\n\n\n\nRefData = {\n  // DATA is imported from BibleBooksCodes_Tables.js\n    const mir = new Ref(AccuStorage);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n    const miresult = await mir.data\n    return miresult\n}\n\n// DISPLAY the list with Details and Summary\nhtml`${RefData.map(item =&gt; html`&lt;details style=\"line-height: 1.6; margin-bottom: 10px;\"&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; ${item.content.slice(0,45)} ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;  ${item.cacheStatus}:${item.duration_fetch}ms&lt;/details&gt;`)}`"
   },
   {
-    "objectID": "posts/DOM via Javascript/index.html",
-    "href": "posts/DOM via Javascript/index.html",
-    "title": "DOM via Javascript",
+    "objectID": "posts/priorités/index.html",
+    "href": "posts/priorités/index.html",
+    "title": "priorités",
     "section": "",
-    "text": "Modify the DOM: take an input, trigger a button, echo the value.\n\n\n\nSubmit\n\n\n\n\n\nUpdate an iframe’s content via its src attribute.\n\n Display  \n\n\nConclusion: Abandon ObersvableJS technology because of CSS-styling hurdle."
+    "text": "Organise the tree of priorities\n\nimportant first"
   },
   {
-    "objectID": "posts/bible-access/index.html",
-    "href": "posts/bible-access/index.html",
-    "title": "Bible access",
+    "objectID": "posts/bible_techpad/index.html",
+    "href": "posts/bible_techpad/index.html",
+    "title": "bible techpad",
     "section": "",
-    "text": "Give access to Bible Texts, version, display, search, pdf as well as to Strong_Numbers and Bible sites. The refs’ full syntax respects “canon”:“ps1:1-3!SG21@bgw”. Workflow is 1.input 2.button.listener 3.iframe.src gets updated. Conclusion: Keep the Input+Button; Use the &lt;iframe for exploration. techno is jsfapi, jscript,\n\n  Get API"
+    "text": "Bible Search and Lookup technologies. Ideapad\n\n\n\n[1] \"1e6448ba-7307-47a0-9950-53c1c1da45c6\""
   },
   {
-    "objectID": "posts/utterances_minimal/index.html",
-    "href": "posts/utterances_minimal/index.html",
-    "title": "utterances minimalsitic",
+    "objectID": "posts/etoile/index.html",
+    "href": "posts/etoile/index.html",
+    "title": "résidence Etoile",
     "section": "",
-    "text": "Here you go, Pier — one single, clean, canonical file, with each component separated into clearly labeled sections.  \nYou can paste this entire block into a single .qmd, .md, or .txt file for reference, or split it later.\nThis is the entire Quarto extension, fully self‑contained, deterministic, and ready to drop into:\n_extensions/utterances-minimal/\nEverything is here:  \n\n_extension.yml  \nutterances.css  \nutterances.js  \nutterances.html  \ninstructions for activation  \n\nAll in one place.\n UTTERANCES MINIMAL QUARTO EXTENSION (ALL FILES IN ONE DOCUMENT)\n\nSECTION 1 — _extension.yml\n`yaml\ntitle: Utterances Minimal\nversion: 1.0.0\ncontributes:\n  formats:\n    html:\n      include-after-body: utterances.html\n      css: utterances.css\n      js: utterances.js\n`\n\nSECTION 2 — utterances.css\n`css\n/* ———————————————————-\n   Minimalist Utterances – Light Theme\n   ———————————————————- */\n.utterances-theme-bare-minimal-light {\n  –color-bg: transparent;\n  –color-border: transparent;\n  –color-text: #333;\n  –color-link: #0366d6;\n  –color-btn-bg: transparent;\n  –color-btn-text: #0366d6;\n  –color-btn-border: #0366d6;\n  –color-btn-hover-bg: #0366d6;\n  –color-btn-hover-text: #fff;\n  –color-btn-hover-border: #0366d6;\n}\n/* ———————————————————-\n   Minimalist Utterances – Dark Theme\n   ———————————————————- */\n.utterances-theme-bare-minimal-dark {\n  –color-bg: transparent;\n  –color-border: transparent;\n  –color-text: #ddd;\n  –color-link: #58a6ff;\n  –color-btn-bg: transparent;\n  –color-btn-text: #58a6ff;\n  –color-btn-border: #58a6ff;\n  –color-btn-hover-bg: #58a6ff;\n  –color-btn-hover-text: #000;\n  –color-btn-hover-border: #58a6ff;\n}\n`\n\nSECTION 3 — utterances.js\n`js\n/* ———————————————————-\n   Load Utterances with the correct theme\n   ———————————————————- */\nfunction loadUtterances(theme) {\n  const container = document.getElementById(“utterances-container”);\n  container.innerHTML = ““;\n  const script = document.createElement(“script”);\n  script.src = “https://utteranc.es/client.js”;\n  script.async = true;\n  script.crossOrigin = “anonymous”;\n  script.setAttribute(“repo”, container.dataset.repo);\n  script.setAttribute(“issue-term”, container.dataset.issueTerm);\n  script.setAttribute(“theme”, theme);\n  container.appendChild(script);\n}\n/* ———————————————————-\n   Detect current Quarto theme\n   ———————————————————- */\nfunction currentTheme() {\n  const body = document.querySelector(“body”);\n  return body.classList.contains(“quarto-dark”)\n    ? “bare-minimal-dark”\n    : “bare-minimal-light”;\n}\n/* ———————————————————-\n   Initial load\n   ———————————————————- */\ndocument.addEventListener(“DOMContentLoaded”, () =&gt; {\n  loadUtterances(currentTheme());\n});\n/* ———————————————————-\n   Reload when Quarto switches theme\n   ———————————————————- */\nwindow.addEventListener(“quarto:themeChanged”, () =&gt; {\n  loadUtterances(currentTheme());\n});\n`\n\nSECTION 4 — utterances.html\n`html\n&lt;div id=“utterances-container”\n     data-repo=“?meta:utterances.repo”\n     data-issue-term=“?meta:utterances.issue-term”&gt;\n&lt;/div&gt;\n&lt;link rel=“stylesheet” href=“?meta:utterances.css”&gt;\n&lt;script src=“?meta:utterances.js”&gt;&lt;/script&gt;\n`\n\nSECTION 5 — How to install the extension\nPlace the folder:\n`\n_extensions/utterances-minimal/\n`\nwith the four files inside.\nYour project structure should look like:\n`\nproject/\n  _quarto.yml\n  _extensions/\n    utterances-minimal/\n      _extension.yml\n      utterances.css\n      utterances.js\n      utterances.html\n`\n\nSECTION 6 — How to activate it in _quarto.yml\nAdd this:\n`yaml\nformat:\n  html:\n    theme: cosmo\nutterances:\n  repo: “YOUR/REPO”\n  issue-term: “pathname”\n  css: “_extensions/utterances-minimal/utterances.css”\n  js: “_extensions/utterances-minimal/utterances.js”\n`\n\nSECTION 7 — How to use it in posts\nComments appear automatically at the bottom.\nIf you want to place them manually:\n`markdown\nComments\n\n\n\n`\n\n Done\nYou now have:\n- a single, canonical reference document  \n- a fully functional Quarto extension  \n- minimalist Utterances styling  \n- automatic light/dark switching  \n- deterministic, reproducible behavior"
+    "text": "Point de départ de l’habitation au Clos de l’Etoile"
+  },
+  {
+    "objectID": "posts/bibGrid/index.html",
+    "href": "posts/bibGrid/index.html",
+    "title": "bibGrid",
+    "section": "",
+    "text": "Grid of Bible Books, Abbreviations, Chapter_Max.\n\n\ninputDiv is considered Void\n\n\nimport { html } from \"@observablehq/stdlib\";\n\n// Inputs\nviewof userRef_new = html`&lt;input type=\"text\" \n  class=\"form-control\" \n  style=\"width: 150px;\"\n  value=\"ps40:1!KJV\"/&gt;`;\n  \n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Lookup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${viewof userRef_new}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { Ref, Bcve, Books, BibleBooksCodes } from \"./ref.js\";\n\n//valid_param = userRef_new;\n\nvalid_param = {\n  const mb = new Bcve(userRef_new);\n//  return mb;\n///  const BBC = new BibleBooksCodes();\n//  return BBC.getBBBFromText(mb.book);\n  return mb.param\n}\n\n// VIEWOF\nhtml`&lt;div class=\"row container\"&gt;\n  Validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  ${valid_param}\n  &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nany output comes here"
+  },
+  {
+    "objectID": "posts/bible-fetch-api/index.html",
+    "href": "posts/bible-fetch-api/index.html",
+    "title": "bible_fetch API",
+    "section": "",
+    "text": "Bible API technologies, in fetch action; to be reviewed.\n\n\n\n\n\n\nconsole.log(\"toto\")\nconst app = new App();\n\n// app.m_fetchPassage(\"ps42!KJV\");\n\n\n\nconsole.log(\"toto2\")\nfetchData(\"ps42!KJV\");"
+  },
+  {
+    "objectID": "posts/bcve/index.html",
+    "href": "posts/bcve/index.html",
+    "title": "BCVE",
+    "section": "",
+    "text": "test of BCVE only for reaction to not recognized input.\nif book is not a recognized abbreviation then osis: null, bbc: undefined and is_valid: false\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nRefPreview = {\n  const mb = new Bcve(RefInput);\n  return mb;\n}\n\nMiRef = {\n  const mb = RefPreview;\n  \n////  if (mb.is_valid) {\n    const mir = new Ref(mb.param);\n//    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n//    return await mir.data;\n      return mir;\n///  } else {\n///    return \"undefined\"\n///  }\n}  \n\nRefPreview;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMiRef;"
+  },
+  {
+    "objectID": "posts/cuisine/index.html",
+    "href": "posts/cuisine/index.html",
+    "title": "cuisine",
+    "section": "",
+    "text": "Recettes de cuisine éprouvées."
   },
   {
     "objectID": "posts/observables/index.html",
@@ -291,6 +284,6 @@
     "href": "index.html",
     "title": "homepage",
     "section": "",
-    "text": "Ynot (Why not!) is a Quarto website with a feature of storing infos/comments as issues.\nYnot is build with quarto render and sourced from https://github.com/fischerpj/ynot.git and locally a docker rocker/verse image like v2519.\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\nRead LocalStorage\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 5, 2025\n\n\naccuStorage\n\n\n \n\n\n\n\n\n\n\nDec 28, 2024\n\n\nmemo_verse\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 29, 2024\n\n\nWelcome To CKeditor\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 16, 2025\n\n\nWelcome To EditorJS\n\n\ngranPiero \n\n\n\n\n\n\n\nNov 27, 2025\n\n\nyieldRun\n\n\n \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nvFetch\n\n\n \n\n\n\n\n\n\n\nApr 3, 2025\n\n\ncheck_storage\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 30, 2025\n\n\nla prière\n\n\ngranPiero \n\n\n\n\n\n\n\nNov 7, 2024\n\n\nSuccession\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\npriorités\n\n\ngranPiero \n\n\n\n\n\n\n\n \n\n\nRomans Note\n\n\n \n\n\n\n\n\n\n\nOct 12, 2024\n\n\nbible techpad\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 21, 2024\n\n\nexcursions\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 1, 2024\n\n\nrésidence Etoile\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 18, 2025\n\n\nverses, mere edition\n\n\n \n\n\n\n\n\n\n\nJul 9, 2025\n\n\nbibGrid\n\n\n \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nverseTest\n\n\n \n\n\n\n\n\n\n\nMay 22, 2025\n\n\nbible_fetch API\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 17, 2025\n\n\nGlobal Note\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 30, 2025\n\n\nBCVE\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngospel banner\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nraw content\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nDOM via Javascript\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\ncuisine\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 21, 2025\n\n\nBible access\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nverses.PDF\n\n\n \n\n\n\n\n\n\n\nNov 27, 2025\n\n\nutterances minimalsitic\n\n\n \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nIT\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\nObservables\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nverseRun\n\n\n \n\n\n\n\n\n\n\nSep 28, 2025\n\n\nVias_QuaranteAns\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nnotes\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 11, 2024\n\n\njsfapi\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 17, 2025\n\n\nNote Prophete\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nRef_to_PDF\n\n\n \n\n\n\n\n\n\n\nJan 5, 2026\n\n\nim Jahr 2026\n\n\n \n\n\n\n\n\n\n\nOct 1, 2024\n\n\nimmobilier\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nStorage with Javascript\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 9, 2024\n\n\nIframes & Workers\n\n\ngranPiero \n\n\n\n\n\n\n\nJan 26, 2026\n\n\nqui a soif ?\n\n\n \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nraw content\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nDOM via Javascript\n\n\ngranPiero \n\n\n\n\nNo matching items"
+    "text": "Ynot (Why not!) is a Quarto website with a feature of storing infos/comments as issues.\nYnot is build with quarto render and sourced from https://github.com/fischerpj/ynot.git and locally a docker rocker/verse image like v2519.\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\nRead LocalStorage\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 5, 2025\n\n\naccuStorage\n\n\n \n\n\n\n\n\n\n\nDec 28, 2024\n\n\nmemo_verse\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 29, 2024\n\n\nWelcome To CKeditor\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 16, 2025\n\n\nWelcome To EditorJS\n\n\ngranPiero \n\n\n\n\n\n\n\nNov 27, 2025\n\n\nyieldRun\n\n\n \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nvFetch\n\n\n \n\n\n\n\n\n\n\nApr 3, 2025\n\n\ncheck_storage\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 30, 2025\n\n\nla prière\n\n\ngranPiero \n\n\n\n\n\n\n\nNov 7, 2024\n\n\nSuccession\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\npriorités\n\n\ngranPiero \n\n\n\n\n\n\n\n \n\n\nRomans Note\n\n\n \n\n\n\n\n\n\n\nOct 12, 2024\n\n\nbible techpad\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 21, 2024\n\n\nexcursions\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 1, 2024\n\n\nrésidence Etoile\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 18, 2025\n\n\nverses, mere edition\n\n\n \n\n\n\n\n\n\n\nJul 9, 2025\n\n\nbibGrid\n\n\n \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nverseTest\n\n\n \n\n\n\n\n\n\n\nMay 22, 2025\n\n\nbible_fetch API\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 17, 2025\n\n\nGlobal Note\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 30, 2025\n\n\nBCVE\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngospel banner\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nraw content\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nDOM via Javascript\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\ncuisine\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 21, 2025\n\n\nBible access\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nverses.PDF\n\n\n \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nIT\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\nObservables\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nverseRun\n\n\n \n\n\n\n\n\n\n\nSep 28, 2025\n\n\nVias_QuaranteAns\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nnotes\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 11, 2024\n\n\njsfapi\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 17, 2025\n\n\nNote Prophete\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nRef_to_PDF\n\n\n \n\n\n\n\n\n\n\nJan 5, 2026\n\n\nim Jahr 2026\n\n\n \n\n\n\n\n\n\n\nOct 1, 2024\n\n\nimmobilier\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nStorage with Javascript\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 9, 2024\n\n\nIframes & Workers\n\n\ngranPiero \n\n\n\n\n\n\n\nJan 26, 2026\n\n\nqui a soif ?\n\n\n \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nraw content\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nDOM via Javascript\n\n\ngranPiero \n\n\n\n\nNo matching items"
   }
 ]
