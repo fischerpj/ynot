@@ -101,9 +101,9 @@ RefPreview = {
 ```{ojs}
 // RESTYLING of Buttons
 restyling = {
-//  viewof AccuStorage.classList.add("btn", "btn-warning");
-//  viewof HelpButton.classList.add("btn", "btn-info");
-//  viewof CopyButton.classList.add("btn", "btn-success");
+  viewof AccuStorage.classList.add("btn", "btn-warning");
+  viewof HelpButton.classList.add("btn", "btn-info");
+  viewof CopyButton.classList.add("btn", "btn-success");
 
   // Very Great
   const mib = viewof AccuStorage.querySelector('button.btn-quarto');
@@ -139,7 +139,7 @@ restyling = {
 };
 
 // VIEWOF
-html`<div style="display:flex;justify-content:space-between; gap:0rem;">
+html`<div class="button-row">
     ${viewof RefInput}
     ${viewof AccuStorage}
     ${viewof CopyButton}

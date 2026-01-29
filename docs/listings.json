@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/vButtonOjs/index_legacy.html",
+      "/posts/vButtonOjs/index.html",
       "/posts/read_storage/index.html",
       "/posts/accuStorage/index.html",
       "/posts/memo_verse/index.html",

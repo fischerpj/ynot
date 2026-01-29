@@ -1,5 +1,5 @@
 ---
-title: "verseRun"
+title: "ojsButtonRow"
 date: "2025-09-08"
 image: "hurdler.jpg"
 category: biblique
@@ -13,6 +13,13 @@ execute:
 ---
 
 > **Instant View & Persistent Bible Verses**.
+
+```{=html}
+<!--
+switch-off all styles.css
+display:flex; does the groundjob for row inline
+-->
+```
 
 ::: {#inputDiv}
 <!-- inputDiv is considered Void-->
@@ -31,11 +38,10 @@ import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
 viewof RefInput = {
   const inputText = Inputs.text({
   value: "Gen1:1",
-  style: "width: 80px;"
+  style: "width: 40px;"
   })
   return inputText
 }
-
 ```
 
 ```{ojs}
@@ -63,11 +69,13 @@ viewof AccuStorage = {
     return accuButton
 }
 
+// HELP BUTTON
 viewof HelpButton = {
   const hbut = Inputs.button("Help");
   return hbut
 }
 
+// COPY BUTTON
 viewof CopyButton =  Inputs.button("Clip",{
     value: null,
     reduce: () => { 
@@ -78,24 +86,6 @@ viewof CopyButton =  Inputs.button("Clip",{
     }
 });
 
-
-```
-
-```{ojs}
-//================== REACTIVE PREVIEW OF INPUT 
-RefPreview = {
-  const mb = new Bcve(RefInput);
-  
-//  if (mb.is_valid ) {
-    const mir = new Ref(mb.param);
-    await mir.fetch_parallel();   // Wait for data to be fetched
-//    await mir.displayData(); 
-//    return mir.outputContent;
-    return await mir.data;
-//  } else {
-//    return `<div><ul><li>${mb.param}</li></ul></div>`  
-//  }
-}
 ```
 
 ```{ojs}
@@ -106,7 +96,7 @@ restyling = {
 //  viewof CopyButton.classList.add("btn", "btn-success");
 
   // Very Great
-  const mib = viewof AccuStorage.querySelector('button.btn-quarto');
+  const mib = viewof AccuStorage.querySelector('button');
   if (mib) {
     mib.classList.remove('btn-quarto');
     mib.classList.add('btn','btn-warning');
@@ -137,18 +127,36 @@ restyling = {
   }
   
 };
+```
 
+```{ojs}
+//================== REACTIVE PREVIEW OF INPUT 
+RefPreview = {
+  const mb = new Bcve(RefInput);
+  
+//  if (mb.is_valid ) {
+    const mir = new Ref(mb.param);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+//    await mir.displayData(); 
+//    return mir.outputContent;
+    return await mir.data;
+//  } else {
+//    return `<div><ul><li>${mb.param}</li></ul></div>`  
+//  }
+}
+```
+
+```{ojs}
 // VIEWOF
-html`<div style="display:flex;justify-content:space-between; gap:0rem;">
+html`<div style="display:flex;justify-content:space-between; gap:0.5rem;">
     ${viewof RefInput}
     ${viewof AccuStorage}
     ${viewof CopyButton}
     ${viewof HelpButton}
  </div>`
-
-// Display the list IF VALID
+ 
+ // Display the list IF VALID
 html`${RefPreview.map(item => html`<div style="line-height: 1.4; margin-bottom: 10px; color: amber"><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></div>`)}`;
-
 ```
 
 ```{ojs}
@@ -164,12 +172,7 @@ RefData = {
 
 // DISPLAY the list with Details and Summary
 html`${RefData.map(item => html`<details style="line-height: 1.6; margin-bottom: 10px;"><summary><strong>${item.ref} </strong><span style='font-size: 0.9em;'><em> ${item.content.slice(0,45)} ...</em></span></summary>${item.content} <em>${item.version}</em>  ${item.cacheStatus}:${item.duration_fetch}ms</details>`)}`
-
-// RefData;
-// at last, view accumulator of Refs
-//JSON.stringify(viewof AccuStorage.value);
 ```
 
 ::: {#outputDiv}
-<!--  any output comes here to outputDiv is considered Void-->
 :::

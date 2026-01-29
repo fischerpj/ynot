@@ -33,7 +33,6 @@ viewof RefInput = {
 
 ```
 
-
 ```{ojs}
 //================== REACTIVE PREVIEW OF INPUT 
 RefPreview = {
@@ -81,4 +80,3 @@ viewof demoValue = {
   yield divTwo;   // update once DOM is ready
 }
 ```
-
