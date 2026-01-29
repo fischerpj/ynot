@@ -2,7 +2,7 @@
 
 /* Neutralize Quarto's button styling */
 .btn-quarto {
-  all: unset;
+/*  all: unset; */
 }
 
 /* Reapply Bootstrap's primary button styling */
