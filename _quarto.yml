@@ -16,9 +16,6 @@ format:
     theme: lumen
     comments:
       utterances: 
-        repo: "fischerpj/ynot"    
-
-filters: 
-  - utterances-minimal
+        repo: "fischerpj/ynot"
   
 editor: visual

@@ -2,7 +2,7 @@ README for ynot and test purposes
 
 #### Logs Reverse
 
--   2604 nucRS only soif.qmd
+-   2604 nucRS only + soif.qmd
 
 -   2601 quarto render (generate) / git push (publish) / (view)
 

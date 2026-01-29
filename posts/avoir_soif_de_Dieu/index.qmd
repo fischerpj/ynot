@@ -1,0 +1,32 @@
+---
+title: "avoir_soif_de_Dieu"
+subtitle: "exposition"
+date: "2026-01-29"
+image: "hurdler.jpg"
+params:
+  refs: ["Matt5:6","Jg15:18-19"]
+  refs_after: Rom1:1
+  version: SG21
+format: html
+execute:
+  echo: false  
+---
+
+> Objectif: Exposer ce qu'est *la soif de Dieu*
+
+1.  je ne suis **pas seul** à vivre l'expérience du besoin de Dieu: beaucoup de personnalités la partagent. C'est rassurant.
+2.  l'Ecriture **légitime** cette expérience et Jésus lui promet **l'exaucement**. C'est fortifiant.
+
+::: {#inputDiv}
+:::
+
+::: {#outputDiv}
+:::
+
+```{r RENDER}
+#| output: asis
+
+library(ynot)
+
+render_refs_(params$refs)
+```
