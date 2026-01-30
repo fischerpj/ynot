@@ -1,0 +1,94 @@
+---
+title: "quarto_buttons"
+date: "2025-09-08"
+image: "hurdler.jpg"
+category: biblique
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+execute:
+  echo: false
+---
+
+> Native Quarto Buttons, in a Row
+
+```{=html}
+<!--
+switch-off all styles.css
+display:flex; does the groundjob for row inline
+-->
+```
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+:::
+
+## Buttons demo
+
+we use html button and Bootstrap Styling classes .btn .btn-primary .btn-success .btn-secondary
+
+```{=html}
+<div class="single-button-wrapper">
+  <button type="button" class="btn btn-primary">
+    Single Button
+  </button>
+</div>
+```
+
+```{=html}
+<div class="row-buttons-wrapper">
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-secondary w-150">
+        Left Button
+      </button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-success w-120">
+        Right Button
+      </button>
+    </div>
+  </div>
+</div>
+```
+
+```{=html}
+
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-success">Success</button>
+  <button class="btn btn-danger">Danger</button>
+  <button class="btn btn-warning">Warning</button>
+  <button class="btn btn-info">Info</button>
+  <button class="btn btn-light">Light</button>
+  <button class="btn btn-dark">Dark</button>
+  <button class="btn btn-link">Link</button>
+
+</div>
+```
+
+
+```{=html}
+<style>
+  .single-button-wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .row-buttons-wrapper {
+    margin-top: 1.5rem;
+  }
+  
+  .row {
+    margin-top: 1.5rem;
+    display: flex
+  }
+  
+</style>
+```
+
+::: {#outputDiv}
+:::
