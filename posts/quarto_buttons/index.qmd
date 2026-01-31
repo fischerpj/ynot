@@ -22,12 +22,36 @@ display:flex; does the groundjob for row inline
 ```
 
 ::: {#inputDiv}
-<!-- inputDiv is considered Void-->
+
+```{=html}
+<!-- inputDiv is considered Void
+
+<div class="single-button-wrapper">
+  <button type="button" class="btn btn-primary">
+    Single Button
+  </button>
+</div>
+
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-success">Success</button>
+  <button class="btn btn-danger">Danger</button>
+  <button class="btn btn-warning">Warning</button>
+  <button class="btn btn-info">Info</button>
+  <button class="btn btn-light">Light</button>
+  <button class="btn btn-dark">Dark</button>
+  <button class="btn btn-link">Link</button>
+
+</div>
+-->
+```
 :::
 
 ## Buttons demo
 
-we use html button and Bootstrap Styling classes .btn .btn-primary .btn-success .btn-secondary
+we use html buttons and Bootstrap Styling classes .btn .btn-primary .btn-success .btn-secondary
 
 ```{=html}
 <div class="single-button-wrapper">
@@ -70,7 +94,6 @@ we use html button and Bootstrap Styling classes .btn .btn-primary .btn-success 
 
 </div>
 ```
-
 
 ```{=html}
 <style>

@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-09-08">
 
-<title>quarto_buttons – ynot</title>
+<title>ojs_buttons – ynot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,6 +103,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 </head>
@@ -109,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">quarto_buttons</h1>
+      <h1 class="title">ojs_buttons</h1>
                       </div>
   </div>
     
@@ -140,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <blockquote class="blockquote">
-<p>Native Quarto Buttons, in a Row</p>
+<p>Native OJS Buttons, in a Row</p>
 </blockquote>
 <!--
 switch-off all styles.css
@@ -170,65 +207,91 @@ display:flex; does the groundjob for row inline
 </div>
 -->
 </div>
-<section id="buttons-demo" class="level2">
-<h2 class="anchored" data-anchor-id="buttons-demo">Buttons demo</h2>
-<p>we use html buttons and Bootstrap Styling classes .btn .btn-primary .btn-success .btn-secondary</p>
+<section id="div-html.button-with-.btn" class="level3">
+<h3 class="anchored" data-anchor-id="div-html.button-with-.btn">div &gt; html.button with .btn</h3>
 <div class="single-button-wrapper">
   <button type="button" class="btn btn-primary">
     Single Button
   </button>
 </div>
-<div class="row-buttons-wrapper">
-  <div class="row">
-    <div class="col">
-      <button type="button" class="btn btn-secondary w-150">
-        Left Button
-      </button>
-    </div>
-    <div class="col">
-      <button type="button" class="btn btn-success w-120">
-        Right Button
-      </button>
-    </div>
-  </div>
-</div>
+</section>
+<section id="ojs-viewof-inputs.button" class="level2">
+<h2 class="anchored" data-anchor-id="ojs-viewof-inputs.button">OJS Viewof Inputs.button</h2>
+<p>we use OJS buttons</p>
+<!--
 
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-
-  <button class="btn btn-primary">Primary</button>
-  <button class="btn btn-secondary">Secondary</button>
-  <button class="btn btn-success">Success</button>
-  <button class="btn btn-danger">Danger</button>
-  <button class="btn btn-warning">Warning</button>
-  <button class="btn btn-info">Info</button>
-  <button class="btn btn-light">Light</button>
-  <button class="btn btn-dark">Dark</button>
-  <button class="btn btn-link">Link</button>
-
-</div>
 <style>
-  .single-button-wrapper {
-    margin-bottom: 1.5rem;
+  .single-wrapper {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 2px solid #007acc;
+    border-radius: 6px;
+    background: #f0f8ff;
   }
 
-  .row-buttons-wrapper {
-    margin-top: 1.5rem;
+  .row-wrapper {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 2px solid #444;
+    border-radius: 6px;
+    background: #fafafa;
   }
-  
+
   .row {
-    margin-top: 1.5rem;
-    display: flex
+    display: flex;
+    gap: 1rem;
   }
-  
-</style>
-<div id="outputDiv">
 
+  .col {
+    flex: 1;
+  }
+
+</style>
+
+-->  
+<div class="single-wrapper">
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="102" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 101;"><span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>viewof singleButton <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Single button"</span>)<span class="op">;</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>restyle <span class="op">=</span> {</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> mib <span class="op">=</span> viewof singleButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (mib) {</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-primary'</span>)<span class="op">;</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIHNpbmdsZUJ1dHRvbiA9IElucHV0cy5idXR0b24oXCJTaW5nbGUgYnV0dG9uXCIpO1xuXG5yZXN0eWxlID0ge1xuIGNvbnN0IG1pYiA9IHZpZXdvZiBzaW5nbGVCdXR0b24ucXVlcnlTZWxlY3RvcignYnV0dG9uLmJ0bi5idG4tcXVhcnRvJyk7XG4gaWYgKG1pYikge1xuICAgIG1pYi5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gICAgbWliLmNsYXNzTGlzdC5hZGQoJ2J0bi1wcmltYXJ5Jyk7XG4gIH1cbn07XG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2luZ2xlQnV0dG9uJykifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../posts/ojs_buttons";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
