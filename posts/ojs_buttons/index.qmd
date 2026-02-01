@@ -1,8 +1,8 @@
 ---
-title: "ojs_buttons"
+title: "button ojs + qrt"
 date: "2025-09-08"
 image: "hurdler.jpg"
-category: biblique
+category: tech
 format: 
   html:
     comments:
@@ -12,7 +12,7 @@ execute:
   echo: false
 ---
 
-> Native OJS Buttons, in a Row
+> Comparative **Styling** of Quarto vs OJS Buttons, **in a Row**
 
 ```{=html}
 <!--
@@ -25,6 +25,28 @@ display:flex; does the groundjob for row inline
 ```{=html}
 <!-- inputDiv is considered Void
 
+// QUARTO plain HTML button
+<div class="single-button-wrapper">
+  <button type="button" class="btn btn-primary">
+    Single Button
+  </button>
+</div>
+
+// OJS cell 
+<div class="ojs-in-a-box-waiting-for-module-import observablehq">
+  <form class="oi-3a86ea">
+    <button class="btn btn-primary">Single button</button>
+  </form>
+</div>
+-->
+```
+:::
+
+### div \> button.btn.btn-primary (quarto html)
+
+=> button type="button" **class="btn btn-primary"**
+
+```{=html}
 <div class="single-button-wrapper">
   <button type="button" class="btn btn-primary">
     Single Button
@@ -44,23 +66,14 @@ display:flex; does the groundjob for row inline
   <button class="btn btn-link">Link</button>
 
 </div>
--->
-```
-:::
-
-### div \> html.button with .btn
-
-```{=html}
-<div class="single-button-wrapper">
-  <button type="button" class="btn btn-primary">
-    Single Button
-  </button>
-</div>
 ```
 
-## OJS Viewof Inputs.button
+## viewof Inputs.button (OJS)
 
 we use OJS buttons
+
+=> form class="oi-3a86ea"
+    button **class="btn btn-primary"**
 
 ```{=html}
 <!--
@@ -96,17 +109,28 @@ we use OJS buttons
 -->  
 ```
 
+
 ::: single-wrapper
 ```{ojs}
 
-viewof singleButton = Inputs.button("Single button");
+viewof OjsBtnZero = Inputs.button(".btn.btn-quarto is default");
+viewof OjsQuartoRemove = Inputs.button(".btn only");
+viewof OjsBtnAdd = Inputs.button(".btn.btn-success added");
 
 restyle = {
- const mib = viewof singleButton.querySelector('button.btn.btn-quarto');
+ const mibOjsBtnZero = viewof OjsBtnZero.querySelector('.btn.btn-quarto');
+  
+ const mib = viewof OjsQuartoRemove.querySelector('.btn.btn-quarto');
  if (mib) {
     mib.classList.remove('btn-quarto');
-    mib.classList.add('btn-primary');
+//    mib.classList.add('btn-success');
   }
+  
+ const addmib = viewof OjsBtnAdd.querySelector('.btn.btn-quarto');
+ if (addmib) {
+   addmib.classList.remove('btn-quarto');
+   addmib.classList.add('btn-success');
+  }  
 };
 
 ```

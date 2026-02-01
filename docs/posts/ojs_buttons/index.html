@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-09-08">
 
-<title>ojs_buttons – ynot</title>
+<title>button ojs + qrt – ynot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">ojs_buttons</h1>
+      <h1 class="title">button ojs + qrt</h1>
                       </div>
   </div>
     
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <blockquote class="blockquote">
-<p>Native OJS Buttons, in a Row</p>
+<p>Comparative <strong>Styling</strong> of Quarto vs OJS Buttons, <strong>in a Row</strong></p>
 </blockquote>
 <!--
 switch-off all styles.css
@@ -186,6 +186,24 @@ display:flex; does the groundjob for row inline
 <div id="inputDiv">
 <!-- inputDiv is considered Void
 
+// QUARTO plain HTML button
+<div class="single-button-wrapper">
+  <button type="button" class="btn btn-primary">
+    Single Button
+  </button>
+</div>
+
+// OJS cell 
+<div class="ojs-in-a-box-waiting-for-module-import observablehq">
+  <form class="oi-3a86ea">
+    <button class="btn btn-primary">Single button</button>
+  </form>
+</div>
+-->
+</div>
+<section id="div-button.btn.btn-primary-quarto-html" class="level3">
+<h3 class="anchored" data-anchor-id="div-button.btn.btn-primary-quarto-html">div &gt; button.btn.btn-primary (quarto html)</h3>
+<p>=&gt; button type=“button” <strong>class=“btn btn-primary”</strong></p>
 <div class="single-button-wrapper">
   <button type="button" class="btn btn-primary">
     Single Button
@@ -205,19 +223,11 @@ display:flex; does the groundjob for row inline
   <button class="btn btn-link">Link</button>
 
 </div>
--->
-</div>
-<section id="div-html.button-with-.btn" class="level3">
-<h3 class="anchored" data-anchor-id="div-html.button-with-.btn">div &gt; html.button with .btn</h3>
-<div class="single-button-wrapper">
-  <button type="button" class="btn btn-primary">
-    Single Button
-  </button>
-</div>
 </section>
-<section id="ojs-viewof-inputs.button" class="level2">
-<h2 class="anchored" data-anchor-id="ojs-viewof-inputs.button">OJS Viewof Inputs.button</h2>
+<section id="viewof-inputs.button-ojs" class="level2">
+<h2 class="anchored" data-anchor-id="viewof-inputs.button-ojs">viewof Inputs.button (OJS)</h2>
 <p>we use OJS buttons</p>
+<p>=&gt; form class=“oi-3a86ea” button <strong>class=“btn btn-primary”</strong></p>
 <!--
 
 <style>
@@ -251,15 +261,25 @@ display:flex; does the groundjob for row inline
 -->  
 <div class="single-wrapper">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="102" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 101;"><span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>viewof singleButton <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Single button"</span>)<span class="op">;</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>restyle <span class="op">=</span> {</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> mib <span class="op">=</span> viewof singleButton<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (mib) {</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-primary'</span>)<span class="op">;</span></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="116" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 115;"><span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>viewof OjsBtnZero <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn.btn-quarto is default"</span>)<span class="op">;</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>viewof OjsQuartoRemove <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn only"</span>)<span class="op">;</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>viewof OjsBtnAdd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn.btn-success added"</span>)<span class="op">;</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>restyle <span class="op">=</span> {</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> mibOjsBtnZero <span class="op">=</span> viewof OjsBtnZero<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> mib <span class="op">=</span> viewof OjsQuartoRemove<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (mib) {</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="co">//    mib.classList.add('btn-success');</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> addmib <span class="op">=</span> viewof OjsBtnAdd<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (addmib) {</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>   addmib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>   addmib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-success'</span>)<span class="op">;</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -274,6 +294,20 @@ display:flex; does the groundjob for row inline
 </div>
 </div>
 </div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -282,7 +316,7 @@ display:flex; does the groundjob for row inline
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIHNpbmdsZUJ1dHRvbiA9IElucHV0cy5idXR0b24oXCJTaW5nbGUgYnV0dG9uXCIpO1xuXG5yZXN0eWxlID0ge1xuIGNvbnN0IG1pYiA9IHZpZXdvZiBzaW5nbGVCdXR0b24ucXVlcnlTZWxlY3RvcignYnV0dG9uLmJ0bi5idG4tcXVhcnRvJyk7XG4gaWYgKG1pYikge1xuICAgIG1pYi5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gICAgbWliLmNsYXNzTGlzdC5hZGQoJ2J0bi1wcmltYXJ5Jyk7XG4gIH1cbn07XG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2luZ2xlQnV0dG9uJykifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIE9qc0J0blplcm8gPSBJbnB1dHMuYnV0dG9uKFwiLmJ0bi5idG4tcXVhcnRvIGlzIGRlZmF1bHRcIik7XG52aWV3b2YgT2pzUXVhcnRvUmVtb3ZlID0gSW5wdXRzLmJ1dHRvbihcIi5idG4gb25seVwiKTtcbnZpZXdvZiBPanNCdG5BZGQgPSBJbnB1dHMuYnV0dG9uKFwiLmJ0bi5idG4tc3VjY2VzcyBhZGRlZFwiKTtcblxucmVzdHlsZSA9IHtcbiBjb25zdCBtaWJPanNCdG5aZXJvID0gdmlld29mIE9qc0J0blplcm8ucXVlcnlTZWxlY3RvcignLmJ0bi5idG4tcXVhcnRvJyk7XG4gIFxuIGNvbnN0IG1pYiA9IHZpZXdvZiBPanNRdWFydG9SZW1vdmUucXVlcnlTZWxlY3RvcignLmJ0bi5idG4tcXVhcnRvJyk7XG4gaWYgKG1pYikge1xuICAgIG1pYi5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4vLyAgICBtaWIuY2xhc3NMaXN0LmFkZCgnYnRuLXN1Y2Nlc3MnKTtcbiAgfVxuICBcbiBjb25zdCBhZGRtaWIgPSB2aWV3b2YgT2pzQnRuQWRkLnF1ZXJ5U2VsZWN0b3IoJy5idG4uYnRuLXF1YXJ0bycpO1xuIGlmIChhZGRtaWIpIHtcbiAgIGFkZG1pYi5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gICBhZGRtaWIuY2xhc3NMaXN0LmFkZCgnYnRuLXN1Y2Nlc3MnKTtcbiAgfSAgXG59O1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ09qc0J0blplcm8nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnT2pzUXVhcnRvUmVtb3ZlJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ09qc0J0bkFkZCcpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
