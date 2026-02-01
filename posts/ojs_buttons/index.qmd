@@ -2,7 +2,7 @@
 title: "button ojs + qrt"
 date: "2025-09-08"
 image: "hurdler.jpg"
-category: tech
+category: it
 format: 
   html:
     comments:

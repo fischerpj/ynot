@@ -130,14 +130,14 @@
     "href": "posts/ojs_buttons/index.html",
     "title": "button ojs + qrt",
     "section": "",
-    "text": "Comparative Styling of Quarto vs OJS Buttons, in a Row"
+    "text": "Comparative Styling of Quarto vs OJS Buttons, in a Row\nlink href=“../../site_libs/quarto-ojs/quarto-ojs.css” rel=“stylesheet”"
   },
   {
-    "objectID": "posts/ojs_buttons/index.html#ojs-viewof-inputs.button",
-    "href": "posts/ojs_buttons/index.html#ojs-viewof-inputs.button",
-    "title": "ojs_buttons",
-    "section": "OJS Viewof Inputs.button",
-    "text": "OJS Viewof Inputs.button\nwe use OJS buttons\n  \n\n\nviewof singleButton = Inputs.button(\"Single button\");\n\nrestyle = {\n const mib = viewof singleButton.querySelector('button.btn.btn-quarto');\n if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn-primary');\n  }\n};"
+    "objectID": "posts/ojs_buttons/index.html#viewof-inputs.button-ojs",
+    "href": "posts/ojs_buttons/index.html#viewof-inputs.button-ojs",
+    "title": "button ojs + qrt",
+    "section": "viewof Inputs.button (OJS)",
+    "text": "viewof Inputs.button (OJS)\nwe use OJS buttons\n=&gt; form class=“oi-3a86ea” button class=“btn btn-primary”\n  \n\n\nviewof OjsBtnZero = Inputs.button(\".btn.btn-quarto is default\");\nviewof OjsQuartoRemove = Inputs.button(\".btn only\");\nviewof OjsBtnAdd = Inputs.button(\".btn.btn-success added\");\n\nrestyle = {\n const mibOjsBtnZero = viewof OjsBtnZero.querySelector('.btn.btn-quarto');\n  \n const mib = viewof OjsQuartoRemove.querySelector('.btn.btn-quarto');\n if (mib) {\n    mib.classList.remove('btn-quarto');\n//    mib.classList.add('btn-success');\n  }\n  \n const addmib = viewof OjsBtnAdd.querySelector('.btn.btn-quarto');\n if (addmib) {\n   addmib.classList.remove('btn-quarto');\n   addmib.classList.add('btn-success');\n  }  \n};"
   },
   {
     "objectID": "posts/checkStorage/index.html",
@@ -341,12 +341,5 @@
     "title": "homepage",
     "section": "",
     "text": "Ynot (Why not!) is a Quarto website with a feature of storing infos/comments as issues.\nYnot is build with quarto render and sourced from https://github.com/fischerpj/ynot.git and locally a docker rocker/verse image like v2519.\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n\n\n\nSep 8, 2025\n\n\nverseRun\n\n\n \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nojsButtonRow\n\n\n \n\n\n\n\n\n\n\nNov 18, 2025\n\n\nRead LocalStorage\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 5, 2025\n\n\naccuStorage\n\n\n \n\n\n\n\n\n\n\nDec 28, 2024\n\n\nmemo_verse\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 29, 2024\n\n\nWelcome To CKeditor\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 16, 2025\n\n\nWelcome To EditorJS\n\n\ngranPiero \n\n\n\n\n\n\n\nNov 27, 2025\n\n\nyieldRun\n\n\n \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nvFetch\n\n\n \n\n\n\n\n\n\n\nApr 3, 2025\n\n\ncheck_storage\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 30, 2025\n\n\nla prière\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nbutton ojs + qrt\n\n\n \n\n\n\n\n\n\n\nNov 7, 2024\n\n\nSuccession\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\npriorités\n\n\ngranPiero \n\n\n\n\n\n\n\n \n\n\nRomans Note\n\n\n \n\n\n\n\n\n\n\nOct 12, 2024\n\n\nbible techpad\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 21, 2024\n\n\nexcursions\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 1, 2024\n\n\nrésidence Etoile\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 18, 2025\n\n\nverses, mere edition\n\n\n \n\n\n\n\n\n\n\nJul 9, 2025\n\n\nbibGrid\n\n\n \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nverseTest\n\n\n \n\n\n\n\n\n\n\nMay 22, 2025\n\n\nbible_fetch API\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 17, 2025\n\n\nGlobal Note\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 30, 2025\n\n\nBCVE\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\ngospel banner\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nraw content\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nDOM via Javascript\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\ncuisine\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nverseRun\n\n\n \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nquarto_buttons\n\n\n \n\n\n\n\n\n\n\nMay 21, 2025\n\n\nBible access\n\n\ngranPiero \n\n\n\n\n\n\n\nJan 29, 2026\n\n\navoir_soif_de_Dieu\n\n\n \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nverses.PDF\n\n\n \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nIT\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 12, 2024\n\n\nObservables\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 8, 2025\n\n\nverseRun\n\n\n \n\n\n\n\n\n\n\nSep 28, 2025\n\n\nVias_QuaranteAns\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nnotes\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 11, 2024\n\n\njsfapi\n\n\ngranPiero \n\n\n\n\n\n\n\nMay 17, 2025\n\n\nNote Prophete\n\n\ngranPiero \n\n\n\n\n\n\n\nSep 9, 2025\n\n\nRef_to_PDF\n\n\n \n\n\n\n\n\n\n\nJan 5, 2026\n\n\nim Jahr 2026\n\n\n \n\n\n\n\n\n\n\nOct 1, 2024\n\n\nimmobilier\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nStorage with Javascript\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 9, 2024\n\n\nIframes & Workers\n\n\ngranPiero \n\n\n\n\n\n\n\nJan 26, 2026\n\n\nà celui qui a soif\n\n\n \n\n\n\n\n\n\n\nOct 10, 2024\n\n\nraw content\n\n\ngranPiero \n\n\n\n\n\n\n\nOct 14, 2024\n\n\nDOM via Javascript\n\n\ngranPiero \n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/ojs_buttons/index.html#viewof-inputs.button-ojs",
-    "href": "posts/ojs_buttons/index.html#viewof-inputs.button-ojs",
-    "title": "button ojs + qrt",
-    "section": "viewof Inputs.button (OJS)",
-    "text": "viewof Inputs.button (OJS)\nwe use OJS buttons\n=&gt; form class=“oi-3a86ea” button class=“btn btn-primary”\n  \n\n\nviewof OjsBtnZero = Inputs.button(\".btn.btn-quarto is default\");\nviewof OjsQuartoRemove = Inputs.button(\".btn only\");\nviewof OjsBtnAdd = Inputs.button(\".btn.btn-success added\");\n\nrestyle = {\n const mibOjsBtnZero = viewof OjsBtnZero.querySelector('.btn.btn-quarto');\n  \n const mib = viewof OjsQuartoRemove.querySelector('.btn.btn-quarto');\n if (mib) {\n    mib.classList.remove('btn-quarto');\n//    mib.classList.add('btn-success');\n  }\n  \n const addmib = viewof OjsBtnAdd.querySelector('.btn.btn-quarto');\n if (addmib) {\n   addmib.classList.remove('btn-quarto');\n   addmib.classList.add('btn-success');\n  }  \n};"
   }
 ]

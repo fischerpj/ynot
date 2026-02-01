@@ -2,7 +2,7 @@
 title: "ojsButtonRow"
 date: "2025-09-08"
 image: "hurdler.jpg"
-category: biblique
+category: it
 format: 
   html:
     comments:
