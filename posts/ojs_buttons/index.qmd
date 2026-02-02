@@ -136,9 +136,9 @@ restyle = {
  const addmib = viewof OjsBtnAdd.querySelector('.btn.btn-quarto');
  if (addmib) {
    addmib.classList.remove('btn-quarto');
+   addmib.style.color = "white";
    addmib.classList.add('btn-success');
   }  
 };
-
 ```
 :::

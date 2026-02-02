@@ -144,6 +144,12 @@
 
 /// end of lumen bootstrap
 
+
+.ojs-in-a-box-waiting-for-module-import .btn-success {
+//  --bs-btn-color: white;
+  color: white !important;
+}
+
 /* Neutralize Quarto's button styling */
 .Xbtn-quarto {
   all: unset; 
