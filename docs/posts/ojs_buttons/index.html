@@ -107,6 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -231,6 +232,13 @@ display:flex; does the groundjob for row inline
 <p>=&gt; form class=“oi-3a86ea” button <strong>class=“btn btn-primary”</strong></p>
 <!--
 
+<div class="ojs-in-a-box-waiting-for-module-import observablehq">
+  <form class="oi-3a86ea">
+    <button class="btn btn-quarto">.btn.btn-quarto is default
+    </button>
+  </form>
+</div>
+
 <style>
   .single-wrapper {
     margin: 2rem 0;
@@ -262,25 +270,25 @@ display:flex; does the groundjob for row inline
 -->  
 <div class="single-wrapper">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="116" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 115;"><span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>viewof OjsBtnZero <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn.btn-quarto is default"</span>)<span class="op">;</span></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>viewof OjsQuartoRemove <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn only"</span>)<span class="op">;</span></span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>viewof OjsBtnAdd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn.btn-success added"</span>)<span class="op">;</span></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>restyle <span class="op">=</span> {</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> mibOjsBtnZero <span class="op">=</span> viewof OjsBtnZero<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> mib <span class="op">=</span> viewof OjsQuartoRemove<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (mib) {</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="co">//    mib.classList.add('btn-success');</span></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> addmib <span class="op">=</span> viewof OjsBtnAdd<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (addmib) {</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>   addmib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>   addmib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-success'</span>)<span class="op">;</span></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  }  </span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="123" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 122;"><span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>viewof OjsBtnZero <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn.btn-quarto is default"</span>)<span class="op">;</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>viewof OjsQuartoRemove <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn only"</span>)<span class="op">;</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>viewof OjsBtnAdd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">".btn.btn-success added"</span>)<span class="op">;</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>restyle <span class="op">=</span> {</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> mibOjsBtnZero <span class="op">=</span> viewof OjsBtnZero<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> mib <span class="op">=</span> viewof OjsQuartoRemove<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (mib) {</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    mib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="co">//    mib.classList.add('btn-success');</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> addmib <span class="op">=</span> viewof OjsBtnAdd<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (addmib) {</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>   addmib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>   addmib<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-success'</span>)<span class="op">;</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">

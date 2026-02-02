@@ -79,6 +79,13 @@ we use OJS buttons
 ```{=html}
 <!--
 
+<div class="ojs-in-a-box-waiting-for-module-import observablehq">
+  <form class="oi-3a86ea">
+    <button class="btn btn-quarto">.btn.btn-quarto is default
+    </button>
+  </form>
+</div>
+
 <style>
   .single-wrapper {
     margin: 2rem 0;
