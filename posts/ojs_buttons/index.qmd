@@ -14,6 +14,8 @@ execute:
 
 > Comparative **Styling** of Quarto vs OJS Buttons, **in a Row**
 
+Solution: fix styling at viewof
+
 link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet"
 
 ```{=html}
@@ -138,6 +140,7 @@ restyle = {
    addmib.classList.remove('btn-quarto');
    addmib.style.color = "white";
    addmib.classList.add('btn-success');
+//   addmib.style.cssText = "color: white; background-color: red;";
   }  
 };
 ```
