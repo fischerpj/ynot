@@ -1,0 +1,26 @@
+---
+title: "buttonRow"
+date: "2025-09-08"
+image: "hurdler.jpg"
+category: it
+format: html
+echo: false
+---
+
+::: {#target}
+:::
+
+```{ojs}
+//| echo: false
+container = html`<div style="display:flex;justify-content:space-between; gap:0rem;">
+placeholder container
+ </div>`
+```
+
+```{ojs}
+btnA = Inputs.button("A");
+result = {
+  container.append(btnA);
+}
+```
+

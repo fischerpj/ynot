@@ -14,7 +14,7 @@ execute:
 
 > Comparative **Styling** of Quarto vs OJS Buttons, **in a Row**
 
-Solution: fix styling at viewof
+Solution: fix styling at viewof Store Clip Help
 
 link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet"
 
@@ -23,6 +23,45 @@ link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet"
 switch-off all styles.css
 display:flex; does the groundjob for row inline
 -->
+```
+
+```{ojs}
+//================== 2. BUTTONS
+
+  viewof AS0 = Inputs.button("Store");
+
+  viewof HB0 = Inputs.button("Help");
+
+  viewof CP0 = Inputs.button("Clip");
+
+restyle2 = {
+ const AS = viewof AS0.querySelector('button.btn.btn-quarto');
+ if (AS) {
+    AS.classList.add('btn-warning');
+    AS.classList.remove('btn-quarto');
+  };
+  
+ const HB = viewof HB0.querySelector('button.btn.btn-quarto');
+ if (HB) {
+    HB.classList.add('btn-info');
+    HB.classList.remove('btn-quarto');
+  }
+  
+  const CB = viewof CP0.querySelector('button.btn.btn-quarto');
+   if (CB) {
+     CB.style.color = "white";
+     CB.classList.add('btn-success');
+     CB.classList.remove('btn-quarto');
+//   addmib.style.cssText = "color: white; background-color: red;";
+  }
+  
+};
+
+//  viewof AccuStorage;
+//  viewof CopyButton;
+//  viewof HelpButton;
+  
+
 ```
 
 ::: {#inputDiv}
