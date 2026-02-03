@@ -107,6 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
+<link rel="stylesheet" href="../../mini_styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -176,13 +177,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<blockquote class="blockquote">
+<p>Best canonical method, very clean OJS input &amp; buttons, boostrap-styled and filled in-a-row.</p>
+</blockquote>
+<!--
+// this is classless generated ojs input
+<form class="oi-3a86ea">
+    <div class="oi-3a86ea-input">
+      <input type="text" name="text">
+    </div>
+  </form>
+
+// this is bootstrap styling of input  
+<input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">  
+  
+-->
 <div id="target">
 
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="14" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 13;"><span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="display:flex;justify-content:space-between; gap:0rem;"&gt;</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="vs">placeholder container</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="vs"> &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="31" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 30;"><span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">// static DIV container with .button-row class that will programmatically trigger effective row and children styling</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div id="row_container" class="button-row"&gt;</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="vs">placeholder container text will be overwritten</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="vs"> &lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -190,10 +207,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="21" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>btnA <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"A"</span>)<span class="op">;</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> {</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  container<span class="op">.</span><span class="fu">append</span>(btnA)<span class="op">;</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="42" data-source-offset="-51"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 41;"><span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>viewof RefInput <span class="op">=</span> {</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> inputText <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"Gen1:1"</span><span class="op">,</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> <span class="st">"width: 80px;"</span><span class="op">,</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> inputText</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">// YIELD BOOSTRAP STYLING via classes added to its &lt;input&gt; element</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>restyl <span class="op">=</span> {</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> IS <span class="op">=</span> viewof RefInput<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'input'</span>)<span class="op">;</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (IS) {</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    IS<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"form-control"</span><span class="op">,</span> <span class="st">"form-control-lg"</span>)<span class="op">;</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -209,12 +237,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="62" data-source-offset="-28"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>viewof btnA <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Store"</span>)<span class="op">;</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>viewof btnB <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Clip"</span>)<span class="op">;</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>viewof btnC <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Help"</span>)<span class="op">;</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="co">// SIDE-EFFECT DOM operations</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="co">// </span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> {</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> midiv <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"#row_container"</span>)<span class="op">;</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>  midiv<span class="op">.</span><span class="fu">replaceChildren</span>(viewof RefInput<span class="op">,</span> viewof btnA<span class="op">,</span> viewof btnB<span class="op">,</span> viewof btnC)<span class="op">;</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="74" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 73;"><span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="co">// RESTYLE OJS viewof buttons</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>restyle <span class="op">=</span> {</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>  <span class="co">// APPLY STYLE to PARENT button-row container</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mirow <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"div.button-row"</span>)<span class="op">;</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>    mirow<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">"flex"</span><span class="op">;</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>    mirow<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">width</span> <span class="op">=</span> <span class="st">"100%"</span><span class="op">;</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>    mirow<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">gap</span> <span class="op">=</span> <span class="st">"3px"</span><span class="op">;</span> <span class="co">// between children spacing</span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> AS <span class="op">=</span> viewof btnA<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (AS) {</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>    AS<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-warning'</span>)<span class="op">;</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>    AS<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> HB <span class="op">=</span> viewof btnB<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (HB) {</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>    HB<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-info'</span>)<span class="op">;</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>    HB<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> CB <span class="op">=</span> viewof btnC<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">'button.btn.btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (CB) {</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="co">//     CB.style.color = "black";</span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>     CB<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'btn-success'</span>)<span class="op">;</span></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>     CB<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">'btn-quarto'</span>)<span class="op">;</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="co">//   addmib.style.cssText = "color: white; background-color: red;";</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="co">// this is inoperative here !? let mini_styles.css do it </span></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="co">/*  mirow.querySelectorAll("button").forEach(btn =&gt; {</span></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="co">    btn.style.flex = "1";</span></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="co">    btn.style.margin = "20px";</span></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a><span class="co">  });</span></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span>  </span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<section id="nb-quarto-bootstrap-buttons" class="level3">
+<h3 class="anchored" data-anchor-id="nb-quarto-bootstrap-buttons">NB Quarto Bootstrap buttons</h3>
+
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-success">Success</button>
+  <button class="btn btn-danger">Danger</button>
+  <button class="btn btn-warning">Warning</button>
+  <button class="btn btn-info">Info</button>
+  <button class="btn btn-light">Light</button>
+  <button class="btn btn-dark">Dark</button>
+  <button class="btn btn-link">Link</button>
+
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImNvbnRhaW5lciA9IGh0bWxgPGRpdiBzdHlsZT1cImRpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2VlbjsgZ2FwOjByZW07XCI+XG5wbGFjZWhvbGRlciBjb250YWluZXJcbiA8L2Rpdj5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJidG5BID0gSW5wdXRzLmJ1dHRvbihcIkFcIik7XG5yZXN1bHQgPSB7XG4gIGNvbnRhaW5lci5hcHBlbmQoYnRuQSk7XG59XG4ifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gc3RhdGljIERJViBjb250YWluZXIgd2l0aCAuYnV0dG9uLXJvdyBjbGFzcyB0aGF0IHdpbGwgcHJvZ3JhbW1hdGljYWxseSB0cmlnZ2VyIGVmZmVjdGl2ZSByb3cgYW5kIGNoaWxkcmVuIHN0eWxpbmdcbmNvbnRhaW5lciA9IGh0bWxgPGRpdiBpZD1cInJvd19jb250YWluZXJcIiBjbGFzcz1cImJ1dHRvbi1yb3dcIj5cbnBsYWNlaG9sZGVyIGNvbnRhaW5lciB0ZXh0IHdpbGwgYmUgb3ZlcndyaXR0ZW5cbiA8L2Rpdj5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyAxLiBDUkVBVEUgT0pTIElOUFVUU1xuLy8gaWUgRWRpdGFibGUgaW5wdXQgZmllbGRcbnZpZXdvZiBSZWZJbnB1dCA9IHtcbiAgY29uc3QgaW5wdXRUZXh0ID0gSW5wdXRzLnRleHQoe1xuICB2YWx1ZTogXCJHZW4xOjFcIixcbiAgc3R5bGU6IFwid2lkdGg6IDgwcHg7XCIsXG4gIH0pXG4gIHJldHVybiBpbnB1dFRleHRcbn1cblxuLy8gWUlFTEQgQk9PU1RSQVAgU1RZTElORyB2aWEgY2xhc3NlcyBhZGRlZCB0byBpdHMgPGlucHV0PiBlbGVtZW50XG5yZXN0eWwgPSB7XG4gY29uc3QgSVMgPSB2aWV3b2YgUmVmSW5wdXQucXVlcnlTZWxlY3RvcignaW5wdXQnKTtcbiBpZiAoSVMpIHtcbiAgICBJUy5jbGFzc0xpc3QuYWRkKFwiZm9ybS1jb250cm9sXCIsIFwiZm9ybS1jb250cm9sLWxnXCIpO1xuICB9O1xufTtcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gQ1JFQVRFIFRocmVlIE9KU19idXR0b25zXG52aWV3b2YgYnRuQSA9IElucHV0cy5idXR0b24oXCJTdG9yZVwiKTtcbnZpZXdvZiBidG5CID0gSW5wdXRzLmJ1dHRvbihcIkNsaXBcIik7XG52aWV3b2YgYnRuQyA9IElucHV0cy5idXR0b24oXCJIZWxwXCIpO1xuXG4vLyBTSURFLUVGRkVDVCBET00gb3BlcmF0aW9uc1xuLy8gXG5yZXN1bHQgPSB7XG4gIGNvbnN0IG1pZGl2ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNyb3dfY29udGFpbmVyXCIpO1xuICBtaWRpdi5yZXBsYWNlQ2hpbGRyZW4odmlld29mIFJlZklucHV0LCB2aWV3b2YgYnRuQSwgdmlld29mIGJ0bkIsIHZpZXdvZiBidG5DKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIFJFU1RZTEUgT0pTIHZpZXdvZiBidXR0b25zXG5yZXN0eWxlID0ge1xuICAvLyBBUFBMWSBTVFlMRSB0byBQQVJFTlQgYnV0dG9uLXJvdyBjb250YWluZXJcbiAgY29uc3QgbWlyb3cgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiZGl2LmJ1dHRvbi1yb3dcIik7XG4gICAgbWlyb3cuc3R5bGUuZGlzcGxheSA9IFwiZmxleFwiO1xuICAgIG1pcm93LnN0eWxlLndpZHRoID0gXCIxMDAlXCI7XG4gICAgbWlyb3cuc3R5bGUuZ2FwID0gXCIzcHhcIjsgLy8gYmV0d2VlbiBjaGlsZHJlbiBzcGFjaW5nXG5cbiBjb25zdCBBUyA9IHZpZXdvZiBidG5BLnF1ZXJ5U2VsZWN0b3IoJ2J1dHRvbi5idG4uYnRuLXF1YXJ0bycpO1xuIGlmIChBUykge1xuICAgIEFTLmNsYXNzTGlzdC5hZGQoJ2J0bi13YXJuaW5nJyk7XG4gICAgQVMuY2xhc3NMaXN0LnJlbW92ZSgnYnRuLXF1YXJ0bycpO1xuICB9O1xuICBcbiAgY29uc3QgSEIgPSB2aWV3b2YgYnRuQi5xdWVyeVNlbGVjdG9yKCdidXR0b24uYnRuLmJ0bi1xdWFydG8nKTtcbiAgaWYgKEhCKSB7XG4gICAgSEIuY2xhc3NMaXN0LmFkZCgnYnRuLWluZm8nKTtcbiAgICBIQi5jbGFzc0xpc3QucmVtb3ZlKCdidG4tcXVhcnRvJyk7XG4gIH1cbiAgXG4gIGNvbnN0IENCID0gdmlld29mIGJ0bkMucXVlcnlTZWxlY3RvcignYnV0dG9uLmJ0bi5idG4tcXVhcnRvJyk7XG4gICBpZiAoQ0IpIHtcbi8vICAgICBDQi5zdHlsZS5jb2xvciA9IFwiYmxhY2tcIjtcbiAgICAgQ0IuY2xhc3NMaXN0LmFkZCgnYnRuLXN1Y2Nlc3MnKTtcbiAgICAgQ0IuY2xhc3NMaXN0LnJlbW92ZSgnYnRuLXF1YXJ0bycpO1xuLy8gICBhZGRtaWIuc3R5bGUuY3NzVGV4dCA9IFwiY29sb3I6IHdoaXRlOyBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XCI7XG4gIH1cblxuLy8gdGhpcyBpcyBpbm9wZXJhdGl2ZSBoZXJlICE/IGxldCBtaW5pX3N0eWxlcy5jc3MgZG8gaXQgXG4vKiAgbWlyb3cucXVlcnlTZWxlY3RvckFsbChcImJ1dHRvblwiKS5mb3JFYWNoKGJ0biA9PiB7XG4gICAgYnRuLnN0eWxlLmZsZXggPSBcIjFcIjtcbiAgICBidG4uc3R5bGUubWFyZ2luID0gXCIyMHB4XCI7XG4gIH0pO1xuKi8gIFxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdSZWZJbnB1dCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdidG5BJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2J0bkInKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnYnRuQycpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

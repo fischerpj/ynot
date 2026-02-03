@@ -7,20 +7,123 @@ format: html
 echo: false
 ---
 
+> Best canonical method, very clean OJS input & buttons, boostrap-styled and filled in-a-row.
+
+```{=html}
+<!--
+// this is classless generated ojs input
+<form class="oi-3a86ea">
+    <div class="oi-3a86ea-input">
+      <input type="text" name="text">
+    </div>
+  </form>
+
+// this is bootstrap styling of input  
+<input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">  
+  
+-->
+```
+
 ::: {#target}
 :::
 
 ```{ojs}
 //| echo: false
-container = html`<div style="display:flex;justify-content:space-between; gap:0rem;">
-placeholder container
+
+// static DIV container with .button-row class that will programmatically trigger effective row and children styling
+container = html`<div id="row_container" class="button-row">
+placeholder container text will be overwritten
  </div>`
 ```
 
 ```{ojs}
-btnA = Inputs.button("A");
+// 1. CREATE OJS INPUTS
+// ie Editable input field
+viewof RefInput = {
+  const inputText = Inputs.text({
+  value: "Gen1:1",
+  style: "width: 80px;",
+  })
+  return inputText
+}
+
+// YIELD BOOSTRAP STYLING via classes added to its <input> element
+restyl = {
+ const IS = viewof RefInput.querySelector('input');
+ if (IS) {
+    IS.classList.add("form-control", "form-control-lg");
+  };
+};
+
+```
+
+```{ojs}
+// CREATE Three OJS_buttons
+viewof btnA = Inputs.button("Store");
+viewof btnB = Inputs.button("Clip");
+viewof btnC = Inputs.button("Help");
+
+// SIDE-EFFECT DOM operations
+// 
 result = {
-  container.append(btnA);
+  const midiv = document.querySelector("#row_container");
+  midiv.replaceChildren(viewof RefInput, viewof btnA, viewof btnB, viewof btnC);
 }
 ```
 
+```{ojs}
+// RESTYLE OJS viewof buttons
+restyle = {
+  // APPLY STYLE to PARENT button-row container
+  const mirow = document.querySelector("div.button-row");
+    mirow.style.display = "flex";
+    mirow.style.width = "100%";
+    mirow.style.gap = "3px"; // between children spacing
+
+ const AS = viewof btnA.querySelector('button.btn.btn-quarto');
+ if (AS) {
+    AS.classList.add('btn-warning');
+    AS.classList.remove('btn-quarto');
+  };
+  
+  const HB = viewof btnB.querySelector('button.btn.btn-quarto');
+  if (HB) {
+    HB.classList.add('btn-info');
+    HB.classList.remove('btn-quarto');
+  }
+  
+  const CB = viewof btnC.querySelector('button.btn.btn-quarto');
+   if (CB) {
+//     CB.style.color = "black";
+     CB.classList.add('btn-success');
+     CB.classList.remove('btn-quarto');
+//   addmib.style.cssText = "color: white; background-color: red;";
+  }
+
+// this is inoperative here !? let mini_styles.css do it 
+/*  mirow.querySelectorAll("button").forEach(btn => {
+    btn.style.flex = "1";
+    btn.style.margin = "20px";
+  });
+*/  
+}
+```
+
+### NB Quarto Bootstrap buttons
+
+```{=html}
+
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-success">Success</button>
+  <button class="btn btn-danger">Danger</button>
+  <button class="btn btn-warning">Warning</button>
+  <button class="btn btn-info">Info</button>
+  <button class="btn btn-light">Light</button>
+  <button class="btn btn-dark">Dark</button>
+  <button class="btn btn-link">Link</button>
+
+</div>
+```

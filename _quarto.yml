@@ -14,6 +14,7 @@ website:
 format:
   html:
     theme: lumen
+    css: mini_styles.css
     comments:
       utterances: 
         repo: "fischerpj/ynot"

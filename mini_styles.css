@@ -1,0 +1,14 @@
+/* css styles */
+
+/* this style is left to the operation of ojs cell side effect */ 
+.Xbutton-row {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    background-color: blue;
+  }
+
+.button-row form button {
+    flex: 1; /* make elastic buttons */
+    margin: 0px;
+  }
