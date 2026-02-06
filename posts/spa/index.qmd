@@ -1,0 +1,105 @@
+---
+title: "Single Page App"
+date: "2026-02-05"
+image: "hurdler.jpg"
+category: it
+format: html
+echo: false
+---
+
+> Single-Page -App with Quarto + OJS
+
+1.  INPUT cell Input_Row with OJS Inputs & Buttons, well Boostrap styled
+2.  FETCH cell
+3.  DISPLAY cell use CSS Grid for layout
+4.  IFRAME cell
+
+```{ojs}
+//| echo: false
+
+//-----------------------------------------------------------
+// I0. STATIC DIV-CONTAINER with .button-row class 
+// used as programmatic trigger to row and children styling
+
+container = html`<div id="row_container" class="button-row">
+placeholder container text will be overwritten
+ </div>`
+ 
+//-----------------------------------------------------------
+// I2. OJS INPUTS created + styled ie Editable input field
+
+viewof RefInput = {
+  const inputText = Inputs.text({
+  value: "Gen1:1",
+  style: "width: 80px;",
+  })
+  return inputText
+}
+
+// BOOSTRAP STYLING YIELD via classes added to its <input> element
+restyl = {
+ const IS = viewof RefInput.querySelector('input');
+ if (IS) {
+    IS.classList.add("form-control", "form-control-lg");
+  };
+};
+
+//-----------------------------------------------------------
+// I3  OJS_BUTTONS created by Three Instances
+
+viewof btnA = Inputs.button("Store");
+viewof btnB = Inputs.button("Clip");
+viewof btnC = Inputs.button("Help");
+
+// I4. SIDE-EFFECT DOM insertion-operations
+
+result = {
+  const midiv = document.querySelector("#row_container");
+  midiv.replaceChildren(viewof RefInput, viewof btnA, viewof btnB, viewof btnC);
+}
+
+// I5 RESTYLE OJS viewof buttons PROGRAMMATICALLY
+
+restyle = {
+  // APPLY STYLE to PARENT button-row container
+  const mirow = document.querySelector("div.button-row");
+    mirow.style.display = "flex";
+    mirow.style.width = "100%";
+    mirow.style.gap = "3px"; // between children spacing
+
+ const AS = viewof btnA.querySelector('button.btn.btn-quarto');
+ if (AS) {
+    AS.classList.add('btn-warning');
+    AS.classList.remove('btn-quarto');
+  };
+  
+  const HB = viewof btnB.querySelector('button.btn.btn-quarto');
+  if (HB) {
+    HB.classList.add('btn-info');
+    HB.classList.remove('btn-quarto');
+  }
+  
+  const CB = viewof btnC.querySelector('button.btn.btn-quarto');
+   if (CB) {
+//     CB.style.color = "black";
+     CB.classList.add('btn-success');
+     CB.classList.remove('btn-quarto');
+//   addmib.style.cssText = "color: white; background-color: red;";
+  }
+
+// this is inoperative here !? let mini_styles.css do it 
+/*  mirow.querySelectorAll("button").forEach(btn => {
+    btn.style.flex = "1";
+    btn.style.margin = "20px";
+  });
+*/  
+}
+ 
+```
+
+
+```{ojs}
+RefInput
+```
+
+

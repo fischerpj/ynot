@@ -1,0 +1,31 @@
+---
+title: "JSON_pretty"
+date: "2026-02-05"
+image: "hurdler.jpg"
+category: it
+format: html
+echo: false
+---
+
+> JSON object, pretty printed, using pre to preserve identation.
+
+```{=html}
+<pre id="output-div-raw"></pre>
+```
+
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const data = {
+    name: "Pier",
+    project: "Demo",
+    items: [1, 2, 3],
+    nested: { ok: true }
+  };
+
+  const pretty = JSON.stringify(data, null, 3);
+  console.log(pretty);
+  document.getElementById("output-div-raw").textContent = pretty;
+});
+</script>
+```

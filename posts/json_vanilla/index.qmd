@@ -1,0 +1,58 @@
+---
+title: "JSON_CDN_editor"
+date: "2026-02-05"
+image: "hurdler.jpg"
+category: it
+format: html
+echo: false
+resources:
+  - static/json-editor.js
+---
+
+> JSON editor library used
+
+
+### Pretty‑printed JSON output
+
+```{=html}
+<pre id="pretty" style="background:#f5f5f5;padding:10px;border:1px solid #ccc;overflow:auto;height:300px;"></pre>
+```
+
+```{=html}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/vanilla-jsoneditor@0.23.4/dist/vanilla-jsoneditor.css"
+/>
+```
+
+```{=html}
+<script type="module">
+  import { JSONEditor } from "https://cdn.jsdelivr.net/npm/vanilla-jsoneditor@0.23.4/dist/vanilla-jsoneditor.js";
+
+  const container = document.getElementById("jsoneditor");
+  const pretty = document.getElementById("pretty");
+
+  const editor = new JSONEditor({
+    target: container,
+    props: {
+      content: {
+        json: {
+          hello: "world",
+          n: 42
+        }
+      },
+      onChange: (updated) => {
+        try {
+          const formatted = JSON.stringify(updated.json, null, 2);
+          pretty.textContent = formatted;
+        } catch (e) {
+          pretty.textContent = "";
+        }
+      }
+    }
+  });
+
+  // initial pretty print
+  pretty.textContent = JSON.stringify({ hello: "world", n: 42 }, null, 2);
+</script>
+```
