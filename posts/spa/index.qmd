@@ -10,9 +10,17 @@ echo: false
 > Single-Page -App with Quarto + OJS
 
 1.  INPUT cell Input_Row with OJS Inputs & Buttons, well Boostrap styled
-2.  FETCH cell
-3.  DISPLAY cell use CSS Grid for layout
+2.  FETCH cell. DO: if error
+3.  DISPLAY cell use CSS Grid for layout. DO: DOM.append like
 4.  IFRAME cell
+
+```{ojs}
+// IMPORT JS code
+
+import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
+
+```
+
 
 ```{ojs}
 //| echo: false
@@ -23,6 +31,10 @@ echo: false
 
 container = html`<div id="row_container" class="button-row">
 placeholder container text will be overwritten
+ </div>`
+ 
+output_div = html`<div id="output_div">
+outputdiv  container text will be overwritten
  </div>`
  
 //-----------------------------------------------------------
@@ -99,7 +111,35 @@ restyle = {
 
 
 ```{ojs}
-RefInput
+//| echo: false
+
+// FETCH DATA transform Input to Data
+
+//================== REACTIVE PREVIEW OF INPUT 
+RefPreview = {
+  const mb = new Bcve(RefInput);
+  
+    const mir = new Ref(mb.param);
+    await mir.fetch_parallel();   // Wait for data to be fetched
+    const result = await mir.data;
+    return result
+  };
+
+// Display the list IF VALID
+RefResult = {
+  RefPreview.map(item => html`<div style="line-height: 1.4; margin-bottom: 10px; color: amber"><strong>${item.ref}</strong> ${item.content} <em>${item.version}</em></div>`)
+}
+
+dummy = {
+  const out = document.querySelector("#output_div");
+  const ul = document.createElement("ul");
+  
+  RefPreview.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item.content;
+    ul.appendChild(li);
+    });
+  out.appendChild(ul);
+//  out.textContent = RefPreview[0].content;
+  }
 ```
-
-
