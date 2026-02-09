@@ -15,12 +15,11 @@ echo: false
 4.  IFRAME cell
 
 ```{ojs}
-// IMPORT JS code
+// IMPORT JS code..
 
 import { Bcve, Ref } from "./BibleBooksCodes_Tables.js";
 
 ```
-
 
 ```{ojs}
 //| echo: false
@@ -108,7 +107,6 @@ restyle = {
 }
  
 ```
-
 
 ```{ojs}
 //| echo: false
