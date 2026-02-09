@@ -137,7 +137,7 @@ dummy = {
     li.textContent = item.content;
     ul.appendChild(li);
     });
-  out.appendChild(ul);
+  out.replaceChildren(ul);
 //  out.textContent = RefPreview[0].content;
   }
 ```
