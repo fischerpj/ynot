@@ -1,0 +1,92 @@
+---
+title: "collection sur les pensées"
+subtitle: "v0.2"
+date: "2026-04-18"
+image: "hurdler.jpg"
+format:
+  pdf:
+    documentclass: scrartcl
+    classoption: [twocolumn, landscape]
+    papersize: letter
+    geometry:
+      - top=30mm
+      - left=40mm
+      - right=40mm
+      - heightrounded
+    mainfont: Lato
+    monofont: Arial
+    colorlinks: true
+execute:
+  echo: false  
+---
+
+::: {#inputDiv}
+<!-- inputDiv is considered Void-->
+:::
+
+:::: {#outputDiv}
+<div>
+
+<!--  any output comes here to outputDiv is considered Void-->
+
+</div>
+::::
+
+```{r FETCH, eval=TRUE}
+#| results: asis
+
+library(httr)
+library(jsonlite)
+library(htmltools)
+
+xURLBASE <- "https://hsub.pjafischer.workers.dev/bgw/api/?param="
+
+mijson1 <- '["HEB2:15!SG21","HEB2:18!SG21","HEB2:1!SG21","HEB3:1!SG21","PHP4:8!SG21","PSA6:8!SG21","JON2:3-4!SG21","PSA69:2-3!SG21","ISA41:10!SG21","1KI18:21!SG21","JAM1:5-8!SG21","PSA139:1-2!SG21","PSA94:18-19!SG21","GEN1:2!SG21","PSA42:1!KJV"]'  |> jsonlite::fromJSON()
+
+mijson2 <- '["JOB9:21!SG21","JOB27:3!SG21","PSA124:4-5!SG21","PSA69:2!SG21","JON2:6!SG21","PSA73:23-28!SG21","PSA42:7!SG21","JOB14:22!KJV","ISA66:18!SG21","ISA66:11-14!SG21","PSA6:8!SG21","JON2:3-4!SG21","PSA69:2-3!SG21","ISA41:10!SG21","1KI18:21!SG21","JAM1:5-8!SG21","PSA139:1-2!SG21","PSA94:18-19!SG21","GEN1:2!SG21","PSA42:1!KJV"]'  |> jsonlite::fromJSON()
+
+miparam <- c(mijson1, mijson2) |> sort() |> unique()
+
+xLENGTH <- length(miparam)
+miurls <- purrr::map(miparam[1:xLENGTH], ~paste(xURLBASE,.x, sep=""))
+
+##----- PARAMETER
+# Define the FETCH function
+fetch_json <- function(
+    url= "https://hsub.pjafischer.workers.dev/bgw/api/?param=GAL2%3A20") {
+  tryCatch({
+    response <- GET(url, accept_json())
+    
+    if (status_code(response) == 200) {
+      json_data <- content(response, "text", encoding = "UTF-8")
+      parsed <- fromJSON(json_data)
+      parsed$error <- NULL
+      return(tibble::as_tibble(parsed))
+    } else {
+      warning(paste("Request failed with status code:", status_code(response)))
+      return(NULL)
+    }
+  }, error = function(e) {
+    message("Error fetching JSON: ", e$message)
+    return(NULL)
+  })
+}
+
+##----- DATAFRAME RESULT
+payload_df <- purrr::map_df(miurls, ~fetch_json(.x)) |>
+  dplyr::relocate(ref,version,content)
+
+```
+
+```{r TEMPLATE}
+#| output: asis
+
+# Create a Markdown template for each row
+template <- "{{ paste0('- **', df$ref, '**: ', df$content, collapse = '\\n\\n') }}"
+
+##-------- CRAFT MARKDOWN output
+# Expand the template using knit_expand
+md_body <- knitr::knit_expand(text = template, df = payload_df)
+cat(md_body, sep = "\n")
+
+```
