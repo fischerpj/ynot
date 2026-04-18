@@ -140,109 +140,18 @@
     "text": "Point de départ de l’habitation au Clos de l’Etoile"
   },
   {
-    "objectID": "posts/bible_techpad/index.html",
-    "href": "posts/bible_techpad/index.html",
-    "title": "bible techpad",
+    "objectID": "posts/excursions/index.html",
+    "href": "posts/excursions/index.html",
+    "title": "excursions",
     "section": "",
-    "text": "Bible Search and Lookup technologies. Ideapad\n\n\n\n[1] \"1e6448ba-7307-47a0-9950-53c1c1da45c6\""
+    "text": "The root of discoveries.\n\n\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres."
   },
   {
-    "objectID": "posts/priorités/index.html",
-    "href": "posts/priorités/index.html",
-    "title": "priorités",
+    "objectID": "posts/romans_note/index.html",
+    "href": "posts/romans_note/index.html",
+    "title": "Romans Note",
     "section": "",
-    "text": "Organise the tree of priorities\n\nimportant first"
-  },
-  {
-    "objectID": "posts/succession/index.html",
-    "href": "posts/succession/index.html",
-    "title": "Succession",
-    "section": "",
-    "text": "Everything related to succession Fischer-Durrenberger."
-  },
-  {
-    "objectID": "posts/checkStorage/index.html",
-    "href": "posts/checkStorage/index.html",
-    "title": "check_storage",
-    "section": "",
-    "text": "This checks your localStorage"
-  },
-  {
-    "objectID": "posts/yRun/index.html",
-    "href": "posts/yRun/index.html",
-    "title": "yieldRun",
-    "section": "",
-    "text": "Use yield to wait for DOM ready.\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}"
-  },
-  {
-    "objectID": "posts/yRun/index.html#observablejs-demo",
-    "href": "posts/yRun/index.html#observablejs-demo",
-    "title": "yieldRun",
-    "section": "ObservableJS demo",
-    "text": "ObservableJS demo\n\ndomReady = new Promise(resolve =&gt; {\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", resolve);\n  } else {\n    resolve();\n  }\n})\n\n// A reactive view that updates once DOM is ready\nviewof demoValue = {\n//  const div = html`&lt;div&gt;⏳ Waiting for DOM…&lt;/div&gt;`;\n//  yield div;   // show placeholder immediately\n\n  await domReady;  // wait until DOM is ready\n//  div.textContent = `DOM is ready, value displayed! ${RefPreview} `;\n\n  // from vRun: Display the list IF VALID\n  const divTwo = html`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;\n  \n  yield divTwo;   // update once DOM is ready\n}"
-  },
-  {
-    "objectID": "posts/cke/index_cke.html",
-    "href": "posts/cke/index_cke.html",
-    "title": "Welcome To CKeditor",
-    "section": "",
-    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
-  },
-  {
-    "objectID": "posts/accuStorage/index.html",
-    "href": "posts/accuStorage/index.html",
-    "title": "accuStorage",
-    "section": "",
-    "text": "The AccuStorage Button yes\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof theme = {\n  const key = \"theme\"\n  const stored = localStorage.getItem(key)\n  const initial = stored ?? \"light\"\n\n  const input = Inputs.select([\"light\", \"dark\"], {\n    label: \"Theme\",\n    value: initial\n  })\n\n  // Sync to localStorage on change\n  input.addEventListener(\"input\", () =&gt; {\n    localStorage.setItem(key, input.value)\n  })\n\n  return input\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"RefAccu\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Keep\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = \"Gal2:20\"\n//      const input = viewof RefInput.value;\n//      const validated = new Bcve(input);\n//      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...list, input ]\n//      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nAccuStorage;"
-  },
-  {
-    "objectID": "posts/vButtonOjs/index.html",
-    "href": "posts/vButtonOjs/index.html",
-    "title": "ojsButtonRow",
-    "section": "",
-    "text": "Instant View & Persistent Bible Verses.\n\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 40px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"prophete\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Store\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = viewof RefInput.value;\n      const validated = new Bcve(input);\n      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\n// HELP BUTTON\nviewof HelpButton = {\n  const hbut = Inputs.button(\"Help\");\n  return hbut\n}\n\n// COPY BUTTON\nviewof CopyButton =  Inputs.button(\"Clip\",{\n    value: null,\n    reduce: () =&gt; { \n      // Copy to clipboard\n      navigator.clipboard.writeText(JSON.stringify(AccuStorage))\n        .then(() =&gt; console.log('Copied to clipboard!'))\n       .catch(err =&gt; console.error('Failed to copy:', err));\n    }\n});\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// RESTYLING of Buttons\nrestyling = {\n//  viewof AccuStorage.classList.add(\"btn\", \"btn-warning\");\n//  viewof HelpButton.classList.add(\"btn\", \"btn-info\");\n//  viewof CopyButton.classList.add(\"btn\", \"btn-success\");\n\n  // Very Great\n  const mib = viewof AccuStorage.querySelector('button');\n  if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn','btn-warning');\n  }\n  \n  const hbut = viewof HelpButton.querySelector('button.btn-quarto');\n  if (hbut) {\n    hbut.classList.remove('btn-quarto');\n    hbut.classList.add('btn', 'btn-info');\n  } \n  \n  const copbut = viewof CopyButton.querySelector('button.btn-quarto');\n  if (copbut) {\n    copbut.classList.remove('btn-quarto');\n    copbut.classList.add('btn-success');\n  }  \n\n// RESTYLING of INPUT\n  const mii = viewof RefInput.querySelector('div');\n  if (mii) {\n    mii.classList.add(\"form-control\");\n  }\n  \n  const inp = mii.querySelector('input');\n  if (inp) {\n    inp.style.border = \"none\";\n    inp.style.outline = \"none\";\n  }\n  \n};\n\n\n\n\n\n\n\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}\n\n\n\n\n\n\n\nhtml`&lt;div style=\"display:flex;justify-content:space-between; gap:0.5rem;\"&gt;\n    ${viewof RefInput}\n    ${viewof AccuStorage}\n    ${viewof CopyButton}\n    ${viewof HelpButton}\n &lt;/div&gt;`\n\n\n\n\n\n\n\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;\n\n\n\n\n\n\n\n\n\nRefData = {\n  // DATA is imported from BibleBooksCodes_Tables.js\n    const mir = new Ref(AccuStorage);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n    const miresult = await mir.data\n    return miresult\n}\n\n// DISPLAY the list with Details and Summary\nhtml`${RefData.map(item =&gt; html`&lt;details style=\"line-height: 1.6; margin-bottom: 10px;\"&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; ${item.content.slice(0,45)} ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;  ${item.cacheStatus}:${item.duration_fetch}ms&lt;/details&gt;`)}`"
-  },
-  {
-    "objectID": "posts/vButtonOjs/index_legacy.html",
-    "href": "posts/vButtonOjs/index_legacy.html",
-    "title": "verseRun",
-    "section": "",
-    "text": "Instant View & Persistent Bible Verses.\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"prophete\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Store\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = viewof RefInput.value;\n      const validated = new Bcve(input);\n      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nviewof HelpButton = {\n  const hbut = Inputs.button(\"Help\");\n  return hbut\n}\n\nviewof CopyButton =  Inputs.button(\"Clip\",{\n    value: null,\n    reduce: () =&gt; { \n      // Copy to clipboard\n      navigator.clipboard.writeText(JSON.stringify(AccuStorage))\n        .then(() =&gt; console.log('Copied to clipboard!'))\n       .catch(err =&gt; console.error('Failed to copy:', err));\n    }\n});\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}\n\n\n\n\n\n\n\nrestyling = {\n  viewof AccuStorage.classList.add(\"btn\", \"btn-warning\");\n  viewof HelpButton.classList.add(\"btn\", \"btn-info\");\n  viewof CopyButton.classList.add(\"btn\", \"btn-success\");\n\n  // Very Great\n  const mib = viewof AccuStorage.querySelector('button.btn-quarto');\n  if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn','btn-warning');\n  }\n  \n  const hbut = viewof HelpButton.querySelector('button.btn-quarto');\n  if (hbut) {\n    hbut.classList.remove('btn-quarto');\n    hbut.classList.add('btn', 'btn-info');\n  } \n  \n  const copbut = viewof CopyButton.querySelector('button.btn-quarto');\n  if (copbut) {\n    copbut.classList.remove('btn-quarto');\n    copbut.classList.add('btn-success');\n  }  \n\n// RESTYLING of INPUT\n  const mii = viewof RefInput.querySelector('div');\n  if (mii) {\n    mii.classList.add(\"form-control\");\n  }\n  \n  const inp = mii.querySelector('input');\n  if (inp) {\n    inp.style.border = \"none\";\n    inp.style.outline = \"none\";\n  }\n  \n};\n\n// VIEWOF\nhtml`&lt;div class=\"button-row\"&gt;\n    ${viewof RefInput}\n    ${viewof AccuStorage}\n    ${viewof CopyButton}\n    ${viewof HelpButton}\n &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;\n\n\n\n\n\n\n\n\n\nRefData = {\n  // DATA is imported from BibleBooksCodes_Tables.js\n    const mir = new Ref(AccuStorage);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n    const miresult = await mir.data\n    return miresult\n}\n\n// DISPLAY the list with Details and Summary\nhtml`${RefData.map(item =&gt; html`&lt;details style=\"line-height: 1.6; margin-bottom: 10px;\"&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; ${item.content.slice(0,45)} ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;  ${item.cacheStatus}:${item.duration_fetch}ms&lt;/details&gt;`)}`"
-  },
-  {
-    "objectID": "posts/read_storage/index.html",
-    "href": "posts/read_storage/index.html",
-    "title": "Read LocalStorage",
-    "section": "",
-    "text": "Read LocalStorage key “prophete”\n\n\ntake an input, trigger a button to echo the value\n\n\n\nEcho Input\n\n\n\n\nRead from LocalStorage: Trigger the retrieval and echo the value\n\n\nRead from LocalStorage\n\n\n\nOne script inserted here handles that all."
-  },
-  {
-    "objectID": "posts/memo_verse/index.html",
-    "href": "posts/memo_verse/index.html",
-    "title": "memo_verse",
-    "section": "",
-    "text": "VALUABLE LEGACY via hsub &gt; jsfapi (maybe slow storage setup): This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
-  },
-  {
-    "objectID": "posts/cke/index.html",
-    "href": "posts/cke/index.html",
-    "title": "Welcome To EditorJS",
-    "section": "",
-    "text": "Proof of Concept of EditorJS\n\nThis is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.\nrelies on yaml =&gt; format: html: include: include-on-header:\n\nEditor.js in Node.js\n\n\n\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
-  },
-  {
-    "objectID": "posts/vFetch/index.html",
-    "href": "posts/vFetch/index.html",
-    "title": "vFetch",
-    "section": "",
-    "text": "Check verseFetch\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRefPreview = {\n  const mb = new Bcve(\"Ps42!KJV\");\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}\n\n// Display the list IF VALID\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;"
-  },
-  {
-    "objectID": "posts/prayer/index.html",
-    "href": "posts/prayer/index.html",
-    "title": "la prière",
-    "section": "",
-    "text": "ceci est la page sur la prière chrétienne, pour l’accumulation des versets sur ce sujet , la conservation de commentaires et l’édition d’un exposé structuré.\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"prayer\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Store\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = viewof RefInput.value;\n      const validated = new Bcve(input);\n      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nviewof HelpButton = {\n  const hbut = Inputs.button(\"Help\");\n  return hbut\n}\n\nviewof CopyButton =  Inputs.button(\"Clip\",{\n    value: null,\n    reduce: () =&gt; { \n      // Copy to clipboard\n      navigator.clipboard.writeText(JSON.stringify(AccuStorage))\n        .then(() =&gt; console.log('Copied to clipboard!'))\n       .catch(err =&gt; console.error('Failed to copy:', err));\n    }\n});\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n  if (mb.is_valid) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n  } else {\n    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n  }\n}\n\n\n\n\n\n\n\nrestyling = {\n  viewof AccuStorage.classList.add(\"btn\", \"btn-warning\");\n  viewof HelpButton.classList.add(\"btn\", \"btn-info\");\n  viewof CopyButton.classList.add(\"btn\", \"btn-success\");\n\n  // Very Great\n  const mib = viewof AccuStorage.querySelector('button.btn-quarto');\n  if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn','btn-warning');\n  }\n  \n  const hbut = viewof HelpButton.querySelector('button.btn-quarto');\n  if (hbut) {\n    hbut.classList.remove('btn-quarto');\n    hbut.classList.add('btn', 'btn-info');\n  } \n  \n  const copbut = viewof CopyButton.querySelector('button.btn-quarto');\n  if (copbut) {\n    copbut.classList.remove('btn-quarto');\n    copbut.classList.add('btn-success');\n  }  \n\n// RESTYLING of INPUT\n  const mii = viewof RefInput.querySelector('div');\n  if (mii) {\n    mii.classList.add(\"form-control\");\n  }\n  \n  const inp = mii.querySelector('input');\n  if (inp) {\n    inp.style.border = \"none\";\n    inp.style.outline = \"none\";\n  }\n}\n\n// VIEWOF\nhtml`&lt;div class=\"button-row\"&gt;\n    ${viewof RefInput}\n    ${viewof AccuStorage}\n    ${viewof CopyButton}\n    ${viewof HelpButton}\n &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`\n\n\n\n\n\n\n\n\n\nRefData = {\n  // DATA is imported from BibleBooksCodes_Tables.js\n    const mir = new Ref(AccuStorage);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n    const miresult = await mir.data\n    return miresult\n}\n\n// DISPLAY the list with Details and Summary\nhtml`${RefData.map(item =&gt; html`&lt;details style=\"line-height: 1.6; margin-bottom: 10px;\"&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; ${item.content.slice(0,45)} ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;  ${item.cacheStatus}:${item.duration_fetch}ms&lt;/details&gt;`)}`"
+    "text": "This is a Global Note on Romans (using EditorJS and localStorage autosave mechanisms)\n\n\nthis is inputDiv\nthis is editorDiv"
   },
   {
     "objectID": "posts/json_editor/index.html",
@@ -259,18 +168,109 @@
     "text": "proprietary JSON editor\n{ \"hello\": \"world\", \"n\": 42 }"
   },
   {
-    "objectID": "posts/romans_note/index.html",
-    "href": "posts/romans_note/index.html",
-    "title": "Romans Note",
+    "objectID": "posts/prayer/index.html",
+    "href": "posts/prayer/index.html",
+    "title": "la prière",
     "section": "",
-    "text": "This is a Global Note on Romans (using EditorJS and localStorage autosave mechanisms)\n\n\nthis is inputDiv\nthis is editorDiv"
+    "text": "ceci est la page sur la prière chrétienne, pour l’accumulation des versets sur ce sujet , la conservation de commentaires et l’édition d’un exposé structuré.\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"prayer\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Store\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = viewof RefInput.value;\n      const validated = new Bcve(input);\n      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nviewof HelpButton = {\n  const hbut = Inputs.button(\"Help\");\n  return hbut\n}\n\nviewof CopyButton =  Inputs.button(\"Clip\",{\n    value: null,\n    reduce: () =&gt; { \n      // Copy to clipboard\n      navigator.clipboard.writeText(JSON.stringify(AccuStorage))\n        .then(() =&gt; console.log('Copied to clipboard!'))\n       .catch(err =&gt; console.error('Failed to copy:', err));\n    }\n});\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n  if (mb.is_valid) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n  } else {\n    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n  }\n}\n\n\n\n\n\n\n\nrestyling = {\n  viewof AccuStorage.classList.add(\"btn\", \"btn-warning\");\n  viewof HelpButton.classList.add(\"btn\", \"btn-info\");\n  viewof CopyButton.classList.add(\"btn\", \"btn-success\");\n\n  // Very Great\n  const mib = viewof AccuStorage.querySelector('button.btn-quarto');\n  if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn','btn-warning');\n  }\n  \n  const hbut = viewof HelpButton.querySelector('button.btn-quarto');\n  if (hbut) {\n    hbut.classList.remove('btn-quarto');\n    hbut.classList.add('btn', 'btn-info');\n  } \n  \n  const copbut = viewof CopyButton.querySelector('button.btn-quarto');\n  if (copbut) {\n    copbut.classList.remove('btn-quarto');\n    copbut.classList.add('btn-success');\n  }  \n\n// RESTYLING of INPUT\n  const mii = viewof RefInput.querySelector('div');\n  if (mii) {\n    mii.classList.add(\"form-control\");\n  }\n  \n  const inp = mii.querySelector('input');\n  if (inp) {\n    inp.style.border = \"none\";\n    inp.style.outline = \"none\";\n  }\n}\n\n// VIEWOF\nhtml`&lt;div class=\"button-row\"&gt;\n    ${viewof RefInput}\n    ${viewof AccuStorage}\n    ${viewof CopyButton}\n    ${viewof HelpButton}\n &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`\n\n\n\n\n\n\n\n\n\nRefData = {\n  // DATA is imported from BibleBooksCodes_Tables.js\n    const mir = new Ref(AccuStorage);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n    const miresult = await mir.data\n    return miresult\n}\n\n// DISPLAY the list with Details and Summary\nhtml`${RefData.map(item =&gt; html`&lt;details style=\"line-height: 1.6; margin-bottom: 10px;\"&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; ${item.content.slice(0,45)} ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;  ${item.cacheStatus}:${item.duration_fetch}ms&lt;/details&gt;`)}`"
   },
   {
-    "objectID": "posts/excursions/index.html",
-    "href": "posts/excursions/index.html",
-    "title": "excursions",
+    "objectID": "posts/vFetch/index.html",
+    "href": "posts/vFetch/index.html",
+    "title": "vFetch",
     "section": "",
-    "text": "The root of discoveries.\n\n\nmagnifique Cathédrale Saint-Pierre à Montpellier, érigée par le Pape Urban V.\nMarrons à Brenas le 20 octobre 2024, près de Vernazoubres."
+    "text": "Check verseFetch\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRefPreview = {\n  const mb = new Bcve(\"Ps42!KJV\");\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}\n\n// Display the list IF VALID\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;"
+  },
+  {
+    "objectID": "posts/cke/index.html",
+    "href": "posts/cke/index.html",
+    "title": "Welcome To EditorJS",
+    "section": "",
+    "text": "Proof of Concept of EditorJS\n\nThis is the first SUCCESSFUL post in a Quarto blog to a) use EditorJS and b) localStorage autosave mechanism.\nrelies on yaml =&gt; format: html: include: include-on-header:\n\nEditor.js in Node.js\n\n\n\n\nit’s to be class: EditorjsList, Hey!\nSave Content Load Content"
+  },
+  {
+    "objectID": "posts/memo_verse/index.html",
+    "href": "posts/memo_verse/index.html",
+    "title": "memo_verse",
+    "section": "",
+    "text": "VALUABLE LEGACY via hsub &gt; jsfapi (maybe slow storage setup): This is on-your-device-only-persistent-memory of bible references, that you accumulate on the fly. However one distinct memory zone per browser"
+  },
+  {
+    "objectID": "posts/read_storage/index.html",
+    "href": "posts/read_storage/index.html",
+    "title": "Read LocalStorage",
+    "section": "",
+    "text": "Read LocalStorage key “prophete”\n\n\ntake an input, trigger a button to echo the value\n\n\n\nEcho Input\n\n\n\n\nRead from LocalStorage: Trigger the retrieval and echo the value\n\n\nRead from LocalStorage\n\n\n\nOne script inserted here handles that all."
+  },
+  {
+    "objectID": "posts/vButtonOjs/index_legacy.html",
+    "href": "posts/vButtonOjs/index_legacy.html",
+    "title": "verseRun",
+    "section": "",
+    "text": "Instant View & Persistent Bible Verses.\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"prophete\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Store\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = viewof RefInput.value;\n      const validated = new Bcve(input);\n      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nviewof HelpButton = {\n  const hbut = Inputs.button(\"Help\");\n  return hbut\n}\n\nviewof CopyButton =  Inputs.button(\"Clip\",{\n    value: null,\n    reduce: () =&gt; { \n      // Copy to clipboard\n      navigator.clipboard.writeText(JSON.stringify(AccuStorage))\n        .then(() =&gt; console.log('Copied to clipboard!'))\n       .catch(err =&gt; console.error('Failed to copy:', err));\n    }\n});\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}\n\n\n\n\n\n\n\nrestyling = {\n  viewof AccuStorage.classList.add(\"btn\", \"btn-warning\");\n  viewof HelpButton.classList.add(\"btn\", \"btn-info\");\n  viewof CopyButton.classList.add(\"btn\", \"btn-success\");\n\n  // Very Great\n  const mib = viewof AccuStorage.querySelector('button.btn-quarto');\n  if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn','btn-warning');\n  }\n  \n  const hbut = viewof HelpButton.querySelector('button.btn-quarto');\n  if (hbut) {\n    hbut.classList.remove('btn-quarto');\n    hbut.classList.add('btn', 'btn-info');\n  } \n  \n  const copbut = viewof CopyButton.querySelector('button.btn-quarto');\n  if (copbut) {\n    copbut.classList.remove('btn-quarto');\n    copbut.classList.add('btn-success');\n  }  \n\n// RESTYLING of INPUT\n  const mii = viewof RefInput.querySelector('div');\n  if (mii) {\n    mii.classList.add(\"form-control\");\n  }\n  \n  const inp = mii.querySelector('input');\n  if (inp) {\n    inp.style.border = \"none\";\n    inp.style.outline = \"none\";\n  }\n  \n};\n\n// VIEWOF\nhtml`&lt;div class=\"button-row\"&gt;\n    ${viewof RefInput}\n    ${viewof AccuStorage}\n    ${viewof CopyButton}\n    ${viewof HelpButton}\n &lt;/div&gt;`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;\n\n\n\n\n\n\n\n\n\nRefData = {\n  // DATA is imported from BibleBooksCodes_Tables.js\n    const mir = new Ref(AccuStorage);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n    const miresult = await mir.data\n    return miresult\n}\n\n// DISPLAY the list with Details and Summary\nhtml`${RefData.map(item =&gt; html`&lt;details style=\"line-height: 1.6; margin-bottom: 10px;\"&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; ${item.content.slice(0,45)} ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;  ${item.cacheStatus}:${item.duration_fetch}ms&lt;/details&gt;`)}`"
+  },
+  {
+    "objectID": "posts/vButtonOjs/index.html",
+    "href": "posts/vButtonOjs/index.html",
+    "title": "ojsButtonRow",
+    "section": "",
+    "text": "Instant View & Persistent Bible Verses.\n\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 40px;\"\n  })\n  return inputText\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"prophete\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Store\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = viewof RefInput.value;\n      const validated = new Bcve(input);\n      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\n// HELP BUTTON\nviewof HelpButton = {\n  const hbut = Inputs.button(\"Help\");\n  return hbut\n}\n\n// COPY BUTTON\nviewof CopyButton =  Inputs.button(\"Clip\",{\n    value: null,\n    reduce: () =&gt; { \n      // Copy to clipboard\n      navigator.clipboard.writeText(JSON.stringify(AccuStorage))\n        .then(() =&gt; console.log('Copied to clipboard!'))\n       .catch(err =&gt; console.error('Failed to copy:', err));\n    }\n});\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// RESTYLING of Buttons\nrestyling = {\n//  viewof AccuStorage.classList.add(\"btn\", \"btn-warning\");\n//  viewof HelpButton.classList.add(\"btn\", \"btn-info\");\n//  viewof CopyButton.classList.add(\"btn\", \"btn-success\");\n\n  // Very Great\n  const mib = viewof AccuStorage.querySelector('button');\n  if (mib) {\n    mib.classList.remove('btn-quarto');\n    mib.classList.add('btn','btn-warning');\n  }\n  \n  const hbut = viewof HelpButton.querySelector('button.btn-quarto');\n  if (hbut) {\n    hbut.classList.remove('btn-quarto');\n    hbut.classList.add('btn', 'btn-info');\n  } \n  \n  const copbut = viewof CopyButton.querySelector('button.btn-quarto');\n  if (copbut) {\n    copbut.classList.remove('btn-quarto');\n    copbut.classList.add('btn-success');\n  }  \n\n// RESTYLING of INPUT\n  const mii = viewof RefInput.querySelector('div');\n  if (mii) {\n    mii.classList.add(\"form-control\");\n  }\n  \n  const inp = mii.querySelector('input');\n  if (inp) {\n    inp.style.border = \"none\";\n    inp.style.outline = \"none\";\n  }\n  \n};\n\n\n\n\n\n\n\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}\n\n\n\n\n\n\n\nhtml`&lt;div style=\"display:flex;justify-content:space-between; gap:0.5rem;\"&gt;\n    ${viewof RefInput}\n    ${viewof AccuStorage}\n    ${viewof CopyButton}\n    ${viewof HelpButton}\n &lt;/div&gt;`\n\n\n\n\n\n\n\nhtml`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;\n\n\n\n\n\n\n\n\n\nRefData = {\n  // DATA is imported from BibleBooksCodes_Tables.js\n    const mir = new Ref(AccuStorage);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n    const miresult = await mir.data\n    return miresult\n}\n\n// DISPLAY the list with Details and Summary\nhtml`${RefData.map(item =&gt; html`&lt;details style=\"line-height: 1.6; margin-bottom: 10px;\"&gt;&lt;summary&gt;&lt;strong&gt;${item.ref} &lt;/strong&gt;&lt;span style='font-size: 0.9em;'&gt;&lt;em&gt; ${item.content.slice(0,45)} ...&lt;/em&gt;&lt;/span&gt;&lt;/summary&gt;${item.content} &lt;em&gt;${item.version}&lt;/em&gt;  ${item.cacheStatus}:${item.duration_fetch}ms&lt;/details&gt;`)}`"
+  },
+  {
+    "objectID": "posts/accuStorage/index.html",
+    "href": "posts/accuStorage/index.html",
+    "title": "accuStorage",
+    "section": "",
+    "text": "The AccuStorage Button yes\n\n\n\n\n\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof theme = {\n  const key = \"theme\"\n  const stored = localStorage.getItem(key)\n  const initial = stored ?? \"light\"\n\n  const input = Inputs.select([\"light\", \"dark\"], {\n    label: \"Theme\",\n    value: initial\n  })\n\n  // Sync to localStorage on change\n  input.addEventListener(\"input\", () =&gt; {\n    localStorage.setItem(key, input.value)\n  })\n\n  return input\n}\n\n\n\n\n\n\n\nviewof AccuStorage = {\n  //  INITIALISATION READ from LocalStorage\n  const _STORAGE_KEY = \"RefAccu\"\n  const stored = JSON.parse(localStorage.getItem(_STORAGE_KEY))\n  const _INITIAL = stored ?? [\"Gen1:1\"]\n  \n  const accuButton = Inputs.button(\"Keep\", {\n    value: _INITIAL,\n    reduce: (list) =&gt; {\n      const input = \"Gal2:20\"\n//      const input = viewof RefInput.value;\n//      const validated = new Bcve(input);\n//      const result = validated.is_valid ? [validated.param, ...list ] : [...list]\n      const uniqueResult = [...list, input ]\n//      const uniqueResult = [...new Set(result)];\n  // STORE persistent\n      localStorage.setItem(_STORAGE_KEY, JSON.stringify(uniqueResult));\n      return uniqueResult // new accumulated value\n      } // end of reduce\n    });\n    \n    return accuButton\n}\n\nAccuStorage;"
+  },
+  {
+    "objectID": "posts/cke/index_cke.html",
+    "href": "posts/cke/index_cke.html",
+    "title": "Welcome To CKeditor",
+    "section": "",
+    "text": "Concept of CKEditor\n\nThis is the first post in a Quarto blog to use CKeditor.\nHas format: html: include: include-on-header:\nHas also html: comments: utterances: repo:"
+  },
+  {
+    "objectID": "posts/yRun/index.html",
+    "href": "posts/yRun/index.html",
+    "title": "yieldRun",
+    "section": "",
+    "text": "Use yield to wait for DOM ready.\nimport { Inputs } from \"@observablehq/inputs\";\nimport { html } from \"@observablehq/stdlib\";\nimport { Bcve, Ref } from \"./BibleBooksCodes_Tables.js\";\n//================== 1. INPUTS\n// Editable input field\nviewof RefInput = {\n  const inputText = Inputs.text({\n  value: \"Gen1:1\",\n  style: \"width: 80px;\"\n  })\n  return inputText\n}\n//================== REACTIVE PREVIEW OF INPUT \nRefPreview = {\n  const mb = new Bcve(RefInput);\n  \n//  if (mb.is_valid ) {\n    const mir = new Ref(mb.param);\n    await mir.fetch_parallel();   // Wait for data to be fetched\n//    await mir.displayData(); \n//    return mir.outputContent;\n    return await mir.data;\n//  } else {\n//    return `&lt;div&gt;&lt;ul&gt;&lt;li&gt;${mb.param}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;`  \n//  }\n}"
+  },
+  {
+    "objectID": "posts/yRun/index.html#observablejs-demo",
+    "href": "posts/yRun/index.html#observablejs-demo",
+    "title": "yieldRun",
+    "section": "ObservableJS demo",
+    "text": "ObservableJS demo\n\ndomReady = new Promise(resolve =&gt; {\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", resolve);\n  } else {\n    resolve();\n  }\n})\n\n// A reactive view that updates once DOM is ready\nviewof demoValue = {\n//  const div = html`&lt;div&gt;⏳ Waiting for DOM…&lt;/div&gt;`;\n//  yield div;   // show placeholder immediately\n\n  await domReady;  // wait until DOM is ready\n//  div.textContent = `DOM is ready, value displayed! ${RefPreview} `;\n\n  // from vRun: Display the list IF VALID\n  const divTwo = html`${RefPreview.map(item =&gt; html`&lt;div style=\"line-height: 1.4; margin-bottom: 10px; color: amber\"&gt;&lt;strong&gt;${item.ref}&lt;/strong&gt; ${item.content} &lt;em&gt;${item.version}&lt;/em&gt;&lt;/div&gt;`)}`;\n  \n  yield divTwo;   // update once DOM is ready\n}"
+  },
+  {
+    "objectID": "posts/checkStorage/index.html",
+    "href": "posts/checkStorage/index.html",
+    "title": "check_storage",
+    "section": "",
+    "text": "This checks your localStorage"
+  },
+  {
+    "objectID": "posts/succession/index.html",
+    "href": "posts/succession/index.html",
+    "title": "Succession",
+    "section": "",
+    "text": "Everything related to succession Fischer-Durrenberger."
+  },
+  {
+    "objectID": "posts/priorités/index.html",
+    "href": "posts/priorités/index.html",
+    "title": "priorités",
+    "section": "",
+    "text": "Organise the tree of priorities\n\nimportant first"
+  },
+  {
+    "objectID": "posts/bible_techpad/index.html",
+    "href": "posts/bible_techpad/index.html",
+    "title": "bible techpad",
+    "section": "",
+    "text": "Bible Search and Lookup technologies. Ideapad\n\n\n\n[1] \"1e6448ba-7307-47a0-9950-53c1c1da45c6\""
   },
   {
     "objectID": "posts/spa/index.html",
