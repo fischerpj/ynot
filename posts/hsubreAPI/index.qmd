@@ -1,0 +1,28 @@
+---
+title: "HMI interafce"
+author: "granPiero"
+date: "2024-10-12"
+categories: [tech]
+image: "todo.jpg"
+execute: 
+  echo: false
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+-   HMI is the latest Cloudflare Service Worker as a Proxy to Biblegateway.
+
+-   Query is <https://hmi.pjafischer.workers.dev/bgw/cache/?param=gen1:1>
+
+-   Response is JSON structure like, when cached with typical duration 4 ms
+
+```{r}
+myresponse <- '{"success":true,"error":null,"data":{"param":"gen1:1","searchQuery":"gen1:1","versionQuery":"SG21","cacheid":"v3.1","from_cache":true,"upstream":{"ok":true,"status":200}},"duration":3,"href":"https://www.biblegateway.com/passage/?search=gen1%3A1&version=SG21","ref":"Genèse 1:1","version":"Segond 21","content":"1 Au commencement, Dieu créa le ciel et la terre."}'
+jsonlite::prettify(myresponse)
+```
+
+-   response_object.content is the payload  along response_object.ref,  response_object.version abd response.duration [these four properties preserve previous interafaces]
+

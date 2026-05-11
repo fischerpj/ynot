@@ -1,0 +1,34 @@
+---
+title: "Face à l'adversité"
+author: "granPiero"
+date: "2024-10-12"
+categories: [org]
+image: "todo.jpg"
+execute: 
+  echo: false
+format: 
+  html:
+    comments:
+      utterances: 
+        repo: "fischerpj/ynot"
+---
+
+```{r}
+# install.packages("treemapify")
+library(ggplot2)
+library(treemapify)
+
+df <- data.frame(
+  label = c('Guerre','Maladie','Finances','Relations','Moi','Persécution','Catastrophes','Cqrd','Spirituel')
+) |>
+  dplyr::mutate(  
+    random = 100*runif(length(label)),
+    value= random/sum(random)
+  )
+
+ggplot(df, aes(area = value, fill = label, label = label)) +
+  geom_treemap() +
+  geom_treemap_text(colour ="black", place = "centre") +
+  scale_fill_brewer(palette = "Set3") +
+  theme(legend.position = "none")
+```

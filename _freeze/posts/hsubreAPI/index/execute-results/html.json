@@ -1,0 +1,15 @@
+{
+  "hash": "779d55b084442be34398036f39f9cc0a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"HMI interafce\"\nauthor: \"granPiero\"\ndate: \"2024-10-12\"\ncategories: [tech]\nimage: \"todo.jpg\"\nexecute: \n  echo: false\nformat: \n  html:\n    comments:\n      utterances: \n        repo: \"fischerpj/ynot\"\n---\n\n-   HMI is the latest Cloudflare Service Worker as a Proxy to Biblegateway.\n\n-   Query is <https://hmi.pjafischer.workers.dev/bgw/cache/?param=gen1:1>\n\n-   Response is JSON structure like, when cached with typical duration 4 ms\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n{\n    \"success\": true,\n    \"error\": null,\n    \"data\": {\n        \"param\": \"gen1:1\",\n        \"searchQuery\": \"gen1:1\",\n        \"versionQuery\": \"SG21\",\n        \"cacheid\": \"v3.1\",\n        \"from_cache\": true,\n        \"upstream\": {\n            \"ok\": true,\n            \"status\": 200\n        }\n    },\n    \"duration\": 3,\n    \"href\": \"https://www.biblegateway.com/passage/?search=gen1%3A1&version=SG21\",\n    \"ref\": \"Genèse 1:1\",\n    \"version\": \"Segond 21\",\n    \"content\": \"1 Au commencement, Dieu créa le ciel et la terre.\"\n}\n \n```\n\n\n:::\n:::\n\n\n-   response_object.content is the payload  along response_object.ref,  response_object.version abd response.duration [these four properties preserve previous interafaces]\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

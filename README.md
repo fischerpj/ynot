@@ -1,6 +1,14 @@
-README for ynot and test purposes
+README for ynot and test purposes is a Quarto blog.
+
+Main features: utterances notes, ojs reactivity, js ui_factory
+
+Main applis: verse interfaces eg <https://fischerpj.github.io/ynot/posts/verseRun/>
+
+Main workflows: quarto render
 
 #### Logs Reverse
+
+-   ssh pepo\@192.168.8.122 "touch /Downloads"
 
 -   2604 nucRS only + soif.qmd
 

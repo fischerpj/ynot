@@ -1,0 +1,17 @@
+{
+  "hash": "f9e84f20de610a4f2f51efab0e8a7f72",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tree_Stats\"\nauthor: \"granPiero\"\ndate: \"2024-10-12\"\ncategories: [org]\nimage: \"todo.jpg\"\nexecute: \n  echo: false\nformat: \n  html:\n    comments:\n      utterances: \n        repo: \"fischerpj/ynot\"\n---\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -90,3 +90,7 @@ md_body <- knitr::knit_expand(text = template, df = payload_df)
 cat(md_body, sep = "\n")
 
 ```
+
+```{r}
+miparam |> jsonlite::toJSON()
+```
