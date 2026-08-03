@@ -1,0 +1,15 @@
+{
+  "hash": "867e3c759d18fc2e5d12d47251e68df9",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"le regard de Jésus\"\nsubtitle: \"\"\ndate: \"2026-06-23\"\nimage: \"hurdler.jpg\"\nparams:\n  refs: [\"Rev2:18\",\"ps94:9\",\"ps139:1\",\"Ap2:19\",\"heb4:13\",\"Luc22:61-62\",\"2Cor7:10\",\"marc10:21\"]\n  refs_after: Rom1:1\n  version: SG21\nformat: html\nexecute:\n  echo: false  \n---\n\n::: {.cell}\n\n:::\n\n\n\n> Objectif: Souligner l'effet salvateur du *regard du Fils de DIEU* sur moi.\n\n1.  le regard flamboyant de Christ, qui voit tout en moi, les bonnes dispositions tout comme le péché.\n2.  me conduit à la repentance sincère\n3.  Ayant l'assurance de sa bonté qui pardonne.\n\n\n\n- **Apocalypse 2:18**: 18 »Ecris à l'ange de l'Eglise de Thyatire: ‘Voici ce que dit le Fils de Dieu, celui qui a les yeux comme une flamme de feu et dont les pieds sont semblables à du bronze ardent:\n\n- **Psaumes 94:9**: 9 Celui qui a fixé l’oreille n’entendrait-il pas?Celui qui a formé l’œil ne verrait-il pas?\n\n- **Psaumes 139:1**: 139 Au chef de chœur. Psaume de David.Eternel, tu m’examines et tu me connais,\n\n- **Apocalypse 2:19**: 19 Je connais tes œuvres, ton amour, ta foi, ton service et ta persévérance. Je sais que tes dernières œuvres sont plus nombreuses que les premières.\n\n- **Hébreux 4:13**: 13 Aucune créature n’est cachée devant lui: tout est nu et découvert aux yeux de celui à qui nous devons rendre compte.\n\n- **Luc 22:61-62**: 61 Le Seigneur se retourna et regarda Pierre. Pierre se souvint alors de ce que le Seigneur lui avait dit: «Avant que le coq chante [aujourd'hui], tu me renieras trois fois.»  62 Il sortit et pleura amèrement.\n\n- **2 Corinthiens 7:10**: 10 En effet, la tristesse selon Dieu produit une repentance qui conduit au salut et que l'on ne regrette jamais, tandis que la tristesse du monde produit la mort.\n\n- **Marc 10:21**: 21 L'ayant regardé, Jésus l'aima, et il lui dit: «Il te manque une chose: va vendre tout ce que tu as, donne-le aux pauvres, et tu auras un trésor dans le ciel. Puis viens, [charge-toi de la croix] et suis-moi.»\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

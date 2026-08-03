@@ -1,0 +1,29 @@
+---
+title: "le regard de Jésus"
+subtitle: ""
+date: "2026-06-23"
+image: "hurdler.jpg"
+params:
+  refs: ["Rev2:18","ps94:9","ps139:1","Ap2:19","heb4:13","Luc22:61-62","2Cor7:10","marc10:21"]
+  refs_after: Rom1:1
+  version: SG21
+format: html
+execute:
+  echo: false  
+---
+
+```{r}
+library(ynot)
+```
+
+> Objectif: Souligner l'effet salvateur du *regard du Fils de DIEU* sur moi.
+
+1.  le regard flamboyant de Christ, qui voit tout en moi, les bonnes dispositions tout comme le péché.
+2.  ... me conduit à la repentance sincère
+3.  ... puis à l'assurance de son pardon sa bonté qui pardonne.
+
+```{r RENDER}
+#| output: asis
+
+render_refs_(params$refs)
+```
