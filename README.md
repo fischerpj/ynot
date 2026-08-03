@@ -8,7 +8,7 @@ Main workflows: quarto render
 
 #### Logs Reverse
 
--   2632 fixrd d3.treemap and nuc pushups
+-   2632 fixed d3.treemap and nuc pushups
 
 -   ssh pepo\@192.168.8.122 "touch /Downloads"
 
